@@ -21,7 +21,7 @@ items:
       branch: northstar
       path: azure-mgmt-servicefabric\azure\mgmt\servicefabric\service_fabric_management_client.py
       repo: https://github.com/mmacy/azure-sdk-for-python
-    startLine: 58
+    startLine: 57
   summary: 'The Service Fabric Management Client is the entry point for all operations
     to be performed in cluster management.
 
