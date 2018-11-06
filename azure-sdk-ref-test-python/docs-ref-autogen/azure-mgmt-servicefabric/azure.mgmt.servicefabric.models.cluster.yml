@@ -1,0 +1,26 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.mgmt.servicefabric.models.cluster.Cluster
+  fullName: azure.mgmt.servicefabric.models.cluster
+  langs:
+  - python
+  module: azure.mgmt.servicefabric.models.cluster
+  name: cluster
+  source:
+    id: cluster
+    path: azure-mgmt-servicefabric\azure\mgmt\servicefabric\models\cluster.py
+    remote:
+      branch: northstar
+      path: azure-mgmt-servicefabric\azure\mgmt\servicefabric\models\cluster.py
+      repo: https://github.com/mmacy/azure-sdk-for-python
+    startLine: 0
+  type: module
+  uid: azure.mgmt.servicefabric.models.cluster
+references:
+- fullName: azure.mgmt.servicefabric.models.cluster.Cluster
+  isExternal: false
+  name: Cluster
+  parent: azure.mgmt.servicefabric.models.cluster
+  uid: azure.mgmt.servicefabric.models.cluster.Cluster
