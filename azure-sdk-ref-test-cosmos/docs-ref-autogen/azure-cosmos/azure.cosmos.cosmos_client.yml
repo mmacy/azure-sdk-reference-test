@@ -16,7 +16,7 @@ items:
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
     startLine: 0
-  summary: 'Document client class for the Azure Cosmos database service.
+  summary: 'Document client class for the Azure Cosmos DB service.
 
     '
   type: module

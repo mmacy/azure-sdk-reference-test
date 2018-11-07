@@ -105,19 +105,20 @@ items:
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
     startLine: 41
-  summary: 'Represents a document client.
+  summary: 'Represents an Azure Cosmos DB document client.
 
 
-    Provides a client-side logical representation of the Azure Cosmos
+    This class provides a client-side logical representation of the Azure Cosmos DB
 
-    service. This client is used to configure and execute requests against the
+    service. Use the client object to configure and execute requests against the
 
-    service.
+    service. Create containers, add documents to containers, query documents, and
+    more.
 
 
-    The service client encapsulates the endpoint and credentials used to access
+    The service client encapsulates the endpoint and credentials use when accessing
 
-    the Azure Cosmos service.
+    the Azure Cosmos DB service.
 
 
 
