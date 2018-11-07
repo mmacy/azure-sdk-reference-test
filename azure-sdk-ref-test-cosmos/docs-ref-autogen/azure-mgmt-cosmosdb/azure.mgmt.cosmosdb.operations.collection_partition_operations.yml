@@ -1,0 +1,26 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.mgmt.cosmosdb.operations.collection_partition_operations.CollectionPartitionOperations
+  fullName: azure.mgmt.cosmosdb.operations.collection_partition_operations
+  langs:
+  - python
+  module: azure.mgmt.cosmosdb.operations.collection_partition_operations
+  name: collection_partition_operations
+  source:
+    id: collection_partition_operations
+    path: azure-mgmt-cosmosdb\azure\mgmt\cosmosdb\operations\collection_partition_operations.py
+    remote:
+      branch: northstar
+      path: azure-mgmt-cosmosdb\azure\mgmt\cosmosdb\operations\collection_partition_operations.py
+      repo: https://github.com/mmacy/azure-sdk-for-python
+    startLine: 0
+  type: module
+  uid: azure.mgmt.cosmosdb.operations.collection_partition_operations
+references:
+- fullName: azure.mgmt.cosmosdb.operations.collection_partition_operations.CollectionPartitionOperations
+  isExternal: false
+  name: CollectionPartitionOperations
+  parent: azure.mgmt.cosmosdb.operations.collection_partition_operations
+  uid: azure.mgmt.cosmosdb.operations.collection_partition_operations.CollectionPartitionOperations

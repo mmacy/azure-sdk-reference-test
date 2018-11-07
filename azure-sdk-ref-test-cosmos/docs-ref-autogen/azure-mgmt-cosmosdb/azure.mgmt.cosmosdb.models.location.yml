@@ -1,0 +1,26 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.mgmt.cosmosdb.models.location.Location
+  fullName: azure.mgmt.cosmosdb.models.location
+  langs:
+  - python
+  module: azure.mgmt.cosmosdb.models.location
+  name: location
+  source:
+    id: location
+    path: azure-mgmt-cosmosdb\azure\mgmt\cosmosdb\models\location.py
+    remote:
+      branch: northstar
+      path: azure-mgmt-cosmosdb\azure\mgmt\cosmosdb\models\location.py
+      repo: https://github.com/mmacy/azure-sdk-for-python
+    startLine: 0
+  type: module
+  uid: azure.mgmt.cosmosdb.models.location
+references:
+- fullName: azure.mgmt.cosmosdb.models.location.Location
+  isExternal: false
+  name: Location
+  parent: azure.mgmt.cosmosdb.models.location
+  uid: azure.mgmt.cosmosdb.models.location.Location

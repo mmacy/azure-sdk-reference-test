@@ -193,3 +193,555 @@
   name: azure-cosmos
   uid: project-azure-cosmos
 
+- items:
+  - items:
+    - items:
+      - name: azure.mgmt.cosmosdb.cosmos_db.CosmosDB
+        uid: azure.mgmt.cosmosdb.cosmos_db.CosmosDB
+      - name: azure.mgmt.cosmosdb.cosmos_db.CosmosDBConfiguration
+        uid: azure.mgmt.cosmosdb.cosmos_db.CosmosDBConfiguration
+      name: azure.mgmt.cosmosdb.cosmos_db
+      uid: azure.mgmt.cosmosdb.cosmos_db
+    - items:
+      - items:
+        - name: azure.mgmt.cosmosdb.models.capability.Capability
+          uid: azure.mgmt.cosmosdb.models.capability.Capability
+        name: azure.mgmt.cosmosdb.models.capability
+        uid: azure.mgmt.cosmosdb.models.capability
+      - items:
+        - name: azure.mgmt.cosmosdb.models.capability_py3.Capability
+          uid: azure.mgmt.cosmosdb.models.capability_py3.Capability
+        name: azure.mgmt.cosmosdb.models.capability_py3
+        uid: azure.mgmt.cosmosdb.models.capability_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.consistency_policy.ConsistencyPolicy
+          uid: azure.mgmt.cosmosdb.models.consistency_policy.ConsistencyPolicy
+        name: azure.mgmt.cosmosdb.models.consistency_policy
+        uid: azure.mgmt.cosmosdb.models.consistency_policy
+      - items:
+        - name: azure.mgmt.cosmosdb.models.consistency_policy_py3.ConsistencyPolicy
+          uid: azure.mgmt.cosmosdb.models.consistency_policy_py3.ConsistencyPolicy
+        name: azure.mgmt.cosmosdb.models.consistency_policy_py3
+        uid: azure.mgmt.cosmosdb.models.consistency_policy_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.cosmos_db_enums.DatabaseAccountKind
+          uid: azure.mgmt.cosmosdb.models.cosmos_db_enums.DatabaseAccountKind
+        - name: azure.mgmt.cosmosdb.models.cosmos_db_enums.DatabaseAccountOfferType
+          uid: azure.mgmt.cosmosdb.models.cosmos_db_enums.DatabaseAccountOfferType
+        - name: azure.mgmt.cosmosdb.models.cosmos_db_enums.DefaultConsistencyLevel
+          uid: azure.mgmt.cosmosdb.models.cosmos_db_enums.DefaultConsistencyLevel
+        - name: azure.mgmt.cosmosdb.models.cosmos_db_enums.KeyKind
+          uid: azure.mgmt.cosmosdb.models.cosmos_db_enums.KeyKind
+        - name: azure.mgmt.cosmosdb.models.cosmos_db_enums.PrimaryAggregationType
+          uid: azure.mgmt.cosmosdb.models.cosmos_db_enums.PrimaryAggregationType
+        - name: azure.mgmt.cosmosdb.models.cosmos_db_enums.UnitType
+          uid: azure.mgmt.cosmosdb.models.cosmos_db_enums.UnitType
+        name: azure.mgmt.cosmosdb.models.cosmos_db_enums
+        uid: azure.mgmt.cosmosdb.models.cosmos_db_enums
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account.DatabaseAccount
+          uid: azure.mgmt.cosmosdb.models.database_account.DatabaseAccount
+        name: azure.mgmt.cosmosdb.models.database_account
+        uid: azure.mgmt.cosmosdb.models.database_account
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_connection_string.DatabaseAccountConnectionString
+          uid: azure.mgmt.cosmosdb.models.database_account_connection_string.DatabaseAccountConnectionString
+        name: azure.mgmt.cosmosdb.models.database_account_connection_string
+        uid: azure.mgmt.cosmosdb.models.database_account_connection_string
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_connection_string_py3.DatabaseAccountConnectionString
+          uid: azure.mgmt.cosmosdb.models.database_account_connection_string_py3.DatabaseAccountConnectionString
+        name: azure.mgmt.cosmosdb.models.database_account_connection_string_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_connection_string_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_create_update_parameters.DatabaseAccountCreateUpdateParameters
+          uid: azure.mgmt.cosmosdb.models.database_account_create_update_parameters.DatabaseAccountCreateUpdateParameters
+        name: azure.mgmt.cosmosdb.models.database_account_create_update_parameters
+        uid: azure.mgmt.cosmosdb.models.database_account_create_update_parameters
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_create_update_parameters_py3.DatabaseAccountCreateUpdateParameters
+          uid: azure.mgmt.cosmosdb.models.database_account_create_update_parameters_py3.DatabaseAccountCreateUpdateParameters
+        name: azure.mgmt.cosmosdb.models.database_account_create_update_parameters_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_create_update_parameters_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result.DatabaseAccountListConnectionStringsResult
+          uid: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result.DatabaseAccountListConnectionStringsResult
+        name: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result
+        uid: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result_py3.DatabaseAccountListConnectionStringsResult
+          uid: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result_py3.DatabaseAccountListConnectionStringsResult
+        name: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_list_connection_strings_result_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_list_keys_result.DatabaseAccountListKeysResult
+          uid: azure.mgmt.cosmosdb.models.database_account_list_keys_result.DatabaseAccountListKeysResult
+        name: azure.mgmt.cosmosdb.models.database_account_list_keys_result
+        uid: azure.mgmt.cosmosdb.models.database_account_list_keys_result
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_list_keys_result_py3.DatabaseAccountListKeysResult
+          uid: azure.mgmt.cosmosdb.models.database_account_list_keys_result_py3.DatabaseAccountListKeysResult
+        name: azure.mgmt.cosmosdb.models.database_account_list_keys_result_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_list_keys_result_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result.DatabaseAccountListReadOnlyKeysResult
+          uid: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result.DatabaseAccountListReadOnlyKeysResult
+        name: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result
+        uid: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result_py3.DatabaseAccountListReadOnlyKeysResult
+          uid: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result_py3.DatabaseAccountListReadOnlyKeysResult
+        name: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_list_read_only_keys_result_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_paged.DatabaseAccountPaged
+          uid: azure.mgmt.cosmosdb.models.database_account_paged.DatabaseAccountPaged
+        name: azure.mgmt.cosmosdb.models.database_account_paged
+        uid: azure.mgmt.cosmosdb.models.database_account_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_patch_parameters.DatabaseAccountPatchParameters
+          uid: azure.mgmt.cosmosdb.models.database_account_patch_parameters.DatabaseAccountPatchParameters
+        name: azure.mgmt.cosmosdb.models.database_account_patch_parameters
+        uid: azure.mgmt.cosmosdb.models.database_account_patch_parameters
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_patch_parameters_py3.DatabaseAccountPatchParameters
+          uid: azure.mgmt.cosmosdb.models.database_account_patch_parameters_py3.DatabaseAccountPatchParameters
+        name: azure.mgmt.cosmosdb.models.database_account_patch_parameters_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_patch_parameters_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_py3.DatabaseAccount
+          uid: azure.mgmt.cosmosdb.models.database_account_py3.DatabaseAccount
+        name: azure.mgmt.cosmosdb.models.database_account_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters.DatabaseAccountRegenerateKeyParameters
+          uid: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters.DatabaseAccountRegenerateKeyParameters
+        name: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters
+        uid: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters
+      - items:
+        - name: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters_py3.DatabaseAccountRegenerateKeyParameters
+          uid: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters_py3.DatabaseAccountRegenerateKeyParameters
+        name: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters_py3
+        uid: azure.mgmt.cosmosdb.models.database_account_regenerate_key_parameters_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.error_response.ErrorResponse
+          uid: azure.mgmt.cosmosdb.models.error_response.ErrorResponse
+        - name: azure.mgmt.cosmosdb.models.error_response.ErrorResponseException
+          uid: azure.mgmt.cosmosdb.models.error_response.ErrorResponseException
+        name: azure.mgmt.cosmosdb.models.error_response
+        uid: azure.mgmt.cosmosdb.models.error_response
+      - items:
+        - name: azure.mgmt.cosmosdb.models.error_response_py3.ErrorResponse
+          uid: azure.mgmt.cosmosdb.models.error_response_py3.ErrorResponse
+        - name: azure.mgmt.cosmosdb.models.error_response_py3.ErrorResponseException
+          uid: azure.mgmt.cosmosdb.models.error_response_py3.ErrorResponseException
+        name: azure.mgmt.cosmosdb.models.error_response_py3
+        uid: azure.mgmt.cosmosdb.models.error_response_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.failover_policies.FailoverPolicies
+          uid: azure.mgmt.cosmosdb.models.failover_policies.FailoverPolicies
+        name: azure.mgmt.cosmosdb.models.failover_policies
+        uid: azure.mgmt.cosmosdb.models.failover_policies
+      - items:
+        - name: azure.mgmt.cosmosdb.models.failover_policies_py3.FailoverPolicies
+          uid: azure.mgmt.cosmosdb.models.failover_policies_py3.FailoverPolicies
+        name: azure.mgmt.cosmosdb.models.failover_policies_py3
+        uid: azure.mgmt.cosmosdb.models.failover_policies_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.failover_policy.FailoverPolicy
+          uid: azure.mgmt.cosmosdb.models.failover_policy.FailoverPolicy
+        name: azure.mgmt.cosmosdb.models.failover_policy
+        uid: azure.mgmt.cosmosdb.models.failover_policy
+      - items:
+        - name: azure.mgmt.cosmosdb.models.failover_policy_py3.FailoverPolicy
+          uid: azure.mgmt.cosmosdb.models.failover_policy_py3.FailoverPolicy
+        name: azure.mgmt.cosmosdb.models.failover_policy_py3
+        uid: azure.mgmt.cosmosdb.models.failover_policy_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.location.Location
+          uid: azure.mgmt.cosmosdb.models.location.Location
+        name: azure.mgmt.cosmosdb.models.location
+        uid: azure.mgmt.cosmosdb.models.location
+      - items:
+        - name: azure.mgmt.cosmosdb.models.location_py3.Location
+          uid: azure.mgmt.cosmosdb.models.location_py3.Location
+        name: azure.mgmt.cosmosdb.models.location_py3
+        uid: azure.mgmt.cosmosdb.models.location_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric.Metric
+          uid: azure.mgmt.cosmosdb.models.metric.Metric
+        name: azure.mgmt.cosmosdb.models.metric
+        uid: azure.mgmt.cosmosdb.models.metric
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_availability.MetricAvailability
+          uid: azure.mgmt.cosmosdb.models.metric_availability.MetricAvailability
+        name: azure.mgmt.cosmosdb.models.metric_availability
+        uid: azure.mgmt.cosmosdb.models.metric_availability
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_availability_py3.MetricAvailability
+          uid: azure.mgmt.cosmosdb.models.metric_availability_py3.MetricAvailability
+        name: azure.mgmt.cosmosdb.models.metric_availability_py3
+        uid: azure.mgmt.cosmosdb.models.metric_availability_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_definition.MetricDefinition
+          uid: azure.mgmt.cosmosdb.models.metric_definition.MetricDefinition
+        name: azure.mgmt.cosmosdb.models.metric_definition
+        uid: azure.mgmt.cosmosdb.models.metric_definition
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_definition_paged.MetricDefinitionPaged
+          uid: azure.mgmt.cosmosdb.models.metric_definition_paged.MetricDefinitionPaged
+        name: azure.mgmt.cosmosdb.models.metric_definition_paged
+        uid: azure.mgmt.cosmosdb.models.metric_definition_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_definition_py3.MetricDefinition
+          uid: azure.mgmt.cosmosdb.models.metric_definition_py3.MetricDefinition
+        name: azure.mgmt.cosmosdb.models.metric_definition_py3
+        uid: azure.mgmt.cosmosdb.models.metric_definition_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_name.MetricName
+          uid: azure.mgmt.cosmosdb.models.metric_name.MetricName
+        name: azure.mgmt.cosmosdb.models.metric_name
+        uid: azure.mgmt.cosmosdb.models.metric_name
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_name_py3.MetricName
+          uid: azure.mgmt.cosmosdb.models.metric_name_py3.MetricName
+        name: azure.mgmt.cosmosdb.models.metric_name_py3
+        uid: azure.mgmt.cosmosdb.models.metric_name_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_paged.MetricPaged
+          uid: azure.mgmt.cosmosdb.models.metric_paged.MetricPaged
+        name: azure.mgmt.cosmosdb.models.metric_paged
+        uid: azure.mgmt.cosmosdb.models.metric_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_py3.Metric
+          uid: azure.mgmt.cosmosdb.models.metric_py3.Metric
+        name: azure.mgmt.cosmosdb.models.metric_py3
+        uid: azure.mgmt.cosmosdb.models.metric_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_value.MetricValue
+          uid: azure.mgmt.cosmosdb.models.metric_value.MetricValue
+        name: azure.mgmt.cosmosdb.models.metric_value
+        uid: azure.mgmt.cosmosdb.models.metric_value
+      - items:
+        - name: azure.mgmt.cosmosdb.models.metric_value_py3.MetricValue
+          uid: azure.mgmt.cosmosdb.models.metric_value_py3.MetricValue
+        name: azure.mgmt.cosmosdb.models.metric_value_py3
+        uid: azure.mgmt.cosmosdb.models.metric_value_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.operation.Operation
+          uid: azure.mgmt.cosmosdb.models.operation.Operation
+        name: azure.mgmt.cosmosdb.models.operation
+        uid: azure.mgmt.cosmosdb.models.operation
+      - items:
+        - name: azure.mgmt.cosmosdb.models.operation_display.OperationDisplay
+          uid: azure.mgmt.cosmosdb.models.operation_display.OperationDisplay
+        name: azure.mgmt.cosmosdb.models.operation_display
+        uid: azure.mgmt.cosmosdb.models.operation_display
+      - items:
+        - name: azure.mgmt.cosmosdb.models.operation_display_py3.OperationDisplay
+          uid: azure.mgmt.cosmosdb.models.operation_display_py3.OperationDisplay
+        name: azure.mgmt.cosmosdb.models.operation_display_py3
+        uid: azure.mgmt.cosmosdb.models.operation_display_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.operation_paged.OperationPaged
+          uid: azure.mgmt.cosmosdb.models.operation_paged.OperationPaged
+        name: azure.mgmt.cosmosdb.models.operation_paged
+        uid: azure.mgmt.cosmosdb.models.operation_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.operation_py3.Operation
+          uid: azure.mgmt.cosmosdb.models.operation_py3.Operation
+        name: azure.mgmt.cosmosdb.models.operation_py3
+        uid: azure.mgmt.cosmosdb.models.operation_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.partition_metric.PartitionMetric
+          uid: azure.mgmt.cosmosdb.models.partition_metric.PartitionMetric
+        name: azure.mgmt.cosmosdb.models.partition_metric
+        uid: azure.mgmt.cosmosdb.models.partition_metric
+      - items:
+        - name: azure.mgmt.cosmosdb.models.partition_metric_paged.PartitionMetricPaged
+          uid: azure.mgmt.cosmosdb.models.partition_metric_paged.PartitionMetricPaged
+        name: azure.mgmt.cosmosdb.models.partition_metric_paged
+        uid: azure.mgmt.cosmosdb.models.partition_metric_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.partition_metric_py3.PartitionMetric
+          uid: azure.mgmt.cosmosdb.models.partition_metric_py3.PartitionMetric
+        name: azure.mgmt.cosmosdb.models.partition_metric_py3
+        uid: azure.mgmt.cosmosdb.models.partition_metric_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.partition_usage.PartitionUsage
+          uid: azure.mgmt.cosmosdb.models.partition_usage.PartitionUsage
+        name: azure.mgmt.cosmosdb.models.partition_usage
+        uid: azure.mgmt.cosmosdb.models.partition_usage
+      - items:
+        - name: azure.mgmt.cosmosdb.models.partition_usage_paged.PartitionUsagePaged
+          uid: azure.mgmt.cosmosdb.models.partition_usage_paged.PartitionUsagePaged
+        name: azure.mgmt.cosmosdb.models.partition_usage_paged
+        uid: azure.mgmt.cosmosdb.models.partition_usage_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.partition_usage_py3.PartitionUsage
+          uid: azure.mgmt.cosmosdb.models.partition_usage_py3.PartitionUsage
+        name: azure.mgmt.cosmosdb.models.partition_usage_py3
+        uid: azure.mgmt.cosmosdb.models.partition_usage_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.percentile_metric.PercentileMetric
+          uid: azure.mgmt.cosmosdb.models.percentile_metric.PercentileMetric
+        name: azure.mgmt.cosmosdb.models.percentile_metric
+        uid: azure.mgmt.cosmosdb.models.percentile_metric
+      - items:
+        - name: azure.mgmt.cosmosdb.models.percentile_metric_paged.PercentileMetricPaged
+          uid: azure.mgmt.cosmosdb.models.percentile_metric_paged.PercentileMetricPaged
+        name: azure.mgmt.cosmosdb.models.percentile_metric_paged
+        uid: azure.mgmt.cosmosdb.models.percentile_metric_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.percentile_metric_py3.PercentileMetric
+          uid: azure.mgmt.cosmosdb.models.percentile_metric_py3.PercentileMetric
+        name: azure.mgmt.cosmosdb.models.percentile_metric_py3
+        uid: azure.mgmt.cosmosdb.models.percentile_metric_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.percentile_metric_value.PercentileMetricValue
+          uid: azure.mgmt.cosmosdb.models.percentile_metric_value.PercentileMetricValue
+        name: azure.mgmt.cosmosdb.models.percentile_metric_value
+        uid: azure.mgmt.cosmosdb.models.percentile_metric_value
+      - items:
+        - name: azure.mgmt.cosmosdb.models.percentile_metric_value_py3.PercentileMetricValue
+          uid: azure.mgmt.cosmosdb.models.percentile_metric_value_py3.PercentileMetricValue
+        name: azure.mgmt.cosmosdb.models.percentile_metric_value_py3
+        uid: azure.mgmt.cosmosdb.models.percentile_metric_value_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.region_for_online_offline.RegionForOnlineOffline
+          uid: azure.mgmt.cosmosdb.models.region_for_online_offline.RegionForOnlineOffline
+        name: azure.mgmt.cosmosdb.models.region_for_online_offline
+        uid: azure.mgmt.cosmosdb.models.region_for_online_offline
+      - items:
+        - name: azure.mgmt.cosmosdb.models.region_for_online_offline_py3.RegionForOnlineOffline
+          uid: azure.mgmt.cosmosdb.models.region_for_online_offline_py3.RegionForOnlineOffline
+        name: azure.mgmt.cosmosdb.models.region_for_online_offline_py3
+        uid: azure.mgmt.cosmosdb.models.region_for_online_offline_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.resource.Resource
+          uid: azure.mgmt.cosmosdb.models.resource.Resource
+        name: azure.mgmt.cosmosdb.models.resource
+        uid: azure.mgmt.cosmosdb.models.resource
+      - items:
+        - name: azure.mgmt.cosmosdb.models.resource_py3.Resource
+          uid: azure.mgmt.cosmosdb.models.resource_py3.Resource
+        name: azure.mgmt.cosmosdb.models.resource_py3
+        uid: azure.mgmt.cosmosdb.models.resource_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.usage.Usage
+          uid: azure.mgmt.cosmosdb.models.usage.Usage
+        name: azure.mgmt.cosmosdb.models.usage
+        uid: azure.mgmt.cosmosdb.models.usage
+      - items:
+        - name: azure.mgmt.cosmosdb.models.usage_paged.UsagePaged
+          uid: azure.mgmt.cosmosdb.models.usage_paged.UsagePaged
+        name: azure.mgmt.cosmosdb.models.usage_paged
+        uid: azure.mgmt.cosmosdb.models.usage_paged
+      - items:
+        - name: azure.mgmt.cosmosdb.models.usage_py3.Usage
+          uid: azure.mgmt.cosmosdb.models.usage_py3.Usage
+        name: azure.mgmt.cosmosdb.models.usage_py3
+        uid: azure.mgmt.cosmosdb.models.usage_py3
+      - items:
+        - name: azure.mgmt.cosmosdb.models.virtual_network_rule.VirtualNetworkRule
+          uid: azure.mgmt.cosmosdb.models.virtual_network_rule.VirtualNetworkRule
+        name: azure.mgmt.cosmosdb.models.virtual_network_rule
+        uid: azure.mgmt.cosmosdb.models.virtual_network_rule
+      - items:
+        - name: azure.mgmt.cosmosdb.models.virtual_network_rule_py3.VirtualNetworkRule
+          uid: azure.mgmt.cosmosdb.models.virtual_network_rule_py3.VirtualNetworkRule
+        name: azure.mgmt.cosmosdb.models.virtual_network_rule_py3
+        uid: azure.mgmt.cosmosdb.models.virtual_network_rule_py3
+      - name: azure.mgmt.cosmosdb.models.Capability
+        uid: azure.mgmt.cosmosdb.models.Capability
+      - name: azure.mgmt.cosmosdb.models.ConsistencyPolicy
+        uid: azure.mgmt.cosmosdb.models.ConsistencyPolicy
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccount
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccount
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountConnectionString
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountConnectionString
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountCreateUpdateParameters
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountCreateUpdateParameters
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountKind
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountKind
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountListConnectionStringsResult
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountListConnectionStringsResult
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountListKeysResult
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountListKeysResult
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountListReadOnlyKeysResult
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountListReadOnlyKeysResult
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountOfferType
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountOfferType
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountPaged
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountPaged
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountPatchParameters
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountPatchParameters
+      - name: azure.mgmt.cosmosdb.models.DatabaseAccountRegenerateKeyParameters
+        uid: azure.mgmt.cosmosdb.models.DatabaseAccountRegenerateKeyParameters
+      - name: azure.mgmt.cosmosdb.models.DefaultConsistencyLevel
+        uid: azure.mgmt.cosmosdb.models.DefaultConsistencyLevel
+      - name: azure.mgmt.cosmosdb.models.ErrorResponse
+        uid: azure.mgmt.cosmosdb.models.ErrorResponse
+      - name: azure.mgmt.cosmosdb.models.ErrorResponseException
+        uid: azure.mgmt.cosmosdb.models.ErrorResponseException
+      - name: azure.mgmt.cosmosdb.models.FailoverPolicies
+        uid: azure.mgmt.cosmosdb.models.FailoverPolicies
+      - name: azure.mgmt.cosmosdb.models.FailoverPolicy
+        uid: azure.mgmt.cosmosdb.models.FailoverPolicy
+      - name: azure.mgmt.cosmosdb.models.KeyKind
+        uid: azure.mgmt.cosmosdb.models.KeyKind
+      - name: azure.mgmt.cosmosdb.models.Location
+        uid: azure.mgmt.cosmosdb.models.Location
+      - name: azure.mgmt.cosmosdb.models.Metric
+        uid: azure.mgmt.cosmosdb.models.Metric
+      - name: azure.mgmt.cosmosdb.models.MetricAvailability
+        uid: azure.mgmt.cosmosdb.models.MetricAvailability
+      - name: azure.mgmt.cosmosdb.models.MetricDefinition
+        uid: azure.mgmt.cosmosdb.models.MetricDefinition
+      - name: azure.mgmt.cosmosdb.models.MetricDefinitionPaged
+        uid: azure.mgmt.cosmosdb.models.MetricDefinitionPaged
+      - name: azure.mgmt.cosmosdb.models.MetricName
+        uid: azure.mgmt.cosmosdb.models.MetricName
+      - name: azure.mgmt.cosmosdb.models.MetricPaged
+        uid: azure.mgmt.cosmosdb.models.MetricPaged
+      - name: azure.mgmt.cosmosdb.models.MetricValue
+        uid: azure.mgmt.cosmosdb.models.MetricValue
+      - name: azure.mgmt.cosmosdb.models.Operation
+        uid: azure.mgmt.cosmosdb.models.Operation
+      - name: azure.mgmt.cosmosdb.models.OperationDisplay
+        uid: azure.mgmt.cosmosdb.models.OperationDisplay
+      - name: azure.mgmt.cosmosdb.models.OperationPaged
+        uid: azure.mgmt.cosmosdb.models.OperationPaged
+      - name: azure.mgmt.cosmosdb.models.PartitionMetric
+        uid: azure.mgmt.cosmosdb.models.PartitionMetric
+      - name: azure.mgmt.cosmosdb.models.PartitionMetricPaged
+        uid: azure.mgmt.cosmosdb.models.PartitionMetricPaged
+      - name: azure.mgmt.cosmosdb.models.PartitionUsage
+        uid: azure.mgmt.cosmosdb.models.PartitionUsage
+      - name: azure.mgmt.cosmosdb.models.PartitionUsagePaged
+        uid: azure.mgmt.cosmosdb.models.PartitionUsagePaged
+      - name: azure.mgmt.cosmosdb.models.PercentileMetric
+        uid: azure.mgmt.cosmosdb.models.PercentileMetric
+      - name: azure.mgmt.cosmosdb.models.PercentileMetricPaged
+        uid: azure.mgmt.cosmosdb.models.PercentileMetricPaged
+      - name: azure.mgmt.cosmosdb.models.PercentileMetricValue
+        uid: azure.mgmt.cosmosdb.models.PercentileMetricValue
+      - name: azure.mgmt.cosmosdb.models.PrimaryAggregationType
+        uid: azure.mgmt.cosmosdb.models.PrimaryAggregationType
+      - name: azure.mgmt.cosmosdb.models.RegionForOnlineOffline
+        uid: azure.mgmt.cosmosdb.models.RegionForOnlineOffline
+      - name: azure.mgmt.cosmosdb.models.Resource
+        uid: azure.mgmt.cosmosdb.models.Resource
+      - name: azure.mgmt.cosmosdb.models.UnitType
+        uid: azure.mgmt.cosmosdb.models.UnitType
+      - name: azure.mgmt.cosmosdb.models.Usage
+        uid: azure.mgmt.cosmosdb.models.Usage
+      - name: azure.mgmt.cosmosdb.models.UsagePaged
+        uid: azure.mgmt.cosmosdb.models.UsagePaged
+      - name: azure.mgmt.cosmosdb.models.VirtualNetworkRule
+        uid: azure.mgmt.cosmosdb.models.VirtualNetworkRule
+      name: azure.mgmt.cosmosdb.models
+      uid: azure.mgmt.cosmosdb.models
+    - items:
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.collection_operations.CollectionOperations
+          uid: azure.mgmt.cosmosdb.operations.collection_operations.CollectionOperations
+        name: azure.mgmt.cosmosdb.operations.collection_operations
+        uid: azure.mgmt.cosmosdb.operations.collection_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.collection_partition_operations.CollectionPartitionOperations
+          uid: azure.mgmt.cosmosdb.operations.collection_partition_operations.CollectionPartitionOperations
+        name: azure.mgmt.cosmosdb.operations.collection_partition_operations
+        uid: azure.mgmt.cosmosdb.operations.collection_partition_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.collection_partition_region_operations.CollectionPartitionRegionOperations
+          uid: azure.mgmt.cosmosdb.operations.collection_partition_region_operations.CollectionPartitionRegionOperations
+        name: azure.mgmt.cosmosdb.operations.collection_partition_region_operations
+        uid: azure.mgmt.cosmosdb.operations.collection_partition_region_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.collection_region_operations.CollectionRegionOperations
+          uid: azure.mgmt.cosmosdb.operations.collection_region_operations.CollectionRegionOperations
+        name: azure.mgmt.cosmosdb.operations.collection_region_operations
+        uid: azure.mgmt.cosmosdb.operations.collection_region_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.database_account_region_operations.DatabaseAccountRegionOperations
+          uid: azure.mgmt.cosmosdb.operations.database_account_region_operations.DatabaseAccountRegionOperations
+        name: azure.mgmt.cosmosdb.operations.database_account_region_operations
+        uid: azure.mgmt.cosmosdb.operations.database_account_region_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.database_accounts_operations.DatabaseAccountsOperations
+          uid: azure.mgmt.cosmosdb.operations.database_accounts_operations.DatabaseAccountsOperations
+        name: azure.mgmt.cosmosdb.operations.database_accounts_operations
+        uid: azure.mgmt.cosmosdb.operations.database_accounts_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.database_operations.DatabaseOperations
+          uid: azure.mgmt.cosmosdb.operations.database_operations.DatabaseOperations
+        name: azure.mgmt.cosmosdb.operations.database_operations
+        uid: azure.mgmt.cosmosdb.operations.database_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.operations.Operations
+          uid: azure.mgmt.cosmosdb.operations.operations.Operations
+        name: azure.mgmt.cosmosdb.operations.operations
+        uid: azure.mgmt.cosmosdb.operations.operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.partition_key_range_id_operations.PartitionKeyRangeIdOperations
+          uid: azure.mgmt.cosmosdb.operations.partition_key_range_id_operations.PartitionKeyRangeIdOperations
+        name: azure.mgmt.cosmosdb.operations.partition_key_range_id_operations
+        uid: azure.mgmt.cosmosdb.operations.partition_key_range_id_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.partition_key_range_id_region_operations.PartitionKeyRangeIdRegionOperations
+          uid: azure.mgmt.cosmosdb.operations.partition_key_range_id_region_operations.PartitionKeyRangeIdRegionOperations
+        name: azure.mgmt.cosmosdb.operations.partition_key_range_id_region_operations
+        uid: azure.mgmt.cosmosdb.operations.partition_key_range_id_region_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.percentile_operations.PercentileOperations
+          uid: azure.mgmt.cosmosdb.operations.percentile_operations.PercentileOperations
+        name: azure.mgmt.cosmosdb.operations.percentile_operations
+        uid: azure.mgmt.cosmosdb.operations.percentile_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.percentile_source_target_operations.PercentileSourceTargetOperations
+          uid: azure.mgmt.cosmosdb.operations.percentile_source_target_operations.PercentileSourceTargetOperations
+        name: azure.mgmt.cosmosdb.operations.percentile_source_target_operations
+        uid: azure.mgmt.cosmosdb.operations.percentile_source_target_operations
+      - items:
+        - name: azure.mgmt.cosmosdb.operations.percentile_target_operations.PercentileTargetOperations
+          uid: azure.mgmt.cosmosdb.operations.percentile_target_operations.PercentileTargetOperations
+        name: azure.mgmt.cosmosdb.operations.percentile_target_operations
+        uid: azure.mgmt.cosmosdb.operations.percentile_target_operations
+      - name: azure.mgmt.cosmosdb.operations.CollectionOperations
+        uid: azure.mgmt.cosmosdb.operations.CollectionOperations
+      - name: azure.mgmt.cosmosdb.operations.CollectionPartitionOperations
+        uid: azure.mgmt.cosmosdb.operations.CollectionPartitionOperations
+      - name: azure.mgmt.cosmosdb.operations.CollectionPartitionRegionOperations
+        uid: azure.mgmt.cosmosdb.operations.CollectionPartitionRegionOperations
+      - name: azure.mgmt.cosmosdb.operations.CollectionRegionOperations
+        uid: azure.mgmt.cosmosdb.operations.CollectionRegionOperations
+      - name: azure.mgmt.cosmosdb.operations.DatabaseAccountRegionOperations
+        uid: azure.mgmt.cosmosdb.operations.DatabaseAccountRegionOperations
+      - name: azure.mgmt.cosmosdb.operations.DatabaseAccountsOperations
+        uid: azure.mgmt.cosmosdb.operations.DatabaseAccountsOperations
+      - name: azure.mgmt.cosmosdb.operations.DatabaseOperations
+        uid: azure.mgmt.cosmosdb.operations.DatabaseOperations
+      - name: azure.mgmt.cosmosdb.operations.Operations
+        uid: azure.mgmt.cosmosdb.operations.Operations
+      - name: azure.mgmt.cosmosdb.operations.PartitionKeyRangeIdOperations
+        uid: azure.mgmt.cosmosdb.operations.PartitionKeyRangeIdOperations
+      - name: azure.mgmt.cosmosdb.operations.PartitionKeyRangeIdRegionOperations
+        uid: azure.mgmt.cosmosdb.operations.PartitionKeyRangeIdRegionOperations
+      - name: azure.mgmt.cosmosdb.operations.PercentileOperations
+        uid: azure.mgmt.cosmosdb.operations.PercentileOperations
+      - name: azure.mgmt.cosmosdb.operations.PercentileSourceTargetOperations
+        uid: azure.mgmt.cosmosdb.operations.PercentileSourceTargetOperations
+      - name: azure.mgmt.cosmosdb.operations.PercentileTargetOperations
+        uid: azure.mgmt.cosmosdb.operations.PercentileTargetOperations
+      name: azure.mgmt.cosmosdb.operations
+      uid: azure.mgmt.cosmosdb.operations
+    - name: azure.mgmt.cosmosdb.version
+      uid: azure.mgmt.cosmosdb.version
+    - name: azure.mgmt.cosmosdb.CosmosDB
+      uid: azure.mgmt.cosmosdb.CosmosDB
+    name: azure.mgmt.cosmosdb
+    uid: azure.mgmt.cosmosdb
+  name: azure-mgmt-cosmosdb
+  uid: project-azure-mgmt-cosmosdb
+
