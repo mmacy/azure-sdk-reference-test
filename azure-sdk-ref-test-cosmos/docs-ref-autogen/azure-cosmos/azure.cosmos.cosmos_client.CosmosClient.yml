@@ -111,7 +111,9 @@ items:
     \ auth={\n                                       'masterKey': config['PRIMARYKEY']})\n\
     \   # Create a database\n   db = client.CreateDatabase({'id': config['DATABASE']})\n\
     \n   # Create a container\n   container = client.CreateContainer(db['_self'],\
-    \ container_definition, options)\n   ````\n"
+    \ container_definition, options)\n   ````\n\nNote: It is recommended to cache\
+    \ and reuse this instance within your application rather than creating a new instance\
+    \ for every operation. \n"
   source:
     id: CosmosClient
     path: .\azure\cosmos\cosmos_client.py
@@ -119,7 +121,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 41
+    startLine: 42
   summary: 'Represents an Azure Cosmos DB document client.
 
 
@@ -267,7 +269,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2450
+    startLine: 2455
   summary: 'Creates a Azure Cosmos resource and returns it.
 
     '
@@ -322,7 +324,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1720
+    startLine: 1725
   summary: 'Creates an attachment in a document.
 
     '
@@ -369,7 +371,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1780
+    startLine: 1785
   summary: 'Creates an attachment and upload media.
 
     '
@@ -414,7 +416,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 382
+    startLine: 387
   summary: 'Creates a collection in a database.
 
     '
@@ -461,7 +463,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 253
+    startLine: 258
   summary: 'Creates a database.
 
     '
@@ -502,7 +504,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1025
+    startLine: 1030
   summary: 'Creates a document in a collection.
 
     '
@@ -559,7 +561,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 616
+    startLine: 621
   summary: 'Creates a permission for a user.
 
     '
@@ -606,7 +608,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1476
+    startLine: 1481
   summary: 'Creates a stored procedure in a collection.
 
     '
@@ -651,7 +653,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1206
+    startLine: 1211
   summary: 'Creates a trigger in a collection.
 
     '
@@ -696,7 +698,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 463
+    startLine: 468
   summary: 'Creates a user.
 
     '
@@ -743,7 +745,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1341
+    startLine: 1346
   summary: 'Creates a user defined function in a collection.
 
     '
@@ -788,7 +790,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2049
+    startLine: 2054
   summary: 'Deletes an attachment.
 
     '
@@ -829,7 +831,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2297
+    startLine: 2302
   summary: 'Deletes a conflict.
 
     '
@@ -870,7 +872,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1633
+    startLine: 1638
   summary: 'Deletes a collection.
 
     '
@@ -911,7 +913,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 591
+    startLine: 596
   summary: 'Deletes a database.
 
     '
@@ -952,7 +954,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1695
+    startLine: 1700
   summary: 'Deletes a document.
 
     '
@@ -993,7 +995,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 832
+    startLine: 837
   summary: 'Deletes a permission.
 
     '
@@ -1034,7 +1036,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2604
+    startLine: 2609
   summary: 'Deletes a Azure Cosmos resource and returns it.
 
     '
@@ -1085,7 +1087,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2272
+    startLine: 2277
   summary: 'Deletes a stored procedure.
 
     '
@@ -1126,7 +1128,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2108
+    startLine: 2113
   summary: 'Deletes a trigger.
 
     '
@@ -1167,7 +1169,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 779
+    startLine: 784
   summary: 'Deletes a user.
 
     '
@@ -1208,7 +1210,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2167
+    startLine: 2172
   summary: 'Deletes a user defined function.
 
     '
@@ -1249,7 +1251,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2192
+    startLine: 2197
   summary: 'Executes a store procedure.
 
     '
@@ -1296,7 +1298,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2399
+    startLine: 2404
   summary: 'Gets database account info.
 
     '
@@ -1326,7 +1328,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 236
+    startLine: 241
   summary: 'Gets the partition resolver associated with the database link
 
     '
@@ -1360,7 +1362,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1901
+    startLine: 1906
   summary: 'Queries attachments in a document.
 
     '
@@ -1405,7 +1407,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1579
+    startLine: 1584
   summary: 'Queries conflicts in a collection.
 
     '
@@ -1450,7 +1452,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 353
+    startLine: 358
   summary: 'Queries collections in a database.
 
     '
@@ -1495,7 +1497,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 310
+    startLine: 315
   summary: 'Queries databases.
 
     '
@@ -1534,7 +1536,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2741
+    startLine: 2746
   summary: 'Query Feed for Document Collection resource.
 
     '
@@ -1588,7 +1590,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 875
+    startLine: 880
   summary: 'Queries documents in a collection.
 
     '
@@ -1641,7 +1643,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 913
+    startLine: 918
   summary: 'Queries documents change feed in a collection.
 
     '
@@ -1684,7 +1686,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2373
+    startLine: 2378
   summary: 'Query for all offers.
 
     '
@@ -1723,7 +1725,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 721
+    startLine: 726
   summary: 'Queries permissions for a user.
 
     '
@@ -1768,7 +1770,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1446
+    startLine: 1451
   summary: 'Queries stored procedures in a collection.
 
     '
@@ -1813,7 +1815,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1176
+    startLine: 1181
   summary: 'Queries triggers in a collection.
 
     '
@@ -1858,7 +1860,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1311
+    startLine: 1316
   summary: 'Queries user defined functions in a collection.
 
     '
@@ -1903,7 +1905,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 561
+    startLine: 566
   summary: 'Queries users in a database.
 
     '
@@ -1948,7 +1950,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2570
+    startLine: 2575
   summary: 'Reads a Azure Cosmos resource and returns it.
 
     '
@@ -1999,7 +2001,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1857
+    startLine: 1862
   summary: 'Reads an attachment.
 
     '
@@ -2040,7 +2042,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1882
+    startLine: 1887
   summary: 'Reads all attachments in a document.
 
     '
@@ -2081,7 +2083,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1609
+    startLine: 1614
   summary: 'Reads a conflict.
 
     '
@@ -2120,7 +2122,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1561
+    startLine: 1566
   summary: 'Reads conflicts.
 
     '
@@ -2159,7 +2161,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 438
+    startLine: 443
   summary: 'Reads a collection.
 
     '
@@ -2200,7 +2202,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 335
+    startLine: 340
   summary: 'Reads all collections in a database.
 
     '
@@ -2241,7 +2243,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 273
+    startLine: 278
   summary: 'Reads a database.
 
     '
@@ -2282,7 +2284,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 293
+    startLine: 298
   summary: 'Reads all databases.
 
     '
@@ -2337,7 +2339,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1132
+    startLine: 1137
   summary: 'Reads a document.
 
     '
@@ -2378,7 +2380,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 857
+    startLine: 862
   summary: 'Reads all documents in a collection.
 
     '
@@ -2417,7 +2419,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1933
+    startLine: 1938
   summary: 'Reads a media.
 
 
@@ -2459,7 +2461,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2340
+    startLine: 2345
   summary: 'Reads an offer.
 
     '
@@ -2493,7 +2495,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2356
+    startLine: 2361
   summary: 'Reads all offers.
 
     '
@@ -2528,7 +2530,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 677
+    startLine: 682
   summary: 'Reads a permission.
 
     '
@@ -2569,7 +2571,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 702
+    startLine: 707
   summary: 'Reads all permissions for a user.
 
     '
@@ -2610,7 +2612,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1540
+    startLine: 1545
   summary: 'Reads a stored procedure.
 
     '
@@ -2651,7 +2653,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1427
+    startLine: 1432
   summary: 'Reads all store procedures in a collection.
 
     '
@@ -2692,7 +2694,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1271
+    startLine: 1276
   summary: 'Reads a trigger.
 
     '
@@ -2733,7 +2735,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1157
+    startLine: 1162
   summary: 'Reads all triggers in a collection.
 
     '
@@ -2774,7 +2776,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 522
+    startLine: 527
   summary: 'Reads a user.
 
     '
@@ -2815,7 +2817,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1406
+    startLine: 1411
   summary: 'Reads a user defined function.
 
     '
@@ -2856,7 +2858,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1292
+    startLine: 1297
   summary: 'Reads all user defined functions in a collection.
 
     '
@@ -2897,7 +2899,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 543
+    startLine: 548
   summary: 'Reads all users in a database.
 
     '
@@ -2928,7 +2930,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 218
+    startLine: 223
   summary: 'Registers the partition resolver associated with the database link
 
     '
@@ -2962,7 +2964,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2531
+    startLine: 2536
   summary: 'Replaces a Azure Cosmos resource and returns it.
 
     '
@@ -3017,7 +3019,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2021
+    startLine: 2026
   summary: 'Replaces an attachment and returns it.
 
     '
@@ -3062,7 +3064,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 409
+    startLine: 414
   summary: 'Replaces a collection and return it.
 
     '
@@ -3109,7 +3111,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1658
+    startLine: 1663
   summary: 'Replaces a document and returns it.
 
     '
@@ -3154,7 +3156,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2322
+    startLine: 2327
   summary: 'Replaces an offer and returns it.
 
     '
@@ -3192,7 +3194,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 804
+    startLine: 809
   summary: 'Replaces a permission and return it.
 
     '
@@ -3237,7 +3239,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2238
+    startLine: 2243
   summary: 'Replaces a stored procedure and returns it.
 
     '
@@ -3282,7 +3284,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2074
+    startLine: 2079
   summary: 'Replaces a trigger and returns it.
 
     '
@@ -3327,7 +3329,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 751
+    startLine: 756
   summary: 'Replaces a user and return it.
 
     '
@@ -3372,7 +3374,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2133
+    startLine: 2138
   summary: 'Replaces a user defined function and returns it.
 
     '
@@ -3437,7 +3439,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1969
+    startLine: 1974
   summary: 'Updates a media and returns it.
 
     '
@@ -3483,7 +3485,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 2490
+    startLine: 2495
   summary: 'Upserts a Azure Cosmos resource and returns it.
 
     '
@@ -3538,7 +3540,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1747
+    startLine: 1752
   summary: 'Upserts an attachment in a document.
 
     '
@@ -3585,7 +3587,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1809
+    startLine: 1814
   summary: 'Upserts an attachment and upload media.
 
     '
@@ -3630,7 +3632,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1063
+    startLine: 1068
   summary: 'Upserts a document in a collection.
 
     '
@@ -3687,7 +3689,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 643
+    startLine: 648
   summary: 'Upserts a permission for a user.
 
     '
@@ -3734,7 +3736,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1502
+    startLine: 1507
   summary: 'Upserts a stored procedure in a collection.
 
     '
@@ -3779,7 +3781,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1232
+    startLine: 1237
   summary: 'Upserts a trigger in a collection.
 
     '
@@ -3824,7 +3826,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 490
+    startLine: 495
   summary: 'Upserts a user.
 
     '
@@ -3871,7 +3873,7 @@ items:
       branch: northstar
       path: .\azure\cosmos\cosmos_client.py
       repo: https://github.com/mmacy/azure-cosmos-python
-    startLine: 1367
+    startLine: 1372
   summary: 'Upserts a user defined function in a collection.
 
     '
