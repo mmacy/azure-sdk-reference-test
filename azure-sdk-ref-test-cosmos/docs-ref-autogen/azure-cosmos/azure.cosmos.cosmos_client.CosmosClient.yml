@@ -104,13 +104,14 @@ items:
     \ used when accessing\nthe Azure Cosmos DB service.\n\n<!-- literal_block {\"\
     ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [],\
     \ \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {}} -->\n\n````python\n\n\n   ````\n\nimport azure.cosmos.cosmos_client\
-    \ as cosmos_client\n\nconfig = {\n   'ENDPOINT': 'FILLME',\n   'PRIMARYKEY': 'FILLME',\n\
-    \   'DATABASE': 'CosmosDatabase',\n   'CONTAINER': 'CosmosContainer'\n\n}\n\n\
-    # Initialize the Cosmos client\nclient = cosmos_client.CosmosClient(url_connection=config['ENDPOINT'],\
-    \ auth={\n\n   'masterKey': config['PRIMARYKEY']})\n\n# Create a database\ndb\
-    \ = client.CreateDatabase({'id': config['DATABASE']})\n\n# Create a container\n\
-    container = client.CreateContainer(db['_self'], container_definition, options)\n"
+    highlight_args\": {}} -->\n\n````python\n\n   import azure.cosmos.cosmos_client\
+    \ as cosmos_client\n\n   config = {\n       'ENDPOINT': 'FILLME',\n       'PRIMARYKEY':\
+    \ 'FILLME',\n       'DATABASE': 'CosmosDatabase',\n       'CONTAINER': 'CosmosContainer'\n\
+    \   }\n\n   # Initialize the Cosmos client\n   client = cosmos_client.CosmosClient(url_connection=config['ENDPOINT'],\
+    \ auth={\n                                       'masterKey': config['PRIMARYKEY']})\n\
+    \   # Create a database\n   db = client.CreateDatabase({'id': config['DATABASE']})\n\
+    \n   # Create a container\n   container = client.CreateContainer(db['_self'],\
+    \ container_definition, options)\n   ````\n"
   source:
     id: CosmosClient
     path: .\azure\cosmos\cosmos_client.py
