@@ -45,6 +45,25 @@
       ]
     },
     {
+      "docset_name": "azure-sdk-ref-test-cosmos-prototype",
+      "build_source_folder": "azure-sdk-ref-test-cosmos-prototype",
+      "build_output_subfolder": "azure-sdk-ref-test-cosmos-prototype",
+      "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content",
+        "UniversalReference": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
+      "base_path": "python",
+      "site_name": "Docs"
+    },
+    {
       "docset_name": "azure-sdk-ref-test-dotnet",
       "build_source_folder": "azure-sdk-ref-test-dotnet",
       "build_output_subfolder": "azure-sdk-ref-test-dotnet",
