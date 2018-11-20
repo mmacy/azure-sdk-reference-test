@@ -1,4 +1,18 @@
-- name: Sample
-  items:
-    - uid: azure.batch.BatchServiceClient
-      name: azure.batch.BatchServiceClient
+- items:
+  - items:
+    - items:
+      - name: azure.cosmos.Container
+        uid: azure.cosmos.Container
+      - name: azure.cosmos.CosmosClient
+        uid: azure.cosmos.CosmosClient
+      - name: azure.cosmos.Database
+        uid: azure.cosmos.Database
+      - name: azure.cosmos.Item
+        uid: azure.cosmos.Item
+      name: azure.cosmos
+      uid: azure.cosmos
+    name: azure
+    uid: azure
+  name: azure-cosmos-python-prototype
+  uid: project-azure-cosmos-python-prototype
+

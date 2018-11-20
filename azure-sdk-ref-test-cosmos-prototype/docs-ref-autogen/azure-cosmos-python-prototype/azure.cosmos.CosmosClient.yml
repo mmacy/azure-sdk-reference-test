@@ -1,0 +1,468 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.cosmos.CosmosClient.create_database
+  - azure.cosmos.CosmosClient.delete_database
+  - azure.cosmos.CosmosClient.get_database
+  - azure.cosmos.CosmosClient.get_database_properties
+  - azure.cosmos.CosmosClient.list_databases
+  - azure.cosmos.CosmosClient.create_database
+  - azure.cosmos.CosmosClient.delete_database
+  - azure.cosmos.CosmosClient.get_database
+  - azure.cosmos.CosmosClient.get_database_properties
+  - azure.cosmos.CosmosClient.list_databases
+  class: azure.cosmos.CosmosClient
+  fullName: azure.cosmos.CosmosClient
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.cosmos
+  name: CosmosClient
+  source:
+    id: CosmosClient
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 25
+  summary: 'Provides a client-side logical representation of the Azure Cosmos DB database
+    account.
+
+    This client is used to configure and execute requests in the Azure Cosmos DB database
+    service.
+
+
+
+
+
+
+    '
+  syntax:
+    content: 'CosmosClient(url: str, key, consistency_level=''Session'')'
+  type: class
+  uid: azure.cosmos.CosmosClient
+- class: azure.cosmos.CosmosClient
+  exceptions: &id001
+  - description: 'If *fail_if_exists* is set to True and a database with the given
+      id already exists
+
+      '
+    type: HTTPFailure
+  fullName: azure.cosmos.CosmosClient.create_database
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  source:
+    id: create_database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 51
+  summary: 'Create a new database with the given name (id)
+
+
+
+    ```
+
+
+    >>> import os
+
+    >>> ACCOUNT_KEY = os.environ[''ACCOUNT_KEY'']
+
+    >>> ACCOUNT_HOST = os.environ[''ACCOUNT_HOST'']
+
+    >>> client = CosmosClient(url=ACCOUNT_HOST, key=ACCOUNT_KEY)
+
+    >>> database = client.create_database(''nameofdatabase'')
+
+    ...
+
+    ```
+
+    '
+  syntax:
+    content: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+    parameters:
+    - &id002
+      description: 'Id (name) of the database to create.
+
+        '
+      id: id
+    - &id003
+      description: 'Fail if database already exists.
+
+        '
+      id: fail_if_exists
+  type: method
+  uid: azure.cosmos.CosmosClient.create_database
+- class: azure.cosmos.CosmosClient
+  exceptions: &id005
+  - description: 'If the call to delete the database fails.
+
+      '
+    type: HTTPFailure
+  fullName: azure.cosmos.CosmosClient.delete_database
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  source:
+    id: delete_database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 117
+  summary: 'Delete the database with the given id (name).
+
+    '
+  syntax:
+    content: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+    parameters:
+    - &id006
+      description: 'The id (name) of, or the database instance to delete.
+
+        '
+      id: database
+  type: method
+  uid: azure.cosmos.CosmosClient.delete_database
+- class: azure.cosmos.CosmosClient
+  exceptions: &id008
+  - description: 'If the given database couldn''t be retrieved.
+
+      '
+    type: HTTPFailure
+  fullName: azure.cosmos.CosmosClient.get_database
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  source:
+    id: get_database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 78
+  summary: 'Retreive the existing database with the id (name) *id*.
+
+    '
+  syntax:
+    content: 'get_database(database: typing.Union[str, azure.cosmos.Database]) ->
+      azure.cosmos.Database'
+    parameters:
+    - &id009
+      description: 'Id of the new <xref:azure.cosmos.Database>.
+
+        '
+      id: id
+  type: method
+  uid: azure.cosmos.CosmosClient.get_database
+- class: azure.cosmos.CosmosClient
+  exceptions: &id011
+  - description: 'If the database cannot be retreived from the server.
+
+      '
+    type: HTTPFailure
+  fullName: azure.cosmos.CosmosClient.get_database_properties
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
+  source:
+    id: get_database_properties
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 89
+  summary: 'Get the database properties
+
+    '
+  syntax:
+    content: 'get_database_properties(database: typing.Union[azure.cosmos.Database,
+      str])'
+    parameters:
+    - &id012
+      description: 'Id (or name) of the database to retrieve properties for.
+
+        '
+      id: database
+  type: method
+  uid: azure.cosmos.CosmosClient.get_database_properties
+- class: azure.cosmos.CosmosClient
+  fullName: azure.cosmos.CosmosClient.list_databases
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  source:
+    id: list_databases
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 100
+  summary: 'List databases in the Cosmos SQL Database Account.
+
+    '
+  syntax:
+    content: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+    parameters:
+    - &id014
+      description: 'Cosmos DB SQL query. If omitted, all databases will be listed.
+
+        '
+      id: query
+  type: method
+  uid: azure.cosmos.CosmosClient.list_databases
+- children:
+  - azure.cosmos.CosmosClient.create_database
+  - azure.cosmos.CosmosClient.delete_database
+  - azure.cosmos.CosmosClient.get_database
+  - azure.cosmos.CosmosClient.get_database_properties
+  - azure.cosmos.CosmosClient.list_databases
+  class: azure.cosmos.CosmosClient
+  fullName: azure.cosmos.CosmosClient
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.cosmos
+  name: CosmosClient
+  source:
+    id: CosmosClient
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 25
+  summary: 'Provides a client-side logical representation of the Azure Cosmos DB database
+    account.
+
+    This client is used to configure and execute requests in the Azure Cosmos DB database
+    service.
+
+
+
+
+
+
+    '
+  syntax:
+    content: 'CosmosClient(url: str, key, consistency_level=''Session'')'
+  type: class
+  uid: azure.cosmos.CosmosClient
+- &id004
+  class: azure.cosmos.CosmosClient
+  exceptions: *id001
+  fullName: azure.cosmos.CosmosClient.create_database
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  source:
+    id: create_database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 51
+  summary: 'Create a new database with the given name (id)
+
+
+
+    ```
+
+
+    >>> import os
+
+    >>> ACCOUNT_KEY = os.environ[''ACCOUNT_KEY'']
+
+    >>> ACCOUNT_HOST = os.environ[''ACCOUNT_HOST'']
+
+    >>> client = CosmosClient(url=ACCOUNT_HOST, key=ACCOUNT_KEY)
+
+    >>> database = client.create_database(''nameofdatabase'')
+
+    ...
+
+    ```
+
+    '
+  syntax:
+    content: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+    parameters:
+    - *id002
+    - *id003
+  type: method
+  uid: azure.cosmos.CosmosClient.create_database
+- *id004
+- &id007
+  class: azure.cosmos.CosmosClient
+  exceptions: *id005
+  fullName: azure.cosmos.CosmosClient.delete_database
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  source:
+    id: delete_database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 117
+  summary: 'Delete the database with the given id (name).
+
+    '
+  syntax:
+    content: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+    parameters:
+    - *id006
+  type: method
+  uid: azure.cosmos.CosmosClient.delete_database
+- *id007
+- &id010
+  class: azure.cosmos.CosmosClient
+  exceptions: *id008
+  fullName: azure.cosmos.CosmosClient.get_database
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  source:
+    id: get_database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 78
+  summary: 'Retreive the existing database with the id (name) *id*.
+
+    '
+  syntax:
+    content: 'get_database(database: typing.Union[str, azure.cosmos.Database]) ->
+      azure.cosmos.Database'
+    parameters:
+    - *id009
+  type: method
+  uid: azure.cosmos.CosmosClient.get_database
+- *id010
+- &id013
+  class: azure.cosmos.CosmosClient
+  exceptions: *id011
+  fullName: azure.cosmos.CosmosClient.get_database_properties
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
+  source:
+    id: get_database_properties
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 89
+  summary: 'Get the database properties
+
+    '
+  syntax:
+    content: 'get_database_properties(database: typing.Union[azure.cosmos.Database,
+      str])'
+    parameters:
+    - *id012
+  type: method
+  uid: azure.cosmos.CosmosClient.get_database_properties
+- *id013
+- &id015
+  class: azure.cosmos.CosmosClient
+  fullName: azure.cosmos.CosmosClient.list_databases
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  source:
+    id: list_databases
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 100
+  summary: 'List databases in the Cosmos SQL Database Account.
+
+    '
+  syntax:
+    content: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+    parameters:
+    - *id014
+  type: method
+  uid: azure.cosmos.CosmosClient.list_databases
+- *id015
+references:
+- fullName: azure.cosmos.CosmosClient.create_database
+  isExternal: false
+  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.create_database
+- fullName: azure.cosmos.CosmosClient.delete_database
+  isExternal: false
+  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.delete_database
+- fullName: azure.cosmos.CosmosClient.get_database
+  isExternal: false
+  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.get_database
+- fullName: azure.cosmos.CosmosClient.get_database_properties
+  isExternal: false
+  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.get_database_properties
+- fullName: azure.cosmos.CosmosClient.list_databases
+  isExternal: false
+  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.list_databases
+- fullName: azure.cosmos.CosmosClient.create_database
+  isExternal: false
+  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.create_database
+- fullName: azure.cosmos.CosmosClient.delete_database
+  isExternal: false
+  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.delete_database
+- fullName: azure.cosmos.CosmosClient.get_database
+  isExternal: false
+  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.get_database
+- fullName: azure.cosmos.CosmosClient.get_database_properties
+  isExternal: false
+  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.get_database_properties
+- fullName: azure.cosmos.CosmosClient.list_databases
+  isExternal: false
+  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  parent: azure.cosmos.CosmosClient
+  uid: azure.cosmos.CosmosClient.list_databases

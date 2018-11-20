@@ -1,0 +1,848 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.cosmos.Database.create_container
+  - azure.cosmos.Database.create_user
+  - azure.cosmos.Database.delete_container
+  - azure.cosmos.Database.delete_user
+  - azure.cosmos.Database.get_container
+  - azure.cosmos.Database.get_container_properties
+  - azure.cosmos.Database.get_user
+  - azure.cosmos.Database.get_user_link
+  - azure.cosmos.Database.list_containers
+  - azure.cosmos.Database.list_users
+  - azure.cosmos.Database.set_container_properties
+  - azure.cosmos.Database.create_container
+  - azure.cosmos.Database.create_user
+  - azure.cosmos.Database.delete_container
+  - azure.cosmos.Database.delete_user
+  - azure.cosmos.Database.get_container
+  - azure.cosmos.Database.get_container_properties
+  - azure.cosmos.Database.get_user
+  - azure.cosmos.Database.get_user_link
+  - azure.cosmos.Database.list_containers
+  - azure.cosmos.Database.list_users
+  - azure.cosmos.Database.set_container_properties
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.cosmos
+  name: Database
+  source:
+    id: Database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 128
+  summary: 'Represents an Azure Cosmos SQL <xref:azure.cosmos.Database>.
+
+
+    A database contains one or more collections, each of which can contain stored
+    procedures,
+
+    triggers, user defined functions.
+
+
+    A database also has associated users, each with a set of permissions to access
+    various
+
+    other collections, stored procedures, triggers, user defined functions, or items
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: 'Database(client_context: azure.cosmos.ClientContext, id: str)'
+  type: class
+  uid: azure.cosmos.Database
+- class: azure.cosmos.Database
+  exceptions: &id001
+  - description: 'The container creation failed
+
+      '
+    type: HTTPFailure
+  fullName: azure.cosmos.Database.create_container
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'create_container(id, options=None, *, partition_key: typing.Union[str, NoneType]
+    = None, indexing_policy: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, default_ttl: typing.Union[int, NoneType] = None) -> azure.cosmos.Container'
+  source:
+    id: create_container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 155
+  summary: "Create a new container with the given id (name).\n\nIf a container with\
+    \ the given id (name) already exists, an HTTPFailure with status_code 409 will\
+    \ be raised.\n\n**Example:** Create a container with the name 'mycontainer' with\
+    \ default settings:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
+    : [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n````python\n\n\
+    \   container = database.create_container('mycontainer')\n   ````\n\n**Example:**\
+    \ Create a container with the name 'containerwithspecificsettings' with  custom\
+    \ particion key\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
+    : [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n````python\n\n\
+    \   container = database.create_container(\n       id='containerwithspecificsettings',\n\
+    \       partition_key={\n           \"paths\": [\n           \"/AccountNumber\"\
+    \n           ],\n           \"kind\": \"Hash\"\n       }\n   )\n   ````\n"
+  syntax:
+    content: 'create_container(id, options=None, *, partition_key: typing.Union[str,
+      NoneType] = None, indexing_policy: typing.Union[typing.Dict[str, typing.Any],
+      NoneType] = None, default_ttl: typing.Union[int, NoneType] = None) -> azure.cosmos.Container'
+    parameters:
+    - &id002
+      description: 'Id of container to create
+
+        '
+      id: id
+    - &id003
+      description: 'The partition key to use for the container
+
+        '
+      id: partition_key
+    - &id004
+      description: 'The indexing policy to apply to the container
+
+        '
+      id: indexing_policy
+    - &id005
+      description: 'Default TTL (time to live) for the container
+
+        '
+      id: default_ttl
+  type: method
+  uid: azure.cosmos.Database.create_container
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.create_user
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_user(user, options=None)
+  source:
+    id: create_user
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 327
+  syntax:
+    content: create_user(user, options=None)
+    parameters:
+    - id: user
+    - defaultValue: None
+      id: options
+  type: method
+  uid: azure.cosmos.Database.create_user
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.delete_container
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'delete_container(container: typing.Union[str, azure.cosmos.Container])'
+  source:
+    id: delete_container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 219
+  summary: 'Delete the container
+
+    '
+  syntax:
+    content: 'delete_container(container: typing.Union[str, azure.cosmos.Container])'
+    parameters:
+    - &id008
+      description: 'The container to delete. You can either pass in the name (id)
+        of the container to delete or a container instance.
+
+        '
+      id: container
+  type: method
+  uid: azure.cosmos.Database.delete_container
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.delete_user
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_user(user)
+  source:
+    id: delete_user
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 339
+  syntax:
+    content: delete_user(user)
+    parameters:
+    - id: user
+  type: method
+  uid: azure.cosmos.Database.delete_user
+- class: azure.cosmos.Database
+  exceptions: &id011
+  - description: 'Raised if the client was unable to get the container. This includes
+      if the container does not exist.
+
+      '
+    type: HTTPFailure
+  fullName: azure.cosmos.Database.get_container
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_container(container: typing.Union[str, azure.cosmos.Container]) -> azure.cosmos.Container'
+  source:
+    id: get_container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 227
+  summary: "Get the container with the id (name) *container*.\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false,\
+    \ \"highlight_args\": {}} -->\n\n````python\n\n   database = client.get_database('fabrikamdb')\n\
+    \   try:\n       container = database.get_container('customers')\n   except HTTPFailure\
+    \ as failure:\n       if failure.status_code == 404:\n           print('Container\
+    \ did not exist...')\n       else:\n           print(f'Failed to retrieve container\
+    \ - status code:{failure.status_code}')\n   ````\n"
+  syntax:
+    content: 'get_container(container: typing.Union[str, azure.cosmos.Container])
+      -> azure.cosmos.Container'
+    parameters:
+    - &id012
+      description: 'The id (name) of the continer, or a container instance.
+
+        '
+      id: container
+  type: method
+  uid: azure.cosmos.Database.get_container
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.get_container_properties
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_container_properties(container) -> typing.Dict[str, typing.Any]
+  source:
+    id: get_container_properties
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 313
+  summary: 'Get properties for the given container.
+
+    '
+  syntax:
+    content: get_container_properties(container) -> typing.Dict[str, typing.Any]
+  type: method
+  uid: azure.cosmos.Database.get_container_properties
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.get_user
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_user(id)
+  source:
+    id: get_user
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 331
+  syntax:
+    content: get_user(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Database.get_user
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.get_user_link
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_user_link(id_or_user: typing.Union[azure.cosmos.User, str]) -> str'
+  source:
+    id: get_user_link
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 321
+  syntax:
+    content: 'get_user_link(id_or_user: typing.Union[azure.cosmos.User, str]) -> str'
+  type: method
+  uid: azure.cosmos.Database.get_user_link
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.list_containers
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'list_containers(query: typing.Union[str, NoneType] = None, parameters=None)
+    -> typing.Iterable[azure.cosmos.ContainerReference]'
+  source:
+    id: list_containers
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 255
+  summary: "List the containers in this database.\n\n\n<!-- literal_block {\"ids\"\
+    : [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+    : \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {}} -->\n\n````python\n\n   database.list_containers()\n   ````\n"
+  syntax:
+    content: 'list_containers(query: typing.Union[str, NoneType] = None, parameters=None)
+      -> typing.Iterable[azure.cosmos.ContainerReference]'
+    parameters:
+    - &id017
+      description: 'If provided, query used to filter which containers to return.
+        If omitted returns all containers.
+
+        '
+      id: query
+    - &id018
+      description: 'Parameters to query. Only applicable of a query has been specified.
+
+        '
+      id: parameters
+  type: method
+  uid: azure.cosmos.Database.list_containers
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.list_users
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_users(query=None)
+  source:
+    id: list_users
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 335
+  syntax:
+    content: list_users(query=None)
+    parameters:
+    - defaultValue: None
+      id: query
+  type: method
+  uid: azure.cosmos.Database.list_users
+- class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.set_container_properties
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'set_container_properties(container: typing.Union[str, azure.cosmos.Container],
+    *, partition_key=None, indexing_policy=None, default_ttl=None, conflict_resolution_policy=None)'
+  source:
+    id: set_container_properties
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 285
+  summary: 'Update the properties of the container. Change will be persisted immediately.
+
+    '
+  syntax:
+    content: 'set_container_properties(container: typing.Union[str, azure.cosmos.Container],
+      *, partition_key=None, indexing_policy=None, default_ttl=None, conflict_resolution_policy=None)'
+  type: method
+  uid: azure.cosmos.Database.set_container_properties
+- children:
+  - azure.cosmos.Database.create_container
+  - azure.cosmos.Database.create_user
+  - azure.cosmos.Database.delete_container
+  - azure.cosmos.Database.delete_user
+  - azure.cosmos.Database.get_container
+  - azure.cosmos.Database.get_container_properties
+  - azure.cosmos.Database.get_user
+  - azure.cosmos.Database.get_user_link
+  - azure.cosmos.Database.list_containers
+  - azure.cosmos.Database.list_users
+  - azure.cosmos.Database.set_container_properties
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.cosmos
+  name: Database
+  source:
+    id: Database
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 128
+  summary: 'Represents an Azure Cosmos SQL <xref:azure.cosmos.Database>.
+
+
+    A database contains one or more collections, each of which can contain stored
+    procedures,
+
+    triggers, user defined functions.
+
+
+    A database also has associated users, each with a set of permissions to access
+    various
+
+    other collections, stored procedures, triggers, user defined functions, or items
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: 'Database(client_context: azure.cosmos.ClientContext, id: str)'
+  type: class
+  uid: azure.cosmos.Database
+- &id006
+  class: azure.cosmos.Database
+  exceptions: *id001
+  fullName: azure.cosmos.Database.create_container
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'create_container(id, options=None, *, partition_key: typing.Union[str, NoneType]
+    = None, indexing_policy: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, default_ttl: typing.Union[int, NoneType] = None) -> azure.cosmos.Container'
+  source:
+    id: create_container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 155
+  summary: "Create a new container with the given id (name).\n\nIf a container with\
+    \ the given id (name) already exists, an HTTPFailure with status_code 409 will\
+    \ be raised.\n\n**Example:** Create a container with the name 'mycontainer' with\
+    \ default settings:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
+    : [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n````python\n\n\
+    \   container = database.create_container('mycontainer')\n   ````\n\n**Example:**\
+    \ Create a container with the name 'containerwithspecificsettings' with  custom\
+    \ particion key\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
+    : [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n````python\n\n\
+    \   container = database.create_container(\n       id='containerwithspecificsettings',\n\
+    \       partition_key={\n           \"paths\": [\n           \"/AccountNumber\"\
+    \n           ],\n           \"kind\": \"Hash\"\n       }\n   )\n   ````\n"
+  syntax:
+    content: 'create_container(id, options=None, *, partition_key: typing.Union[str,
+      NoneType] = None, indexing_policy: typing.Union[typing.Dict[str, typing.Any],
+      NoneType] = None, default_ttl: typing.Union[int, NoneType] = None) -> azure.cosmos.Container'
+    parameters:
+    - *id002
+    - *id003
+    - *id004
+    - *id005
+  type: method
+  uid: azure.cosmos.Database.create_container
+- *id006
+- &id007
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.create_user
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_user(user, options=None)
+  source:
+    id: create_user
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 327
+  syntax:
+    content: create_user(user, options=None)
+    parameters:
+    - id: user
+    - defaultValue: None
+      id: options
+  type: method
+  uid: azure.cosmos.Database.create_user
+- *id007
+- &id009
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.delete_container
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'delete_container(container: typing.Union[str, azure.cosmos.Container])'
+  source:
+    id: delete_container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 219
+  summary: 'Delete the container
+
+    '
+  syntax:
+    content: 'delete_container(container: typing.Union[str, azure.cosmos.Container])'
+    parameters:
+    - *id008
+  type: method
+  uid: azure.cosmos.Database.delete_container
+- *id009
+- &id010
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.delete_user
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_user(user)
+  source:
+    id: delete_user
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 339
+  syntax:
+    content: delete_user(user)
+    parameters:
+    - id: user
+  type: method
+  uid: azure.cosmos.Database.delete_user
+- *id010
+- &id013
+  class: azure.cosmos.Database
+  exceptions: *id011
+  fullName: azure.cosmos.Database.get_container
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_container(container: typing.Union[str, azure.cosmos.Container]) -> azure.cosmos.Container'
+  source:
+    id: get_container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 227
+  summary: "Get the container with the id (name) *container*.\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false,\
+    \ \"highlight_args\": {}} -->\n\n````python\n\n   database = client.get_database('fabrikamdb')\n\
+    \   try:\n       container = database.get_container('customers')\n   except HTTPFailure\
+    \ as failure:\n       if failure.status_code == 404:\n           print('Container\
+    \ did not exist...')\n       else:\n           print(f'Failed to retrieve container\
+    \ - status code:{failure.status_code}')\n   ````\n"
+  syntax:
+    content: 'get_container(container: typing.Union[str, azure.cosmos.Container])
+      -> azure.cosmos.Container'
+    parameters:
+    - *id012
+  type: method
+  uid: azure.cosmos.Database.get_container
+- *id013
+- &id014
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.get_container_properties
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_container_properties(container) -> typing.Dict[str, typing.Any]
+  source:
+    id: get_container_properties
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 313
+  summary: 'Get properties for the given container.
+
+    '
+  syntax:
+    content: get_container_properties(container) -> typing.Dict[str, typing.Any]
+  type: method
+  uid: azure.cosmos.Database.get_container_properties
+- *id014
+- &id015
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.get_user
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_user(id)
+  source:
+    id: get_user
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 331
+  syntax:
+    content: get_user(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Database.get_user
+- *id015
+- &id016
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.get_user_link
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_user_link(id_or_user: typing.Union[azure.cosmos.User, str]) -> str'
+  source:
+    id: get_user_link
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 321
+  syntax:
+    content: 'get_user_link(id_or_user: typing.Union[azure.cosmos.User, str]) -> str'
+  type: method
+  uid: azure.cosmos.Database.get_user_link
+- *id016
+- &id019
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.list_containers
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'list_containers(query: typing.Union[str, NoneType] = None, parameters=None)
+    -> typing.Iterable[azure.cosmos.ContainerReference]'
+  source:
+    id: list_containers
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 255
+  summary: "List the containers in this database.\n\n\n<!-- literal_block {\"ids\"\
+    : [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+    : \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {}} -->\n\n````python\n\n   database.list_containers()\n   ````\n"
+  syntax:
+    content: 'list_containers(query: typing.Union[str, NoneType] = None, parameters=None)
+      -> typing.Iterable[azure.cosmos.ContainerReference]'
+    parameters:
+    - *id017
+    - *id018
+  type: method
+  uid: azure.cosmos.Database.list_containers
+- *id019
+- &id020
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.list_users
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_users(query=None)
+  source:
+    id: list_users
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 335
+  syntax:
+    content: list_users(query=None)
+    parameters:
+    - defaultValue: None
+      id: query
+  type: method
+  uid: azure.cosmos.Database.list_users
+- *id020
+- &id021
+  class: azure.cosmos.Database
+  fullName: azure.cosmos.Database.set_container_properties
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'set_container_properties(container: typing.Union[str, azure.cosmos.Container],
+    *, partition_key=None, indexing_policy=None, default_ttl=None, conflict_resolution_policy=None)'
+  source:
+    id: set_container_properties
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 285
+  summary: 'Update the properties of the container. Change will be persisted immediately.
+
+    '
+  syntax:
+    content: 'set_container_properties(container: typing.Union[str, azure.cosmos.Container],
+      *, partition_key=None, indexing_policy=None, default_ttl=None, conflict_resolution_policy=None)'
+  type: method
+  uid: azure.cosmos.Database.set_container_properties
+- *id021
+references:
+- fullName: azure.cosmos.Database.create_container
+  isExternal: false
+  name: 'create_container(id, options=None, *, partition_key: typing.Union[str, NoneType]
+    = None, indexing_policy: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, default_ttl: typing.Union[int, NoneType] = None) -> azure.cosmos.Container'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.create_container
+- fullName: azure.cosmos.Database.create_user
+  isExternal: false
+  name: create_user(user, options=None)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.create_user
+- fullName: azure.cosmos.Database.delete_container
+  isExternal: false
+  name: 'delete_container(container: typing.Union[str, azure.cosmos.Container])'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.delete_container
+- fullName: azure.cosmos.Database.delete_user
+  isExternal: false
+  name: delete_user(user)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.delete_user
+- fullName: azure.cosmos.Database.get_container
+  isExternal: false
+  name: 'get_container(container: typing.Union[str, azure.cosmos.Container]) -> azure.cosmos.Container'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_container
+- fullName: azure.cosmos.Database.get_container_properties
+  isExternal: false
+  name: get_container_properties(container) -> typing.Dict[str, typing.Any]
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_container_properties
+- fullName: azure.cosmos.Database.get_user
+  isExternal: false
+  name: get_user(id)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_user
+- fullName: azure.cosmos.Database.get_user_link
+  isExternal: false
+  name: 'get_user_link(id_or_user: typing.Union[azure.cosmos.User, str]) -> str'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_user_link
+- fullName: azure.cosmos.Database.list_containers
+  isExternal: false
+  name: 'list_containers(query: typing.Union[str, NoneType] = None, parameters=None)
+    -> typing.Iterable[azure.cosmos.ContainerReference]'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.list_containers
+- fullName: azure.cosmos.Database.list_users
+  isExternal: false
+  name: list_users(query=None)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.list_users
+- fullName: azure.cosmos.Database.set_container_properties
+  isExternal: false
+  name: 'set_container_properties(container: typing.Union[str, azure.cosmos.Container],
+    *, partition_key=None, indexing_policy=None, default_ttl=None, conflict_resolution_policy=None)'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.set_container_properties
+- fullName: azure.cosmos.Database.create_container
+  isExternal: false
+  name: 'create_container(id, options=None, *, partition_key: typing.Union[str, NoneType]
+    = None, indexing_policy: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, default_ttl: typing.Union[int, NoneType] = None) -> azure.cosmos.Container'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.create_container
+- fullName: azure.cosmos.Database.create_user
+  isExternal: false
+  name: create_user(user, options=None)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.create_user
+- fullName: azure.cosmos.Database.delete_container
+  isExternal: false
+  name: 'delete_container(container: typing.Union[str, azure.cosmos.Container])'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.delete_container
+- fullName: azure.cosmos.Database.delete_user
+  isExternal: false
+  name: delete_user(user)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.delete_user
+- fullName: azure.cosmos.Database.get_container
+  isExternal: false
+  name: 'get_container(container: typing.Union[str, azure.cosmos.Container]) -> azure.cosmos.Container'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_container
+- fullName: azure.cosmos.Database.get_container_properties
+  isExternal: false
+  name: get_container_properties(container) -> typing.Dict[str, typing.Any]
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_container_properties
+- fullName: azure.cosmos.Database.get_user
+  isExternal: false
+  name: get_user(id)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_user
+- fullName: azure.cosmos.Database.get_user_link
+  isExternal: false
+  name: 'get_user_link(id_or_user: typing.Union[azure.cosmos.User, str]) -> str'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.get_user_link
+- fullName: azure.cosmos.Database.list_containers
+  isExternal: false
+  name: 'list_containers(query: typing.Union[str, NoneType] = None, parameters=None)
+    -> typing.Iterable[azure.cosmos.ContainerReference]'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.list_containers
+- fullName: azure.cosmos.Database.list_users
+  isExternal: false
+  name: list_users(query=None)
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.list_users
+- fullName: azure.cosmos.Database.set_container_properties
+  isExternal: false
+  name: 'set_container_properties(container: typing.Union[str, azure.cosmos.Container],
+    *, partition_key=None, indexing_policy=None, default_ttl=None, conflict_resolution_policy=None)'
+  parent: azure.cosmos.Database
+  uid: azure.cosmos.Database.set_container_properties

@@ -1,0 +1,33 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.cosmos
+  - azure.cosmos
+  fullName: azure
+  kind: import
+  langs:
+  - python
+  module: azure
+  name: azure
+  source:
+    id: azure
+    path: null
+    remote:
+      branch: ref-prototype
+      path: null
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: null
+  type: package
+  uid: azure
+references:
+- fullName: azure.cosmos
+  isExternal: false
+  name: cosmos
+  parent: azure
+  uid: azure.cosmos
+- fullName: azure.cosmos
+  isExternal: false
+  name: cosmos
+  parent: azure
+  uid: azure.cosmos

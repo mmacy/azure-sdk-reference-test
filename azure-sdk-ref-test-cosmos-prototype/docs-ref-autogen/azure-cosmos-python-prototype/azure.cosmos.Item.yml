@@ -1,0 +1,50 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: azure.cosmos.Item
+  fullName: azure.cosmos.Item
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: builtins.dict
+  langs:
+  - python
+  module: azure.cosmos
+  name: Item
+  source:
+    id: Item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 352
+  syntax:
+    content: 'Item(headers: typing.Dict[str, typing.Any], data: typing.Dict[str, typing.Any])'
+  type: class
+  uid: azure.cosmos.Item
+- children: []
+  class: azure.cosmos.Item
+  fullName: azure.cosmos.Item
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: builtins.dict
+  langs:
+  - python
+  module: azure.cosmos
+  name: Item
+  source:
+    id: Item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 352
+  syntax:
+    content: 'Item(headers: typing.Dict[str, typing.Any], data: typing.Dict[str, typing.Any])'
+  type: class
+  uid: azure.cosmos.Item
+references: []

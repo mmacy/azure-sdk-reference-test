@@ -1,0 +1,17 @@
+### YamlMime:UniversalReference
+items:
+- children:
+  - azure
+  fullName: azure-cosmos-python-prototype
+  kind: distribution
+  langs:
+  - python
+  name: azure-cosmos-python-prototype
+  summary: ''
+  type: package
+  uid: project-azure-cosmos-python-prototype
+references:
+- fullname: azure
+  isExternal: false
+  name: azure
+  uid: azure

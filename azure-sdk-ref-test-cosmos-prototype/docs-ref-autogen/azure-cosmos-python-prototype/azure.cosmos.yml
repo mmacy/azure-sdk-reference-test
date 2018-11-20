@@ -1,0 +1,94 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.cosmos.CosmosClient
+  - azure.cosmos.Database
+  - azure.cosmos.Container
+  - azure.cosmos.Item
+  - azure.cosmos.CosmosClient
+  - azure.cosmos.Database
+  - azure.cosmos.Container
+  - azure.cosmos.Item
+  fullName: azure.cosmos
+  kind: import
+  langs:
+  - python
+  module: azure.cosmos
+  name: cosmos
+  source:
+    id: cosmos
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 0
+  summary: 'Access (query/create/delete/manage) items, databases and collections in
+    Azure Cosmos SQL Databases
+
+    '
+  type: package
+  uid: azure.cosmos
+- children: []
+  fullName: azure.cosmos
+  kind: import
+  langs:
+  - python
+  module: azure.cosmos
+  name: cosmos
+  source:
+    id: cosmos
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 0
+  summary: 'Access (query/create/delete/manage) items, databases and collections in
+    Azure Cosmos SQL Databases
+
+    '
+  type: package
+  uid: azure.cosmos
+references:
+- fullName: azure.cosmos.CosmosClient
+  isExternal: false
+  name: CosmosClient
+  parent: azure.cosmos
+  uid: azure.cosmos.CosmosClient
+- fullName: azure.cosmos.Database
+  isExternal: false
+  name: Database
+  parent: azure.cosmos
+  uid: azure.cosmos.Database
+- fullName: azure.cosmos.Container
+  isExternal: false
+  name: Container
+  parent: azure.cosmos
+  uid: azure.cosmos.Container
+- fullName: azure.cosmos.Item
+  isExternal: false
+  name: Item
+  parent: azure.cosmos
+  uid: azure.cosmos.Item
+- fullName: azure.cosmos.CosmosClient
+  isExternal: false
+  name: CosmosClient
+  parent: azure.cosmos
+  uid: azure.cosmos.CosmosClient
+- fullName: azure.cosmos.Database
+  isExternal: false
+  name: Database
+  parent: azure.cosmos
+  uid: azure.cosmos.Database
+- fullName: azure.cosmos.Container
+  isExternal: false
+  name: Container
+  parent: azure.cosmos
+  uid: azure.cosmos.Container
+- fullName: azure.cosmos.Item
+  isExternal: false
+  name: Item
+  parent: azure.cosmos
+  uid: azure.cosmos.Item

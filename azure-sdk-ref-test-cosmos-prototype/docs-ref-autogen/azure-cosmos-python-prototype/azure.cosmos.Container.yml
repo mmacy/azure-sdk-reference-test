@@ -1,0 +1,1423 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.cosmos.Container.create_item
+  - azure.cosmos.Container.create_stored_procedure
+  - azure.cosmos.Container.create_trigger
+  - azure.cosmos.Container.create_user_defined_function
+  - azure.cosmos.Container.delete_item
+  - azure.cosmos.Container.delete_stored_procedure
+  - azure.cosmos.Container.delete_trigger
+  - azure.cosmos.Container.delete_user_defined_function
+  - azure.cosmos.Container.get_item
+  - azure.cosmos.Container.get_stored_procedure
+  - azure.cosmos.Container.get_trigger
+  - azure.cosmos.Container.get_user_defined_function
+  - azure.cosmos.Container.list_items
+  - azure.cosmos.Container.list_stored_procedures
+  - azure.cosmos.Container.list_triggers
+  - azure.cosmos.Container.list_user_defined_functions
+  - azure.cosmos.Container.query_items
+  - azure.cosmos.Container.query_items_change_feed
+  - azure.cosmos.Container.replace_item
+  - azure.cosmos.Container.upsert_item
+  - azure.cosmos.Container.upsert_stored_procedure
+  - azure.cosmos.Container.upsert_trigger
+  - azure.cosmos.Container.upsert_user_defined_function
+  - azure.cosmos.Container.create_item
+  - azure.cosmos.Container.create_stored_procedure
+  - azure.cosmos.Container.create_trigger
+  - azure.cosmos.Container.create_user_defined_function
+  - azure.cosmos.Container.delete_item
+  - azure.cosmos.Container.delete_stored_procedure
+  - azure.cosmos.Container.delete_trigger
+  - azure.cosmos.Container.delete_user_defined_function
+  - azure.cosmos.Container.get_item
+  - azure.cosmos.Container.get_stored_procedure
+  - azure.cosmos.Container.get_trigger
+  - azure.cosmos.Container.get_user_defined_function
+  - azure.cosmos.Container.list_items
+  - azure.cosmos.Container.list_stored_procedures
+  - azure.cosmos.Container.list_triggers
+  - azure.cosmos.Container.list_user_defined_functions
+  - azure.cosmos.Container.query_items
+  - azure.cosmos.Container.query_items_change_feed
+  - azure.cosmos.Container.replace_item
+  - azure.cosmos.Container.upsert_item
+  - azure.cosmos.Container.upsert_stored_procedure
+  - azure.cosmos.Container.upsert_trigger
+  - azure.cosmos.Container.upsert_user_defined_function
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.cosmos
+  name: Container
+  source:
+    id: Container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 359
+  summary: 'An Azure Cosmos SQL Container
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: 'Container(client_context: azure.cosmos.ClientContext, database: typing.Union[azure.cosmos.Database,
+      str], id: str)'
+  type: class
+  uid: azure.cosmos.Container
+- class: azure.cosmos.Container
+  exceptions: &id001
+  - description: ''
+    type: HTTPFailure
+  fullName: azure.cosmos.Container.create_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  source:
+    id: create_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 466
+  summary: 'Create an item in the container.
+
+
+    In order to replace an existing item, use the <xref:Collection.upsert_item> method.
+
+    '
+  syntax:
+    content: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+    parameters:
+    - &id002
+      description: 'A dict-like object or string representing the item to create.
+
+        '
+      id: body
+  type: method
+  uid: azure.cosmos.Container.create_item
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.create_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_stored_procedure()
+  source:
+    id: create_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 490
+  syntax:
+    content: create_stored_procedure()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.create_stored_procedure
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.create_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_trigger()
+  source:
+    id: create_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 505
+  syntax:
+    content: create_trigger()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.create_trigger
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.create_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_user_defined_function()
+  source:
+    id: create_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 520
+  syntax:
+    content: create_user_defined_function()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.create_user_defined_function
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  source:
+    id: delete_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 480
+  syntax:
+    content: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  type: method
+  uid: azure.cosmos.Container.delete_item
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_stored_procedure()
+  source:
+    id: delete_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 496
+  syntax:
+    content: delete_stored_procedure()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.delete_stored_procedure
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_trigger()
+  source:
+    id: delete_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 511
+  syntax:
+    content: delete_trigger()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.delete_trigger
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_user_defined_function()
+  source:
+    id: delete_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 526
+  syntax:
+    content: delete_user_defined_function()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.delete_user_defined_function
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_item(id: str) -> azure.cosmos.Item'
+  source:
+    id: get_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 381
+  summary: 'Get the item identified by *id*
+
+    :param str id: Id of item to retreive
+
+    :returns: Item if present.
+
+    '
+  syntax:
+    content: 'get_item(id: str) -> azure.cosmos.Item'
+  type: method
+  uid: azure.cosmos.Container.get_item
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_stored_procedure(id)
+  source:
+    id: get_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 487
+  syntax:
+    content: get_stored_procedure(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Container.get_stored_procedure
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_trigger(id)
+  source:
+    id: get_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 502
+  syntax:
+    content: get_trigger(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Container.get_trigger
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_user_defined_function(id)
+  source:
+    id: get_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 517
+  syntax:
+    content: get_user_defined_function(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Container.get_user_defined_function
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_items
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  source:
+    id: list_items
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 393
+  summary: 'List all items in the collection
+
+    '
+  syntax:
+    content: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  type: method
+  uid: azure.cosmos.Container.list_items
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_stored_procedures
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_stored_procedures(query)
+  source:
+    id: list_stored_procedures
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 484
+  syntax:
+    content: list_stored_procedures(query)
+    parameters:
+    - id: query
+  type: method
+  uid: azure.cosmos.Container.list_stored_procedures
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_triggers
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_triggers(query)
+  source:
+    id: list_triggers
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 499
+  syntax:
+    content: list_triggers(query)
+    parameters:
+    - id: query
+  type: method
+  uid: azure.cosmos.Container.list_triggers
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_user_defined_functions
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_user_defined_functions(query)
+  source:
+    id: list_user_defined_functions
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 514
+  syntax:
+    content: list_user_defined_functions(query)
+    parameters:
+    - id: query
+  type: method
+  uid: azure.cosmos.Container.list_user_defined_functions
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.query_items
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
+    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+  source:
+    id: query_items
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 410
+  summary: "Return any items matching the given *query*.\n\n**Example:** find all\
+    \ families in the state of NY:\n\n<!-- literal_block {\"ids\": [], \"classes\"\
+    : [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n\
+    ````python\n\n   items = container.query_items(\n       query='SELECT * FROM Families\
+    \ f WHERE f.address.state = \"NY\"'\n   )\n   ````\n\n**Example:** parameterized\
+    \ query to find all families in the state of NY:\n\n<!-- literal_block {\"ids\"\
+    : [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+    : \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {}} -->\n\n````python\n\n   items = container.query_items(\n       query='SELECT\
+    \ * FROM Families f WHERE f.address.state = @addressState',\n       parameters=[\n\
+    \           dict('name'='@addressState', value='NY')\n       ]\n   )\n   ````\n"
+  syntax:
+    content: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType]
+      = None, options=None, partition_key: typing.Union[str, NoneType] = None) ->
+      typing.Iterable[azure.cosmos.Item]'
+    parameters:
+    - &id019
+      description: 'The Azure Cosmos SQL query to run
+
+        '
+      id: query
+    - &id020
+      description: 'Optional array of parameters
+
+        '
+      id: parameters
+  type: method
+  uid: azure.cosmos.Container.query_items
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.query_items_change_feed
+  langs:
+  - python
+  module: azure.cosmos
+  name: query_items_change_feed(options=None)
+  source:
+    id: query_items_change_feed
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 403
+  syntax:
+    content: query_items_change_feed(options=None)
+    parameters:
+    - defaultValue: None
+      id: options
+  type: method
+  uid: azure.cosmos.Container.query_items_change_feed
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.replace_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
+    typing.Any]) -> azure.cosmos.Item'
+  source:
+    id: replace_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 453
+  syntax:
+    content: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
+      typing.Any]) -> azure.cosmos.Item'
+  type: method
+  uid: azure.cosmos.Container.replace_item
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  source:
+    id: upsert_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 460
+  syntax:
+    content: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  type: method
+  uid: azure.cosmos.Container.upsert_item
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: upsert_stored_procedure(trigger)
+  source:
+    id: upsert_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 493
+  syntax:
+    content: upsert_stored_procedure(trigger)
+    parameters:
+    - id: trigger
+  type: method
+  uid: azure.cosmos.Container.upsert_stored_procedure
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: upsert_trigger(trigger)
+  source:
+    id: upsert_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 508
+  syntax:
+    content: upsert_trigger(trigger)
+    parameters:
+    - id: trigger
+  type: method
+  uid: azure.cosmos.Container.upsert_trigger
+- class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: upsert_user_defined_function(trigger)
+  source:
+    id: upsert_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 523
+  syntax:
+    content: upsert_user_defined_function(trigger)
+    parameters:
+    - id: trigger
+  type: method
+  uid: azure.cosmos.Container.upsert_user_defined_function
+- children:
+  - azure.cosmos.Container.create_item
+  - azure.cosmos.Container.create_stored_procedure
+  - azure.cosmos.Container.create_trigger
+  - azure.cosmos.Container.create_user_defined_function
+  - azure.cosmos.Container.delete_item
+  - azure.cosmos.Container.delete_stored_procedure
+  - azure.cosmos.Container.delete_trigger
+  - azure.cosmos.Container.delete_user_defined_function
+  - azure.cosmos.Container.get_item
+  - azure.cosmos.Container.get_stored_procedure
+  - azure.cosmos.Container.get_trigger
+  - azure.cosmos.Container.get_user_defined_function
+  - azure.cosmos.Container.list_items
+  - azure.cosmos.Container.list_stored_procedures
+  - azure.cosmos.Container.list_triggers
+  - azure.cosmos.Container.list_user_defined_functions
+  - azure.cosmos.Container.query_items
+  - azure.cosmos.Container.query_items_change_feed
+  - azure.cosmos.Container.replace_item
+  - azure.cosmos.Container.upsert_item
+  - azure.cosmos.Container.upsert_stored_procedure
+  - azure.cosmos.Container.upsert_trigger
+  - azure.cosmos.Container.upsert_user_defined_function
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.cosmos
+  name: Container
+  source:
+    id: Container
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 359
+  summary: 'An Azure Cosmos SQL Container
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: 'Container(client_context: azure.cosmos.ClientContext, database: typing.Union[azure.cosmos.Database,
+      str], id: str)'
+  type: class
+  uid: azure.cosmos.Container
+- &id003
+  class: azure.cosmos.Container
+  exceptions: *id001
+  fullName: azure.cosmos.Container.create_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  source:
+    id: create_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 466
+  summary: 'Create an item in the container.
+
+
+    In order to replace an existing item, use the <xref:Collection.upsert_item> method.
+
+    '
+  syntax:
+    content: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+    parameters:
+    - *id002
+  type: method
+  uid: azure.cosmos.Container.create_item
+- *id003
+- &id004
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.create_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_stored_procedure()
+  source:
+    id: create_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 490
+  syntax:
+    content: create_stored_procedure()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.create_stored_procedure
+- *id004
+- &id005
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.create_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_trigger()
+  source:
+    id: create_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 505
+  syntax:
+    content: create_trigger()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.create_trigger
+- *id005
+- &id006
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.create_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: create_user_defined_function()
+  source:
+    id: create_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 520
+  syntax:
+    content: create_user_defined_function()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.create_user_defined_function
+- *id006
+- &id007
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  source:
+    id: delete_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 480
+  syntax:
+    content: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  type: method
+  uid: azure.cosmos.Container.delete_item
+- *id007
+- &id008
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_stored_procedure()
+  source:
+    id: delete_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 496
+  syntax:
+    content: delete_stored_procedure()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.delete_stored_procedure
+- *id008
+- &id009
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_trigger()
+  source:
+    id: delete_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 511
+  syntax:
+    content: delete_trigger()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.delete_trigger
+- *id009
+- &id010
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.delete_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: delete_user_defined_function()
+  source:
+    id: delete_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 526
+  syntax:
+    content: delete_user_defined_function()
+    parameters: []
+  type: method
+  uid: azure.cosmos.Container.delete_user_defined_function
+- *id010
+- &id011
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'get_item(id: str) -> azure.cosmos.Item'
+  source:
+    id: get_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 381
+  summary: 'Get the item identified by *id*
+
+    :param str id: Id of item to retreive
+
+    :returns: Item if present.
+
+    '
+  syntax:
+    content: 'get_item(id: str) -> azure.cosmos.Item'
+  type: method
+  uid: azure.cosmos.Container.get_item
+- *id011
+- &id012
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_stored_procedure(id)
+  source:
+    id: get_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 487
+  syntax:
+    content: get_stored_procedure(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Container.get_stored_procedure
+- *id012
+- &id013
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_trigger(id)
+  source:
+    id: get_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 502
+  syntax:
+    content: get_trigger(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Container.get_trigger
+- *id013
+- &id014
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.get_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: get_user_defined_function(id)
+  source:
+    id: get_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 517
+  syntax:
+    content: get_user_defined_function(id)
+    parameters:
+    - id: id
+  type: method
+  uid: azure.cosmos.Container.get_user_defined_function
+- *id014
+- &id015
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_items
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  source:
+    id: list_items
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 393
+  summary: 'List all items in the collection
+
+    '
+  syntax:
+    content: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  type: method
+  uid: azure.cosmos.Container.list_items
+- *id015
+- &id016
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_stored_procedures
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_stored_procedures(query)
+  source:
+    id: list_stored_procedures
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 484
+  syntax:
+    content: list_stored_procedures(query)
+    parameters:
+    - id: query
+  type: method
+  uid: azure.cosmos.Container.list_stored_procedures
+- *id016
+- &id017
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_triggers
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_triggers(query)
+  source:
+    id: list_triggers
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 499
+  syntax:
+    content: list_triggers(query)
+    parameters:
+    - id: query
+  type: method
+  uid: azure.cosmos.Container.list_triggers
+- *id017
+- &id018
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.list_user_defined_functions
+  langs:
+  - python
+  module: azure.cosmos
+  name: list_user_defined_functions(query)
+  source:
+    id: list_user_defined_functions
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 514
+  syntax:
+    content: list_user_defined_functions(query)
+    parameters:
+    - id: query
+  type: method
+  uid: azure.cosmos.Container.list_user_defined_functions
+- *id018
+- &id021
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.query_items
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
+    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+  source:
+    id: query_items
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 410
+  summary: "Return any items matching the given *query*.\n\n**Example:** find all\
+    \ families in the state of NY:\n\n<!-- literal_block {\"ids\": [], \"classes\"\
+    : [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n\
+    ````python\n\n   items = container.query_items(\n       query='SELECT * FROM Families\
+    \ f WHERE f.address.state = \"NY\"'\n   )\n   ````\n\n**Example:** parameterized\
+    \ query to find all families in the state of NY:\n\n<!-- literal_block {\"ids\"\
+    : [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+    : \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {}} -->\n\n````python\n\n   items = container.query_items(\n       query='SELECT\
+    \ * FROM Families f WHERE f.address.state = @addressState',\n       parameters=[\n\
+    \           dict('name'='@addressState', value='NY')\n       ]\n   )\n   ````\n"
+  syntax:
+    content: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType]
+      = None, options=None, partition_key: typing.Union[str, NoneType] = None) ->
+      typing.Iterable[azure.cosmos.Item]'
+    parameters:
+    - *id019
+    - *id020
+  type: method
+  uid: azure.cosmos.Container.query_items
+- *id021
+- &id022
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.query_items_change_feed
+  langs:
+  - python
+  module: azure.cosmos
+  name: query_items_change_feed(options=None)
+  source:
+    id: query_items_change_feed
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 403
+  syntax:
+    content: query_items_change_feed(options=None)
+    parameters:
+    - defaultValue: None
+      id: options
+  type: method
+  uid: azure.cosmos.Container.query_items_change_feed
+- *id022
+- &id023
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.replace_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
+    typing.Any]) -> azure.cosmos.Item'
+  source:
+    id: replace_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 453
+  syntax:
+    content: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
+      typing.Any]) -> azure.cosmos.Item'
+  type: method
+  uid: azure.cosmos.Container.replace_item
+- *id023
+- &id024
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_item
+  langs:
+  - python
+  module: azure.cosmos
+  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  source:
+    id: upsert_item
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 460
+  syntax:
+    content: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  type: method
+  uid: azure.cosmos.Container.upsert_item
+- *id024
+- &id025
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_stored_procedure
+  langs:
+  - python
+  module: azure.cosmos
+  name: upsert_stored_procedure(trigger)
+  source:
+    id: upsert_stored_procedure
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 493
+  syntax:
+    content: upsert_stored_procedure(trigger)
+    parameters:
+    - id: trigger
+  type: method
+  uid: azure.cosmos.Container.upsert_stored_procedure
+- *id025
+- &id026
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_trigger
+  langs:
+  - python
+  module: azure.cosmos
+  name: upsert_trigger(trigger)
+  source:
+    id: upsert_trigger
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 508
+  syntax:
+    content: upsert_trigger(trigger)
+    parameters:
+    - id: trigger
+  type: method
+  uid: azure.cosmos.Container.upsert_trigger
+- *id026
+- &id027
+  class: azure.cosmos.Container
+  fullName: azure.cosmos.Container.upsert_user_defined_function
+  langs:
+  - python
+  module: azure.cosmos
+  name: upsert_user_defined_function(trigger)
+  source:
+    id: upsert_user_defined_function
+    path: .\azure\cosmos\__init__.py
+    remote:
+      branch: ref-prototype
+      path: .\azure\cosmos\__init__.py
+      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+    startLine: 523
+  syntax:
+    content: upsert_user_defined_function(trigger)
+    parameters:
+    - id: trigger
+  type: method
+  uid: azure.cosmos.Container.upsert_user_defined_function
+- *id027
+references:
+- fullName: azure.cosmos.Container.create_item
+  isExternal: false
+  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_item
+- fullName: azure.cosmos.Container.create_stored_procedure
+  isExternal: false
+  name: create_stored_procedure()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_stored_procedure
+- fullName: azure.cosmos.Container.create_trigger
+  isExternal: false
+  name: create_trigger()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_trigger
+- fullName: azure.cosmos.Container.create_user_defined_function
+  isExternal: false
+  name: create_user_defined_function()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_user_defined_function
+- fullName: azure.cosmos.Container.delete_item
+  isExternal: false
+  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_item
+- fullName: azure.cosmos.Container.delete_stored_procedure
+  isExternal: false
+  name: delete_stored_procedure()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_stored_procedure
+- fullName: azure.cosmos.Container.delete_trigger
+  isExternal: false
+  name: delete_trigger()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_trigger
+- fullName: azure.cosmos.Container.delete_user_defined_function
+  isExternal: false
+  name: delete_user_defined_function()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_user_defined_function
+- fullName: azure.cosmos.Container.get_item
+  isExternal: false
+  name: 'get_item(id: str) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_item
+- fullName: azure.cosmos.Container.get_stored_procedure
+  isExternal: false
+  name: get_stored_procedure(id)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_stored_procedure
+- fullName: azure.cosmos.Container.get_trigger
+  isExternal: false
+  name: get_trigger(id)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_trigger
+- fullName: azure.cosmos.Container.get_user_defined_function
+  isExternal: false
+  name: get_user_defined_function(id)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_user_defined_function
+- fullName: azure.cosmos.Container.list_items
+  isExternal: false
+  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_items
+- fullName: azure.cosmos.Container.list_stored_procedures
+  isExternal: false
+  name: list_stored_procedures(query)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_stored_procedures
+- fullName: azure.cosmos.Container.list_triggers
+  isExternal: false
+  name: list_triggers(query)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_triggers
+- fullName: azure.cosmos.Container.list_user_defined_functions
+  isExternal: false
+  name: list_user_defined_functions(query)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_user_defined_functions
+- fullName: azure.cosmos.Container.query_items
+  isExternal: false
+  name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
+    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.query_items
+- fullName: azure.cosmos.Container.query_items_change_feed
+  isExternal: false
+  name: query_items_change_feed(options=None)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.query_items_change_feed
+- fullName: azure.cosmos.Container.replace_item
+  isExternal: false
+  name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
+    typing.Any]) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.replace_item
+- fullName: azure.cosmos.Container.upsert_item
+  isExternal: false
+  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_item
+- fullName: azure.cosmos.Container.upsert_stored_procedure
+  isExternal: false
+  name: upsert_stored_procedure(trigger)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_stored_procedure
+- fullName: azure.cosmos.Container.upsert_trigger
+  isExternal: false
+  name: upsert_trigger(trigger)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_trigger
+- fullName: azure.cosmos.Container.upsert_user_defined_function
+  isExternal: false
+  name: upsert_user_defined_function(trigger)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_user_defined_function
+- fullName: azure.cosmos.Container.create_item
+  isExternal: false
+  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_item
+- fullName: azure.cosmos.Container.create_stored_procedure
+  isExternal: false
+  name: create_stored_procedure()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_stored_procedure
+- fullName: azure.cosmos.Container.create_trigger
+  isExternal: false
+  name: create_trigger()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_trigger
+- fullName: azure.cosmos.Container.create_user_defined_function
+  isExternal: false
+  name: create_user_defined_function()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.create_user_defined_function
+- fullName: azure.cosmos.Container.delete_item
+  isExternal: false
+  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_item
+- fullName: azure.cosmos.Container.delete_stored_procedure
+  isExternal: false
+  name: delete_stored_procedure()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_stored_procedure
+- fullName: azure.cosmos.Container.delete_trigger
+  isExternal: false
+  name: delete_trigger()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_trigger
+- fullName: azure.cosmos.Container.delete_user_defined_function
+  isExternal: false
+  name: delete_user_defined_function()
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.delete_user_defined_function
+- fullName: azure.cosmos.Container.get_item
+  isExternal: false
+  name: 'get_item(id: str) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_item
+- fullName: azure.cosmos.Container.get_stored_procedure
+  isExternal: false
+  name: get_stored_procedure(id)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_stored_procedure
+- fullName: azure.cosmos.Container.get_trigger
+  isExternal: false
+  name: get_trigger(id)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_trigger
+- fullName: azure.cosmos.Container.get_user_defined_function
+  isExternal: false
+  name: get_user_defined_function(id)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.get_user_defined_function
+- fullName: azure.cosmos.Container.list_items
+  isExternal: false
+  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_items
+- fullName: azure.cosmos.Container.list_stored_procedures
+  isExternal: false
+  name: list_stored_procedures(query)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_stored_procedures
+- fullName: azure.cosmos.Container.list_triggers
+  isExternal: false
+  name: list_triggers(query)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_triggers
+- fullName: azure.cosmos.Container.list_user_defined_functions
+  isExternal: false
+  name: list_user_defined_functions(query)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.list_user_defined_functions
+- fullName: azure.cosmos.Container.query_items
+  isExternal: false
+  name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
+    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.query_items
+- fullName: azure.cosmos.Container.query_items_change_feed
+  isExternal: false
+  name: query_items_change_feed(options=None)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.query_items_change_feed
+- fullName: azure.cosmos.Container.replace_item
+  isExternal: false
+  name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
+    typing.Any]) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.replace_item
+- fullName: azure.cosmos.Container.upsert_item
+  isExternal: false
+  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_item
+- fullName: azure.cosmos.Container.upsert_stored_procedure
+  isExternal: false
+  name: upsert_stored_procedure(trigger)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_stored_procedure
+- fullName: azure.cosmos.Container.upsert_trigger
+  isExternal: false
+  name: upsert_trigger(trigger)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_trigger
+- fullName: azure.cosmos.Container.upsert_user_defined_function
+  isExternal: false
+  name: upsert_user_defined_function(trigger)
+  parent: azure.cosmos.Container
+  uid: azure.cosmos.Container.upsert_user_defined_function
