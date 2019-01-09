@@ -1,0 +1,39 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: azure.cosmos.query_iterator.QueryResultIterator
+  fullName: azure.cosmos.query_iterator.QueryResultIterator
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: collections.abc.Iterable
+    type: collections.abc.Iterator
+  langs:
+  - python
+  module: azure.cosmos.query_iterator
+  name: QueryResultIterator
+  source:
+    id: QueryResultIterator
+    path: .\azure\cosmos\query_iterator.py
+    remote:
+      branch: master
+      path: .\azure\cosmos\query_iterator.py
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 4
+  summary: 'Iterator over query results from Azure Cosmos SQL DB
+
+
+    The type of each item returned by the iterator depends on the specific
+
+    query used to generate the result set. It may be a scalar value for aggregate
+
+    functions, or it may be a dictionary for projections.
+
+    '
+  syntax:
+    content: QueryResultIterator(inner, metadata=None)
+  type: class
+  uid: azure.cosmos.query_iterator.QueryResultIterator
+references: []

@@ -16,10 +16,16 @@ items:
     id: Item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 352
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 749
+  summary: 'Represents a document in an Azure Cosmos DB SQL API container.
+
+
+    To create, read, update, and delete Items, use the associated methods on the <xref:azure.cosmos.Container>.
+
+    '
   syntax:
     content: 'Item(headers: typing.Dict[str, typing.Any], data: typing.Dict[str, typing.Any])'
   type: class
@@ -39,10 +45,16 @@ items:
     id: Item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 352
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 749
+  summary: 'Represents a document in an Azure Cosmos DB SQL API container.
+
+
+    To create, read, update, and delete Items, use the associated methods on the <xref:azure.cosmos.Container>.
+
+    '
   syntax:
     content: 'Item(headers: typing.Dict[str, typing.Any], data: typing.Dict[str, typing.Any])'
   type: class

@@ -5,12 +5,11 @@ items:
   - azure.cosmos.CosmosClient.create_database
   - azure.cosmos.CosmosClient.delete_database
   - azure.cosmos.CosmosClient.get_database
-  - azure.cosmos.CosmosClient.get_database_properties
+  - azure.cosmos.CosmosClient.list_database_properties
   - azure.cosmos.CosmosClient.list_databases
   - azure.cosmos.CosmosClient.create_database
   - azure.cosmos.CosmosClient.delete_database
   - azure.cosmos.CosmosClient.get_database
-  - azure.cosmos.CosmosClient.get_database_properties
   - azure.cosmos.CosmosClient.list_databases
   class: azure.cosmos.CosmosClient
   fullName: azure.cosmos.CosmosClient
@@ -24,16 +23,13 @@ items:
     id: CosmosClient
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 25
-  summary: 'Provides a client-side logical representation of the Azure Cosmos DB database
-    account.
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 79
+  summary: 'Provides a client-side logical representation of an Azure Cosmos DB account.
 
-    This client is used to configure and execute requests in the Azure Cosmos DB database
-    service.
-
+    Use this client to configure and execute requests to the Azure Cosmos DB service.
 
 
 
@@ -41,13 +37,13 @@ items:
 
     '
   syntax:
-    content: 'CosmosClient(url: str, key, consistency_level=''Session'')'
+    content: 'CosmosClient(url: str, key, consistency_level=''Session'', connection_policy=None)'
   type: class
   uid: azure.cosmos.CosmosClient
 - class: azure.cosmos.CosmosClient
   exceptions: &id001
   - description: 'If *fail_if_exists* is set to True and a database with the given
-      id already exists
+      ID already exists.
 
       '
     type: HTTPFailure
@@ -55,55 +51,70 @@ items:
   langs:
   - python
   module: azure.cosmos
-  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  name: 'create_database(id: str, *, consistency_level=None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
   source:
     id: create_database
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 51
-  summary: 'Create a new database with the given name (id)
-
-
-
-    ```
-
-
-    >>> import os
-
-    >>> ACCOUNT_KEY = os.environ[''ACCOUNT_KEY'']
-
-    >>> ACCOUNT_HOST = os.environ[''ACCOUNT_HOST'']
-
-    >>> client = CosmosClient(url=ACCOUNT_HOST, key=ACCOUNT_KEY)
-
-    >>> database = client.create_database(''nameofdatabase'')
-
-    ...
-
-    ```
-
-    '
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 124
+  summary: "Create a new database with the given ID (name).\n\nCreate a database in\
+    \ the Cosmos DB account:<!--[!code-python[Main](ples\\examples.py )]-->\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\examples\\\
+    \\examples.py\", \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\"\
+    : false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   database_name\
+    \ = \"testDatabase\"\n   try:\n       database = client.create_database(id=database_name)\n\
+    \   except HTTPFailure:\n       database = client.get_database(database=database_name)\n\
+    \n   ````\n"
   syntax:
-    content: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+    content: 'create_database(id: str, *, consistency_level=None, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
     parameters:
     - &id002
-      description: 'Id (name) of the database to create.
+      description: 'ID (name) of the database to create.
 
         '
       id: id
     - &id003
-      description: 'Fail if database already exists.
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
 
         '
-      id: fail_if_exists
+      id: disable_ru_per_minute_usage
+    - &id004
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id005
+      description: 'Conditions Associated with the request.
+
+        '
+      id: access_condition
+    - &id006
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
+    return: &id007
+      description: 'A <xref:azure.cosmos.Database> instance representing the new database.
+
+        '
   type: method
   uid: azure.cosmos.CosmosClient.create_database
 - class: azure.cosmos.CosmosClient
-  exceptions: &id005
-  - description: 'If the call to delete the database fails.
+  exceptions: &id009
+  - description: 'If the database couldn''t be deleted.
 
       '
     type: HTTPFailure
@@ -111,30 +122,70 @@ items:
   langs:
   - python
   module: azure.cosmos
-  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  name: 'delete_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)'
   source:
     id: delete_database
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 117
-  summary: 'Delete the database with the given id (name).
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 290
+  summary: 'Delete the database with the given ID (name).
 
     '
   syntax:
-    content: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+    content: 'delete_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+      typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+      typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+      typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)'
     parameters:
-    - &id006
-      description: 'The id (name) of, or the database instance to delete.
+    - &id010
+      description: 'The ID (name) or <xref:azure.cosmos.Database> instance of the
+        database to delete.
 
         '
       id: database
+    - &id011
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id012
+      description: 'The maximum number of concurrent operations that run client side
+        during parallel query execution in the Azure Cosmos DB database service. Negative
+        values make the system automatically decides the number of concurrent operations
+        to run.
+
+        '
+      id: max_degree_parallelism
+    - &id013
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id014
+      description: 'Conditions Associated with the request.
+
+        '
+      id: access_condition
+    - &id015
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
   type: method
   uid: azure.cosmos.CosmosClient.delete_database
 - class: azure.cosmos.CosmosClient
-  exceptions: &id008
+  exceptions: &id017
   - description: 'If the given database couldn''t be retrieved.
 
       '
@@ -143,94 +194,134 @@ items:
   langs:
   - python
   module: azure.cosmos
-  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  name: 'get_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> azure.cosmos.Database'
   source:
     id: get_database
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 78
-  summary: 'Retreive the existing database with the id (name) *id*.
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 157
+  summary: 'Retrieve an existing database with the ID (name) *id*.
 
     '
   syntax:
-    content: 'get_database(database: typing.Union[str, azure.cosmos.Database]) ->
-      azure.cosmos.Database'
+    content: 'get_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+      typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+      typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+      typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
     parameters:
-    - &id009
-      description: 'Id of the new <xref:azure.cosmos.Database>.
+    - &id018
+      description: 'ID of the new <xref:azure.cosmos.Database>.
 
         '
       id: id
+    - &id019
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id020
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id021
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
   type: method
   uid: azure.cosmos.CosmosClient.get_database
 - class: azure.cosmos.CosmosClient
-  exceptions: &id011
-  - description: 'If the database cannot be retreived from the server.
-
-      '
-    type: HTTPFailure
-  fullName: azure.cosmos.CosmosClient.get_database_properties
+  fullName: azure.cosmos.CosmosClient.list_database_properties
   langs:
   - python
   module: azure.cosmos
-  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
+  name: list_database_properties
   source:
-    id: get_database_properties
+    id: list_database_properties
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 89
-  summary: 'Get the database properties
-
-    '
-  syntax:
-    content: 'get_database_properties(database: typing.Union[azure.cosmos.Database,
-      str])'
-    parameters:
-    - &id012
-      description: 'Id (or name) of the database to retrieve properties for.
-
-        '
-      id: database
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 239
+  syntax: {}
   type: method
-  uid: azure.cosmos.CosmosClient.get_database_properties
+  uid: azure.cosmos.CosmosClient.list_database_properties
 - class: azure.cosmos.CosmosClient
   fullName: azure.cosmos.CosmosClient.list_databases
   langs:
   - python
   module: azure.cosmos
-  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  name: 'list_databases(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Database]'
   source:
     id: list_databases
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 100
-  summary: 'List databases in the Cosmos SQL Database Account.
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 198
+  summary: 'List the databases in a Cosmos DB SQL database account.
 
     '
   syntax:
-    content: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+    content: 'list_databases(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+      typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+      = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+      typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+      typing.Union[bool, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
     parameters:
-    - &id014
-      description: 'Cosmos DB SQL query. If omitted, all databases will be listed.
+    - &id023
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
 
         '
-      id: query
+      id: disable_ru_per_minute_usage
+    - &id024
+      description: 'The maximum number of concurrent operations that run client side
+        during parallel query execution in the Azure Cosmos DB database service. Negative
+        values make the system automatically decides the number of concurrent operations
+        to run.
+
+        '
+      id: max_degree_parallelism
+    - &id025
+      description: 'Max number of items to be returned in the enumeration operation.
+
+        '
+      id: max_item_count
+    - &id026
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id027
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
   type: method
   uid: azure.cosmos.CosmosClient.list_databases
 - children:
   - azure.cosmos.CosmosClient.create_database
   - azure.cosmos.CosmosClient.delete_database
   - azure.cosmos.CosmosClient.get_database
-  - azure.cosmos.CosmosClient.get_database_properties
   - azure.cosmos.CosmosClient.list_databases
   class: azure.cosmos.CosmosClient
   fullName: azure.cosmos.CosmosClient
@@ -244,16 +335,13 @@ items:
     id: CosmosClient
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 25
-  summary: 'Provides a client-side logical representation of the Azure Cosmos DB database
-    account.
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 79
+  summary: 'Provides a client-side logical representation of an Azure Cosmos DB account.
 
-    This client is used to configure and execute requests in the Azure Cosmos DB database
-    service.
-
+    Use this client to configure and execute requests to the Azure Cosmos DB service.
 
 
 
@@ -261,208 +349,250 @@ items:
 
     '
   syntax:
-    content: 'CosmosClient(url: str, key, consistency_level=''Session'')'
+    content: 'CosmosClient(url: str, key, consistency_level=''Session'', connection_policy=None)'
   type: class
   uid: azure.cosmos.CosmosClient
-- &id004
+- &id008
   class: azure.cosmos.CosmosClient
   exceptions: *id001
   fullName: azure.cosmos.CosmosClient.create_database
   langs:
   - python
   module: azure.cosmos
-  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  name: 'create_database(id: str, *, consistency_level=None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
   source:
     id: create_database
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 51
-  summary: 'Create a new database with the given name (id)
-
-
-
-    ```
-
-
-    >>> import os
-
-    >>> ACCOUNT_KEY = os.environ[''ACCOUNT_KEY'']
-
-    >>> ACCOUNT_HOST = os.environ[''ACCOUNT_HOST'']
-
-    >>> client = CosmosClient(url=ACCOUNT_HOST, key=ACCOUNT_KEY)
-
-    >>> database = client.create_database(''nameofdatabase'')
-
-    ...
-
-    ```
-
-    '
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 124
+  summary: "Create a new database with the given ID (name).\n\nCreate a database in\
+    \ the Cosmos DB account:<!--[!code-python[Main](ples\\examples.py )]-->\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\examples\\\
+    \\examples.py\", \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\"\
+    : false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   database_name\
+    \ = \"testDatabase\"\n   try:\n       database = client.create_database(id=database_name)\n\
+    \   except HTTPFailure:\n       database = client.get_database(database=database_name)\n\
+    \n   ````\n"
   syntax:
-    content: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+    content: 'create_database(id: str, *, consistency_level=None, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
     parameters:
     - *id002
     - *id003
+    - *id004
+    - *id005
+    - *id006
+    return: *id007
   type: method
   uid: azure.cosmos.CosmosClient.create_database
-- *id004
-- &id007
+- *id008
+- &id016
   class: azure.cosmos.CosmosClient
-  exceptions: *id005
+  exceptions: *id009
   fullName: azure.cosmos.CosmosClient.delete_database
   langs:
   - python
   module: azure.cosmos
-  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  name: 'delete_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)'
   source:
     id: delete_database
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 117
-  summary: 'Delete the database with the given id (name).
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 290
+  summary: 'Delete the database with the given ID (name).
 
     '
   syntax:
-    content: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+    content: 'delete_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+      typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+      typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+      typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)'
     parameters:
-    - *id006
+    - *id010
+    - *id011
+    - *id012
+    - *id013
+    - *id014
+    - *id015
   type: method
   uid: azure.cosmos.CosmosClient.delete_database
-- *id007
-- &id010
+- *id016
+- &id022
   class: azure.cosmos.CosmosClient
-  exceptions: *id008
+  exceptions: *id017
   fullName: azure.cosmos.CosmosClient.get_database
   langs:
   - python
   module: azure.cosmos
-  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  name: 'get_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> azure.cosmos.Database'
   source:
     id: get_database
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 78
-  summary: 'Retreive the existing database with the id (name) *id*.
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 157
+  summary: 'Retrieve an existing database with the ID (name) *id*.
 
     '
   syntax:
-    content: 'get_database(database: typing.Union[str, azure.cosmos.Database]) ->
-      azure.cosmos.Database'
+    content: 'get_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+      typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+      typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+      typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
     parameters:
-    - *id009
+    - *id018
+    - *id019
+    - *id020
+    - *id021
   type: method
   uid: azure.cosmos.CosmosClient.get_database
-- *id010
-- &id013
-  class: azure.cosmos.CosmosClient
-  exceptions: *id011
-  fullName: azure.cosmos.CosmosClient.get_database_properties
-  langs:
-  - python
-  module: azure.cosmos
-  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
-  source:
-    id: get_database_properties
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 89
-  summary: 'Get the database properties
-
-    '
-  syntax:
-    content: 'get_database_properties(database: typing.Union[azure.cosmos.Database,
-      str])'
-    parameters:
-    - *id012
-  type: method
-  uid: azure.cosmos.CosmosClient.get_database_properties
-- *id013
-- &id015
+- *id022
+- &id028
   class: azure.cosmos.CosmosClient
   fullName: azure.cosmos.CosmosClient.list_databases
   langs:
   - python
   module: azure.cosmos
-  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  name: 'list_databases(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Database]'
   source:
     id: list_databases
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 100
-  summary: 'List databases in the Cosmos SQL Database Account.
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 198
+  summary: 'List the databases in a Cosmos DB SQL database account.
 
     '
   syntax:
-    content: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+    content: 'list_databases(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+      typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+      = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+      typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+      typing.Union[bool, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
     parameters:
-    - *id014
+    - *id023
+    - *id024
+    - *id025
+    - *id026
+    - *id027
   type: method
   uid: azure.cosmos.CosmosClient.list_databases
-- *id015
+- *id028
 references:
 - fullName: azure.cosmos.CosmosClient.create_database
   isExternal: false
-  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  name: 'create_database(id: str, *, consistency_level=None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.create_database
 - fullName: azure.cosmos.CosmosClient.delete_database
   isExternal: false
-  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  name: 'delete_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.delete_database
 - fullName: azure.cosmos.CosmosClient.get_database
   isExternal: false
-  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  name: 'get_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> azure.cosmos.Database'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.get_database
-- fullName: azure.cosmos.CosmosClient.get_database_properties
+- fullName: azure.cosmos.CosmosClient.list_database_properties
   isExternal: false
-  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
+  name: list_database_properties
   parent: azure.cosmos.CosmosClient
-  uid: azure.cosmos.CosmosClient.get_database_properties
+  uid: azure.cosmos.CosmosClient.list_database_properties
 - fullName: azure.cosmos.CosmosClient.list_databases
   isExternal: false
-  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  name: 'list_databases(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Database]'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.list_databases
 - fullName: azure.cosmos.CosmosClient.create_database
   isExternal: false
-  name: 'create_database(id: str, fail_if_exists: bool = False) -> azure.cosmos.Database'
+  name: 'create_database(id: str, *, consistency_level=None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Database'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.create_database
 - fullName: azure.cosmos.CosmosClient.delete_database
   isExternal: false
-  name: 'delete_database(database: typing.Union[azure.cosmos.Database, str])'
+  name: 'delete_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.delete_database
 - fullName: azure.cosmos.CosmosClient.get_database
   isExternal: false
-  name: 'get_database(database: typing.Union[str, azure.cosmos.Database]) -> azure.cosmos.Database'
+  name: 'get_database(database: typing.Union[_ForwardRef(''Database''), typing.Dict[str,
+    typing.Any], str], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> azure.cosmos.Database'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.get_database
-- fullName: azure.cosmos.CosmosClient.get_database_properties
-  isExternal: false
-  name: 'get_database_properties(database: typing.Union[azure.cosmos.Database, str])'
-  parent: azure.cosmos.CosmosClient
-  uid: azure.cosmos.CosmosClient.get_database_properties
 - fullName: azure.cosmos.CosmosClient.list_databases
   isExternal: false
-  name: 'list_databases(query: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Database]'
+  name: 'list_databases(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Database]'
   parent: azure.cosmos.CosmosClient
   uid: azure.cosmos.CosmosClient.list_databases

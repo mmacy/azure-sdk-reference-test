@@ -26,28 +26,13 @@ items:
   - azure.cosmos.Container.upsert_trigger
   - azure.cosmos.Container.upsert_user_defined_function
   - azure.cosmos.Container.create_item
-  - azure.cosmos.Container.create_stored_procedure
-  - azure.cosmos.Container.create_trigger
-  - azure.cosmos.Container.create_user_defined_function
   - azure.cosmos.Container.delete_item
-  - azure.cosmos.Container.delete_stored_procedure
-  - azure.cosmos.Container.delete_trigger
-  - azure.cosmos.Container.delete_user_defined_function
   - azure.cosmos.Container.get_item
-  - azure.cosmos.Container.get_stored_procedure
-  - azure.cosmos.Container.get_trigger
-  - azure.cosmos.Container.get_user_defined_function
   - azure.cosmos.Container.list_items
-  - azure.cosmos.Container.list_stored_procedures
-  - azure.cosmos.Container.list_triggers
-  - azure.cosmos.Container.list_user_defined_functions
   - azure.cosmos.Container.query_items
   - azure.cosmos.Container.query_items_change_feed
   - azure.cosmos.Container.replace_item
   - azure.cosmos.Container.upsert_item
-  - azure.cosmos.Container.upsert_stored_procedure
-  - azure.cosmos.Container.upsert_trigger
-  - azure.cosmos.Container.upsert_user_defined_function
   class: azure.cosmos.Container
   fullName: azure.cosmos.Container
   inheritance:
@@ -60,26 +45,23 @@ items:
     id: Container
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 359
-  summary: 'An Azure Cosmos SQL Container
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 761
+  summary: 'An Azure Cosmos DB container.
+
+
+    A container in an Azure Cosmos DB SQL API database is a collection of documents,
+    each of which represented as an <xref:azure.cosmos.Item>.
 
 
 
+    > [!NOTE]
 
+    > To create a new container in an existing database, use <xref:azure.cosmos.Database.create_container>.
 
-
-
-
-
-
-
-
-
-
-
+    >
 
 
 
@@ -92,40 +74,88 @@ items:
     '
   syntax:
     content: 'Container(client_context: azure.cosmos.ClientContext, database: typing.Union[azure.cosmos.Database,
-      str], id: str)'
+      str], id: str, properties: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None)'
+    variables: &id001
+    - description: 'ID (name) of the container
+
+        '
+      id: id
+      type:
+      - str
+    - description: 'The session token for the container.
+
+        '
+      id: session_token
+      type:
+      - str
   type: class
   uid: azure.cosmos.Container
 - class: azure.cosmos.Container
-  exceptions: &id001
+  exceptions: &id002
   - description: ''
     type: HTTPFailure
   fullName: azure.cosmos.Container.create_item
   langs:
   - python
   module: azure.cosmos
-  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'create_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   source:
     id: create_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 466
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1051
   summary: 'Create an item in the container.
 
 
-    In order to replace an existing item, use the <xref:Collection.upsert_item> method.
+    To update or replace an existing item, use the <xref:azure.cosmos.Container.upsert_item>
+    method.
 
     '
   syntax:
-    content: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+    content: 'create_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
     parameters:
-    - &id002
-      description: 'A dict-like object or string representing the item to create.
+    - &id003
+      description: 'A dict-like object representing the item to create.
 
         '
       id: body
+    - &id004
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id005
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id006
+      description: 'Conditions Associated with the request.
+
+        '
+      id: access_condition
+    - &id007
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
+    return: &id008
+      description: 'The <xref:azure.cosmos.Item> inserted into the container.
+
+        '
   type: method
   uid: azure.cosmos.Container.create_item
 - class: azure.cosmos.Container
@@ -138,10 +168,10 @@ items:
     id: create_stored_procedure
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 490
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1145
   syntax:
     content: create_stored_procedure()
     parameters: []
@@ -157,10 +187,10 @@ items:
     id: create_trigger
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 505
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1160
   syntax:
     content: create_trigger()
     parameters: []
@@ -176,31 +206,92 @@ items:
     id: create_user_defined_function
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 520
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1175
   syntax:
     content: create_user_defined_function()
     parameters: []
   type: method
   uid: azure.cosmos.Container.create_user_defined_function
 - class: azure.cosmos.Container
+  exceptions: &id010
+  - description: 'The item wasn''t deleted successfully. If the item does not exist
+      in the container, a *404* error is returned.
+
+      '
+    type: HTTPFailure
   fullName: azure.cosmos.Container.delete_item
   langs:
   - python
   module: azure.cosmos
-  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  name: 'delete_item(item: typing.Union[azure.cosmos.Item, typing.Dict[str, typing.Any],
+    str], partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> NoneType'
   source:
     id: delete_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 480
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1094
+  summary: 'Delete the specified item from the container.
+
+    '
   syntax:
-    content: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+    content: 'delete_item(item: typing.Union[azure.cosmos.Item, typing.Dict[str, typing.Any],
+      str], partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool,
+      NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+      session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+      typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+      -> NoneType'
+    parameters:
+    - &id011
+      description: 'The <xref:azure.cosmos.Item> to delete from the container.
+
+        '
+      id: item
+    - &id012
+      description: 'Specifies the partition key value for the item.
+
+        '
+      id: partition_key
+    - &id013
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id014
+      description: 'The maximum number of concurrent operations that run client side
+        during parallel query execution in the Azure Cosmos DB database service. Negative
+        values make the system automatically decides the number of concurrent operations
+        to run.
+
+        '
+      id: max_degree_parallelism
+    - &id015
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id016
+      description: 'Conditions Associated with the request.
+
+        '
+      id: access_condition
+    - &id017
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
   type: method
   uid: azure.cosmos.Container.delete_item
 - class: azure.cosmos.Container
@@ -213,10 +304,10 @@ items:
     id: delete_stored_procedure
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 496
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1151
   syntax:
     content: delete_stored_procedure()
     parameters: []
@@ -232,10 +323,10 @@ items:
     id: delete_trigger
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 511
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1166
   syntax:
     content: delete_trigger()
     parameters: []
@@ -251,10 +342,10 @@ items:
     id: delete_user_defined_function
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 526
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1181
   syntax:
     content: delete_user_defined_function()
     parameters: []
@@ -265,24 +356,63 @@ items:
   langs:
   - python
   module: azure.cosmos
-  name: 'get_item(id: str) -> azure.cosmos.Item'
+  name: 'get_item(id: str, partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool,
+    NoneType] = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+    typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+    typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   source:
     id: get_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 381
-  summary: 'Get the item identified by *id*
-
-    :param str id: Id of item to retreive
-
-    :returns: Item if present.
-
-    '
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 796
+  summary: "Get the item identified by *id*.\n\nGet an item from the database and\
+    \ update one of its properties:<!--[!code-python[Main](ples\\examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    examples\\\\examples.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   item = container.get_item(\"item2\", partition_key=\"Widget\")\n   item[\"\
+    productModel\"] = \"DISCONTINUED\"\n   updated_item = container.upsert_item(item)\n\
+    \n   ````\n"
   syntax:
-    content: 'get_item(id: str) -> azure.cosmos.Item'
+    content: 'get_item(id: str, partition_key: str, *, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
+    parameters:
+    - &id019
+      description: 'ID of item to retrieve.
+
+        '
+      id: id
+    - &id020
+      description: 'Partition key for the item to retrieve.
+
+        '
+      id: partition_key
+    - &id021
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id022
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id023
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
+    return: &id024
+      description: '<xref:azure.cosmos.Item>, if present in the container.
+
+        '
   type: method
   uid: azure.cosmos.Container.get_item
 - class: azure.cosmos.Container
@@ -295,10 +425,10 @@ items:
     id: get_stored_procedure
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 487
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1142
   syntax:
     content: get_stored_procedure(id)
     parameters:
@@ -315,10 +445,10 @@ items:
     id: get_trigger
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 502
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1157
   syntax:
     content: get_trigger(id)
     parameters:
@@ -335,10 +465,10 @@ items:
     id: get_user_defined_function
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 517
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1172
   syntax:
     content: get_user_defined_function(id)
     parameters:
@@ -350,20 +480,66 @@ items:
   langs:
   - python
   module: azure.cosmos
-  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  name: 'list_items(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType] =
+    None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Item]'
   source:
     id: list_items
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 393
-  summary: 'List all items in the collection
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 846
+  summary: 'List all items in the container.
 
     '
   syntax:
-    content: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+    content: 'list_items(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+      typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+      = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+      typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+      typing.Union[bool, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+    parameters:
+    - &id026
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id027
+      description: 'Allow scan on the queries which couldn''t be served as indexing
+        was opted out on the requested paths.
+
+        '
+      id: enable_cross_partition_query
+    - &id028
+      description: 'The maximum number of concurrent operations that run client side
+        during parallel query execution in the Azure Cosmos DB database service. Negative
+        values make the system automatically decides the number of concurrent operations
+        to run.
+
+        '
+      id: max_degree_parallelism
+    - &id029
+      description: 'Max number of items to be returned in the enumeration operation.
+
+        '
+      id: max_item_count
+    - &id030
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id031
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
   type: method
   uid: azure.cosmos.Container.list_items
 - class: azure.cosmos.Container
@@ -376,10 +552,10 @@ items:
     id: list_stored_procedures
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 484
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1139
   syntax:
     content: list_stored_procedures(query)
     parameters:
@@ -396,10 +572,10 @@ items:
     id: list_triggers
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 499
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1154
   syntax:
     content: list_triggers(query)
     parameters:
@@ -416,10 +592,10 @@ items:
     id: list_user_defined_functions
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 514
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1169
   syntax:
     content: list_user_defined_functions(query)
     parameters:
@@ -432,42 +608,109 @@ items:
   - python
   module: azure.cosmos
   name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
-    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+    None, *, partition_key: typing.Union[str, NoneType] = None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, enable_cross_partition_query: typing.Union[bool,
+    NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+    max_item_count: typing.Union[int, NoneType] = None, session_token: typing.Union[str,
+    NoneType] = None, initial_headers: typing.Union[typing.Dict[str, typing.Any],
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.query_iterator.QueryResultIterator'
   source:
     id: query_items
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 410
-  summary: "Return any items matching the given *query*.\n\n**Example:** find all\
-    \ families in the state of NY:\n\n<!-- literal_block {\"ids\": [], \"classes\"\
-    : [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n\
-    ````python\n\n   items = container.query_items(\n       query='SELECT * FROM Families\
-    \ f WHERE f.address.state = \"NY\"'\n   )\n   ````\n\n**Example:** parameterized\
-    \ query to find all families in the state of NY:\n\n<!-- literal_block {\"ids\"\
-    : [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
-    : \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {}} -->\n\n````python\n\n   items = container.query_items(\n       query='SELECT\
-    \ * FROM Families f WHERE f.address.state = @addressState',\n       parameters=[\n\
-    \           dict('name'='@addressState', value='NY')\n       ]\n   )\n   ````\n"
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 897
+  summary: "Return all results matching the given *query*.\n\nYou can use any value\
+    \ for the container name in the FROM clause, but typically the container name\
+    \ is used.\nIn the examples below, the container name is \"products,\" and is\
+    \ aliased as \"p\" for easier referencing\nin the WHERE clause.\n\nGet all products\
+    \ that have not been discontinued:<!--[!code-python[Main](ples\\examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    examples\\\\examples.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   import json\n\n   for item in container.query_items(\n       query='SELECT\
+    \ * FROM products p WHERE p.productModel <> \"DISCONTINUED\"',\n       enable_cross_partition_query=True,\n\
+    \   ):\n       print(json.dumps(item, indent=True))\n\n   ````\n\nParameterized\
+    \ query to get all products that have been discontinued:<!--[!code-python[Main](ples\\\
+    examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
+    : [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\\
+    source_repo\\\\0\\\\examples\\\\examples.py\", \"xml:space\": \"preserve\", \"\
+    language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   discontinued_items = container.query_items(\n  \
+    \     query='SELECT * FROM products p WHERE p.productModel = @model AND p.productName=\"\
+    Widget\"',\n       parameters=[dict(name=\"@model\", value=\"DISCONTINUED\")],\n\
+    \   )\n   for item in discontinued_items:\n       print(json.dumps(item, indent=True))\n\
+    \n   ````\n"
   syntax:
     content: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType]
-      = None, options=None, partition_key: typing.Union[str, NoneType] = None) ->
-      typing.Iterable[azure.cosmos.Item]'
+      = None, *, partition_key: typing.Union[str, NoneType] = None, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, enable_cross_partition_query: typing.Union[bool,
+      NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+      max_item_count: typing.Union[int, NoneType] = None, session_token: typing.Union[str,
+      NoneType] = None, initial_headers: typing.Union[typing.Dict[str, typing.Any],
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+      -> azure.cosmos.query_iterator.QueryResultIterator'
     parameters:
-    - &id019
-      description: 'The Azure Cosmos SQL query to run
+    - &id033
+      description: 'The Azure Cosmos DB SQL query to execute.
 
         '
       id: query
-    - &id020
-      description: 'Optional array of parameters
+    - &id034
+      description: 'Optional array of parameters to the query. Ignored if no query
+        is provided.
 
         '
       id: parameters
+    - &id035
+      description: 'Specifies the partition key value for the item.
+
+        '
+      id: partition_key
+    - &id036
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id037
+      description: 'Allow scan on the queries which couldn''t be served as indexing
+        was opted out on the requested paths.
+
+        '
+      id: enable_cross_partition_query
+    - &id038
+      description: 'The maximum number of concurrent operations that run client side
+        during parallel query execution in the Azure Cosmos DB database service. Negative
+        values make the system automatically decides the number of concurrent operations
+        to run.
+
+        '
+      id: max_degree_parallelism
+    - &id039
+      description: 'Max number of items to be returned in the enumeration operation.
+
+        '
+      id: max_item_count
+    - &id040
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id041
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
+    return: &id042
+      description: 'An *Iterator* containing each result returned by the query, if
+        any.
+
+        '
   type: method
   uid: azure.cosmos.Container.query_items
 - class: azure.cosmos.Container
@@ -480,10 +723,14 @@ items:
     id: query_items_change_feed
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 403
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 888
+  summary: 'Get a sorted list of items that were changed, in the order in which they
+    were modified.
+
+    '
   syntax:
     content: query_items_change_feed(options=None)
     parameters:
@@ -492,41 +739,127 @@ items:
   type: method
   uid: azure.cosmos.Container.query_items_change_feed
 - class: azure.cosmos.Container
+  exceptions: &id045
+  - description: ''
+    type: HTTPFailure
   fullName: azure.cosmos.Container.replace_item
   langs:
   - python
   module: azure.cosmos
   name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
-    typing.Any]) -> azure.cosmos.Item'
+    typing.Any], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType] = None,
+    session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.Item'
   source:
     id: replace_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 453
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 974
+  summary: 'Replaces the specified item if it exists in the container.
+
+    '
   syntax:
     content: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
-      typing.Any]) -> azure.cosmos.Item'
+      typing.Any], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType] =
+      None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+      typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+      -> azure.cosmos.Item'
+    parameters:
+    - &id046
+      description: 'A dict-like object representing the item to replace.
+
+        '
+      id: body
+    - &id047
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id048
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id049
+      description: 'Conditions Associated with the request.
+
+        '
+      id: access_condition
+    - &id050
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
   type: method
   uid: azure.cosmos.Container.replace_item
 - class: azure.cosmos.Container
+  exceptions: &id052
+  - description: ''
+    type: HTTPFailure
   fullName: azure.cosmos.Container.upsert_item
   langs:
   - python
   module: azure.cosmos
-  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'upsert_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   source:
     id: upsert_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 460
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1012
+  summary: 'Insert or update the specified item.
+
+
+    If the item already exists in the container, it is replaced. If it does not, it
+    is inserted.
+
+    '
   syntax:
-    content: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+    content: 'upsert_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
+    parameters:
+    - &id053
+      description: 'A dict-like object representing the item to update or insert.
+
+        '
+      id: body
+    - &id054
+      description: 'Enable/disable Request Units(RUs)/minute capacity to serve the
+        request if regular provisioned RUs/second is exhausted.
+
+        '
+      id: disable_ru_per_minute_usage
+    - &id055
+      description: 'Token for use with Session consistency.
+
+        '
+      id: session_token
+    - &id056
+      description: 'Conditions Associated with the request.
+
+        '
+      id: access_condition
+    - &id057
+      description: 'Enable returning query metrics in response headers.
+
+        '
+      id: populate_query_metrics
   type: method
   uid: azure.cosmos.Container.upsert_item
 - class: azure.cosmos.Container
@@ -539,10 +872,10 @@ items:
     id: upsert_stored_procedure
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 493
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1148
   syntax:
     content: upsert_stored_procedure(trigger)
     parameters:
@@ -559,10 +892,10 @@ items:
     id: upsert_trigger
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 508
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1163
   syntax:
     content: upsert_trigger(trigger)
     parameters:
@@ -579,10 +912,10 @@ items:
     id: upsert_user_defined_function
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 523
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1178
   syntax:
     content: upsert_user_defined_function(trigger)
     parameters:
@@ -591,28 +924,13 @@ items:
   uid: azure.cosmos.Container.upsert_user_defined_function
 - children:
   - azure.cosmos.Container.create_item
-  - azure.cosmos.Container.create_stored_procedure
-  - azure.cosmos.Container.create_trigger
-  - azure.cosmos.Container.create_user_defined_function
   - azure.cosmos.Container.delete_item
-  - azure.cosmos.Container.delete_stored_procedure
-  - azure.cosmos.Container.delete_trigger
-  - azure.cosmos.Container.delete_user_defined_function
   - azure.cosmos.Container.get_item
-  - azure.cosmos.Container.get_stored_procedure
-  - azure.cosmos.Container.get_trigger
-  - azure.cosmos.Container.get_user_defined_function
   - azure.cosmos.Container.list_items
-  - azure.cosmos.Container.list_stored_procedures
-  - azure.cosmos.Container.list_triggers
-  - azure.cosmos.Container.list_user_defined_functions
   - azure.cosmos.Container.query_items
   - azure.cosmos.Container.query_items_change_feed
   - azure.cosmos.Container.replace_item
   - azure.cosmos.Container.upsert_item
-  - azure.cosmos.Container.upsert_stored_procedure
-  - azure.cosmos.Container.upsert_trigger
-  - azure.cosmos.Container.upsert_user_defined_function
   class: azure.cosmos.Container
   fullName: azure.cosmos.Container
   inheritance:
@@ -625,26 +943,23 @@ items:
     id: Container
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 359
-  summary: 'An Azure Cosmos SQL Container
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 761
+  summary: 'An Azure Cosmos DB container.
+
+
+    A container in an Azure Cosmos DB SQL API database is a collection of documents,
+    each of which represented as an <xref:azure.cosmos.Item>.
 
 
 
+    > [!NOTE]
 
+    > To create a new container in an existing database, use <xref:azure.cosmos.Database.create_container>.
 
-
-
-
-
-
-
-
-
-
-
+    >
 
 
 
@@ -657,405 +972,248 @@ items:
     '
   syntax:
     content: 'Container(client_context: azure.cosmos.ClientContext, database: typing.Union[azure.cosmos.Database,
-      str], id: str)'
+      str], id: str, properties: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None)'
+    variables: *id001
   type: class
   uid: azure.cosmos.Container
-- &id003
+- &id009
   class: azure.cosmos.Container
-  exceptions: *id001
+  exceptions: *id002
   fullName: azure.cosmos.Container.create_item
   langs:
   - python
   module: azure.cosmos
-  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'create_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   source:
     id: create_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 466
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1051
   summary: 'Create an item in the container.
 
 
-    In order to replace an existing item, use the <xref:Collection.upsert_item> method.
+    To update or replace an existing item, use the <xref:azure.cosmos.Container.upsert_item>
+    method.
 
     '
   syntax:
-    content: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+    content: 'create_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
     parameters:
-    - *id002
+    - *id003
+    - *id004
+    - *id005
+    - *id006
+    - *id007
+    return: *id008
   type: method
   uid: azure.cosmos.Container.create_item
-- *id003
-- &id004
+- *id009
+- &id018
   class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.create_stored_procedure
-  langs:
-  - python
-  module: azure.cosmos
-  name: create_stored_procedure()
-  source:
-    id: create_stored_procedure
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 490
-  syntax:
-    content: create_stored_procedure()
-    parameters: []
-  type: method
-  uid: azure.cosmos.Container.create_stored_procedure
-- *id004
-- &id005
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.create_trigger
-  langs:
-  - python
-  module: azure.cosmos
-  name: create_trigger()
-  source:
-    id: create_trigger
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 505
-  syntax:
-    content: create_trigger()
-    parameters: []
-  type: method
-  uid: azure.cosmos.Container.create_trigger
-- *id005
-- &id006
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.create_user_defined_function
-  langs:
-  - python
-  module: azure.cosmos
-  name: create_user_defined_function()
-  source:
-    id: create_user_defined_function
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 520
-  syntax:
-    content: create_user_defined_function()
-    parameters: []
-  type: method
-  uid: azure.cosmos.Container.create_user_defined_function
-- *id006
-- &id007
-  class: azure.cosmos.Container
+  exceptions: *id010
   fullName: azure.cosmos.Container.delete_item
   langs:
   - python
   module: azure.cosmos
-  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  name: 'delete_item(item: typing.Union[azure.cosmos.Item, typing.Dict[str, typing.Any],
+    str], partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> NoneType'
   source:
     id: delete_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 480
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1094
+  summary: 'Delete the specified item from the container.
+
+    '
   syntax:
-    content: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+    content: 'delete_item(item: typing.Union[azure.cosmos.Item, typing.Dict[str, typing.Any],
+      str], partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool,
+      NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+      session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+      typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+      -> NoneType'
+    parameters:
+    - *id011
+    - *id012
+    - *id013
+    - *id014
+    - *id015
+    - *id016
+    - *id017
   type: method
   uid: azure.cosmos.Container.delete_item
-- *id007
-- &id008
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.delete_stored_procedure
-  langs:
-  - python
-  module: azure.cosmos
-  name: delete_stored_procedure()
-  source:
-    id: delete_stored_procedure
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 496
-  syntax:
-    content: delete_stored_procedure()
-    parameters: []
-  type: method
-  uid: azure.cosmos.Container.delete_stored_procedure
-- *id008
-- &id009
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.delete_trigger
-  langs:
-  - python
-  module: azure.cosmos
-  name: delete_trigger()
-  source:
-    id: delete_trigger
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 511
-  syntax:
-    content: delete_trigger()
-    parameters: []
-  type: method
-  uid: azure.cosmos.Container.delete_trigger
-- *id009
-- &id010
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.delete_user_defined_function
-  langs:
-  - python
-  module: azure.cosmos
-  name: delete_user_defined_function()
-  source:
-    id: delete_user_defined_function
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 526
-  syntax:
-    content: delete_user_defined_function()
-    parameters: []
-  type: method
-  uid: azure.cosmos.Container.delete_user_defined_function
-- *id010
-- &id011
+- *id018
+- &id025
   class: azure.cosmos.Container
   fullName: azure.cosmos.Container.get_item
   langs:
   - python
   module: azure.cosmos
-  name: 'get_item(id: str) -> azure.cosmos.Item'
+  name: 'get_item(id: str, partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool,
+    NoneType] = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+    typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+    typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   source:
     id: get_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 381
-  summary: 'Get the item identified by *id*
-
-    :param str id: Id of item to retreive
-
-    :returns: Item if present.
-
-    '
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 796
+  summary: "Get the item identified by *id*.\n\nGet an item from the database and\
+    \ update one of its properties:<!--[!code-python[Main](ples\\examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    examples\\\\examples.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   item = container.get_item(\"item2\", partition_key=\"Widget\")\n   item[\"\
+    productModel\"] = \"DISCONTINUED\"\n   updated_item = container.upsert_item(item)\n\
+    \n   ````\n"
   syntax:
-    content: 'get_item(id: str) -> azure.cosmos.Item'
+    content: 'get_item(id: str, partition_key: str, *, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
+    parameters:
+    - *id019
+    - *id020
+    - *id021
+    - *id022
+    - *id023
+    return: *id024
   type: method
   uid: azure.cosmos.Container.get_item
-- *id011
-- &id012
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.get_stored_procedure
-  langs:
-  - python
-  module: azure.cosmos
-  name: get_stored_procedure(id)
-  source:
-    id: get_stored_procedure
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 487
-  syntax:
-    content: get_stored_procedure(id)
-    parameters:
-    - id: id
-  type: method
-  uid: azure.cosmos.Container.get_stored_procedure
-- *id012
-- &id013
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.get_trigger
-  langs:
-  - python
-  module: azure.cosmos
-  name: get_trigger(id)
-  source:
-    id: get_trigger
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 502
-  syntax:
-    content: get_trigger(id)
-    parameters:
-    - id: id
-  type: method
-  uid: azure.cosmos.Container.get_trigger
-- *id013
-- &id014
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.get_user_defined_function
-  langs:
-  - python
-  module: azure.cosmos
-  name: get_user_defined_function(id)
-  source:
-    id: get_user_defined_function
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 517
-  syntax:
-    content: get_user_defined_function(id)
-    parameters:
-    - id: id
-  type: method
-  uid: azure.cosmos.Container.get_user_defined_function
-- *id014
-- &id015
+- *id025
+- &id032
   class: azure.cosmos.Container
   fullName: azure.cosmos.Container.list_items
   langs:
   - python
   module: azure.cosmos
-  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  name: 'list_items(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType] =
+    None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Item]'
   source:
     id: list_items
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 393
-  summary: 'List all items in the collection
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 846
+  summary: 'List all items in the container.
 
     '
   syntax:
-    content: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+    content: 'list_items(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+      = None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+      typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+      = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+      typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+      typing.Union[bool, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+    parameters:
+    - *id026
+    - *id027
+    - *id028
+    - *id029
+    - *id030
+    - *id031
   type: method
   uid: azure.cosmos.Container.list_items
-- *id015
-- &id016
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.list_stored_procedures
-  langs:
-  - python
-  module: azure.cosmos
-  name: list_stored_procedures(query)
-  source:
-    id: list_stored_procedures
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 484
-  syntax:
-    content: list_stored_procedures(query)
-    parameters:
-    - id: query
-  type: method
-  uid: azure.cosmos.Container.list_stored_procedures
-- *id016
-- &id017
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.list_triggers
-  langs:
-  - python
-  module: azure.cosmos
-  name: list_triggers(query)
-  source:
-    id: list_triggers
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 499
-  syntax:
-    content: list_triggers(query)
-    parameters:
-    - id: query
-  type: method
-  uid: azure.cosmos.Container.list_triggers
-- *id017
-- &id018
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.list_user_defined_functions
-  langs:
-  - python
-  module: azure.cosmos
-  name: list_user_defined_functions(query)
-  source:
-    id: list_user_defined_functions
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 514
-  syntax:
-    content: list_user_defined_functions(query)
-    parameters:
-    - id: query
-  type: method
-  uid: azure.cosmos.Container.list_user_defined_functions
-- *id018
-- &id021
+- *id032
+- &id043
   class: azure.cosmos.Container
   fullName: azure.cosmos.Container.query_items
   langs:
   - python
   module: azure.cosmos
   name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
-    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+    None, *, partition_key: typing.Union[str, NoneType] = None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, enable_cross_partition_query: typing.Union[bool,
+    NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+    max_item_count: typing.Union[int, NoneType] = None, session_token: typing.Union[str,
+    NoneType] = None, initial_headers: typing.Union[typing.Dict[str, typing.Any],
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.query_iterator.QueryResultIterator'
   source:
     id: query_items
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 410
-  summary: "Return any items matching the given *query*.\n\n**Example:** find all\
-    \ families in the state of NY:\n\n<!-- literal_block {\"ids\": [], \"classes\"\
-    : [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {}} -->\n\n\
-    ````python\n\n   items = container.query_items(\n       query='SELECT * FROM Families\
-    \ f WHERE f.address.state = \"NY\"'\n   )\n   ````\n\n**Example:** parameterized\
-    \ query to find all families in the state of NY:\n\n<!-- literal_block {\"ids\"\
-    : [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
-    : \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {}} -->\n\n````python\n\n   items = container.query_items(\n       query='SELECT\
-    \ * FROM Families f WHERE f.address.state = @addressState',\n       parameters=[\n\
-    \           dict('name'='@addressState', value='NY')\n       ]\n   )\n   ````\n"
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 897
+  summary: "Return all results matching the given *query*.\n\nYou can use any value\
+    \ for the container name in the FROM clause, but typically the container name\
+    \ is used.\nIn the examples below, the container name is \"products,\" and is\
+    \ aliased as \"p\" for easier referencing\nin the WHERE clause.\n\nGet all products\
+    \ that have not been discontinued:<!--[!code-python[Main](ples\\examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    examples\\\\examples.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   import json\n\n   for item in container.query_items(\n       query='SELECT\
+    \ * FROM products p WHERE p.productModel <> \"DISCONTINUED\"',\n       enable_cross_partition_query=True,\n\
+    \   ):\n       print(json.dumps(item, indent=True))\n\n   ````\n\nParameterized\
+    \ query to get all products that have been discontinued:<!--[!code-python[Main](ples\\\
+    examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
+    : [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\\
+    source_repo\\\\0\\\\examples\\\\examples.py\", \"xml:space\": \"preserve\", \"\
+    language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   discontinued_items = container.query_items(\n  \
+    \     query='SELECT * FROM products p WHERE p.productModel = @model AND p.productName=\"\
+    Widget\"',\n       parameters=[dict(name=\"@model\", value=\"DISCONTINUED\")],\n\
+    \   )\n   for item in discontinued_items:\n       print(json.dumps(item, indent=True))\n\
+    \n   ````\n"
   syntax:
     content: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType]
-      = None, options=None, partition_key: typing.Union[str, NoneType] = None) ->
-      typing.Iterable[azure.cosmos.Item]'
+      = None, *, partition_key: typing.Union[str, NoneType] = None, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, enable_cross_partition_query: typing.Union[bool,
+      NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+      max_item_count: typing.Union[int, NoneType] = None, session_token: typing.Union[str,
+      NoneType] = None, initial_headers: typing.Union[typing.Dict[str, typing.Any],
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+      -> azure.cosmos.query_iterator.QueryResultIterator'
     parameters:
-    - *id019
-    - *id020
+    - *id033
+    - *id034
+    - *id035
+    - *id036
+    - *id037
+    - *id038
+    - *id039
+    - *id040
+    - *id041
+    return: *id042
   type: method
   uid: azure.cosmos.Container.query_items
-- *id021
-- &id022
+- *id043
+- &id044
   class: azure.cosmos.Container
   fullName: azure.cosmos.Container.query_items_change_feed
   langs:
@@ -1066,10 +1224,14 @@ items:
     id: query_items_change_feed
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 403
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 888
+  summary: 'Get a sorted list of items that were changed, in the order in which they
+    were modified.
+
+    '
   syntax:
     content: query_items_change_feed(options=None)
     parameters:
@@ -1077,119 +1239,97 @@ items:
       id: options
   type: method
   uid: azure.cosmos.Container.query_items_change_feed
-- *id022
-- &id023
+- *id044
+- &id051
   class: azure.cosmos.Container
+  exceptions: *id045
   fullName: azure.cosmos.Container.replace_item
   langs:
   - python
   module: azure.cosmos
   name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
-    typing.Any]) -> azure.cosmos.Item'
+    typing.Any], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType] = None,
+    session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.Item'
   source:
     id: replace_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 453
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 974
+  summary: 'Replaces the specified item if it exists in the container.
+
+    '
   syntax:
     content: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
-      typing.Any]) -> azure.cosmos.Item'
+      typing.Any], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType] =
+      None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+      typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+      NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+      -> azure.cosmos.Item'
+    parameters:
+    - *id046
+    - *id047
+    - *id048
+    - *id049
+    - *id050
   type: method
   uid: azure.cosmos.Container.replace_item
-- *id023
-- &id024
+- *id051
+- &id058
   class: azure.cosmos.Container
+  exceptions: *id052
   fullName: azure.cosmos.Container.upsert_item
   langs:
   - python
   module: azure.cosmos
-  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'upsert_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   source:
     id: upsert_item
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 460
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 1012
+  summary: 'Insert or update the specified item.
+
+
+    If the item already exists in the container, it is replaced. If it does not, it
+    is inserted.
+
+    '
   syntax:
-    content: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+    content: 'upsert_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+      typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+      = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+      = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+      = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
+    parameters:
+    - *id053
+    - *id054
+    - *id055
+    - *id056
+    - *id057
   type: method
   uid: azure.cosmos.Container.upsert_item
-- *id024
-- &id025
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.upsert_stored_procedure
-  langs:
-  - python
-  module: azure.cosmos
-  name: upsert_stored_procedure(trigger)
-  source:
-    id: upsert_stored_procedure
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 493
-  syntax:
-    content: upsert_stored_procedure(trigger)
-    parameters:
-    - id: trigger
-  type: method
-  uid: azure.cosmos.Container.upsert_stored_procedure
-- *id025
-- &id026
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.upsert_trigger
-  langs:
-  - python
-  module: azure.cosmos
-  name: upsert_trigger(trigger)
-  source:
-    id: upsert_trigger
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 508
-  syntax:
-    content: upsert_trigger(trigger)
-    parameters:
-    - id: trigger
-  type: method
-  uid: azure.cosmos.Container.upsert_trigger
-- *id026
-- &id027
-  class: azure.cosmos.Container
-  fullName: azure.cosmos.Container.upsert_user_defined_function
-  langs:
-  - python
-  module: azure.cosmos
-  name: upsert_user_defined_function(trigger)
-  source:
-    id: upsert_user_defined_function
-    path: .\azure\cosmos\__init__.py
-    remote:
-      branch: ref-prototype
-      path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
-    startLine: 523
-  syntax:
-    content: upsert_user_defined_function(trigger)
-    parameters:
-    - id: trigger
-  type: method
-  uid: azure.cosmos.Container.upsert_user_defined_function
-- *id027
+- *id058
 references:
 - fullName: azure.cosmos.Container.create_item
   isExternal: false
-  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'create_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.create_item
 - fullName: azure.cosmos.Container.create_stored_procedure
@@ -1209,7 +1349,13 @@ references:
   uid: azure.cosmos.Container.create_user_defined_function
 - fullName: azure.cosmos.Container.delete_item
   isExternal: false
-  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  name: 'delete_item(item: typing.Union[azure.cosmos.Item, typing.Dict[str, typing.Any],
+    str], partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> NoneType'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.delete_item
 - fullName: azure.cosmos.Container.delete_stored_procedure
@@ -1229,7 +1375,10 @@ references:
   uid: azure.cosmos.Container.delete_user_defined_function
 - fullName: azure.cosmos.Container.get_item
   isExternal: false
-  name: 'get_item(id: str) -> azure.cosmos.Item'
+  name: 'get_item(id: str, partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool,
+    NoneType] = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+    typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+    typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.get_item
 - fullName: azure.cosmos.Container.get_stored_procedure
@@ -1249,7 +1398,12 @@ references:
   uid: azure.cosmos.Container.get_user_defined_function
 - fullName: azure.cosmos.Container.list_items
   isExternal: false
-  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  name: 'list_items(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType] =
+    None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Item]'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.list_items
 - fullName: azure.cosmos.Container.list_stored_procedures
@@ -1270,7 +1424,13 @@ references:
 - fullName: azure.cosmos.Container.query_items
   isExternal: false
   name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
-    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+    None, *, partition_key: typing.Union[str, NoneType] = None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, enable_cross_partition_query: typing.Union[bool,
+    NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+    max_item_count: typing.Union[int, NoneType] = None, session_token: typing.Union[str,
+    NoneType] = None, initial_headers: typing.Union[typing.Dict[str, typing.Any],
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.query_iterator.QueryResultIterator'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.query_items
 - fullName: azure.cosmos.Container.query_items_change_feed
@@ -1281,12 +1441,20 @@ references:
 - fullName: azure.cosmos.Container.replace_item
   isExternal: false
   name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
-    typing.Any]) -> azure.cosmos.Item'
+    typing.Any], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType] = None,
+    session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.replace_item
 - fullName: azure.cosmos.Container.upsert_item
   isExternal: false
-  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'upsert_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.upsert_item
 - fullName: azure.cosmos.Container.upsert_stored_procedure
@@ -1306,88 +1474,52 @@ references:
   uid: azure.cosmos.Container.upsert_user_defined_function
 - fullName: azure.cosmos.Container.create_item
   isExternal: false
-  name: 'create_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'create_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.create_item
-- fullName: azure.cosmos.Container.create_stored_procedure
-  isExternal: false
-  name: create_stored_procedure()
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.create_stored_procedure
-- fullName: azure.cosmos.Container.create_trigger
-  isExternal: false
-  name: create_trigger()
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.create_trigger
-- fullName: azure.cosmos.Container.create_user_defined_function
-  isExternal: false
-  name: create_user_defined_function()
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.create_user_defined_function
 - fullName: azure.cosmos.Container.delete_item
   isExternal: false
-  name: 'delete_item(item: azure.cosmos.Item) -> NoneType'
+  name: 'delete_item(item: typing.Union[azure.cosmos.Item, typing.Dict[str, typing.Any],
+    str], partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool, NoneType]
+    = None, max_degree_parallelism: typing.Union[int, NoneType] = None, session_token:
+    typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> NoneType'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.delete_item
-- fullName: azure.cosmos.Container.delete_stored_procedure
-  isExternal: false
-  name: delete_stored_procedure()
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.delete_stored_procedure
-- fullName: azure.cosmos.Container.delete_trigger
-  isExternal: false
-  name: delete_trigger()
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.delete_trigger
-- fullName: azure.cosmos.Container.delete_user_defined_function
-  isExternal: false
-  name: delete_user_defined_function()
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.delete_user_defined_function
 - fullName: azure.cosmos.Container.get_item
   isExternal: false
-  name: 'get_item(id: str) -> azure.cosmos.Item'
+  name: 'get_item(id: str, partition_key: str, *, disable_ru_per_minute_usage: typing.Union[bool,
+    NoneType] = None, session_token: typing.Union[str, NoneType] = None, initial_headers:
+    typing.Union[typing.Dict[str, typing.Any], NoneType] = None, populate_query_metrics:
+    typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.get_item
-- fullName: azure.cosmos.Container.get_stored_procedure
-  isExternal: false
-  name: get_stored_procedure(id)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.get_stored_procedure
-- fullName: azure.cosmos.Container.get_trigger
-  isExternal: false
-  name: get_trigger(id)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.get_trigger
-- fullName: azure.cosmos.Container.get_user_defined_function
-  isExternal: false
-  name: get_user_defined_function(id)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.get_user_defined_function
 - fullName: azure.cosmos.Container.list_items
   isExternal: false
-  name: list_items(options=None) -> typing.Iterable[azure.cosmos.Item]
+  name: 'list_items(*, disable_ru_per_minute_usage: typing.Union[bool, NoneType] =
+    None, enable_cross_partition_query: typing.Union[bool, NoneType] = None, max_degree_parallelism:
+    typing.Union[int, NoneType] = None, max_item_count: typing.Union[int, NoneType]
+    = None, session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType]
+    = None) -> typing.Iterable[azure.cosmos.Item]'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.list_items
-- fullName: azure.cosmos.Container.list_stored_procedures
-  isExternal: false
-  name: list_stored_procedures(query)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.list_stored_procedures
-- fullName: azure.cosmos.Container.list_triggers
-  isExternal: false
-  name: list_triggers(query)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.list_triggers
-- fullName: azure.cosmos.Container.list_user_defined_functions
-  isExternal: false
-  name: list_user_defined_functions(query)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.list_user_defined_functions
 - fullName: azure.cosmos.Container.query_items
   isExternal: false
   name: 'query_items(query: str, parameters: typing.Union[typing.List, NoneType] =
-    None, options=None, partition_key: typing.Union[str, NoneType] = None) -> typing.Iterable[azure.cosmos.Item]'
+    None, *, partition_key: typing.Union[str, NoneType] = None, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, enable_cross_partition_query: typing.Union[bool,
+    NoneType] = None, max_degree_parallelism: typing.Union[int, NoneType] = None,
+    max_item_count: typing.Union[int, NoneType] = None, session_token: typing.Union[str,
+    NoneType] = None, initial_headers: typing.Union[typing.Dict[str, typing.Any],
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.query_iterator.QueryResultIterator'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.query_items
 - fullName: azure.cosmos.Container.query_items_change_feed
@@ -1398,26 +1530,19 @@ references:
 - fullName: azure.cosmos.Container.replace_item
   isExternal: false
   name: 'replace_item(item: typing.Union[azure.cosmos.Item, str], body: typing.Dict[str,
-    typing.Any]) -> azure.cosmos.Item'
+    typing.Any], *, disable_ru_per_minute_usage: typing.Union[bool, NoneType] = None,
+    session_token: typing.Union[str, NoneType] = None, initial_headers: typing.Union[typing.Dict[str,
+    typing.Any], NoneType] = None, access_condition: typing.Union[azure.cosmos.AccessCondition,
+    NoneType] = None, populate_query_metrics: typing.Union[bool, NoneType] = None)
+    -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.replace_item
 - fullName: azure.cosmos.Container.upsert_item
   isExternal: false
-  name: 'upsert_item(body: typing.Dict[str, typing.Any]) -> azure.cosmos.Item'
+  name: 'upsert_item(body: typing.Dict[str, typing.Any], *, disable_ru_per_minute_usage:
+    typing.Union[bool, NoneType] = None, session_token: typing.Union[str, NoneType]
+    = None, initial_headers: typing.Union[typing.Dict[str, typing.Any], NoneType]
+    = None, access_condition: typing.Union[azure.cosmos.AccessCondition, NoneType]
+    = None, populate_query_metrics: typing.Union[bool, NoneType] = None) -> azure.cosmos.Item'
   parent: azure.cosmos.Container
   uid: azure.cosmos.Container.upsert_item
-- fullName: azure.cosmos.Container.upsert_stored_procedure
-  isExternal: false
-  name: upsert_stored_procedure(trigger)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.upsert_stored_procedure
-- fullName: azure.cosmos.Container.upsert_trigger
-  isExternal: false
-  name: upsert_trigger(trigger)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.upsert_trigger
-- fullName: azure.cosmos.Container.upsert_user_defined_function
-  isExternal: false
-  name: upsert_user_defined_function(trigger)
-  parent: azure.cosmos.Container
-  uid: azure.cosmos.Container.upsert_user_defined_function

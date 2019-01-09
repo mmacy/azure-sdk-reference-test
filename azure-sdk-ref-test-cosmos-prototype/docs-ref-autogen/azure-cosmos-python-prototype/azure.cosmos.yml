@@ -6,6 +6,7 @@ items:
   - azure.cosmos.Database
   - azure.cosmos.Container
   - azure.cosmos.Item
+  - azure.cosmos.query_iterator
   - azure.cosmos.CosmosClient
   - azure.cosmos.Database
   - azure.cosmos.Container
@@ -20,17 +21,18 @@ items:
     id: cosmos
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+      repo: https://github.com/mmacy/cosmos-python-prototype
     startLine: 0
-  summary: 'Access (query/create/delete/manage) items, databases and collections in
-    Azure Cosmos SQL Databases
+  summary: 'Create, read, update, and delete databases, containers, and items in Azure
+    Cosmos DB SQL API databases.
 
     '
   type: package
   uid: azure.cosmos
-- children: []
+- children:
+  - azure.cosmos.query_iterator
   fullName: azure.cosmos
   kind: import
   langs:
@@ -41,12 +43,12 @@ items:
     id: cosmos
     path: .\azure\cosmos\__init__.py
     remote:
-      branch: ref-prototype
+      branch: master
       path: .\azure\cosmos\__init__.py
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+      repo: https://github.com/mmacy/cosmos-python-prototype
     startLine: 0
-  summary: 'Access (query/create/delete/manage) items, databases and collections in
-    Azure Cosmos SQL Databases
+  summary: 'Create, read, update, and delete databases, containers, and items in Azure
+    Cosmos DB SQL API databases.
 
     '
   type: package
@@ -72,6 +74,11 @@ references:
   name: Item
   parent: azure.cosmos
   uid: azure.cosmos.Item
+- fullName: azure.cosmos.query_iterator
+  isExternal: false
+  name: query_iterator
+  parent: azure.cosmos
+  uid: azure.cosmos.query_iterator
 - fullName: azure.cosmos.CosmosClient
   isExternal: false
   name: CosmosClient

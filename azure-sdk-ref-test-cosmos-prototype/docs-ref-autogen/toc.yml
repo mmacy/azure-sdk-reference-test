@@ -1,6 +1,11 @@
 - items:
   - items:
     - items:
+      - items:
+        - name: azure.cosmos.query_iterator.QueryResultIterator
+          uid: azure.cosmos.query_iterator.QueryResultIterator
+        name: azure.cosmos.query_iterator
+        uid: azure.cosmos.query_iterator
       - name: azure.cosmos.Container
         uid: azure.cosmos.Container
       - name: azure.cosmos.CosmosClient

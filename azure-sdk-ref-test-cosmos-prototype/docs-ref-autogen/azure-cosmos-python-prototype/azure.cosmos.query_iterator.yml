@@ -1,0 +1,26 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.cosmos.query_iterator.QueryResultIterator
+  fullName: azure.cosmos.query_iterator
+  langs:
+  - python
+  module: azure.cosmos.query_iterator
+  name: query_iterator
+  source:
+    id: query_iterator
+    path: .\azure\cosmos\query_iterator.py
+    remote:
+      branch: master
+      path: .\azure\cosmos\query_iterator.py
+      repo: https://github.com/mmacy/cosmos-python-prototype
+    startLine: 0
+  type: module
+  uid: azure.cosmos.query_iterator
+references:
+- fullName: azure.cosmos.query_iterator.QueryResultIterator
+  isExternal: false
+  name: QueryResultIterator
+  parent: azure.cosmos.query_iterator
+  uid: azure.cosmos.query_iterator.QueryResultIterator

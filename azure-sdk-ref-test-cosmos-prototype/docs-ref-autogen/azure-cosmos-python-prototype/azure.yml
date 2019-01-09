@@ -14,9 +14,9 @@ items:
     id: azure
     path: null
     remote:
-      branch: ref-prototype
+      branch: master
       path: null
-      repo: https://github.com/mmacy/azure-cosmos-python-prototype
+      repo: https://github.com/mmacy/cosmos-python-prototype
     startLine: null
   type: package
   uid: azure
