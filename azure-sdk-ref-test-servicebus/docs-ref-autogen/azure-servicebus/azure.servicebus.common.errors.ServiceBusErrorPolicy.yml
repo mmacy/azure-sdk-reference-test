@@ -1,0 +1,109 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.common.errors.ServiceBusErrorPolicy.on_connection_error
+  - azure.servicebus.common.errors.ServiceBusErrorPolicy.on_link_error
+  - azure.servicebus.common.errors.ServiceBusErrorPolicy.on_unrecognized_error
+  class: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: uamqp.errors.ErrorPolicy
+  langs:
+  - python
+  module: azure.servicebus.common.errors
+  name: ServiceBusErrorPolicy
+  source:
+    id: ServiceBusErrorPolicy
+    path: azure-servicebus\azure\servicebus\common\errors.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\errors.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 62
+  summary: '
+
+
+    '
+  syntax:
+    content: ServiceBusErrorPolicy(max_retries=3, is_session=False)
+  type: class
+  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy
+- class: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_connection_error
+  langs:
+  - python
+  module: azure.servicebus.common.errors
+  name: on_connection_error(error)
+  source:
+    id: on_connection_error
+    path: azure-servicebus\azure\servicebus\common\errors.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\errors.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 78
+  syntax:
+    content: on_connection_error(error)
+    parameters:
+    - id: error
+  type: method
+  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_connection_error
+- class: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_link_error
+  langs:
+  - python
+  module: azure.servicebus.common.errors
+  name: on_link_error(error)
+  source:
+    id: on_link_error
+    path: azure-servicebus\azure\servicebus\common\errors.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\errors.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 73
+  syntax:
+    content: on_link_error(error)
+    parameters:
+    - id: error
+  type: method
+  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_link_error
+- class: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_unrecognized_error
+  langs:
+  - python
+  module: azure.servicebus.common.errors
+  name: on_unrecognized_error(error)
+  source:
+    id: on_unrecognized_error
+    path: azure-servicebus\azure\servicebus\common\errors.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\errors.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 68
+  syntax:
+    content: on_unrecognized_error(error)
+    parameters:
+    - id: error
+  type: method
+  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_unrecognized_error
+references:
+- fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_connection_error
+  isExternal: false
+  name: on_connection_error(error)
+  parent: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_connection_error
+- fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_link_error
+  isExternal: false
+  name: on_link_error(error)
+  parent: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_link_error
+- fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_unrecognized_error
+  isExternal: false
+  name: on_unrecognized_error(error)
+  parent: azure.servicebus.common.errors.ServiceBusErrorPolicy
+  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy.on_unrecognized_error

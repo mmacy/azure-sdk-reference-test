@@ -1,0 +1,39 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.control_client.constants
+  - azure.servicebus.control_client.models
+  - azure.servicebus.control_client.servicebusservice
+  fullName: azure.servicebus.control_client
+  kind: import
+  langs:
+  - python
+  module: azure.servicebus.control_client
+  name: control_client
+  source:
+    id: control_client
+    path: azure-servicebus\azure\servicebus\control_client\__init__.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\control_client\__init__.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 0
+  type: package
+  uid: azure.servicebus.control_client
+references:
+- fullName: azure.servicebus.control_client.constants
+  isExternal: false
+  name: constants
+  parent: azure.servicebus.control_client
+  uid: azure.servicebus.control_client.constants
+- fullName: azure.servicebus.control_client.models
+  isExternal: false
+  name: models
+  parent: azure.servicebus.control_client
+  uid: azure.servicebus.control_client.models
+- fullName: azure.servicebus.control_client.servicebusservice
+  isExternal: false
+  name: servicebusservice
+  parent: azure.servicebus.control_client
+  uid: azure.servicebus.control_client.servicebusservice

@@ -1,0 +1,185 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.aio.async_message.Message.abandon
+  - azure.servicebus.aio.async_message.Message.complete
+  - azure.servicebus.aio.async_message.Message.dead_letter
+  - azure.servicebus.aio.async_message.Message.defer
+  - azure.servicebus.aio.async_message.Message.renew_lock
+  class: azure.servicebus.aio.async_message.Message
+  fullName: azure.servicebus.aio.async_message.Message
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: azure.servicebus.common.message.Message
+  langs:
+  - python
+  module: azure.servicebus.aio.async_message
+  name: Message
+  source:
+    id: Message
+    path: azure-servicebus\azure\servicebus\aio\async_message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\aio\async_message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 16
+  summary: '
+
+
+
+
+    '
+  syntax:
+    content: Message(body, *, encoding='UTF-8', loop=None, **kwargs)
+  type: class
+  uid: azure.servicebus.aio.async_message.Message
+- class: azure.servicebus.aio.async_message.Message
+  fullName: azure.servicebus.aio.async_message.Message.abandon
+  langs:
+  - python
+  module: azure.servicebus.aio.async_message
+  name: abandon()
+  source:
+    id: abandon
+    path: azure-servicebus\azure\servicebus\aio\async_message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\aio\async_message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 68
+  summary: 'Abandon the message. This message will be returned to the queue to be
+    reprocessed.
+
+    '
+  syntax:
+    content: abandon()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.async_message.Message.abandon
+- class: azure.servicebus.aio.async_message.Message
+  fullName: azure.servicebus.aio.async_message.Message.complete
+  langs:
+  - python
+  module: azure.servicebus.aio.async_message
+  name: complete()
+  source:
+    id: complete
+    path: azure-servicebus\azure\servicebus\aio\async_message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\aio\async_message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 37
+  summary: 'Complete the message.
+
+    '
+  syntax:
+    content: complete()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.async_message.Message.complete
+- class: azure.servicebus.aio.async_message.Message
+  fullName: azure.servicebus.aio.async_message.Message.dead_letter
+  langs:
+  - python
+  module: azure.servicebus.aio.async_message
+  name: dead_letter(description=None)
+  source:
+    id: dead_letter
+    path: azure-servicebus\azure\servicebus\aio\async_message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\aio\async_message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 51
+  summary: 'Move the message to the Dead Letter queue.
+
+    '
+  syntax:
+    content: dead_letter(description=None)
+    parameters:
+    - defaultValue: None
+      description: 'Additional details.
+
+        '
+      id: description
+      type:
+      - str
+  type: method
+  uid: azure.servicebus.aio.async_message.Message.dead_letter
+- class: azure.servicebus.aio.async_message.Message
+  fullName: azure.servicebus.aio.async_message.Message.defer
+  langs:
+  - python
+  module: azure.servicebus.aio.async_message
+  name: defer()
+  source:
+    id: defer
+    path: azure-servicebus\azure\servicebus\aio\async_message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\aio\async_message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 83
+  summary: 'Defer the message. This message will remain in the queue but must be received
+
+    specifically by its sequence number in order to be processed.
+
+    '
+  syntax:
+    content: defer()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.async_message.Message.defer
+- class: azure.servicebus.aio.async_message.Message
+  fullName: azure.servicebus.aio.async_message.Message.renew_lock
+  langs:
+  - python
+  module: azure.servicebus.aio.async_message
+  name: renew_lock()
+  source:
+    id: renew_lock
+    path: azure-servicebus\azure\servicebus\aio\async_message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\aio\async_message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 22
+  summary: 'Renew the message lock.
+
+    This operation is only available for non-sessionful messages.
+
+    '
+  syntax:
+    content: renew_lock()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.async_message.Message.renew_lock
+references:
+- fullName: azure.servicebus.aio.async_message.Message.abandon
+  isExternal: false
+  name: abandon()
+  parent: azure.servicebus.aio.async_message.Message
+  uid: azure.servicebus.aio.async_message.Message.abandon
+- fullName: azure.servicebus.aio.async_message.Message.complete
+  isExternal: false
+  name: complete()
+  parent: azure.servicebus.aio.async_message.Message
+  uid: azure.servicebus.aio.async_message.Message.complete
+- fullName: azure.servicebus.aio.async_message.Message.dead_letter
+  isExternal: false
+  name: dead_letter(description=None)
+  parent: azure.servicebus.aio.async_message.Message
+  uid: azure.servicebus.aio.async_message.Message.dead_letter
+- fullName: azure.servicebus.aio.async_message.Message.defer
+  isExternal: false
+  name: defer()
+  parent: azure.servicebus.aio.async_message.Message
+  uid: azure.servicebus.aio.async_message.Message.defer
+- fullName: azure.servicebus.aio.async_message.Message.renew_lock
+  isExternal: false
+  name: renew_lock()
+  parent: azure.servicebus.aio.async_message.Message
+  uid: azure.servicebus.aio.async_message.Message.renew_lock

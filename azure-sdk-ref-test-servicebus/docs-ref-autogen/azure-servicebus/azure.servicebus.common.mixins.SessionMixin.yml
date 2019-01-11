@@ -1,0 +1,24 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: azure.servicebus.common.mixins.SessionMixin
+  fullName: azure.servicebus.common.mixins.SessionMixin
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.servicebus.common.mixins
+  name: SessionMixin
+  source:
+    id: SessionMixin
+    path: azure-servicebus\azure\servicebus\common\mixins.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\mixins.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 351
+  syntax: {}
+  type: class
+  uid: azure.servicebus.common.mixins.SessionMixin
+references: []

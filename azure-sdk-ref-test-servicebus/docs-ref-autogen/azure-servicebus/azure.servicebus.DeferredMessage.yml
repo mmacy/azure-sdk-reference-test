@@ -1,0 +1,136 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.DeferredMessage.abandon
+  - azure.servicebus.DeferredMessage.complete
+  - azure.servicebus.DeferredMessage.dead_letter
+  - azure.servicebus.DeferredMessage.defer
+  class: azure.servicebus.DeferredMessage
+  fullName: azure.servicebus.DeferredMessage
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: azure.servicebus.common.message.Message
+  langs:
+  - python
+  module: azure.servicebus
+  name: DeferredMessage
+  source:
+    id: DeferredMessage
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 382
+  summary: '
+
+
+
+
+
+    '
+  syntax:
+    content: DeferredMessage(message, mode)
+  type: class
+  uid: azure.servicebus.DeferredMessage
+- class: azure.servicebus.DeferredMessage
+  fullName: azure.servicebus.DeferredMessage.abandon
+  langs:
+  - python
+  module: azure.servicebus
+  name: abandon()
+  source:
+    id: abandon
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 419
+  syntax:
+    content: abandon()
+    parameters: []
+  type: method
+  uid: azure.servicebus.DeferredMessage.abandon
+- class: azure.servicebus.DeferredMessage
+  fullName: azure.servicebus.DeferredMessage.complete
+  langs:
+  - python
+  module: azure.servicebus
+  name: complete()
+  source:
+    id: complete
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 406
+  syntax:
+    content: complete()
+    parameters: []
+  type: method
+  uid: azure.servicebus.DeferredMessage.complete
+- class: azure.servicebus.DeferredMessage
+  fullName: azure.servicebus.DeferredMessage.dead_letter
+  langs:
+  - python
+  module: azure.servicebus
+  name: dead_letter(description=None)
+  source:
+    id: dead_letter
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 411
+  syntax:
+    content: dead_letter(description=None)
+    parameters:
+    - defaultValue: None
+      id: description
+  type: method
+  uid: azure.servicebus.DeferredMessage.dead_letter
+- class: azure.servicebus.DeferredMessage
+  fullName: azure.servicebus.DeferredMessage.defer
+  langs:
+  - python
+  module: azure.servicebus
+  name: defer()
+  source:
+    id: defer
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 424
+  syntax:
+    content: defer()
+    parameters: []
+  type: method
+  uid: azure.servicebus.DeferredMessage.defer
+references:
+- fullName: azure.servicebus.DeferredMessage.abandon
+  isExternal: false
+  name: abandon()
+  parent: azure.servicebus.DeferredMessage
+  uid: azure.servicebus.DeferredMessage.abandon
+- fullName: azure.servicebus.DeferredMessage.complete
+  isExternal: false
+  name: complete()
+  parent: azure.servicebus.DeferredMessage
+  uid: azure.servicebus.DeferredMessage.complete
+- fullName: azure.servicebus.DeferredMessage.dead_letter
+  isExternal: false
+  name: dead_letter(description=None)
+  parent: azure.servicebus.DeferredMessage
+  uid: azure.servicebus.DeferredMessage.dead_letter
+- fullName: azure.servicebus.DeferredMessage.defer
+  isExternal: false
+  name: defer()
+  parent: azure.servicebus.DeferredMessage
+  uid: azure.servicebus.DeferredMessage.defer

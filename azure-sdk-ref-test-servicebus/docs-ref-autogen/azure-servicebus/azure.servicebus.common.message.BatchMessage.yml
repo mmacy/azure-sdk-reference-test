@@ -1,0 +1,27 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: azure.servicebus.common.message.BatchMessage
+  fullName: azure.servicebus.common.message.BatchMessage
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: azure.servicebus.common.message.Message
+  langs:
+  - python
+  module: azure.servicebus.common.message
+  name: BatchMessage
+  source:
+    id: BatchMessage
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 343
+  syntax:
+    content: BatchMessage(body, encoding='UTF-8', **kwargs)
+  type: class
+  uid: azure.servicebus.common.message.BatchMessage
+references: []
