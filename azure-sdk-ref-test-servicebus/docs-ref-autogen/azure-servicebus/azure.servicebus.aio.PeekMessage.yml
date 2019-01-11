@@ -1,0 +1,162 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.aio.PeekMessage.abandon
+  - azure.servicebus.aio.PeekMessage.complete
+  - azure.servicebus.aio.PeekMessage.dead_letter
+  - azure.servicebus.aio.PeekMessage.defer
+  - azure.servicebus.aio.PeekMessage.renew_lock
+  class: azure.servicebus.aio.PeekMessage
+  fullName: azure.servicebus.aio.PeekMessage
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: azure.servicebus.common.message.Message
+  langs:
+  - python
+  module: azure.servicebus.aio
+  name: PeekMessage
+  source:
+    id: PeekMessage
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 353
+  summary: '
+
+
+
+
+
+
+    '
+  syntax:
+    content: PeekMessage(message)
+  type: class
+  uid: azure.servicebus.aio.PeekMessage
+- class: azure.servicebus.aio.PeekMessage
+  fullName: azure.servicebus.aio.PeekMessage.abandon
+  langs:
+  - python
+  module: azure.servicebus.aio
+  name: abandon()
+  source:
+    id: abandon
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 375
+  syntax:
+    content: abandon()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.PeekMessage.abandon
+- class: azure.servicebus.aio.PeekMessage
+  fullName: azure.servicebus.aio.PeekMessage.complete
+  langs:
+  - python
+  module: azure.servicebus.aio
+  name: complete()
+  source:
+    id: complete
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 369
+  syntax:
+    content: complete()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.PeekMessage.complete
+- class: azure.servicebus.aio.PeekMessage
+  fullName: azure.servicebus.aio.PeekMessage.dead_letter
+  langs:
+  - python
+  module: azure.servicebus.aio
+  name: dead_letter(description=None)
+  source:
+    id: dead_letter
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 372
+  syntax:
+    content: dead_letter(description=None)
+    parameters:
+    - defaultValue: None
+      id: description
+  type: method
+  uid: azure.servicebus.aio.PeekMessage.dead_letter
+- class: azure.servicebus.aio.PeekMessage
+  fullName: azure.servicebus.aio.PeekMessage.defer
+  langs:
+  - python
+  module: azure.servicebus.aio
+  name: defer()
+  source:
+    id: defer
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 378
+  syntax:
+    content: defer()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.PeekMessage.defer
+- class: azure.servicebus.aio.PeekMessage
+  fullName: azure.servicebus.aio.PeekMessage.renew_lock
+  langs:
+  - python
+  module: azure.servicebus.aio
+  name: renew_lock()
+  source:
+    id: renew_lock
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 366
+  syntax:
+    content: renew_lock()
+    parameters: []
+  type: method
+  uid: azure.servicebus.aio.PeekMessage.renew_lock
+references:
+- fullName: azure.servicebus.aio.PeekMessage.abandon
+  isExternal: false
+  name: abandon()
+  parent: azure.servicebus.aio.PeekMessage
+  uid: azure.servicebus.aio.PeekMessage.abandon
+- fullName: azure.servicebus.aio.PeekMessage.complete
+  isExternal: false
+  name: complete()
+  parent: azure.servicebus.aio.PeekMessage
+  uid: azure.servicebus.aio.PeekMessage.complete
+- fullName: azure.servicebus.aio.PeekMessage.dead_letter
+  isExternal: false
+  name: dead_letter(description=None)
+  parent: azure.servicebus.aio.PeekMessage
+  uid: azure.servicebus.aio.PeekMessage.dead_letter
+- fullName: azure.servicebus.aio.PeekMessage.defer
+  isExternal: false
+  name: defer()
+  parent: azure.servicebus.aio.PeekMessage
+  uid: azure.servicebus.aio.PeekMessage.defer
+- fullName: azure.servicebus.aio.PeekMessage.renew_lock
+  isExternal: false
+  name: renew_lock()
+  parent: azure.servicebus.aio.PeekMessage
+  uid: azure.servicebus.aio.PeekMessage.renew_lock

@@ -1,0 +1,172 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.servicebus_client.SendClientMixin.get_sender
+  - azure.servicebus.servicebus_client.SendClientMixin.send
+  class: azure.servicebus.servicebus_client.SendClientMixin
+  fullName: azure.servicebus.servicebus_client.SendClientMixin
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.servicebus.servicebus_client
+  name: SendClientMixin
+  source:
+    id: SendClientMixin
+    path: azure-servicebus\azure\servicebus\servicebus_client.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\servicebus_client.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 227
+  summary: '
+
+    '
+  syntax: {}
+  type: class
+  uid: azure.servicebus.servicebus_client.SendClientMixin
+- class: azure.servicebus.servicebus_client.SendClientMixin
+  fullName: azure.servicebus.servicebus_client.SendClientMixin.get_sender
+  langs:
+  - python
+  module: azure.servicebus.servicebus_client
+  name: get_sender(message_timeout=0, session=None, **kwargs)
+  source:
+    id: get_sender
+    path: azure-servicebus\azure\servicebus\servicebus_client.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\servicebus_client.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 264
+  summary: 'Get a Sender for the ServiceBus endpoint. A Sender represents
+
+    a single open Connection with which multiple send operations can be made.
+
+    '
+  syntax:
+    content: get_sender(message_timeout=0, session=None, **kwargs)
+    parameters:
+    - defaultValue: '0'
+      description: 'The period in seconds during which the Message must be
+
+        sent. If the send in not completed in this time it will fail.
+
+        '
+      id: message_timeout
+      type:
+      - int
+    - defaultValue: None
+      description: 'An optional Session ID. If supplied, and the ServiceBus endpoint
+
+        is sessionful, this Session ID will be applied to every outgoing message sent
+        with
+
+        this Sender. If an individual message already has a Session ID, that will
+        be
+
+        used instead. If no Session ID is supplied here, nor set on an outgoing
+
+        message, a ValueError will be raised.
+
+        '
+      id: session
+      type:
+      - str
+      - uuid.Guid
+    return:
+      description: 'A Sender instance with an unopened Connection.
+
+        '
+      type:
+      - azure.servicebus.send_handler.Sender
+  type: method
+  uid: azure.servicebus.servicebus_client.SendClientMixin.get_sender
+- class: azure.servicebus.servicebus_client.SendClientMixin
+  fullName: azure.servicebus.servicebus_client.SendClientMixin.send
+  langs:
+  - python
+  module: azure.servicebus.servicebus_client
+  name: send(messages, message_timeout=0, session=None, **kwargs)
+  source:
+    id: send
+    path: azure-servicebus\azure\servicebus\servicebus_client.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\servicebus_client.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 229
+  summary: 'Send one or more messages to the current entity. This operation
+
+    will open a single-use connection, send the supplied messages, and close
+
+    connection. If the entity requires sessions, a Session ID must be set
+
+    on each outgoing message.
+
+    '
+  syntax:
+    content: send(messages, message_timeout=0, session=None, **kwargs)
+    parameters:
+    - description: 'One or more messages to be sent.
+
+        '
+      id: messages
+      type:
+      - azure.servicebus.common.message.Message
+      - list[azure.servicebus.common.message.Message]
+    - defaultValue: '0'
+      description: 'The period in seconds during which the Message must be
+
+        sent. If the send in not completed in this time it will fail.
+
+        '
+      id: message_timeout
+      type:
+      - int
+    - defaultValue: None
+      description: 'An optional Session ID. If supplied, and the ServiceBus endpoint
+
+        is sessionful, this Session ID will be applied to every outgoing message sent
+        with
+
+        this Sender. If an individual message already has a Session ID, that will
+        be
+
+        used instead. If no Session ID is supplied here, nor set on an outgoing
+
+        message, a ValueError will be raised.
+
+        '
+      id: session
+      type:
+      - str
+      - uuid.Guid
+  type: method
+  uid: azure.servicebus.servicebus_client.SendClientMixin.send
+references:
+- fullName: azure.servicebus.servicebus_client.SendClientMixin.get_sender
+  isExternal: false
+  name: get_sender(message_timeout=0, session=None, **kwargs)
+  parent: azure.servicebus.servicebus_client.SendClientMixin
+  uid: azure.servicebus.servicebus_client.SendClientMixin.get_sender
+- fullName: azure.servicebus.servicebus_client.SendClientMixin.send
+  isExternal: false
+  name: send(messages, message_timeout=0, session=None, **kwargs)
+  parent: azure.servicebus.servicebus_client.SendClientMixin
+  uid: azure.servicebus.servicebus_client.SendClientMixin.send
+- fullName: list[azure.servicebus.common.message.Message]
+  name: list[Message]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.Message
+    name: Message
+    uid: azure.servicebus.common.message.Message
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.Message]

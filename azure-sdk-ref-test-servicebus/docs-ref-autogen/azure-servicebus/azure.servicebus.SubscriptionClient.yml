@@ -1,0 +1,110 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.SubscriptionClient.from_connection_string
+  - azure.servicebus.SubscriptionClient.from_entity
+  class: azure.servicebus.SubscriptionClient
+  fullName: azure.servicebus.SubscriptionClient
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: azure.servicebus.servicebus_client.ReceiveClientMixin
+  - inheritance:
+    - type: builtins.object
+    type: azure.servicebus.common.mixins.BaseClient
+  langs:
+  - python
+  module: azure.servicebus
+  name: SubscriptionClient
+  source:
+    id: SubscriptionClient
+    path: azure-servicebus\azure\servicebus\servicebus_client.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\servicebus_client.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 540
+  summary: 'The SubscriptionClient class defines a high level interface for receiving
+
+    messages from an Azure ServiceBus Subscription.
+
+
+
+    '
+  syntax:
+    content: SubscriptionClient(address, name, shared_access_key_name=None, shared_access_key_value=None,
+      debug=False, **kwargs)
+  type: class
+  uid: azure.servicebus.SubscriptionClient
+- class: azure.servicebus.SubscriptionClient
+  fullName: azure.servicebus.SubscriptionClient.from_connection_string
+  langs:
+  - python
+  module: azure.servicebus
+  name: from_connection_string(conn_str, name, topic=None, **kwargs)
+  source:
+    id: from_connection_string
+    path: azure-servicebus\azure\servicebus\servicebus_client.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\servicebus_client.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 570
+  summary: 'Create a QueueClient from a connection string.
+
+    '
+  syntax:
+    content: from_connection_string(conn_str, name, topic=None, **kwargs)
+    parameters:
+    - description: 'The connection string.
+
+        '
+      id: conn_str
+      type:
+      - str
+    - description: 'The name of the Queue, if the EntityName is
+
+        not included in the connection string.
+
+        '
+      id: queue_name
+    - id: name
+    - defaultValue: None
+      id: topic
+  type: method
+  uid: azure.servicebus.SubscriptionClient.from_connection_string
+- class: azure.servicebus.SubscriptionClient
+  fullName: azure.servicebus.SubscriptionClient.from_entity
+  langs:
+  - python
+  module: azure.servicebus
+  name: from_entity(address, topic, entity, **kwargs)
+  source:
+    id: from_entity
+    path: azure-servicebus\azure\servicebus\servicebus_client.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\servicebus_client.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 586
+  syntax:
+    content: from_entity(address, topic, entity, **kwargs)
+    parameters:
+    - id: cls
+    - id: address
+    - id: topic
+    - id: entity
+  type: method
+  uid: azure.servicebus.SubscriptionClient.from_entity
+references:
+- fullName: azure.servicebus.SubscriptionClient.from_connection_string
+  isExternal: false
+  name: from_connection_string(conn_str, name, topic=None, **kwargs)
+  parent: azure.servicebus.SubscriptionClient
+  uid: azure.servicebus.SubscriptionClient.from_connection_string
+- fullName: azure.servicebus.SubscriptionClient.from_entity
+  isExternal: false
+  name: from_entity(address, topic, entity, **kwargs)
+  parent: azure.servicebus.SubscriptionClient
+  uid: azure.servicebus.SubscriptionClient.from_entity

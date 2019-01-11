@@ -1,0 +1,83 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.common.utils.AutoLockRenew.register
+  - azure.servicebus.common.utils.AutoLockRenew.shutdown
+  class: azure.servicebus.common.utils.AutoLockRenew
+  fullName: azure.servicebus.common.utils.AutoLockRenew
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.servicebus.common.utils
+  name: AutoLockRenew
+  source:
+    id: AutoLockRenew
+    path: azure-servicebus\azure\servicebus\common\utils.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\utils.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 85
+  summary: '
+
+    '
+  syntax:
+    content: AutoLockRenew(executor=None, max_workers=None)
+  type: class
+  uid: azure.servicebus.common.utils.AutoLockRenew
+- class: azure.servicebus.common.utils.AutoLockRenew
+  fullName: azure.servicebus.common.utils.AutoLockRenew.register
+  langs:
+  - python
+  module: azure.servicebus.common.utils
+  name: register(renewable, timeout=300)
+  source:
+    id: register
+    path: azure-servicebus\azure\servicebus\common\utils.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\utils.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 128
+  syntax:
+    content: register(renewable, timeout=300)
+    parameters:
+    - id: renewable
+    - defaultValue: '300'
+      id: timeout
+  type: method
+  uid: azure.servicebus.common.utils.AutoLockRenew.register
+- class: azure.servicebus.common.utils.AutoLockRenew
+  fullName: azure.servicebus.common.utils.AutoLockRenew.shutdown
+  langs:
+  - python
+  module: azure.servicebus.common.utils
+  name: shutdown(wait=True)
+  source:
+    id: shutdown
+    path: azure-servicebus\azure\servicebus\common\utils.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\utils.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 132
+  syntax:
+    content: shutdown(wait=True)
+    parameters:
+    - defaultValue: 'True'
+      id: wait
+  type: method
+  uid: azure.servicebus.common.utils.AutoLockRenew.shutdown
+references:
+- fullName: azure.servicebus.common.utils.AutoLockRenew.register
+  isExternal: false
+  name: register(renewable, timeout=300)
+  parent: azure.servicebus.common.utils.AutoLockRenew
+  uid: azure.servicebus.common.utils.AutoLockRenew.register
+- fullName: azure.servicebus.common.utils.AutoLockRenew.shutdown
+  isExternal: false
+  name: shutdown(wait=True)
+  parent: azure.servicebus.common.utils.AutoLockRenew
+  uid: azure.servicebus.common.utils.AutoLockRenew.shutdown

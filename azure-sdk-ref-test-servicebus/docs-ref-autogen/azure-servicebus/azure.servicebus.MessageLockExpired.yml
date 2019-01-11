@@ -1,0 +1,31 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: azure.servicebus.MessageLockExpired
+  fullName: azure.servicebus.MessageLockExpired
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - inheritance:
+        - type: builtins.object
+        type: builtins.BaseException
+      type: builtins.Exception
+    type: azure.servicebus.common.errors.ServiceBusError
+  langs:
+  - python
+  module: azure.servicebus
+  name: MessageLockExpired
+  source:
+    id: MessageLockExpired
+    path: azure-servicebus\azure\servicebus\common\errors.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\errors.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 144
+  syntax:
+    content: MessageLockExpired(message=None, inner_exception=None)
+  type: class
+  uid: azure.servicebus.MessageLockExpired
+references: []

@@ -1,0 +1,336 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.Message.abandon
+  - azure.servicebus.Message.annotations
+  - azure.servicebus.Message.body
+  - azure.servicebus.Message.complete
+  - azure.servicebus.Message.dead_letter
+  - azure.servicebus.Message.defer
+  - azure.servicebus.Message.renew_lock
+  - azure.servicebus.Message.schedule
+  - azure.servicebus.Message.user_properties
+  class: azure.servicebus.Message
+  fullName: azure.servicebus.Message
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: azure.servicebus
+  name: Message
+  source:
+    id: Message
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 21
+  summary: '
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: Message(body, encoding='UTF-8', **kwargs)
+  type: class
+  uid: azure.servicebus.Message
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.abandon
+  langs:
+  - python
+  module: azure.servicebus
+  name: abandon()
+  source:
+    id: abandon
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 314
+  summary: 'Abandon the message. This message will be returned to the queue to be
+    reprocessed.
+
+    '
+  syntax:
+    content: abandon()
+    parameters: []
+  type: method
+  uid: azure.servicebus.Message.abandon
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.annotations
+  langs:
+  - python
+  module: azure.servicebus
+  name: annotations
+  source:
+    id: annotations
+    path: null
+    remote:
+      branch: servicebus
+      path: null
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: null
+  summary: 'The annotations of the message.
+
+    '
+  syntax:
+    return:
+      type:
+      - dict
+  type: attribute
+  uid: azure.servicebus.Message.annotations
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.body
+  langs:
+  - python
+  module: azure.servicebus
+  name: body
+  source:
+    id: body
+    path: null
+    remote:
+      branch: servicebus
+      path: null
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: null
+  summary: 'The body of the event data object.
+
+    '
+  syntax:
+    return:
+      type:
+      - bytes
+      - generator[bytes]
+  type: attribute
+  uid: azure.servicebus.Message.body
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.complete
+  langs:
+  - python
+  module: azure.servicebus
+  name: complete()
+  source:
+    id: complete
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 284
+  summary: 'Complete the message.
+
+    '
+  syntax:
+    content: complete()
+    parameters: []
+  type: method
+  uid: azure.servicebus.Message.complete
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.dead_letter
+  langs:
+  - python
+  module: azure.servicebus
+  name: dead_letter(description=None)
+  source:
+    id: dead_letter
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 298
+  summary: 'Move the message to the Dead Letter queue.
+
+    '
+  syntax:
+    content: dead_letter(description=None)
+    parameters:
+    - defaultValue: None
+      description: 'Additional details.
+
+        '
+      id: description
+      type:
+      - str
+  type: method
+  uid: azure.servicebus.Message.dead_letter
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.defer
+  langs:
+  - python
+  module: azure.servicebus
+  name: defer()
+  source:
+    id: defer
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 328
+  summary: 'Defer the message. This message will remain in the queue but must be received
+
+    specifically by its sequence number in order to be processed.
+
+    '
+  syntax:
+    content: defer()
+    parameters: []
+  type: method
+  uid: azure.servicebus.Message.defer
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.renew_lock
+  langs:
+  - python
+  module: azure.servicebus
+  name: renew_lock()
+  source:
+    id: renew_lock
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 269
+  summary: 'Renew the message lock.
+
+    This operation is only available for non-sessionful messages.
+
+    '
+  syntax:
+    content: renew_lock()
+    parameters: []
+  type: method
+  uid: azure.servicebus.Message.renew_lock
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.schedule
+  langs:
+  - python
+  module: azure.servicebus
+  name: schedule(schedule_time)
+  source:
+    id: schedule
+    path: azure-servicebus\azure\servicebus\common\message.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\message.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 257
+  summary: 'Add a specific enqueue time to the message.
+
+    '
+  syntax:
+    content: schedule(schedule_time)
+    parameters:
+    - description: 'The scheduled time to enqueue the message.
+
+        '
+      id: schedule_time
+      type:
+      - datetime.datetime
+  type: method
+  uid: azure.servicebus.Message.schedule
+- class: azure.servicebus.Message
+  fullName: azure.servicebus.Message.user_properties
+  langs:
+  - python
+  module: azure.servicebus
+  name: user_properties
+  source:
+    id: user_properties
+    path: null
+    remote:
+      branch: servicebus
+      path: null
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: null
+  summary: 'Application defined properties on the message.
+
+    '
+  syntax:
+    return:
+      type:
+      - dict
+  type: attribute
+  uid: azure.servicebus.Message.user_properties
+references:
+- fullName: azure.servicebus.Message.abandon
+  isExternal: false
+  name: abandon()
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.abandon
+- fullName: azure.servicebus.Message.annotations
+  isExternal: false
+  name: annotations
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.annotations
+- fullName: azure.servicebus.Message.body
+  isExternal: false
+  name: body
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.body
+- fullName: azure.servicebus.Message.complete
+  isExternal: false
+  name: complete()
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.complete
+- fullName: azure.servicebus.Message.dead_letter
+  isExternal: false
+  name: dead_letter(description=None)
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.dead_letter
+- fullName: azure.servicebus.Message.defer
+  isExternal: false
+  name: defer()
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.defer
+- fullName: azure.servicebus.Message.renew_lock
+  isExternal: false
+  name: renew_lock()
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.renew_lock
+- fullName: azure.servicebus.Message.schedule
+  isExternal: false
+  name: schedule(schedule_time)
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.schedule
+- fullName: azure.servicebus.Message.user_properties
+  isExternal: false
+  name: user_properties
+  parent: azure.servicebus.Message
+  uid: azure.servicebus.Message.user_properties
+- fullName: generator[bytes]
+  name: generator[bytes]
+  spec.python:
+  - fullName: generator
+    name: generator
+    uid: generator
+  - fullName: '['
+    name: '['
+  - fullName: bytes
+    name: bytes
+    uid: bytes
+  - fullName: ']'
+    name: ']'
+  uid: generator[bytes]

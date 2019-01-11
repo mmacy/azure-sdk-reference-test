@@ -1,0 +1,322 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.servicebus.receive_handler.SessionReceiver.get_session_state
+  - azure.servicebus.receive_handler.SessionReceiver.list_sessions
+  - azure.servicebus.receive_handler.SessionReceiver.peek
+  - azure.servicebus.receive_handler.SessionReceiver.receive_deferred_messages
+  - azure.servicebus.receive_handler.SessionReceiver.renew_lock
+  - azure.servicebus.receive_handler.SessionReceiver.set_session_state
+  class: azure.servicebus.receive_handler.SessionReceiver
+  fullName: azure.servicebus.receive_handler.SessionReceiver
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: azure.servicebus.base_handler.BaseHandler
+    type: azure.servicebus.receive_handler.Receiver
+  - inheritance:
+    - type: builtins.object
+    type: azure.servicebus.common.mixins.SessionMixin
+  langs:
+  - python
+  module: azure.servicebus.receive_handler
+  name: SessionReceiver
+  source:
+    id: SessionReceiver
+    path: azure-servicebus\azure\servicebus\receive_handler.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\receive_handler.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 287
+  summary: '
+
+
+
+
+
+    '
+  syntax:
+    content: SessionReceiver(handler_id, source, auth_config, session=None, connection=None,
+      encoding='UTF-8', debug=False, **kwargs)
+  type: class
+  uid: azure.servicebus.receive_handler.SessionReceiver
+- class: azure.servicebus.receive_handler.SessionReceiver
+  fullName: azure.servicebus.receive_handler.SessionReceiver.get_session_state
+  langs:
+  - python
+  module: azure.servicebus.receive_handler
+  name: get_session_state()
+  source:
+    id: get_session_state
+    path: azure-servicebus\azure\servicebus\receive_handler.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\receive_handler.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 344
+  summary: 'Get the session state. Returns None if no state
+
+    has been set.
+
+    '
+  syntax:
+    content: get_session_state()
+    parameters: []
+    return:
+      description: 'str
+
+        '
+  type: method
+  uid: azure.servicebus.receive_handler.SessionReceiver.get_session_state
+- class: azure.servicebus.receive_handler.SessionReceiver
+  fullName: azure.servicebus.receive_handler.SessionReceiver.list_sessions
+  langs:
+  - python
+  module: azure.servicebus.receive_handler
+  name: list_sessions(updated_since=None, max_results=100, skip=0)
+  source:
+    id: list_sessions
+    path: azure-servicebus\azure\servicebus\receive_handler.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\receive_handler.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 439
+  summary: 'List the Session IDs with pending messages in the queue where the ''State''
+    of the session
+
+    has been updated since the timestamp provided. If no timestamp is provided, all
+    will be returned.
+
+    If the state of a Session has never been set, it will not be returned regardless
+    of whether
+
+    there are messages pending.
+
+    :param updated_since: The UTC datetime from which to return updated pending Session
+    IDs.
+
+    :type updated_since: datetime.datetime
+
+    :param max_results: The maximum number of Session IDs to return. Default value
+    is 100.
+
+    :type max_results: int
+
+    :param skip: The page value to jump to. Default value is 0.
+
+    :type skip: int
+
+    :returns: list[str]
+
+    '
+  syntax:
+    content: list_sessions(updated_since=None, max_results=100, skip=0)
+    parameters:
+    - defaultValue: None
+      id: updated_since
+    - defaultValue: '100'
+      id: max_results
+    - defaultValue: '0'
+      id: skip
+  type: method
+  uid: azure.servicebus.receive_handler.SessionReceiver.list_sessions
+- class: azure.servicebus.receive_handler.SessionReceiver
+  fullName: azure.servicebus.receive_handler.SessionReceiver.peek
+  langs:
+  - python
+  module: azure.servicebus.receive_handler
+  name: peek(count=1, start_from=None)
+  source:
+    id: peek
+    path: azure-servicebus\azure\servicebus\receive_handler.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\receive_handler.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 382
+  summary: 'Browse messages pending in the session. This operation does not remove
+
+    messages from the queue, nor does it lock them.
+
+    '
+  syntax:
+    content: peek(count=1, start_from=None)
+    parameters:
+    - defaultValue: '1'
+      description: 'How many message to try and peek.
+
+        '
+      id: count
+      type:
+      - int
+    - defaultValue: None
+      description: 'An enqueue timestamp from which to peek at messages.
+
+        '
+      id: start_from
+      type:
+      - datetime.datetime
+    return:
+      description: 'list[~azure.servicebus.common.message.PeekMessage]
+
+        '
+  type: method
+  uid: azure.servicebus.receive_handler.SessionReceiver.peek
+- class: azure.servicebus.receive_handler.SessionReceiver
+  fullName: azure.servicebus.receive_handler.SessionReceiver.receive_deferred_messages
+  langs:
+  - python
+  module: azure.servicebus.receive_handler
+  name: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
+    <ReceiverSettleMode.PeekLock: 1>>)'
+  source:
+    id: receive_deferred_messages
+    path: azure-servicebus\azure\servicebus\receive_handler.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\receive_handler.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 409
+  summary: 'Receive messages that have previously been deferred.
+
+    Deferred messages must have had same Session ID as the current receiver.
+
+    '
+  syntax:
+    content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
+      <ReceiverSettleMode.PeekLock: 1>>)'
+    parameters:
+    - description: 'A list of the sequence numbers of messages that have been
+
+        deferred.
+
+        '
+      id: sequence_numbers
+      type:
+      - list[int]
+    - defaultValue: ReceiveSettleMode.PeekLock
+      description: 'The receive mode, default value is PeekLock.
+
+        '
+      id: mode
+      type:
+      - azure.servicebus.common.constants.ReceiveSettleMode
+    return:
+      description: 'list[~azure.servicebus.Message]
+
+        '
+  type: method
+  uid: azure.servicebus.receive_handler.SessionReceiver.receive_deferred_messages
+- class: azure.servicebus.receive_handler.SessionReceiver
+  fullName: azure.servicebus.receive_handler.SessionReceiver.renew_lock
+  langs:
+  - python
+  module: azure.servicebus.receive_handler
+  name: renew_lock()
+  source:
+    id: renew_lock
+    path: azure-servicebus\azure\servicebus\receive_handler.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\receive_handler.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 373
+  summary: 'Renew session lock.
+
+    '
+  syntax:
+    content: renew_lock()
+    parameters: []
+  type: method
+  uid: azure.servicebus.receive_handler.SessionReceiver.renew_lock
+- class: azure.servicebus.receive_handler.SessionReceiver
+  fullName: azure.servicebus.receive_handler.SessionReceiver.set_session_state
+  langs:
+  - python
+  module: azure.servicebus.receive_handler
+  name: set_session_state(state)
+  source:
+    id: set_session_state
+    path: azure-servicebus\azure\servicebus\receive_handler.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\receive_handler.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 360
+  summary: 'Set the session state.
+
+    '
+  syntax:
+    content: set_session_state(state)
+    parameters:
+    - description: 'The state value.
+
+        '
+      id: state
+      type:
+      - str, bytes
+      - bytearray
+  type: method
+  uid: azure.servicebus.receive_handler.SessionReceiver.set_session_state
+references:
+- fullName: azure.servicebus.receive_handler.SessionReceiver.get_session_state
+  isExternal: false
+  name: get_session_state()
+  parent: azure.servicebus.receive_handler.SessionReceiver
+  uid: azure.servicebus.receive_handler.SessionReceiver.get_session_state
+- fullName: azure.servicebus.receive_handler.SessionReceiver.list_sessions
+  isExternal: false
+  name: list_sessions(updated_since=None, max_results=100, skip=0)
+  parent: azure.servicebus.receive_handler.SessionReceiver
+  uid: azure.servicebus.receive_handler.SessionReceiver.list_sessions
+- fullName: azure.servicebus.receive_handler.SessionReceiver.peek
+  isExternal: false
+  name: peek(count=1, start_from=None)
+  parent: azure.servicebus.receive_handler.SessionReceiver
+  uid: azure.servicebus.receive_handler.SessionReceiver.peek
+- fullName: azure.servicebus.receive_handler.SessionReceiver.receive_deferred_messages
+  isExternal: false
+  name: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
+    <ReceiverSettleMode.PeekLock: 1>>)'
+  parent: azure.servicebus.receive_handler.SessionReceiver
+  uid: azure.servicebus.receive_handler.SessionReceiver.receive_deferred_messages
+- fullName: azure.servicebus.receive_handler.SessionReceiver.renew_lock
+  isExternal: false
+  name: renew_lock()
+  parent: azure.servicebus.receive_handler.SessionReceiver
+  uid: azure.servicebus.receive_handler.SessionReceiver.renew_lock
+- fullName: azure.servicebus.receive_handler.SessionReceiver.set_session_state
+  isExternal: false
+  name: set_session_state(state)
+  parent: azure.servicebus.receive_handler.SessionReceiver
+  uid: azure.servicebus.receive_handler.SessionReceiver.set_session_state
+- fullName: list[int]
+  name: list[int]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: int
+    name: int
+    uid: int
+  - fullName: ']'
+    name: ']'
+  uid: list[int]
+- fullName: str, bytes
+  name: str, bytes
+  spec.python:
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: bytes
+    name: bytes
+    uid: bytes
+  uid: str, bytes

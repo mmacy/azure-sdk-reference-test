@@ -1,0 +1,31 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: azure.servicebus.common.errors.MessageSendFailed
+  fullName: azure.servicebus.common.errors.MessageSendFailed
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - inheritance:
+        - type: builtins.object
+        type: builtins.BaseException
+      type: builtins.Exception
+    type: azure.servicebus.common.errors.ServiceBusError
+  langs:
+  - python
+  module: azure.servicebus.common.errors
+  name: MessageSendFailed
+  source:
+    id: MessageSendFailed
+    path: azure-servicebus\azure\servicebus\common\errors.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\errors.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 131
+  syntax:
+    content: MessageSendFailed(inner_exception)
+  type: class
+  uid: azure.servicebus.common.errors.MessageSendFailed
+references: []

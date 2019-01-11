@@ -1,0 +1,31 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: azure.servicebus.aio.SessionLockExpired
+  fullName: azure.servicebus.aio.SessionLockExpired
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - inheritance:
+        - type: builtins.object
+        type: builtins.BaseException
+      type: builtins.Exception
+    type: azure.servicebus.common.errors.ServiceBusError
+  langs:
+  - python
+  module: azure.servicebus.aio
+  name: SessionLockExpired
+  source:
+    id: SessionLockExpired
+    path: azure-servicebus\azure\servicebus\common\errors.py
+    remote:
+      branch: servicebus
+      path: azure-servicebus\azure\servicebus\common\errors.py
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: 151
+  syntax:
+    content: SessionLockExpired(message=None, inner_exception=None)
+  type: class
+  uid: azure.servicebus.aio.SessionLockExpired
+references: []
