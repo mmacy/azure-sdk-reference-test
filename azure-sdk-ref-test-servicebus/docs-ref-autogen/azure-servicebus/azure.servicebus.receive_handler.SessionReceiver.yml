@@ -30,7 +30,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 287
+    startLine: 289
   summary: '
 
 
@@ -56,7 +56,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 344
+    startLine: 346
   summary: 'Get the session state. Returns None if no state
 
     has been set.
@@ -84,7 +84,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 439
+    startLine: 443
   summary: 'List the Session IDs with pending messages in the queue where the ''State''
     of the session
 
@@ -137,7 +137,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 382
+    startLine: 384
   summary: 'Browse messages pending in the session. This operation does not remove
 
     messages from the queue, nor does it lock them.
@@ -180,7 +180,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 409
+    startLine: 411
   summary: 'Receive messages that have previously been deferred.
 
     Deferred messages must have had same Session ID as the current receiver.
@@ -224,7 +224,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 373
+    startLine: 375
   summary: 'Renew session lock.
 
     '
@@ -246,7 +246,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 360
+    startLine: 362
   summary: 'Set the session state.
 
     '

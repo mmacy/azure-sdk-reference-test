@@ -56,7 +56,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 250
+    startLine: 252
   summary: 'Close handler connection.
 
     '
@@ -80,7 +80,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 259
+    startLine: 261
   summary: 'Receive messages from ServiceBus entity.
 
     '
@@ -142,7 +142,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 230
+    startLine: 232
   summary: 'Open handler connection.
 
     '

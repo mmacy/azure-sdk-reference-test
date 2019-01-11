@@ -35,53 +35,33 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 388
-  summary: 'This receive handler acts as an iterable message stream for retrieving
-
-    messages for a sessionful Service Bus entity. It operates a single connetion that
-    must be opened and
-
-    closed on completion. The service connection will remain open for the entirety
-    of the iterator.
-
-    If you find yourself only partially iterating the message stream, you should run
-    the receiver
-
-    in a *with* statement to ensure the connection is closed.
-
-    The Receiver should not be instantiated directly, and should be accessed from
-    a *QueueClient* or
-
-    *SubscriptionClient* using the *get_receiver()* method.
-
-    When receiving messages from a session, connection errors that would normally
-    be automatically
-
-    retried will instead raise an error due to the loss of the lock on a particular
-    session.
-
-    A specific session can be specified, or the receiver can retrieve any available
-    session using
-
-    the *NEXT_AVAILABLE* constant.
-
-
-
-    > [!NOTE]
-
-    > This object is not thread-safe.
-
-    >
-
-
-
-
-
-
-
-
-
-    '
+    startLine: 390
+  summary: "This receive handler acts as an iterable message stream for retrieving\n\
+    messages for a sessionful Service Bus entity. It operates a single connetion that\
+    \ must be opened and\nclosed on completion. The service connection will remain\
+    \ open for the entirety of the iterator.\nIf you find yourself only partially\
+    \ iterating the message stream, you should run the receiver\nin a *with* statement\
+    \ to ensure the connection is closed.\nThe Receiver should not be instantiated\
+    \ directly, and should be accessed from a *QueueClient* or\n*SubscriptionClient*\
+    \ using the *get_receiver()* method.\nWhen receiving messages from a session,\
+    \ connection errors that would normally be automatically\nretried will instead\
+    \ raise an error due to the loss of the lock on a particular session.\nA specific\
+    \ session can be specified, or the receiver can retrieve any available session\
+    \ using\nthe *NEXT_AVAILABLE* constant.\n\n\n> [!NOTE]\n> This object is not thread-safe.\n\
+    >\n\nRunning a session receiver within a context manager.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n\nRunning a session receiver for the next available\
+    \ session.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\
+    \n\n\n"
   syntax:
     content: SessionReceiver(handler_id, source, auth_config, *, session=None, loop=None,
       connection=None, encoding='UTF-8', debug=False, **kwargs)
@@ -170,13 +150,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 498
-  summary: 'Get the session state. Returns None if no state
-
-    has been set.
-
-
-    '
+    startLine: 500
+  summary: "Get the session state. Returns None if no state\nhas been set.\n\nGetting\
+    \ and setting the state of a session.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n\n   ````\n"
   syntax:
     content: get_session_state()
     parameters: []
@@ -198,7 +180,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 642
+    startLine: 646
   summary: 'List the IDs of sessions in the queue with pending messages and where
     the ''State'' of the session
 
@@ -255,15 +237,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 565
-  summary: 'Browse messages pending in the queue. This operation does not remove
-
-    messages from the queue, nor does it lock them.
-
-    This operation will only peek pending messages in the current session.
-
-
-    '
+    startLine: 567
+  summary: "Browse messages pending in the queue. This operation does not remove\n\
+    messages from the queue, nor does it lock them.\nThis operation will only peek\
+    \ pending messages in the current session.\n\nPeek messages in the queue.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=0)
     parameters:
@@ -302,17 +285,17 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 602
-  summary: 'Receive messages that have previously been deferred. This operation can
-
-    only receive deferred messages from the current session.
-
-    When receiving deferred messages from a partitioned entity, all of the supplied
-
-    sequence numbers must be messages from the same partition.
-
-
-    '
+    startLine: 604
+  summary: "Receive messages that have previously been deferred. This operation can\n\
+    only receive deferred messages from the current session.\nWhen receiving deferred\
+    \ messages from a partitioned entity, all of the supplied\nsequence numbers must\
+    \ be messages from the same partition.\n\nDefer messages, then retrieve them by\
+    \ sequence number.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>)'
@@ -350,19 +333,18 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 543
-  summary: 'Renew the session lock. This operation must be performed periodically
-
-    in order to retain a lock on the session to continue message processing.
-
-    Once the lock is lost the connection will be closed. This operation can
-
-    also be performed as an asynchronous background task by registering the session
-
-    with an *azure.servicebus.aio.AutoLockRenew* instance.
-
-
-    '
+    startLine: 545
+  summary: "Renew the session lock. This operation must be performed periodically\n\
+    in order to retain a lock on the session to continue message processing.\nOnce\
+    \ the lock is lost the connection will be closed. This operation can\nalso be\
+    \ performed as an asynchronous background task by registering the session\nwith\
+    \ an *azure.servicebus.aio.AutoLockRenew* instance.\n\nRenew the sesison lock.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n"
   syntax:
     content: renew_lock()
     parameters: []
@@ -381,11 +363,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 522
-  summary: 'Set the session state.
-
-
-    '
+    startLine: 524
+  summary: "Set the session state.\n\nGetting and setting the state of a session.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n"
   syntax:
     content: set_session_state(state)
     parameters:

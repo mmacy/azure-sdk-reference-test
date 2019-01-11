@@ -27,19 +27,19 @@ items:
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 35
-  summary: 'Initializes the service bus service for a namespace with the specified
-
-    authentication settings (SAS).
-
-
-
-
-
-
-
-
-
-    '
+  summary: "Initializes the service bus service for a namespace with the specified\n\
+    authentication settings (SAS).\n\nCreate a new instance of the ServiceBus client:<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n       import os\n       from azure.servicebus\
+    \ import ServiceBusClient\n\n       namespace = os.environ['SERVICE_BUS_HOSTNAME']\n\
+    \       shared_access_policy = os.environ['SERVICE_BUS_SAS_POLICY']\n       shared_access_key\
+    \ = os.environ['SERVICE_BUS_SAS_KEY']\n\n       client = ServiceBusClient(\n \
+    \          service_namespace=namespace,\n           shared_access_key_name=shared_access_policy,\n\
+    \           shared_access_key_value=shared_access_key)\n\n\n   ````\n\n\n\n\n\n\
+    \n\n"
   syntax:
     content: ServiceBusClient(service_namespace=None, host_base='.servicebus.windows.net',
       shared_access_key_name=None, shared_access_key_value=None, http_request_timeout=65,

@@ -40,12 +40,14 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 316
-  summary: 'Get a Sender for the Service Bus endpoint. A Sender represents
-
-    a single open connection within which multiple send operations can be made.
-
-
-    '
+  summary: "Get a Sender for the Service Bus endpoint. A Sender represents\na single\
+    \ open connection within which multiple send operations can be made.\n\nSend multiple\
+    \ messages with a Sender.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: get_sender(message_timeout=0, session=None, **kwargs)
     parameters:
@@ -97,17 +99,22 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 259
-  summary: 'Send one or more messages to the current entity. This operation
-
-    will open a single-use connection, send the supplied messages, and close
-
-    connection. If the entity requires sessions, a session ID must be either
-
-    provided here, or set on each outgoing message.
-
-
-
-    '
+  summary: "Send one or more messages to the current entity. This operation\nwill\
+    \ open a single-use connection, send the supplied messages, and close\nconnection.\
+    \ If the entity requires sessions, a session ID must be either\nprovided here,\
+    \ or set on each outgoing message.\n\nSend a single message.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n\nSend multiple messages.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n"
   syntax:
     content: send(messages, message_timeout=0, session=None, **kwargs)
     parameters:

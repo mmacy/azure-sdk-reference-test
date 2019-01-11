@@ -50,7 +50,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 137
+    startLine: 152
+  summary: 'Abandon the message. This message will be returned to the queue to be
+    reprocessed.
+
+    '
   syntax:
     content: abandon()
     parameters: []
@@ -70,6 +74,9 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 124
+  summary: 'Complete the message.
+
+    '
   syntax:
     content: complete()
     parameters: []
@@ -88,12 +95,20 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 129
+    startLine: 136
+  summary: 'Move the message to the Dead Letter queue.
+
+    '
   syntax:
     content: dead_letter(description=None)
     parameters:
     - defaultValue: None
+      description: 'Additional details.
+
+        '
       id: description
+      type:
+      - str
   type: method
   uid: azure.servicebus.aio.async_message.DeferredMessage.dead_letter
 - class: azure.servicebus.aio.async_message.DeferredMessage
@@ -109,7 +124,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 142
+    startLine: 163
+  summary: 'A DeferredMessage cannot be deferred. Raises *ValueError*.
+
+    '
   syntax:
     content: defer()
     parameters: []

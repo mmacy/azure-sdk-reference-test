@@ -24,7 +24,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 540
+    startLine: 542
   summary: 'The SubscriptionClient class defines a high level interface for receiving
 
     messages from an Azure ServiceBus Subscription.
@@ -50,7 +50,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 570
+    startLine: 572
   summary: 'Create a QueueClient from a connection string.
 
     '
@@ -87,7 +87,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 586
+    startLine: 588
   syntax:
     content: from_entity(address, topic, entity, **kwargs)
     parameters:

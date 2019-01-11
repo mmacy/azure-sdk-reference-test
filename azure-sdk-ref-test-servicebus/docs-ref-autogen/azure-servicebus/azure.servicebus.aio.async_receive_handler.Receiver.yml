@@ -32,41 +32,21 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 40
-  summary: 'This receive handler acts as an iterable message stream for retrieving
-
-    messages for a Service Bus entity. It operates a single connetion that must be
-    opened and
-
-    closed on completion. The service connection will remain open for the entirety
-    of the iterator.
-
-    If you find yourself only partially iterating the message stream, you should run
-    the receiver
-
-    in a *with* statement to ensure the connection is closed.
-
-    The Receiver should not be instantiated directly, and should be accessed from
-    a *QueueClient* or
-
-    *SubscriptionClient* using the *get_receiver()* method.
-
-
-
-    > [!NOTE]
-
-    > This object is not thread-safe.
-
-    >
-
-
-
-
-
-
-
-
-
-    '
+  summary: "This receive handler acts as an iterable message stream for retrieving\n\
+    messages for a Service Bus entity. It operates a single connetion that must be\
+    \ opened and\nclosed on completion. The service connection will remain open for\
+    \ the entirety of the iterator.\nIf you find yourself only partially iterating\
+    \ the message stream, you should run the receiver\nin a *with* statement to ensure\
+    \ the connection is closed.\nThe Receiver should not be instantiated directly,\
+    \ and should be accessed from a *QueueClient* or\n*SubscriptionClient* using the\
+    \ *get_receiver()* method.\n\n\n> [!NOTE]\n> This object is not thread-safe.\n\
+    >\n\nRunning a queue receiver within a context manager.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n\n\n\n\n\n\n\n"
   syntax:
     content: 'Receiver(handler_id, source, auth_config, *, loop=None, connection=None,
       mode=<ReceiveSettleMode.PeekLock: <ReceiverSettleMode.PeekLock: 1>>, encoding=''UTF-8'',
@@ -137,33 +117,20 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 240
-  summary: 'Close down the receiver connection. If the receiver has already closed,
-
-    this operation will do nothing. An optional exception can be passed in to
-
-    indicate that the handler was shutdown due to error.
-
-    It is recommended to open a handler within a context manager as
-
-    opposed to calling the method directly.
-
-    The receiver will be implicitly closed on completion of the message iterator,
-
-    however this method will need to be called explicitly if the message iterator
-    is not run
-
-    to completion.
-
-
-
-    > [!NOTE]
-
-    > This operation is not thread-safe.
-
-    >
-
-
-    '
+  summary: "Close down the receiver connection. If the receiver has already closed,\n\
+    this operation will do nothing. An optional exception can be passed in to\nindicate\
+    \ that the handler was shutdown due to error.\nIt is recommended to open a handler\
+    \ within a context manager as\nopposed to calling the method directly.\nThe receiver\
+    \ will be implicitly closed on completion of the message iterator,\nhowever this\
+    \ method will need to be called explicitly if the message iterator is not run\n\
+    to completion.\n\n\n> [!NOTE]\n> This operation is not thread-safe.\n>\n\nIterate\
+    \ then explicitly close a Receiver.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n\n   ````\n"
   syntax:
     content: close(exception=None)
     parameters:
@@ -191,24 +158,20 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 345
-  summary: 'Receive a batch of messages at once. This approach it optimal
-
-    if you wish to process multiple messages simultaneously. Not that the
-
-    number of messages retrieved in a single batch will be dependent on
-
-    whether *prefetch* was set for the receiver. This call will prioritize returning
-
-    quickly over meeting a specified batch size, and so will return as soon as at
-    least
-
-    one message is received and there is a gap in incoming messages regardless
-
-    of the specified batch size.
-
-
-    '
+    startLine: 347
+  summary: "Receive a batch of messages at once. This approach it optimal\nif you\
+    \ wish to process multiple messages simultaneously. Not that the\nnumber of messages\
+    \ retrieved in a single batch will be dependent on\nwhether *prefetch* was set\
+    \ for the receiver. This call will prioritize returning\nquickly over meeting\
+    \ a specified batch size, and so will return as soon as at least\none message\
+    \ is received and there is a gap in incoming messages regardless\nof the specified\
+    \ batch size.\n\nFetch a batch of messages.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n\n   ````\n"
   syntax:
     content: fetch_next(max_batch_size=None, timeout=None)
     parameters:
@@ -294,12 +257,14 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 271
-  summary: 'Browse messages pending in the queue. This operation does not remove
-
-    messages from the queue, nor does it lock them.
-
-
-    '
+  summary: "Browse messages pending in the queue. This operation does not remove\n\
+    messages from the queue, nor does it lock them.\n\nPeek messages in the queue.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=0)
     parameters:
@@ -363,14 +328,15 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 307
-  summary: 'Receive messages that have previously been deferred.
-
-    When receiving deferred messages from a partitioned entity, all of the supplied
-
-    sequence numbers must be messages from the same partition.
-
-
-    '
+  summary: "Receive messages that have previously been deferred.\nWhen receiving deferred\
+    \ messages from a partitioned entity, all of the supplied\nsequence numbers must\
+    \ be messages from the same partition.\n\nDefer messages, then retrieve them by\
+    \ sequence number.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>)'

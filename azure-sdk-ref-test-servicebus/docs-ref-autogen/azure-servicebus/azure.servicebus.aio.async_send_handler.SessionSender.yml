@@ -27,7 +27,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 144
+    startLine: 196
   summary: '
 
 
@@ -50,20 +50,25 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 163
-  summary: 'Queue a message to be sent later. This operation should be followed up
-
-    with send_pending_messages.
-
-    :param message: The message to be sent.
-
-    :type message: ~azure.servicebus.aio.async_message.Message
-
-    '
+    startLine: 223
+  summary: "Queue a message to be sent later. This operation should be followed up\n\
+    with send_pending_messages. If neither the Sender or the message\nhas a session\
+    \ ID, a *ValueError* will be raised.\n\nSchedule messages.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n"
   syntax:
     content: queue_message(message)
     parameters:
-    - id: message
+    - description: 'The message to be sent.
+
+        '
+      id: message
+      type:
+      - azure.servicebus.aio.async_message.Message
   type: method
   uid: azure.servicebus.aio.async_send_handler.SessionSender.queue_message
 - class: azure.servicebus.aio.async_send_handler.SessionSender
@@ -79,12 +84,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 174
-  summary: 'Send one or more messages to be enqueued at a specific time.
-
-    Returns a list of the sequence numbers of the enqueued messages.
-
-    '
+    startLine: 243
+  summary: "Send one or more messages to be enqueued at a specific time.\nReturns\
+    \ a list of the sequence numbers of the enqueued messages.\nIf neither the Sender\
+    \ or the message has a session ID, a *ValueError* will be raised.\n\nSchedule\
+    \ messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: schedule_messages(schedule_time, *messages)
     parameters:
@@ -119,12 +128,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 146
-  summary: 'Sends a message and blocks until acknowledgement is
-
-    received or operation times out.
-
-    '
+    startLine: 198
+  summary: "Sends a message and blocks until acknowledgement is\nreceived or the operation\
+    \ fails. If neither the Sender or the message\nhas a session ID, a *ValueError*\
+    \ will be raised.\n\nOpen a sessionful Sender and send messages.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n\n   ````\n"
   syntax:
     content: send(message)
     parameters:
@@ -134,10 +147,6 @@ items:
       id: message
       type:
       - azure.servicebus.aio.async_message.Message
-    return:
-      description: 'The outcome of the message send ~uamqp.constants.MessageSendResult
-
-        '
   type: method
   uid: azure.servicebus.aio.async_send_handler.SessionSender.send
 references:

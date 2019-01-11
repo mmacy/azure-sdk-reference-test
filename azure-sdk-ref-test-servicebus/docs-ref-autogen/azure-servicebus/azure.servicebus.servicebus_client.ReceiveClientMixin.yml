@@ -48,7 +48,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 474
+    startLine: 476
   summary: 'Get a Receiver for the deadletter endpoint of the queue. A Receiver represents
 
     a single open Connection with which multiple receive operations can be made.
@@ -103,7 +103,6 @@ items:
       id: mode
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
-      - str
     - defaultValue: '0'
       description: 'The timeout in seconds between received messages after which the
         receiver will
@@ -136,7 +135,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 417
+    startLine: 419
   summary: 'Get a Receiver for the ServiceBus endpoint. A Receiver represents
 
     a single open Connection with which multiple receive operations can be made.
@@ -196,7 +195,6 @@ items:
       id: mode
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
-      - str
     - defaultValue: '0'
       description: 'The timeout in seconds between received messages after which the
         receiver will
@@ -370,7 +368,6 @@ items:
       id: mode
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
-      - str
     return:
       description: 'list[~azure.servicebus.common.message.Message]
 
@@ -390,7 +387,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 388
+    startLine: 390
   summary: 'Settle messages that have been previously deffered.
 
     This operation is only available on Python 3.5 and above.
@@ -425,7 +422,6 @@ items:
       id: mode
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
-      - str
     return:
       description: 'list[~azure.servicebus.aio.async_message.Message]
 
