@@ -130,10 +130,10 @@ items:
     startLine: 1091
   summary: "Creates a new Event Hub.\n\nhub_name:\n   Name of event hub.\n\nhub:\n\
     \   Optional. Event hub properties. Instance of EventHub class.\n\nhub.message_retention_in_days:\n\
-    \   Number of days to retain the events for this Event Hub.\n\n\nhub.status: Status\
-    \ of the Event Hub (enabled or disabled).\nhub.user_metadata: User metadata.\n\
-    hub.partition_count: Number of shards on the Event Hub.\nfail_on_exist:\n\n\n\
-    \   Specify whether to throw an exception when the event hub exists.\n"
+    \   Number of days to retain the events for this Event Hub.\n\nhub.status:\n \
+    \  Status of the Event Hub (enabled or disabled).\n\nhub.user_metadata:\n   User\
+    \ metadata.\n\nhub.partition_count:\n   Number of shards on the Event Hub.\n\n\
+    fail_on_exist:\n   Specify whether to throw an exception when the event hub exists.\n"
   syntax:
     content: create_event_hub(hub_name, hub=None, fail_on_exist=False)
     parameters:
@@ -272,7 +272,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\servicebusservice.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 1150
+    startLine: 1153
   summary: "Deletes an Event Hub. This operation will also remove all associated\n\
     state.\n\nhub_name:\n   Name of the event hub to delete.\n\nfail_not_exist:\n\
     \   Specify whether to throw an exception if the event hub doesn't exist.\n"
@@ -557,7 +557,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\servicebusservice.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 1178
+    startLine: 1181
   summary: "Retrieves an existing event hub.\n\nhub_name:\n   Name of the event hub.\n"
   syntax:
     content: get_event_hub(hub_name)
@@ -1001,7 +1001,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\servicebusservice.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 1196
+    startLine: 1199
   summary: 'Sends a new message event to an Event Hub.
 
     '
@@ -1232,7 +1232,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\servicebusservice.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 1126
+    startLine: 1129
   summary: "Updates an Event Hub.\n\nhub_name:\n   Name of event hub.\n\nhub:\n  \
     \ Optional. Event hub properties. Instance of EventHub class.\n\nhub.message_retention_in_days:\n\
     \   Number of days to retain the events for this Event Hub.\n"

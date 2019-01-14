@@ -27,7 +27,31 @@ items:
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 40
-  summary: 'Implements a Receiver.
+  summary: 'This receive handler acts as an iterable message stream for retrieving
+
+    messages for a Service Bus entity. It operates a single connetion that must be
+    opened and
+
+    closed on completion. The service connection will remain open for the entirety
+    of the iterator.
+
+    If you find yourself only partially iterating the message stream, you should run
+    the receiver
+
+    in a *with* statement to ensure the connection is closed.
+
+    The Receiver should not be instantiated directly, and should be accessed from
+    a *QueueClient* or
+
+    *SubscriptionClient* using the *get_receiver()* method.
+
+
+
+    > [!NOTE]
+
+    > This object is not thread-safe.
+
+    >
 
 
 
@@ -41,6 +65,50 @@ items:
   syntax:
     content: 'Receiver(handler_id, source, auth_config, connection=None, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, encoding=''UTF-8'', debug=False, **kwargs)'
+    parameters:
+    - description: 'The ID used as the connection name for the Receiver.
+
+        '
+      id: handler_id
+      type:
+      - str
+    - description: 'The endpoint from which to receive messages.
+
+        '
+      id: source
+      type:
+      - uamqp.Source
+    - description: 'The SASL auth credentials.
+
+        '
+      id: auth_config
+      type:
+      - dict[str, str]
+    - description: 'A shared connection [not yet supported].
+
+        '
+      id: connection
+      type:
+      - uamqp.Connection
+    - description: 'The receive connection mode. Value must be either PeekLock or
+        ReceiveAndDelete.
+
+        '
+      id: mode
+      type:
+      - azure.servicebus.common.constants.ReceiveSettleMode
+    - description: 'The encoding used for string properties. Default is ''UTF-8''.
+
+        '
+      id: encoding
+      type:
+      - str
+    - description: 'Whether to enable network trace debug logs.
+
+        '
+      id: debug
+      type:
+      - bool
   type: class
   uid: azure.servicebus.receive_handler.Receiver
 - class: azure.servicebus.receive_handler.Receiver
@@ -56,10 +124,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 252
-  summary: 'Close handler connection.
-
-    '
+    startLine: 316
+  summary: "Close handler connection.\n\nClose the connection and shutdown the receiver<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n       receiver = queue_client.get_receiver()\n\
+    \       for message in receiver:\n           print(message)\n           break\n\
+    \       receiver.close()\n\n   ````\n"
   syntax:
     content: close(exception=None)
     parameters:
@@ -80,10 +153,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 261
-  summary: 'Receive messages from ServiceBus entity.
-
-    '
+    startLine: 334
+  summary: "Receive messages from ServiceBus entity.\n\nGet the messages in batch\
+    \ from the receiver<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n   # Receive messages in Batch (specify the amount )\n       messages\
+    \ = receiver_client.fetch_next(max_batch_size=15, timeout=1)\n       for m in\
+    \ messages:\n           print(m.message)\n\n   ````\n"
   syntax:
     content: fetch_next(max_batch_size=None, timeout=None)
     parameters:
@@ -123,7 +202,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 148
+    startLine: 178
   syntax:
     content: next()
     parameters: []
@@ -142,10 +221,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 232
-  summary: 'Open handler connection.
-
-    '
+    startLine: 287
+  summary: "Open handler connection.\n\nOpen the connection to start receiving messages<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n       receiver = queue_client.get_receiver()\n\
+    \       for message in receiver:\n           print(message)\n           break\n\
+    \       receiver.close()\n\n   ````\n"
   syntax:
     content: open()
     parameters: []
@@ -164,12 +248,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 175
-  summary: 'Browse messages pending in the queue. This operation does not remove
-
-    messages from the queue, nor does it lock them.
-
-    '
+    startLine: 213
+  summary: "Browse messages pending in the queue. This operation does not remove\n\
+    messages from the queue, nor does it lock them.\n\nLoog at pending messages in\
+    \ the queue<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n   # Peek at specific number of messages\n       receiver_client.peek(count=5)\n\
+    \n   ````\n"
   syntax:
     content: peek(count=1, start_from=None)
     parameters:
@@ -207,11 +295,15 @@ items:
       path: null
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: null
-  summary: 'The current size of the unprocessed message queue.
-
-    :returns: int
-
-    '
+  summary: "The current size of the unprocessed message queue.\n:returns: int\n\n\
+    Get the number of unprocessed messages in the queue<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Get the number of unprocessed\
+    \ messages in queue\n       num_unprocessed_msgs = receiver.queue_size()\n\n \
+    \  ````\n"
   syntax: {}
   type: attribute
   uid: azure.servicebus.receive_handler.Receiver.queue_size
@@ -229,10 +321,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 202
-  summary: 'Receive messages that have previously been deferred.
-
-    '
+    startLine: 249
+  summary: "Receive messages that have previously been deferred.\n\nGet the messages\
+    \ which were previously deferred<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Receive deferred messages \n   # Provide sequence\
+    \ numbers of messages which were deferred.\n       receiver_client.receive_deferred_messages(sequence_numbers=seq_numbers)\n\
+    \n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>)'
@@ -295,6 +393,25 @@ references:
     <ReceiverSettleMode.PeekLock: 1>>)'
   parent: azure.servicebus.receive_handler.Receiver
   uid: azure.servicebus.receive_handler.Receiver.receive_deferred_messages
+- fullName: dict[str, str]
+  name: dict[str, str]
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  uid: dict[str, str]
 - fullName: list[int]
   name: list[int]
   spec.python:

@@ -83,7 +83,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 310
+    startLine: 309
   summary: 'Abandon the message. This message will be returned to the queue to be
     reprocessed.
 
@@ -153,7 +153,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 280
+    startLine: 279
   summary: 'Complete the message.
 
     '
@@ -175,7 +175,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 294
+    startLine: 293
   summary: 'Move the message to the Dead Letter queue.
 
     '
@@ -204,7 +204,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 324
+    startLine: 323
   summary: 'Defer the message. This message will remain in the queue but must be received
 
     specifically by its sequence number in order to be processed.
@@ -228,7 +228,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 266
+    startLine: 265
   summary: 'Renew the message lock.
 
     This operation is only available for non-sessionful messages.
@@ -252,7 +252,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 254
+    startLine: 253
   summary: 'Add a specific enqueue time to the message.
 
     '

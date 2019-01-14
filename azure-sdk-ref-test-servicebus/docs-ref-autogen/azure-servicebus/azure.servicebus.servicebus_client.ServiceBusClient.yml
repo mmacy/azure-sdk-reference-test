@@ -33,13 +33,7 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n       import os\n       from azure.servicebus\
-    \ import ServiceBusClient\n\n       namespace = os.environ['SERVICE_BUS_HOSTNAME']\n\
-    \       shared_access_policy = os.environ['SERVICE_BUS_SAS_POLICY']\n       shared_access_key\
-    \ = os.environ['SERVICE_BUS_SAS_KEY']\n\n       client = ServiceBusClient(\n \
-    \          service_namespace=namespace,\n           shared_access_key_name=shared_access_policy,\n\
-    \           shared_access_key_value=shared_access_key)\n\n\n   ````\n\n\n\n\n\n\
-    \n\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\n\n\n\n"
   syntax:
     content: ServiceBusClient(service_namespace=None, host_base='.servicebus.windows.net',
       shared_access_key_name=None, shared_access_key_value=None, http_request_timeout=65,
@@ -105,9 +99,13 @@ items:
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 76
-  summary: 'Create a QueueClient from a connection string.
-
-    '
+  summary: "Create a ServiceBus client from a connection string.\n\nCreate a ServiceBusClient\
+    \ via a connection string.<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: from_connection_string(conn_str, **kwargs)
     parameters:
@@ -133,10 +131,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 97
-  summary: 'Get a client for a queue entity.
-
-    '
+    startLine: 104
+  summary: "Get a client for a queue entity.\n\nGet the specific queue client from\
+    \ service bus client<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n\n   ````\n"
   syntax:
     content: get_queue(queue_name)
     parameters:
@@ -147,7 +149,7 @@ items:
       type:
       - str
     return:
-      description: '~azure.servicebus.queue_client.QueueClient
+      description: '~azure.servicebus.servicebus_client.QueueClient
 
         '
   type: method
@@ -165,10 +167,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 179
-  summary: 'Get a client for a subscription entity.
-
-    '
+    startLine: 218
+  summary: "Get a client for a subscription entity.\n\nGet the specific subscription\
+    \ client from service bus client<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: get_subscription(topic_name, subscription_name)
     parameters:
@@ -185,7 +191,7 @@ items:
       type:
       - str
     return:
-      description: '~azure.servicebus.subscription_client.SubscriptionClient
+      description: '~azure.servicebus.servicebus_client.SubscriptionClient
 
         '
   type: method
@@ -203,10 +209,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 139
-  summary: 'Get a client for a topic entity.
-
-    '
+    startLine: 162
+  summary: "Get a client for a topic entity.\n\nGet the specific topic client from\
+    \ service bus client<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n\n   ````\n"
   syntax:
     content: get_topic(topic_name)
     parameters:
@@ -217,7 +227,7 @@ items:
       type:
       - str
     return:
-      description: '~azure.servicebus.topic_client.TopicClient
+      description: '~azure.servicebus.servicebus_client.TopicClient
 
         '
   type: method
@@ -235,15 +245,19 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 119
-  summary: 'Get a clients for all queue entities in the namespace.
-
-    '
+    startLine: 134
+  summary: "Get clients for all queue entities in the namespace.\n\nList the queues\
+    \ from service bus client<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: list_queues()
     parameters: []
     return:
-      description: 'list[~azure.servicebus.queue_client.QueueClient]
+      description: 'list[~azure.servicebus.servicebus_client.QueueClient]
 
         '
   type: method
@@ -261,10 +275,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 202
-  summary: 'Get a client for all subscription entities in the topic.
-
-    '
+    startLine: 249
+  summary: "Get a client for all subscription entities in the topic.\n\nList the subscriptions\
+    \ from service bus client<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: list_subscriptions(topic_name)
     parameters:
@@ -275,7 +293,7 @@ items:
       type:
       - str
     return:
-      description: 'list[~azure.servicebus.subscription_client.SubscriptionClient]
+      description: 'list[~azure.servicebus.servicebus_client.SubscriptionClient]
 
         '
   type: method
@@ -293,15 +311,19 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 160
-  summary: 'Get a client for all topic entities in the namespace.
-
-    '
+    startLine: 191
+  summary: "Get a client for all topic entities in the namespace.\n\nList the topics\
+    \ from service bus client<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: list_topics()
     parameters: []
     return:
-      description: 'list[~azure.servicebus.topic_client.TopicClient]
+      description: 'list[~azure.servicebus.servicebus_client.TopicClient]
 
         '
   type: method

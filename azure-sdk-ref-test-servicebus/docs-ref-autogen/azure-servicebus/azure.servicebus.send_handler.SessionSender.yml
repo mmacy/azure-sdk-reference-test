@@ -27,7 +27,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 148
+    startLine: 197
   summary: '
 
 
@@ -50,16 +50,17 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 167
-  summary: 'Queue a message to be sent later. This operation should be followed up
-
-    with send_pending_messages.
-
-    :param message: The message to be sent.
-
-    :type message: ~azure.servicebus.Message
-
-    '
+    startLine: 224
+  summary: "Queue a message to be sent later. This operation should be followed up\n\
+    with send_pending_messages.\n:param message: The message to be sent.\n:type message:\
+    \ ~azure.servicebus.Message\n\nPut the message to be sent later in the queue<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n       message = Message(\"Hello\
+    \ World!\")\n       message_next = Message(\"How are you?\")\n       sender.queue_message(message)\n\
+    \       sender.queue_message(message_next)\n\n   ````\n"
   syntax:
     content: queue_message(message)
     parameters:
@@ -79,12 +80,19 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 178
-  summary: 'Send one or more messages to be enqueued at a specific time.
-
-    Returns a list of the sequence numbers of the enqueued messages.
-
-    '
+    startLine: 243
+  summary: "Send one or more messages to be enqueued at a specific time.\nReturns\
+    \ a list of the sequence numbers of the enqueued messages.\n\nSchedule a message\
+    \ to be sent in future<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n\
+    <!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Get the sender - a single open Connection with\
+    \ which multiple send operations can be made\n       sender = queue_client.get_sender(session_id)\n\
+    \       message = Message(\"Hello World!\")\n       today = datetime.datetime.today()\n\
+    \   # Schedule the message 5 days from today\n       sequence_numbers = sender.schedule(today\
+    \ + datetime.timedelta(days=5),[message])\n\n   ````\n"
   syntax:
     content: schedule(schedule_time, *messages)
     parameters:
@@ -119,12 +127,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 150
-  summary: 'Sends a message and blocks until acknowledgement is
-
-    received or operation times out.
-
-    '
+    startLine: 199
+  summary: "Sends a message and blocks until acknowledgement is\nreceived or operation\
+    \ times out.\n\nSend a message and block<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Send the message via sender\n       message =\
+    \ Message(\"Hello World!\")\n       sender.send(message)\n\n   ````\n"
   syntax:
     content: send(message)
     parameters:

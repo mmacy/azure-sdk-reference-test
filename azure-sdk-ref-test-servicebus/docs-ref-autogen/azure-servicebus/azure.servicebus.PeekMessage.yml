@@ -24,7 +24,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 349
+    startLine: 348
   summary: '
 
 
@@ -50,7 +50,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 374
+    startLine: 373
   summary: 'A PeekMessage cannot be abandoned. Raises *TypeError*.
 
     '
@@ -72,7 +72,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 366
+    startLine: 365
   summary: 'A PeekMessage cannot be completed Raises *TypeError*.
 
     '
@@ -94,7 +94,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 370
+    startLine: 369
   summary: 'A PeekMessage cannot be dead-lettered. Raises *TypeError*.
 
     '
@@ -118,7 +118,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 378
+    startLine: 377
   summary: 'A PeekMessage cannot be deferred. Raises *TypeError*.
 
     '
@@ -140,7 +140,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 362
+    startLine: 361
   summary: 'A PeekMessage cannot be renewed. Raises *TypeError*.
 
     '

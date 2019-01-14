@@ -30,7 +30,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 289
+    startLine: 370
   summary: '
 
 
@@ -56,12 +56,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 346
-  summary: 'Get the session state. Returns None if no state
-
-    has been set.
-
-    '
+    startLine: 436
+  summary: "Get the session state. Returns None if no state\nhas been set.\n\nGet\
+    \ the session state of the receiver<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Get the session state\n       session_state =\
+    \ session_receiver_client.get_session_state()\n\n   ````\n"
   syntax:
     content: get_session_state()
     parameters: []
@@ -84,35 +87,25 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 443
-  summary: 'List the Session IDs with pending messages in the queue where the ''State''
-    of the session
-
-    has been updated since the timestamp provided. If no timestamp is provided, all
-    will be returned.
-
-    If the state of a Session has never been set, it will not be returned regardless
-    of whether
-
-    there are messages pending.
-
-    :param updated_since: The UTC datetime from which to return updated pending Session
-    IDs.
-
-    :type updated_since: datetime.datetime
-
-    :param max_results: The maximum number of Session IDs to return. Default value
-    is 100.
-
-    :type max_results: int
-
-    :param skip: The page value to jump to. Default value is 0.
-
-    :type skip: int
-
-    :returns: list[str]
-
-    '
+    startLine: 574
+  summary: "List the Session IDs with pending messages in the queue where the 'State'\
+    \ of the session\nhas been updated since the timestamp provided. If no timestamp\
+    \ is provided, all will be returned.\nIf the state of a Session has never been\
+    \ set, it will not be returned regardless of whether\nthere are messages pending.\n\
+    :param updated_since: The UTC datetime from which to return updated pending Session\
+    \ IDs.\n:type updated_since: datetime.datetime\n:param max_results: The maximum\
+    \ number of Session IDs to return. Default value is 100.\n:type max_results: int\n\
+    :param skip: The page value to jump to. Default value is 0.\n:type skip: int\n\
+    :returns: list[str]\n\nList the ids of sessions with pending messages<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # List sessions\n       session_ids\
+    \ = session_receiver_client.list_sessions()\n\n   # List sessions updated after\
+    \ specific time\n       today = datetime.datetime.today()\n       yesterday =\
+    \ today - datetime.timedelta(days=1)\n       session_ids = session_receiver_client.list_sessions(updated_since=yesterday)\n\
+    \n   ````\n"
   syntax:
     content: list_sessions(updated_since=None, max_results=100, skip=0)
     parameters:
@@ -137,12 +130,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 384
-  summary: 'Browse messages pending in the session. This operation does not remove
-
-    messages from the queue, nor does it lock them.
-
-    '
+    startLine: 499
+  summary: "Browse messages pending in the session. This operation does not remove\n\
+    messages from the queue, nor does it lock them.\n\nLook at pending messages in\
+    \ the queue<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n   # Peek at specific number of messages\n       receiver_client.peek(count=5)\n\
+    \n   ````\n"
   syntax:
     content: peek(count=1, start_from=None)
     parameters:
@@ -180,12 +177,17 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 411
-  summary: 'Receive messages that have previously been deferred.
-
-    Deferred messages must have had same Session ID as the current receiver.
-
-    '
+    startLine: 534
+  summary: "Receive messages that have previously been deferred.\nDeferred messages\
+    \ must have had same Session ID as the current receiver.\n\nGet the messages which\
+    \ were previously deferred in the session<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Receive deferred messages \n   # Provide sequence\
+    \ numbers of messages which were deferred.\n       receiver_client.receive_deferred_messages(sequence_numbers=seq_numbers)\n\
+    \n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>)'
@@ -224,10 +226,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 375
-  summary: 'Renew session lock.
-
-    '
+    startLine: 481
+  summary: "Renew session lock.\n\nRenew the session lock before it expires<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Renew session lock before it\
+    \ expires\n       session_receiver_client.renew_lock()\n\n   ````\n"
   syntax:
     content: renew_lock()
     parameters: []
@@ -246,10 +252,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 362
-  summary: 'Set the session state.
-
-    '
+    startLine: 460
+  summary: "Set the session state.\n\nSet the session state of the receiver<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Set the session state\n    \
+    \   session_receiver_client.set_session_state('START')\n\n   ````\n"
   syntax:
     content: set_session_state(state)
     parameters:

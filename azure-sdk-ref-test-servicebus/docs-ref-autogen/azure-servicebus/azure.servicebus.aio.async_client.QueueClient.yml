@@ -27,12 +27,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 637
+    startLine: 641
   summary: "The QueueClient class defines a high level interface for sending\nmessages\
     \ to and receiving messages from an Azure Service Bus queue.\nIf you do not wish\
     \ to perform management operations, a QueueClient can be\ninstantiated directly\
     \ to perform send and receive operations to a Queue.\nHowever if a QueueClient\
-    \ is created directory, a *get_properties* operation will\nneed to be completed\
+    \ is created directly, a *get_properties* operation will\nneed to be completed\
     \ in order to retrieve the properties of this queue (for example,\nwhether it\
     \ is sessionful).\n\nCreate a QueueClient.<!--[!code-python[Main](ples\\async_examples\\\
     test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\

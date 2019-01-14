@@ -18,7 +18,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\servicebusservice.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 1255
+    startLine: 1258
   syntax:
     content: ServiceBusWrapTokenAuthentication(account_key, issuer)
   type: class
@@ -36,7 +36,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\servicebusservice.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 1260
+    startLine: 1263
   syntax:
     content: sign_request(request, httpclient)
     parameters:

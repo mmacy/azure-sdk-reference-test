@@ -26,7 +26,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 712
+    startLine: 716
   summary: "The SubscriptionClient class defines a high level interface for receiving\n\
     messages to an Azure Service Bus Subscription.\nIf you do not wish to perform\
     \ management operations, a SubscriptionClient can be\ninstantiated directly to\
@@ -99,7 +99,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 753
+    startLine: 758
   summary: 'Create a SubscriptionClient from a connection string.
 
     '
@@ -143,7 +143,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 772
+    startLine: 777
   syntax:
     content: from_entity(address, topic, entity, **kwargs)
     parameters:

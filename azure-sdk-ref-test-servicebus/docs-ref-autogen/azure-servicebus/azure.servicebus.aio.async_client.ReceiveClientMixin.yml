@@ -48,7 +48,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 568
+    startLine: 572
   summary: "Get a Receiver for the deadletter endpoint of the entity. A Receiver represents\n\
     a single open connection with which multiple receive operations can be made.\n\
     \nReceive dead-lettered messages.<!--[!code-python[Main](ples\\async_examples\\\
@@ -122,7 +122,7 @@ items:
 
         '
       type:
-      - azure.servicebus.receive_handler.Receiver
+      - azure.servicebus.aio.async_receive_handler.Receiver
   type: method
   uid: azure.servicebus.aio.async_client.ReceiveClientMixin.get_deadletter_receiver
 - class: azure.servicebus.aio.async_client.ReceiveClientMixin
@@ -139,15 +139,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 503
-  summary: "Get a Receiver for the ServiceBus endpoint. A Receiver represents\na single\
-    \ open connection with which multiple receive operations can be made.\n\nReceive\
-    \ messages with a Receiver.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
-    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    startLine: 507
+  summary: "Get a Receiver for the Service Bus endpoint. A Receiver represents\na\
+    \ single open connection with which multiple receive operations can be made.\n\
+    \nReceive messages with a Receiver.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n\n   ````\n"
   syntax:
     content: 'get_receiver(session=None, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -217,7 +218,7 @@ items:
 
         '
       type:
-      - azure.servicebus.receive_handler.Receiver
+      - azure.servicebus.aio.async_receive_handler.Receiver
   type: method
   uid: azure.servicebus.aio.async_client.ReceiveClientMixin.get_receiver
 - class: azure.servicebus.aio.async_client.ReceiveClientMixin
@@ -233,9 +234,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 475
+    startLine: 479
   summary: 'List the IDs of sessions in the queue with pending messages and where
-    the ''State'' of the session
+    the state of the session
 
     has been updated since the timestamp provided. If no timestamp is provided, all
     will be returned.
@@ -371,7 +372,19 @@ items:
       type:
       - list[int]
     - defaultValue: ReceiveSettleMode.PeekLock
-      description: 'The receive mode, default value is PeekLock.
+      description: 'The mode with which messages will be retrieved from the entity.
+        The two options
+
+        are PeekLock and ReceiveAndDelete. Messages received with PeekLock must be
+        settled within a given
+
+        lock period before they will be removed from the queue. Messages received
+        with ReceiveAndDelete
+
+        will be immediately removed from the queue, and cannot be subsequently rejected
+        or re-received if
+
+        the client fails to process the message. The default mode is PeekLock.
 
         '
       id: mode
@@ -395,7 +408,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 443
+    startLine: 447
   summary: "Settle messages that have been previously deffered.\n\nSettle deferred\
     \ messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
     \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\

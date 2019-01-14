@@ -54,7 +54,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 93
+    startLine: 117
   summary: 'Cancel one or more messages that have previsouly been scheduled and are
 
     still pending.
@@ -67,8 +67,6 @@ items:
 
         '
       id: sequence_numbers
-      type:
-      - int
   type: method
   uid: azure.servicebus.send_handler.Sender.cancel_scheduled_messages
 - class: azure.servicebus.send_handler.Sender
@@ -84,12 +82,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 136
-  summary: 'If the handler was disconnected from the service with
-
-    a retryable error - attempt to reconnect.
-
-    '
+    startLine: 176
+  summary: "If the handler was disconnected from the service with\na retryable error\
+    \ - attempt to reconnect.\n\nReconnect to the service when connection breaks<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Reconnect to the service, if\
+    \ connection error happens.\n       sender.reconnect()\n\n   ````\n"
   syntax:
     content: reconnect()
     parameters: []
@@ -108,12 +109,19 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 75
-  summary: 'Send one or more messages to be enqueued at a specific time.
-
-    Returns a list of the sequence numbers of the enqueued messages.
-
-    '
+    startLine: 91
+  summary: "Send one or more messages to be enqueued at a specific time.\nReturns\
+    \ a list of the sequence numbers of the enqueued messages.\n\nSchedule a message\
+    \ to be sent in future<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n\
+    <!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Get the sender - a single open Connection with\
+    \ which multiple send operations can be made\n       sender = queue_client.get_sender(session_id)\n\
+    \       message = Message(\"Hello World!\")\n       today = datetime.datetime.today()\n\
+    \   # Schedule the message 5 days from today\n       sequence_numbers = sender.schedule(today\
+    \ + datetime.timedelta(days=5),[message])\n\n   ````\n"
   syntax:
     content: schedule(schedule_time, *messages)
     parameters:
@@ -148,12 +156,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 55
-  summary: 'Sends a message and blocks until acknowledgement is
-
-    received or operation times out.
-
-    '
+    startLine: 63
+  summary: "Sends a message and blocks until acknowledgement is\nreceived or operation\
+    \ times out.\n\nSend a message and block<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Send the message via sender\n       message =\
+    \ Message(\"Hello World!\")\n       sender.send(message)\n\n   ````\n"
   syntax:
     content: send(message)
     parameters:
@@ -178,10 +189,18 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 109
-  summary: 'Wait until all transferred events have been sent.
-
-    '
+    startLine: 141
+  summary: "Wait until all transferred events have been sent.\n\nSend the queued messages<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Send the pending messages\n\
+    \       message_send_status = sender.send_pending_messages()\n       i = 0\n \
+    \      for status in message_send_status:\n           messageSent = status[0]\n\
+    \           if(not(messageSent)):\n               failureReason = status[1].description\n\
+    \               print(\"Message at Index {} was not sent. Reason: {}\".format(i,failureReason))\n\
+    \n   ````\n"
   syntax:
     content: send_pending_messages()
     parameters: []

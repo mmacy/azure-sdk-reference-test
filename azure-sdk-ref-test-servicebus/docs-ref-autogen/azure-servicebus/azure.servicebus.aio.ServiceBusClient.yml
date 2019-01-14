@@ -243,7 +243,7 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 128
-  summary: 'Get a clients for all queue entities in the namespace.
+  summary: 'Get clients for all queue entities in the namespace.
 
     '
   syntax:

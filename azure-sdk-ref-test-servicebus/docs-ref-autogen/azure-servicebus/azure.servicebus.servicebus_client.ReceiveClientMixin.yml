@@ -23,7 +23,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 302
+    startLine: 383
   summary: '
 
 
@@ -48,12 +48,23 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 476
-  summary: 'Get a Receiver for the deadletter endpoint of the queue. A Receiver represents
-
-    a single open Connection with which multiple receive operations can be made.
-
-    '
+    startLine: 593
+  summary: "Get a Receiver for the deadletter endpoint of the queue. A Receiver represents\n\
+    a single open Connection with which multiple receive operations can be made.\n\
+    \nGet the dead lettered messages<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n       # Get dead lettered messages\n       with queue_client.get_deadletter_receiver(idle_timeout=1)\
+    \ as dead_letter_receiver:\n           # Peek at messages\n           message\
+    \ = dead_letter_receiver.peek()\n       \n           # Receive dead letterted\
+    \ messages in Batch\n           messages_batch = dead_letter_receiver.fetch_next()\n\
+    \           for message in messages_batch:\n               print(message)\n\n\
+    \               # Indicate message acceptance\n               message.complete()\n\
+    \n           # Receive dead lettered message continuously\n           for message\
+    \ in dead_letter_receiver:\n               print(message)\n               message.complete()\n\
+    \n   ````\n"
   syntax:
     content: 'get_deadletter_receiver(transfer_deadletter=False, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -135,12 +146,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 419
-  summary: 'Get a Receiver for the ServiceBus endpoint. A Receiver represents
-
-    a single open Connection with which multiple receive operations can be made.
-
-    '
+    startLine: 528
+  summary: "Get a Receiver for the Service Bus endpoint. A Receiver represents\na\
+    \ single open Connection with which multiple receive operations can be made.\n\
+    \nGet the receiver client from service bus client<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: 'get_receiver(session=None, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -158,7 +172,7 @@ items:
       id: session
       type:
       - str
-      - azure.servicebus.NEXT_AVAILABLE
+      - azure.servicebus.common.constants.NEXT_AVAILABLE
     - defaultValue: '0'
       description: 'The maximum number of messages to cache with each request to the
         service.
@@ -226,44 +240,51 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 332
-  summary: 'List the Session IDs with pending messages in the queue where the ''State''
-    of the session
-
-    has been updated since the timestamp provided. If no timestamp is provided, all
-    will be returned.
-
-    If the state of a Session has never been set, it will not be returned regardless
-    of whether
-
-    there are messages pending.
-
-    :param updated_since: The UTC datetime from which to return updated pending Session
-    IDs.
-
-    :type updated_since: datetime.datetime
-
-    :param max_results: The maximum number of Session IDs to return. Default value
-    is 100.
-
-    :type max_results: int
-
-    :param skip: The page value to jump to. Default value is 0.
-
-    :type skip: int
-
-    :returns: list[str]
-
-    '
+    startLine: 421
+  summary: "List the Session IDs with pending messages in the queue where the state\
+    \ of the session\nhas been updated since the timestamp provided. If no timestamp\
+    \ is provided, all will be returned.\nIf the state of a session has never been\
+    \ set, it will not be returned regardless of whether\nthere are messages pending.\n\
+    \nGet the Ids of session which have messages pending in the queue<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n       session_ids = session_client.list_sessions()\n\
+    \n       # List sessions updated after specific time\n       import datetime\n\
+    \       yesterday = datetime.datetime.today() - datetime.timedelta(days=1)\n \
+    \      session_ids = session_client.list_sessions(updated_since=yesterday)\n\n\
+    \   ````\n"
   syntax:
     content: list_sessions(updated_since=None, max_results=100, skip=0, **kwargs)
     parameters:
     - defaultValue: None
+      description: 'The UTC datetime from which to return updated pending Session
+        IDs.
+
+        '
       id: updated_since
+      type:
+      - datetime.datetime
     - defaultValue: '100'
+      description: 'The maximum number of Session IDs to return. Default value is
+        100.
+
+        '
       id: max_results
+      type:
+      - int
     - defaultValue: '0'
+      description: 'The page value to jump to. Default value is 0.
+
+        '
       id: skip
+      type:
+      - int
+    return:
+      description: 'list[str]
+
+        '
   type: method
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.list_sessions
 - class: azure.servicebus.servicebus_client.ReceiveClientMixin
@@ -279,19 +300,21 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 304
-  summary: 'Browse messages currently pending in the queue. Peeked messages
-
-    are not removed from queue, nor are they locked. The cannot be completed,
-
-    deferred or dead-lettered.
-
-    '
+    startLine: 385
+  summary: "Browse messages currently pending in the queue. Peeked messages\nare not\
+    \ removed from queue, nor are they locked. The cannot be completed,\ndeferred\
+    \ or dead-lettered.\n\nLook at specificied number of messages without removing\
+    \ them from queue<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=0, session=None, **kwargs)
     parameters:
     - defaultValue: '1'
-      description: 'Maximum number of messages to attempt to browse. The default
+      description: 'The maximum number of messages to try and peek. The default
 
         value is 1.
 
@@ -300,6 +323,13 @@ items:
       type:
       - int
     - defaultValue: '0'
+      description: 'A message sequence number from which to start browsing messages.
+
+        '
+      id: start_from
+      type:
+      - int
+    - defaultValue: None
       description: 'If the entity requires sessions, a session ID must be supplied
 
         in order that only messages from that session will be browsed. If the entity
@@ -310,13 +340,9 @@ items:
       id: session
       type:
       - str
-      - uuid.Guid
-    - defaultValue: None
-      id: session
     return:
-      description: 'list[~azure.servicebus.common.message.PeekMessage]
-
-        '
+      type:
+      - list[azure.servicebus.common.message.PeekMessage]
   type: method
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.peek
 - class: azure.servicebus.servicebus_client.ReceiveClientMixin
@@ -333,10 +359,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 358
-  summary: 'Receive messages by sequence number that have been previously deffered.
-
-    '
+    startLine: 456
+  summary: "Receive messages by sequence number that have been previously deffered.\n\
+    When receiving deferred messages from a partitioned entity, all of the supplied\n\
+    sequence numbers must be messages from the same partition.\n\nGet the messages\
+    \ which were deferred using their sequence numbers<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, **kwargs)'
@@ -369,9 +401,8 @@ items:
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
     return:
-      description: 'list[~azure.servicebus.common.message.Message]
-
-        '
+      type:
+      - list[azure.servicebus.common.message.Message]
   type: method
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.receive_deferred_messages
 - class: azure.servicebus.servicebus_client.ReceiveClientMixin
@@ -387,45 +418,31 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 390
-  summary: 'Settle messages that have been previously deffered.
-
-    This operation is only available on Python 3.5 and above.
-
-    '
+    startLine: 498
+  summary: "Settle messages that have been previously deffered.\n\nSettle deferred\
+    \ messages.<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n\n   ````\n"
   syntax:
     content: settle_deferred_messages(settlement, messages, **kwargs)
     parameters:
-    - description: 'A list of the sequence numbers of messages that have been
+    - description: 'How the messages are to be settled. This must be a string
 
-        deferred.
+        of one of the following values: ''completed'', ''suspended'', ''abandoned''.
 
         '
-      id: sequence_numbers
+      id: settlement
       type:
-      - list[str]
-    - description: 'The mode with which messages will be retrieved from the entity.
-        The two options
-
-        are PeekLock and ReceiveAndDelete. Messages received with PeekLock must be
-        settled within a given
-
-        lock period before they will be removed from the queue. Messages received
-        with ReceiveAndDelete
-
-        will be immediately removed from the queue, and cannot be subsequently rejected
-        or re-received if
-
-        the client fails to process the message. The default mode is PeekLock.
+      - str
+    - description: 'A list of deferred messages to be settled.
 
         '
-      id: mode
+      id: messages
       type:
-      - azure.servicebus.common.constants.ReceiveSettleMode
-    return:
-      description: 'list[~azure.servicebus.aio.async_message.Message]
-
-        '
+      - list[azure.servicebus.common.message.DeferredMessage]
   type: method
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.settle_deferred_messages
 references:
@@ -462,6 +479,20 @@ references:
   name: settle_deferred_messages(settlement, messages, **kwargs)
   parent: azure.servicebus.servicebus_client.ReceiveClientMixin
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.settle_deferred_messages
+- fullName: list[azure.servicebus.common.message.PeekMessage]
+  name: list[PeekMessage]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.PeekMessage
+    name: PeekMessage
+    uid: azure.servicebus.common.message.PeekMessage
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.PeekMessage]
 - fullName: list[int]
   name: list[int]
   spec.python:
@@ -476,17 +507,31 @@ references:
   - fullName: ']'
     name: ']'
   uid: list[int]
-- fullName: list[str]
-  name: list[str]
+- fullName: list[azure.servicebus.common.message.Message]
+  name: list[Message]
   spec.python:
   - fullName: list
     name: list
     uid: list
   - fullName: '['
     name: '['
-  - fullName: str
-    name: str
-    uid: str
+  - fullName: azure.servicebus.common.message.Message
+    name: Message
+    uid: azure.servicebus.common.message.Message
   - fullName: ']'
     name: ']'
-  uid: list[str]
+  uid: list[azure.servicebus.common.message.Message]
+- fullName: list[azure.servicebus.common.message.DeferredMessage]
+  name: list[DeferredMessage]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.DeferredMessage
+    name: DeferredMessage
+    uid: azure.servicebus.common.message.DeferredMessage
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.DeferredMessage]

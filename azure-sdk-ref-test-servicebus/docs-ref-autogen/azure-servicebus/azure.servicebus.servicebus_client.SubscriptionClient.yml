@@ -24,17 +24,57 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 542
-  summary: 'The SubscriptionClient class defines a high level interface for receiving
-
-    messages from an Azure ServiceBus Subscription.
-
-
-
-    '
+    startLine: 715
+  summary: "The SubscriptionClient class defines a high level interface for receiving\n\
+    messages to an Azure Service Bus Subscription.\nIf you do not wish to perform\
+    \ management operations, a SubscriptionClient can be\ninstantiated directly to\
+    \ perform receive operations from a Subscription.\n\nCreate a SubscriptionClient.<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\n\n"
   syntax:
     content: SubscriptionClient(address, name, shared_access_key_name=None, shared_access_key_value=None,
       debug=False, **kwargs)
+    parameters:
+    - description: 'The full URI of the Service Bus namespace. This can optionally
+
+        include URL-encoded access name and key.
+
+        '
+      id: address
+      type:
+      - str
+    - description: 'The name of the topic to which the Client will connect.
+
+        '
+      id: name
+      type:
+      - str
+    - description: 'The name of the shared access policy. This must be supplied
+
+        if not encoded into the address.
+
+        '
+      id: shared_access_key_name
+      type:
+      - str
+    - description: 'The shared access key. This must be supplied if not encoded
+
+        into the address.
+
+        '
+      id: shared_access_key_value
+      type:
+      - str
+    - description: 'Whether to output network trace logs to the logger. Default is
+        *False*.
+
+        '
+      id: debug
+      type:
+      - bool
   type: class
   uid: azure.servicebus.servicebus_client.SubscriptionClient
 - class: azure.servicebus.servicebus_client.SubscriptionClient
@@ -50,8 +90,8 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 572
-  summary: 'Create a QueueClient from a connection string.
+    startLine: 752
+  summary: 'Create a SubscriptionClient from a connection string.
 
     '
   syntax:
@@ -63,13 +103,20 @@ items:
       id: conn_str
       type:
       - str
-    - description: 'The name of the Queue, if the EntityName is
+    - description: 'The name of the Subscription.
+
+        '
+      id: name
+      type:
+      - str
+    - description: 'The name of the Topic, if the EntityName is
 
         not included in the connection string.
 
         '
-      id: queue_name
-    - id: name
+      id: topic
+      type:
+      - str
     - defaultValue: None
       id: topic
   type: method
@@ -87,7 +134,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 588
+    startLine: 771
   syntax:
     content: from_entity(address, topic, entity, **kwargs)
     parameters:
