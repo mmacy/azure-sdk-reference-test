@@ -54,14 +54,19 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n\nRunning a session receiver for the next available\
-    \ session.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \n````python\n\n   async with queue_client.get_receiver(session=\"MySession\"\
+    , idle_timeout=5) as session:\n       async for message in session:\n        \
+    \   await process_message(message)\n\n   ````\n\nRunning a session receiver for\
+    \ the next available session.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
     \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
     , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\
-    \n\n\n"
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   from azure.servicebus\
+    \ import NEXT_AVAILABLE, NoActiveSession\n\n   try:\n       async with queue_client.get_receiver(session=NEXT_AVAILABLE,\
+    \ idle_timeout=5) as receiver:\n           async for message in receiver:\n  \
+    \             await process_message(message)\n   except NoActiveSession:\n   \
+    \    pass\n\n   ````\n\n\n\n\n\n\n"
   syntax:
     content: SessionReceiver(handler_id, source, auth_config, *, session=None, loop=None,
       connection=None, encoding='UTF-8', debug=False, **kwargs)
@@ -158,7 +163,10 @@ items:
     a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
     \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
     , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n\n   ````\n"
+    \n   async with queue_client.get_receiver(session=\"MySession\", idle_timeout=5)\
+    \ as session:\n       current_state = await session.get_session_state()\n    \
+    \   if not current_state:\n           await session.set_session_state(\"OPENED\"\
+    )\n\n   ````\n"
   syntax:
     content: get_session_state()
     parameters: []
@@ -344,7 +352,10 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    \n````python\n\n   async with queue_client.get_receiver(session=\"MySession\"\
+    , idle_timeout=5) as session:\n       async for message in session:\n        \
+    \   await process_message(message)\n           await session.renew_lock()\n\n\
+    \   ````\n"
   syntax:
     content: renew_lock()
     parameters: []
@@ -370,7 +381,10 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    \n````python\n\n   async with queue_client.get_receiver(session=\"MySession\"\
+    , idle_timeout=5) as session:\n       current_state = await session.get_session_state()\n\
+    \       if not current_state:\n           await session.set_session_state(\"OPENED\"\
+    )\n\n   ````\n"
   syntax:
     content: set_session_state(state)
     parameters:

@@ -56,7 +56,10 @@ items:
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   # Get dead lettered messages\n   with queue_client.get_deadletter_receiver(idle_timeout=1)\
+    \ as dead_letter_receiver:\n\n       # Receive dead lettered message continuously\n\
+    \       for message in dead_letter_receiver:\n           print(message)\n    \
+    \       message.complete()\n\n   ````\n"
   syntax:
     content: 'get_deadletter_receiver(transfer_deadletter=False, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -146,7 +149,9 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   with queue_client.get_receiver()\
+    \ as queue_receiver:\n       messages = queue_receiver.fetch_next(timeout=3)\n\
+    \n   ````\n"
   syntax:
     content: 'get_receiver(session=None, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -242,7 +247,10 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   session_ids = session_client.list_sessions()\n\
+    \n   # List sessions updated after specific time\n   import datetime\n   yesterday\
+    \ = datetime.datetime.today() - datetime.timedelta(days=1)\n   session_ids = session_client.list_sessions(updated_since=yesterday)\n\
+    \n   ````\n"
   syntax:
     content: list_sessions(updated_since=None, max_results=100, skip=0, **kwargs)
     parameters:
@@ -297,7 +305,8 @@ items:
     \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
     \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
     python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n\n   ````\n"
+    ````python\n\n   # Specify the number of messages to peek at.\n   pending_messages\
+    \ = queue_client.peek(count=5)\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=0, session=None, **kwargs)
     parameters:

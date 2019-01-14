@@ -33,7 +33,13 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\n\n\n\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   import os\n   from azure.servicebus\
+    \ import ServiceBusClient\n\n   namespace = os.environ['SERVICE_BUS_HOSTNAME']\n\
+    \   shared_access_policy = os.environ['SERVICE_BUS_SAS_POLICY']\n   shared_access_key\
+    \ = os.environ['SERVICE_BUS_SAS_KEY']\n\n   # Create a new service bus client\
+    \ using SAS credentials\n   client = ServiceBusClient(\n       service_namespace=namespace,\n\
+    \       shared_access_key_name=shared_access_policy,\n       shared_access_key_value=shared_access_key)\n\
+    \n\n   ````\n\n\n\n\n\n\n\n"
   syntax:
     content: ServiceBusClient(service_namespace=None, host_base='.servicebus.windows.net',
       shared_access_key_name=None, shared_access_key_value=None, http_request_timeout=65,
@@ -105,7 +111,9 @@ items:
     : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
     azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   from azure.servicebus import ServiceBusClient\n\
+    \   connection_str = os.environ['SERVICE_BUS_CONNECTION_STR']\n\n   client = ServiceBusClient.from_connection_string(connection_str)\n\
+    \n   ````\n"
   syntax:
     content: from_connection_string(conn_str, **kwargs)
     parameters:
@@ -252,7 +260,9 @@ items:
     : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
     azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   queues = client.list_queues()\n   # Process the\
+    \ queues\n   for queue_client in queues:\n       print(queue_client.name)\n\n\
+    \   ````\n"
   syntax:
     content: list_queues()
     parameters: []
@@ -282,7 +292,9 @@ items:
     : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
     azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   subscriptions = client.list_subscriptions(topic_name)\n\
+    \   # Process subscriptions\n   for sub_client in subscriptions:\n       print(sub_client.name)\n\
+    \n   ````\n"
   syntax:
     content: list_subscriptions(topic_name)
     parameters:
@@ -318,7 +330,8 @@ items:
     : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
     azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   topics = client.list_topics()\n   # Process topics\n\
+    \   for topic_client in topics:\n       print(topic_client.name)\n\n   ````\n"
   syntax:
     content: list_topics()
     parameters: []

@@ -57,7 +57,10 @@ items:
     a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
     \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
     , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n\n   ````\n"
+    \n   async with queue_client.get_receiver(idle_timeout=5) as receiver:\n     \
+    \  async for message in receiver:\n           await message.dead_letter()\n\n\
+    \   async with queue_client.get_deadletter_receiver() as receiver:\n       async\
+    \ for message in receiver:\n           await message.complete()\n\n   ````\n"
   syntax:
     content: 'get_deadletter_receiver(transfer_deadletter=False, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -148,7 +151,8 @@ items:
     a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
     \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
     , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n\n   ````\n"
+    \n   async with queue_client.get_receiver() as receiver:\n       async for message\
+    \ in receiver:\n           await process_message(message)\n\n   ````\n"
   syntax:
     content: 'get_receiver(session=None, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -299,7 +303,7 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    \n````python\n\n   peeked_messages = await queue_client.peek(count=5)\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=0, session=None, **kwargs)
     parameters:
@@ -415,7 +419,9 @@ items:
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
     , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n       deferred =\
+    \ await queue_client.receive_deferred_messages(sequence_numbers)\n\n       await\
+    \ queue_client.settle_deferred_messages('completed', deferred)\n\n   ````\n"
   syntax:
     content: settle_deferred_messages(settlement, messages, **kwargs)
     parameters:

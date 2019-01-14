@@ -46,7 +46,9 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n\n\n\n\n\n\n\n"
+    \n````python\n\n   async with queue_client.get_receiver() as receiver:\n     \
+    \  async for message in receiver:\n           await process_message(message)\n\
+    \n   ````\n\n\n\n\n\n\n\n"
   syntax:
     content: 'Receiver(handler_id, source, auth_config, *, loop=None, connection=None,
       mode=<ReceiveSettleMode.PeekLock: <ReceiverSettleMode.PeekLock: 1>>, encoding=''UTF-8'',
@@ -130,7 +132,8 @@ items:
     a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
     \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
     , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n\n   ````\n"
+    \n   receiver = queue_client.get_receiver()\n   async for message in receiver:\n\
+    \       print(message)\n       break\n   await receiver.close()\n\n   ````\n"
   syntax:
     content: close(exception=None)
     parameters:
@@ -171,7 +174,9 @@ items:
     a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
     \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
     , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n\n   ````\n"
+    \n   async with queue_client.get_receiver(idle_timeout=5, prefetch=100) as receiver:\n\
+    \       messages = await receiver.fetch_next(timeout=5)\n       await asyncio.gather(*[m.complete()\
+    \ for m in messages])\n\n   ````\n"
   syntax:
     content: fetch_next(max_batch_size=None, timeout=None)
     parameters:
@@ -264,7 +269,8 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    \n````python\n\n   async with queue_client.get_receiver() as receiver:\n     \
+    \  pending_messages = await receiver.peek(count=5)\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=0)
     parameters:

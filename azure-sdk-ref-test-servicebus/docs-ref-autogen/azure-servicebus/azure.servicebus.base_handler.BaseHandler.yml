@@ -43,12 +43,24 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\base_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 151
-  summary: 'Close down the handler conneciton. If the handler has already closed,
+    startLine: 161
+  summary: 'Close down the handler connection. If the handler has already closed,
 
-    this will be a no op. An optional exception can be passed in to
+    this operation will do nothing. An optional exception can be passed in to
 
     indicate that the handler was shutdown due to error.
+
+    It is recommended to open a handler within a context manager as
+
+    opposed to calling the method directly.
+
+
+
+    > [!NOTE]
+
+    > This operation is not thread-safe.
+
+    >
 
     '
   syntax:
@@ -78,8 +90,24 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\base_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 135
-  summary: 'Open the handler connection.
+    startLine: 137
+  summary: 'Open handler connection and authenticate session.
+
+    If the handler is already open, this operation will do nothing.
+
+    A handler opened with this method must be explicitly closed.
+
+    It is recommended to open a handler within a context manager as
+
+    opposed to calling the method directly.
+
+
+
+    > [!NOTE]
+
+    > This operation is not thread-safe.
+
+    >
 
     '
   syntax:
@@ -104,6 +132,8 @@ items:
   summary: 'If the handler was disconnected from the service with
 
     a retryable error - attempt to reconnect.
+
+    This method will be called automatically for most retryable errors.
 
     '
   syntax:

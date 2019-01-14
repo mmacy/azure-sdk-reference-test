@@ -40,7 +40,9 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\n\n\n\n\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   with queue_client.get_receiver()\
+    \ as queue_receiver:\n       messages = queue_receiver.fetch_next(timeout=3)\n\
+    \n   ````\n\n\n\n\n\n\n\n\n"
   syntax:
     content: 'Receiver(handler_id, source, auth_config, connection=None, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, encoding=''UTF-8'', debug=False, **kwargs)'
@@ -116,7 +118,9 @@ items:
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   receiver = queue_client.get_receiver()\n   for message\
+    \ in receiver:\n       print(message)\n       break\n   receiver.close()\n\n \
+    \  ````\n"
   syntax:
     content: close(exception=None)
     parameters:
@@ -156,7 +160,10 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   with queue_client.get_receiver(prefetch=200)\
+    \ as queue_receiver:\n       # Receive messages in Batch (specify the amount )\n\
+    \       messages = queue_receiver.fetch_next(max_batch_size=15, timeout=1)\n \
+    \      for m in messages:\n           print(m.message)\n\n   ````\n"
   syntax:
     content: fetch_next(max_batch_size=None, timeout=None)
     parameters:
@@ -268,8 +275,8 @@ items:
     : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
     \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
     python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n   # Peek at specific number of messages\n       with queue_client.get_receiver()\
-    \ as receiver:\n           receiver.peek(count=5)\n\n   ````\n"
+    ````python\n\n   # Peek at specific number of messages\n   with queue_client.get_receiver()\
+    \ as receiver:\n       receiver.peek(count=5)\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=None)
     parameters:
@@ -315,7 +322,7 @@ items:
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
     : {\"linenostart\": 1}} -->\n\n````python\n\n   # Get the number of unprocessed\
-    \ messages in queue\n       num_unprocessed_msgs = receiver.queue_size\n\n   ````\n"
+    \ messages in queue\n   num_unprocessed_msgs = receiver.queue_size\n\n   ````\n"
   syntax: {}
   type: attribute
   uid: azure.servicebus.receive_handler.Receiver.queue_size

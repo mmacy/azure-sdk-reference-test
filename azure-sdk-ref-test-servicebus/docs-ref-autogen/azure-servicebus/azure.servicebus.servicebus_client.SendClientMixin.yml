@@ -47,7 +47,9 @@ items:
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   with queue_client.get_sender() as queue_sender:\n\
+    \n       queue_sender.send(Message(\"First\"))\n       queue_sender.send(Message(\"\
+    Second\"))\n\n   ````\n"
   syntax:
     content: get_sender(message_timeout=0, session=None, **kwargs)
     parameters:
@@ -108,12 +110,16 @@ items:
     : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
     \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
     python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n\n   ````\n\nSend messages to current entity via a single use connection<!--[!code-python[Main](ples\\\
-    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
-    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
-    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
-    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    ````python\n\n   from azure.servicebus import Message\n\n   message = Message(\"\
+    Hello World!\")\n   queue_client.send(message)\n\n   ````\n\nSend messages to\
+    \ current entity via a single use connection<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   from azure.servicebus import Message\n\n   message1\
+    \ = Message(\"Hello World!\")\n   message2 = Message(\"How are you?\")\n   queue_client.send([message1,\
+    \ message2])\n\n   ````\n"
   syntax:
     content: send(messages, message_timeout=0, session=None, **kwargs)
     parameters:

@@ -48,13 +48,18 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\nRunning a session receiver\
-    \ for the next available session.<!--[!code-python[Main](ples\\test_examples.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\n\n\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   with session_client.get_receiver(session=\"\
+    MySessionID\") as session:\n       for message in session:\n           process_message(message)\n\
+    \n   ````\n\nRunning a session receiver for the next available session.<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   from azure.servicebus import NEXT_AVAILABLE,\
+    \ NoActiveSession\n\n   try:\n       with session_client.get_receiver(session=NEXT_AVAILABLE,\
+    \ idle_timeout=5) as receiver:\n           for message in receiver:\n        \
+    \       process_message(message)\n   except NoActiveSession:\n       pass\n\n\
+    \   ````\n\n\n\n\n\n\n"
   syntax:
     content: SessionReceiver(handler_id, source, auth_config, session=None, connection=None,
       encoding='UTF-8', debug=False, **kwargs)
@@ -150,8 +155,8 @@ items:
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n   # Get the session state\n       with session_client.get_receiver(session=\"\
-    MySessionID\") as receiver:\n           session_state = receiver.get_session_state()\n\
+    : 1}} -->\n\n````python\n\n   # Get the session state\n   with session_client.get_receiver(session=\"\
+    MySessionID\") as receiver:\n       session_state = receiver.get_session_state()\n\
     \n   ````\n"
   syntax:
     content: get_session_state()
@@ -184,11 +189,11 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   # List sessions\n       with session_client.get_receiver(session=\"\
-    MySessionID\") as receiver:\n           session_ids = receiver.list_sessions()\n\
-    \n           # List sessions updated after specific time\n           today = datetime.datetime.today()\n\
-    \           yesterday = today - datetime.timedelta(days=1)\n           session_ids\
-    \ = receiver.list_sessions(updated_since=yesterday)\n\n   ````\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # List sessions\n   with session_client.get_receiver(session=\"\
+    MySessionID\") as receiver:\n       session_ids = receiver.list_sessions()\n\n\
+    \       # List sessions updated after specific time\n       today = datetime.datetime.today()\n\
+    \       yesterday = today - datetime.timedelta(days=1)\n       session_ids = receiver.list_sessions(updated_since=yesterday)\n\
+    \n   ````\n"
   syntax:
     content: list_sessions(updated_since=None, max_results=100, skip=0)
     parameters:
@@ -242,8 +247,8 @@ items:
     : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
     \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
     python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n   # Peek at specific number of messages\n       with queue_client.get_receiver()\
-    \ as receiver:\n           receiver.peek(count=5)\n\n   ````\n"
+    ````python\n\n   # Peek at specific number of messages\n   with queue_client.get_receiver()\
+    \ as receiver:\n       receiver.peek(count=5)\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=None)
     parameters:
@@ -292,7 +297,13 @@ items:
     : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
     azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n       seq_numbers = []\n       with queue_client.get_receiver(idle_timeout=3)\
+    \ as queue_receiver:\n           for message in queue_receiver:\n            \
+    \   seq_numbers.append(message.sequence_number)\n               message.defer()\n\
+    \n       # Receive deferred messages - provide sequence numbers of\n       # messages\
+    \ which were deferred.\n       with queue_client.get_receiver() as queue_receiver:\n\
+    \           deferred = queue_receiver.receive_deferred_messages(sequence_numbers=seq_numbers)\n\
+    \n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>)'
@@ -341,10 +352,9 @@ items:
     : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
     azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n   # Renew session lock before it expires\n       with\
-    \ session_client.get_receiver(session=\"MySessionID\") as session:\n         \
-    \  messages = session.fetch_next(timeout=3)\n           session.renew_lock()\n\
-    \n   ````\n"
+    : 1}} -->\n\n````python\n\n   # Renew session lock before it expires\n   with\
+    \ session_client.get_receiver(session=\"MySessionID\") as session:\n       messages\
+    \ = session.fetch_next(timeout=3)\n       session.renew_lock()\n\n   ````\n"
   syntax:
     content: renew_lock()
     parameters: []
@@ -369,9 +379,9 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Set the session state\n    \
-    \   with session_client.get_receiver(session=\"MySessionID\") as receiver:\n \
-    \          receiver.set_session_state('START')\n\n   ````\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Set the session state\n   with\
+    \ session_client.get_receiver(session=\"MySessionID\") as receiver:\n       receiver.set_session_state('START')\n\
+    \n   ````\n"
   syntax:
     content: set_session_state(state)
     parameters:

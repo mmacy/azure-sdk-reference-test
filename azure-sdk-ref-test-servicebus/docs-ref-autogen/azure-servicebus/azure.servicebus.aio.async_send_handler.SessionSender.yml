@@ -136,7 +136,9 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    \n````python\n\n   async with queue_client.get_sender(session=\"MySession\") as\
+    \ sender:\n\n       sender.queue_message(Message(\"First\"))\n       sender.queue_message(Message(\"\
+    Second\"))\n       await sender.send_pending_messages()\n\n   ````\n"
   syntax:
     content: queue_message(message)
     parameters:
@@ -170,7 +172,10 @@ items:
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
     , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   async with queue_client.get_sender(session=\"\
+    MySession\") as sender:\n\n       enqueue_time = datetime.now() + timedelta(minutes=10)\n\
+    \       await sender.schedule(enqueue_time, Message(\"First\"), Message(\"Second\"\
+    ))\n\n   ````\n"
   syntax:
     content: schedule_messages(schedule_time, *messages)
     parameters:
@@ -214,7 +219,9 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    \n````python\n\n   from azure.servicebus.aio import Message\n\n   async with queue_client.get_sender(session=\"\
+    MySession\") as sender:\n\n       await sender.send(Message(\"First\"))\n    \
+    \   await sender.send(Message(\"Second\"))\n\n   ````\n"
   syntax:
     content: send(message)
     parameters:

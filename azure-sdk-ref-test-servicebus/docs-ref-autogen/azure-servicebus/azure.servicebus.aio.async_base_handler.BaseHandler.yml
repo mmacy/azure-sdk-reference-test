@@ -54,7 +54,10 @@ items:
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
     , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   from azure.servicebus.aio\
+    \ import Message\n\n   sender = queue_client.get_sender()\n   try:\n       await\
+    \ sender.open()\n       await sender.send(Message(\"foobar\"))\n   finally:\n\
+    \       await sender.close()\n\n   ````\n"
   syntax:
     content: close(exception=None)
     parameters:
@@ -93,7 +96,9 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    \n````python\n\n   from azure.servicebus.aio import Message\n\n   sender = queue_client.get_sender()\n\
+    \   try:\n       await sender.open()\n       await sender.send(Message(\"foobar\"\
+    ))\n   finally:\n       await sender.close()\n\n   ````\n"
   syntax:
     content: open()
     parameters: []
