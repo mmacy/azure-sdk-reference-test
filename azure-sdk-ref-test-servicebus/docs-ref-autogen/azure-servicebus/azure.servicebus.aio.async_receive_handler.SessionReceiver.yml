@@ -35,7 +35,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 390
+    startLine: 389
   summary: "This receive handler acts as an iterable message stream for retrieving\n\
     messages for a sessionful Service Bus entity. It operates a single connetion that\
     \ must be opened and\nclosed on completion. The service connection will remain\
@@ -150,7 +150,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 500
+    startLine: 499
   summary: "Get the session state. Returns None if no state\nhas been set.\n\nGetting\
     \ and setting the state of a session.<!--[!code-python[Main](ples\\async_examples\\\
     test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
@@ -180,9 +180,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 646
+    startLine: 645
   summary: 'List the IDs of sessions in the queue with pending messages and where
-    the ''State'' of the session
+    the state of the session
 
     has been updated since the timestamp provided. If no timestamp is provided, all
     will be returned.
@@ -237,7 +237,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 567
+    startLine: 566
   summary: "Browse messages pending in the queue. This operation does not remove\n\
     messages from the queue, nor does it lock them.\nThis operation will only peek\
     \ pending messages in the current session.\n\nPeek messages in the queue.<!--[!code-python[Main](ples\\\
@@ -285,7 +285,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 604
+    startLine: 603
   summary: "Receive messages that have previously been deferred. This operation can\n\
     only receive deferred messages from the current session.\nWhen receiving deferred\
     \ messages from a partitioned entity, all of the supplied\nsequence numbers must\
@@ -333,7 +333,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 545
+    startLine: 544
   summary: "Renew the session lock. This operation must be performed periodically\n\
     in order to retain a lock on the session to continue message processing.\nOnce\
     \ the lock is lost the connection will be closed. This operation can\nalso be\
@@ -363,7 +363,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 524
+    startLine: 523
   summary: "Set the session state.\n\nGetting and setting the state of a session.<!--[!code-python[Main](ples\\\
     async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
     \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\

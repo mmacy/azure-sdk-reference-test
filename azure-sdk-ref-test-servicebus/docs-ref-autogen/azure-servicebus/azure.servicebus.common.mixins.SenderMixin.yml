@@ -37,13 +37,12 @@ items:
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 396
   summary: "Queue a message to be sent later. This operation should be followed up\n\
-    with send_pending_messages.\n\nSchedule messages.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n\n   ````\n"
+    with send_pending_messages.\n\nSend the queued messages<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: queue_message(message)
     parameters:
@@ -52,7 +51,7 @@ items:
         '
       id: message
       type:
-      - azure.servicebus.aio.async_message.Message
+      - azure.servicebus.common.message.Message
   type: method
   uid: azure.servicebus.common.mixins.SenderMixin.queue_message
 references:

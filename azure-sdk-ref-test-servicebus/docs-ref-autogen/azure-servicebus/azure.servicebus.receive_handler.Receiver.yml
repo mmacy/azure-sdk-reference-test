@@ -27,41 +27,20 @@ items:
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 40
-  summary: 'This receive handler acts as an iterable message stream for retrieving
-
-    messages for a Service Bus entity. It operates a single connetion that must be
-    opened and
-
-    closed on completion. The service connection will remain open for the entirety
-    of the iterator.
-
-    If you find yourself only partially iterating the message stream, you should run
-    the receiver
-
-    in a *with* statement to ensure the connection is closed.
-
-    The Receiver should not be instantiated directly, and should be accessed from
-    a *QueueClient* or
-
-    *SubscriptionClient* using the *get_receiver()* method.
-
-
-
-    > [!NOTE]
-
-    > This object is not thread-safe.
-
-    >
-
-
-
-
-
-
-
-
-
-    '
+  summary: "This receive handler acts as an iterable message stream for retrieving\n\
+    messages for a Service Bus entity. It operates a single connetion that must be\
+    \ opened and\nclosed on completion. The service connection will remain open for\
+    \ the entirety of the iterator.\nIf you find yourself only partially iterating\
+    \ the message stream, you should run the receiver\nin a *with* statement to ensure\
+    \ the connection is closed.\nThe Receiver should not be instantiated directly,\
+    \ and should be accessed from a *QueueClient* or\n*SubscriptionClient* using the\
+    \ *get_receiver()* method.\n\n\n> [!NOTE]\n> This object is not thread-safe.\n\
+    >\n\nGet the receiver client from service bus client<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\n\n\n\n\n"
   syntax:
     content: 'Receiver(handler_id, source, auth_config, connection=None, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, encoding=''UTF-8'', debug=False, **kwargs)'
@@ -124,20 +103,32 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 316
-  summary: "Close handler connection.\n\nClose the connection and shutdown the receiver<!--[!code-python[Main](ples\\\
-    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
-    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
-    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
-    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n       receiver = queue_client.get_receiver()\n\
-    \       for message in receiver:\n           print(message)\n           break\n\
-    \       receiver.close()\n\n   ````\n"
+    startLine: 315
+  summary: "Close down the receiver connection. If the receiver has already closed,\n\
+    this operation will do nothing. An optional exception can be passed in to\nindicate\
+    \ that the handler was shutdown due to error.\nIt is recommended to open a handler\
+    \ within a context manager as\nopposed to calling the method directly.\nThe receiver\
+    \ will be implicitly closed on completion of the message iterator,\nhowever this\
+    \ method will need to be called explicitly if the message iterator is not run\n\
+    to completion.\n\n\n> [!NOTE]\n> This operation is not thread-safe.\n>\n\nClose\
+    \ the connection and shutdown the receiver<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: close(exception=None)
     parameters:
     - defaultValue: None
+      description: 'An optional exception if the handler is closing
+
+        due to an error.
+
+        '
       id: exception
+      type:
+      - Exception
   type: method
   uid: azure.servicebus.receive_handler.Receiver.close
 - class: azure.servicebus.receive_handler.Receiver
@@ -153,40 +144,46 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 334
-  summary: "Receive messages from ServiceBus entity.\n\nGet the messages in batch\
-    \ from the receiver<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!--\
-    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
-    \ \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
-    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
-    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n   # Receive messages in Batch (specify the amount )\n       messages\
-    \ = receiver_client.fetch_next(max_batch_size=15, timeout=1)\n       for m in\
-    \ messages:\n           print(m.message)\n\n   ````\n"
+    startLine: 346
+  summary: "Receive a batch of messages at once. This approach it optimal\nif you\
+    \ wish to process multiple messages simultaneously. Note that the\nnumber of messages\
+    \ retrieved in a single batch will be dependent on\nwhether *prefetch* was set\
+    \ for the receiver. This call will prioritize returning\nquickly over meeting\
+    \ a specified batch size, and so will return as soon as at least\none message\
+    \ is received and there is a gap in incoming messages regardless\nof the specified\
+    \ batch size.\n\nGet the messages in batch from the receiver<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: fetch_next(max_batch_size=None, timeout=None)
     parameters:
     - defaultValue: None
-      description: 'Receive a batch of messages. Batch size will
+      description: 'Maximum number of messages in the batch. Actual number
 
-        be up to the maximum specified, but will return as soon as service
-
-        returns no new messages. If combined with a timeout and no messages are
-
-        retrieve before the time, the result will be empty. If no batch
-
-        size is supplied, the prefetch size will be the maximum.
+        returned will depend on prefetch size and incoming stream rate.
 
         '
       id: max_batch_size
       type:
       - int
     - defaultValue: None
-      id: timeout
-    return:
-      description: 'list[~azure.servicebus.Message]
+      description: 'The time to wait in seconds for the first message to arrive.
+
+        If no messages arrive, and no timeout is specified, this call will not return
+
+        until the connection is closed. If specified, an no messages arrive within
+        the
+
+        timeout period, an empty list will be returned.
 
         '
+      id: timeout
+    return:
+      type:
+      - list[azure.servicebus.common.message.Message]
   type: method
   uid: azure.servicebus.receive_handler.Receiver.fetch_next
 - class: azure.servicebus.receive_handler.Receiver
@@ -202,7 +199,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 178
+    startLine: 173
   syntax:
     content: next()
     parameters: []
@@ -221,15 +218,30 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 287
-  summary: "Open handler connection.\n\nOpen the connection to start receiving messages<!--[!code-python[Main](ples\\\
-    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
-    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
-    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
-    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n       receiver = queue_client.get_receiver()\n\
-    \       for message in receiver:\n           print(message)\n           break\n\
-    \       receiver.close()\n\n   ````\n"
+    startLine: 285
+  summary: 'Open receiver connection and authenticate session.
+
+    If the receiver is already open, this operation will do nothing.
+
+    This method will be called automatically when one starts to iterate
+
+    messages in the receiver, so there should be no need to call it directly.
+
+    A receiver opened with this method must be explicitly closed.
+
+    It is recommended to open a handler within a context manager as
+
+    opposed to calling the method directly.
+
+
+
+    > [!NOTE]
+
+    > This operation is not thread-safe.
+
+    >
+
+    '
   syntax:
     content: open()
     parameters: []
@@ -248,7 +260,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 213
+    startLine: 208
   summary: "Browse messages pending in the queue. This operation does not remove\n\
     messages from the queue, nor does it lock them.\n\nLoog at pending messages in\
     \ the queue<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
@@ -256,29 +268,30 @@ items:
     : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
     \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
     python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n   # Peek at specific number of messages\n       receiver_client.peek(count=5)\n\
-    \n   ````\n"
+    ````python\n\n   # Peek at specific number of messages\n       with queue_client.get_receiver()\
+    \ as receiver:\n           receiver.peek(count=5)\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=None)
     parameters:
     - defaultValue: '1'
-      description: 'How many message to try and peek.
+      description: 'The maximum number of messages to try and peek. The default
+
+        value is 1.
 
         '
       id: count
       type:
       - int
     - defaultValue: None
-      description: 'An enqueue timestamp from which to peek at messages.
+      description: 'A message sequence number from which to start browsing messages.
 
         '
       id: start_from
       type:
-      - datetime.datetime
+      - int
     return:
-      description: 'list[~azure.servicebus.common.message.PeekMessage]
-
-        '
+      type:
+      - list[azure.servicebus.common.message.PeekMessage]
   type: method
   uid: azure.servicebus.receive_handler.Receiver.peek
 - class: azure.servicebus.receive_handler.Receiver
@@ -295,15 +308,14 @@ items:
       path: null
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: null
-  summary: "The current size of the unprocessed message queue.\n:returns: int\n\n\
-    Get the number of unprocessed messages in the queue<!--[!code-python[Main](ples\\\
+  summary: "The current size of the unprocessed message queue.\n:rtype: int\n\nGet\
+    \ the number of unprocessed messages in the queue<!--[!code-python[Main](ples\\\
     test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
     : {\"linenostart\": 1}} -->\n\n````python\n\n   # Get the number of unprocessed\
-    \ messages in queue\n       num_unprocessed_msgs = receiver.queue_size()\n\n \
-    \  ````\n"
+    \ messages in queue\n       num_unprocessed_msgs = receiver.queue_size\n\n   ````\n"
   syntax: {}
   type: attribute
   uid: azure.servicebus.receive_handler.Receiver.queue_size
@@ -321,16 +333,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 249
-  summary: "Receive messages that have previously been deferred.\n\nGet the messages\
-    \ which were previously deferred<!--[!code-python[Main](ples\\test_examples.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n   # Receive deferred messages \n   # Provide sequence\
-    \ numbers of messages which were deferred.\n       receiver_client.receive_deferred_messages(sequence_numbers=seq_numbers)\n\
-    \n   ````\n"
+    startLine: 245
+  summary: "Receive messages that have previously been deferred.\nWhen receiving deferred\
+    \ messages from a partitioned entity, all of the supplied\nsequence numbers must\
+    \ be messages from the same partition.\n\nGet the messages which were previously\
+    \ deferred<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
+    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
+    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
+    ````python\n\n\n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>)'
@@ -351,7 +363,7 @@ items:
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
     return:
-      description: 'list[~azure.servicebus.Message]
+      description: 'list[~azure.servicebus.common.message.DeferredMessage]
 
         '
   type: method
@@ -412,6 +424,34 @@ references:
   - fullName: ']'
     name: ']'
   uid: dict[str, str]
+- fullName: list[azure.servicebus.common.message.Message]
+  name: list[Message]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.Message
+    name: Message
+    uid: azure.servicebus.common.message.Message
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.Message]
+- fullName: list[azure.servicebus.common.message.PeekMessage]
+  name: list[PeekMessage]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.PeekMessage
+    name: PeekMessage
+    uid: azure.servicebus.common.message.PeekMessage
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.PeekMessage]
 - fullName: list[int]
   name: list[int]
   spec.python:

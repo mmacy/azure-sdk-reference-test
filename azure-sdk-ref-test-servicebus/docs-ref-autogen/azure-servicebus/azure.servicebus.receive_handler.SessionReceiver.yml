@@ -30,17 +30,104 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 370
-  summary: '
-
-
-
-
-
-    '
+    startLine: 388
+  summary: "This receive handler acts as an iterable message stream for retrieving\n\
+    messages for a sessionful Service Bus entity. It operates a single connetion that\
+    \ must be opened and\nclosed on completion. The service connection will remain\
+    \ open for the entirety of the iterator.\nIf you find yourself only partially\
+    \ iterating the message stream, you should run the receiver\nin a *with* statement\
+    \ to ensure the connection is closed.\nThe Receiver should not be instantiated\
+    \ directly, and should be accessed from a *QueueClient* or\n*SubscriptionClient*\
+    \ using the *get_receiver()* method.\nWhen receiving messages from a session,\
+    \ connection errors that would normally be automatically\nretried will instead\
+    \ raise an error due to the loss of the lock on a particular session.\nA specific\
+    \ session can be specified, or the receiver can retrieve any available session\
+    \ using\nthe *NEXT_AVAILABLE* constant.\n\n\n> [!NOTE]\n> This object is not thread-safe.\n\
+    >\n\nRunning a session receiver within a context manager.<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n\nRunning a session receiver\
+    \ for the next available session.<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n\n   ````\n\n\n\n\n\n\n"
   syntax:
     content: SessionReceiver(handler_id, source, auth_config, session=None, connection=None,
       encoding='UTF-8', debug=False, **kwargs)
+    parameters:
+    - description: 'The ID used as the connection name for the Receiver.
+
+        '
+      id: handler_id
+      type:
+      - str
+    - description: 'The endpoint from which to receive messages.
+
+        '
+      id: source
+      type:
+      - uamqp.Source
+    - description: 'The SASL auth credentials.
+
+        '
+      id: auth_config
+      type:
+      - dict[str, str]
+    - description: 'The ID of the session to receive from.
+
+        '
+      id: session
+      type:
+      - str
+      - azure.servicebus.common.constants.NEXT_AVAILABLE
+    - description: 'An async event loop
+
+        '
+      id: loop
+      type:
+      - asyncio.EventLoop
+    - description: 'A shared connection [not yet supported].
+
+        '
+      id: connection
+      type:
+      - uamqp.Connection
+    - description: 'The receive connection mode. Value must be either PeekLock or
+        ReceiveAndDelete.
+
+        '
+      id: mode
+      type:
+      - azure.servicebus.common.constants.ReceiveSettleMode
+    - description: 'The encoding used for string properties. Default is ''UTF-8''.
+
+        '
+      id: encoding
+      type:
+      - str
+    - description: 'Whether to enable network trace debug logs.
+
+        '
+      id: debug
+      type:
+      - bool
+    variables:
+    - description: 'Whether the receivers lock on a particular session has expired.
+
+        '
+      id: expired
+      type:
+      - bool
+    - description: 'The UTC timestamp that the current session lock will expire.
+
+        '
+      id: locked_until
+      type:
+      - datetime.datetime
   type: class
   uid: azure.servicebus.receive_handler.SessionReceiver
 - class: azure.servicebus.receive_handler.SessionReceiver
@@ -56,22 +143,22 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 436
+    startLine: 497
   summary: "Get the session state. Returns None if no state\nhas been set.\n\nGet\
     \ the session state of the receiver<!--[!code-python[Main](ples\\test_examples.py\
     \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n   # Get the session state\n       session_state =\
-    \ session_receiver_client.get_session_state()\n\n   ````\n"
+    : 1}} -->\n\n````python\n\n   # Get the session state\n       with session_client.get_receiver(session=\"\
+    MySessionID\") as receiver:\n           session_state = receiver.get_session_state()\n\
+    \n   ````\n"
   syntax:
     content: get_session_state()
     parameters: []
     return:
-      description: 'str
-
-        '
+      type:
+      - str
   type: method
   uid: azure.servicebus.receive_handler.SessionReceiver.get_session_state
 - class: azure.servicebus.receive_handler.SessionReceiver
@@ -87,34 +174,50 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 574
-  summary: "List the Session IDs with pending messages in the queue where the 'State'\
+    startLine: 643
+  summary: "List the Session IDs with pending messages in the queue where the state\
     \ of the session\nhas been updated since the timestamp provided. If no timestamp\
     \ is provided, all will be returned.\nIf the state of a Session has never been\
     \ set, it will not be returned regardless of whether\nthere are messages pending.\n\
-    :param updated_since: The UTC datetime from which to return updated pending Session\
-    \ IDs.\n:type updated_since: datetime.datetime\n:param max_results: The maximum\
-    \ number of Session IDs to return. Default value is 100.\n:type max_results: int\n\
-    :param skip: The page value to jump to. Default value is 0.\n:type skip: int\n\
-    :returns: list[str]\n\nList the ids of sessions with pending messages<!--[!code-python[Main](ples\\\
+    \nList the ids of sessions with pending messages<!--[!code-python[Main](ples\\\
     test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   # List sessions\n       session_ids\
-    \ = session_receiver_client.list_sessions()\n\n   # List sessions updated after\
-    \ specific time\n       today = datetime.datetime.today()\n       yesterday =\
-    \ today - datetime.timedelta(days=1)\n       session_ids = session_receiver_client.list_sessions(updated_since=yesterday)\n\
-    \n   ````\n"
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   # List sessions\n       with session_client.get_receiver(session=\"\
+    MySessionID\") as receiver:\n           session_ids = receiver.list_sessions()\n\
+    \n           # List sessions updated after specific time\n           today = datetime.datetime.today()\n\
+    \           yesterday = today - datetime.timedelta(days=1)\n           session_ids\
+    \ = receiver.list_sessions(updated_since=yesterday)\n\n   ````\n"
   syntax:
     content: list_sessions(updated_since=None, max_results=100, skip=0)
     parameters:
     - defaultValue: None
+      description: 'The UTC datetime from which to return updated pending Session
+        IDs.
+
+        '
       id: updated_since
+      type:
+      - datetime.datetime
     - defaultValue: '100'
+      description: 'The maximum number of Session IDs to return. Default value is
+        100.
+
+        '
       id: max_results
+      type:
+      - int
     - defaultValue: '0'
+      description: 'The page value to jump to. Default value is 0.
+
+        '
       id: skip
+      type:
+      - int
+    return:
+      type:
+      - list[str]
   type: method
   uid: azure.servicebus.receive_handler.SessionReceiver.list_sessions
 - class: azure.servicebus.receive_handler.SessionReceiver
@@ -130,37 +233,39 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 499
-  summary: "Browse messages pending in the session. This operation does not remove\n\
-    messages from the queue, nor does it lock them.\n\nLook at pending messages in\
-    \ the queue<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
+    startLine: 564
+  summary: "Browse messages pending in the queue. This operation does not remove\n\
+    messages from the queue, nor does it lock them.\nThis operation will only peek\
+    \ pending messages in the current session.\n\nLook at pending messages in the\
+    \ queue<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
     \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
     : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
     \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
     python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n   # Peek at specific number of messages\n       receiver_client.peek(count=5)\n\
-    \n   ````\n"
+    ````python\n\n   # Peek at specific number of messages\n       with queue_client.get_receiver()\
+    \ as receiver:\n           receiver.peek(count=5)\n\n   ````\n"
   syntax:
     content: peek(count=1, start_from=None)
     parameters:
     - defaultValue: '1'
-      description: 'How many message to try and peek.
+      description: 'The maximum number of messages to try and peek. The default
+
+        value is 1.
 
         '
       id: count
       type:
       - int
     - defaultValue: None
-      description: 'An enqueue timestamp from which to peek at messages.
+      description: 'A message sequence number from which to start browsing messages.
 
         '
       id: start_from
       type:
-      - datetime.datetime
+      - int
     return:
-      description: 'list[~azure.servicebus.common.message.PeekMessage]
-
-        '
+      type:
+      - list[azure.servicebus.common.message.PeekMessage]
   type: method
   uid: azure.servicebus.receive_handler.SessionReceiver.peek
 - class: azure.servicebus.receive_handler.SessionReceiver
@@ -177,17 +282,17 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 534
-  summary: "Receive messages that have previously been deferred.\nDeferred messages\
-    \ must have had same Session ID as the current receiver.\n\nGet the messages which\
-    \ were previously deferred in the session<!--[!code-python[Main](ples\\test_examples.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    startLine: 601
+  summary: "Receive messages that have previously been deferred. This operation can\n\
+    only receive deferred messages from the current session.\nWhen receiving deferred\
+    \ messages from a partitioned entity, all of the supplied\nsequence numbers must\
+    \ be messages from the same partition.\n\nGet the messages which were previously\
+    \ deferred in the session<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
     , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n   # Receive deferred messages \n   # Provide sequence\
-    \ numbers of messages which were deferred.\n       receiver_client.receive_deferred_messages(sequence_numbers=seq_numbers)\n\
-    \n   ````\n"
+    : 1}} -->\n\n````python\n\n\n   ````\n"
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>)'
@@ -208,9 +313,8 @@ items:
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
     return:
-      description: 'list[~azure.servicebus.Message]
-
-        '
+      type:
+      - list[azure.servicebus.common.message.DeferredMessage]
   type: method
   uid: azure.servicebus.receive_handler.SessionReceiver.receive_deferred_messages
 - class: azure.servicebus.receive_handler.SessionReceiver
@@ -226,14 +330,21 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 481
-  summary: "Renew session lock.\n\nRenew the session lock before it expires<!--[!code-python[Main](ples\\\
-    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
-    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
-    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
-    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   # Renew session lock before it\
-    \ expires\n       session_receiver_client.renew_lock()\n\n   ````\n"
+    startLine: 542
+  summary: "Renew the session lock. This operation must be performed periodically\n\
+    in order to retain a lock on the session to continue message processing.\nOnce\
+    \ the lock is lost the connection will be closed. This operation can\nalso be\
+    \ performed as a threaded background task by registering the session\nwith an\
+    \ *azure.servicebus.common.utils.AutoLockRenew* instance.\n\nRenew the session\
+    \ lock before it expires<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Renew session lock before it expires\n       with\
+    \ session_client.get_receiver(session=\"MySessionID\") as session:\n         \
+    \  messages = session.fetch_next(timeout=3)\n           session.renew_lock()\n\
+    \n   ````\n"
   syntax:
     content: renew_lock()
     parameters: []
@@ -252,14 +363,15 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 460
+    startLine: 521
   summary: "Set the session state.\n\nSet the session state of the receiver<!--[!code-python[Main](ples\\\
     test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
     : {\"linenostart\": 1}} -->\n\n````python\n\n   # Set the session state\n    \
-    \   session_receiver_client.set_session_state('START')\n\n   ````\n"
+    \   with session_client.get_receiver(session=\"MySessionID\") as receiver:\n \
+    \          receiver.set_session_state('START')\n\n   ````\n"
   syntax:
     content: set_session_state(state)
     parameters:
@@ -304,6 +416,53 @@ references:
   name: set_session_state(state)
   parent: azure.servicebus.receive_handler.SessionReceiver
   uid: azure.servicebus.receive_handler.SessionReceiver.set_session_state
+- fullName: dict[str, str]
+  name: dict[str, str]
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  uid: dict[str, str]
+- fullName: list[str]
+  name: list[str]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  uid: list[str]
+- fullName: list[azure.servicebus.common.message.PeekMessage]
+  name: list[PeekMessage]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.PeekMessage
+    name: PeekMessage
+    uid: azure.servicebus.common.message.PeekMessage
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.PeekMessage]
 - fullName: list[int]
   name: list[int]
   spec.python:
@@ -318,6 +477,20 @@ references:
   - fullName: ']'
     name: ']'
   uid: list[int]
+- fullName: list[azure.servicebus.common.message.DeferredMessage]
+  name: list[DeferredMessage]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.DeferredMessage
+    name: DeferredMessage
+    uid: azure.servicebus.common.message.DeferredMessage
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.DeferredMessage]
 - fullName: str, bytes
   name: str, bytes
   spec.python:

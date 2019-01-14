@@ -160,7 +160,7 @@ items:
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 347
   summary: "Receive a batch of messages at once. This approach it optimal\nif you\
-    \ wish to process multiple messages simultaneously. Not that the\nnumber of messages\
+    \ wish to process multiple messages simultaneously. Note that the\nnumber of messages\
     \ retrieved in a single batch will be dependent on\nwhether *prefetch* was set\
     \ for the receiver. This call will prioritize returning\nquickly over meeting\
     \ a specified batch size, and so will return as soon as at least\none message\

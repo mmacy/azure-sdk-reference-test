@@ -27,7 +27,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 196
+    startLine: 199
   summary: 'This handler if for sending messages to a sessionful Service Bus entity.
 
     It operates a single connetion that must be opened and closed on completion.
@@ -38,7 +38,7 @@ items:
     The Sender should not be instantiated directly, and should be accessed from a
     *QueueClient* or
 
-    *TopicClient* using the *get_receiver()* method.
+    *TopicClient* using the *get_sender()* method.
 
     An attempt to send a message without a session ID specified either on the Sender
     or the message
@@ -127,7 +127,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 252
+    startLine: 255
   summary: "Queue a message to be sent later. This operation should be followed up\n\
     with send_pending_messages. If neither the Sender or the message\nhas a session\
     \ ID, a *ValueError* will be raised.\n\nSchedule messages.<!--[!code-python[Main](ples\\\
@@ -161,7 +161,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 272
+    startLine: 276
   summary: "Send one or more messages to be enqueued at a specific time.\nReturns\
     \ a list of the sequence numbers of the enqueued messages.\nIf neither the Sender\
     \ or the message has a session ID, a *ValueError* will be raised.\n\nSchedule\
@@ -205,7 +205,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 227
+    startLine: 230
   summary: "Sends a message and blocks until acknowledgement is\nreceived or the operation\
     \ fails. If neither the Sender or the message\nhas a session ID, a *ValueError*\
     \ will be raised.\n\nOpen a sessionful Sender and send messages.<!--[!code-python[Main](ples\\\
