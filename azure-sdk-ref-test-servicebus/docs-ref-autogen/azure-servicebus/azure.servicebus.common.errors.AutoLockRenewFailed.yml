@@ -23,7 +23,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 158
+    startLine: 171
+  summary: 'An attempt to renew a lock on a message or session in the background has
+    failed.
+
+    '
   syntax:
     content: AutoLockRenewFailed(message, inner_exception=None)
   type: class

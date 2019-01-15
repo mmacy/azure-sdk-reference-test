@@ -10,6 +10,18 @@ items:
   - azure.servicebus.aio.ServiceBusClient.list_subscriptions
   - azure.servicebus.aio.ServiceBusClient.list_topics
   class: azure.servicebus.aio.ServiceBusClient
+  example:
+  - "Create a ServiceBusClient.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   import os\n  \
+    \ from azure.servicebus.aio import ServiceBusClient\n\n   namespace = os.environ['SERVICE_BUS_HOSTNAME']\n\
+    \   shared_access_policy = os.environ['SERVICE_BUS_SAS_POLICY']\n   shared_access_key\
+    \ = os.environ['SERVICE_BUS_SAS_KEY']\n\n   client = ServiceBusClient(\n     \
+    \  service_namespace=namespace,\n       shared_access_key_name=shared_access_policy,\n\
+    \       shared_access_key_value=shared_access_key)\n\n   ````\n"
   fullName: azure.servicebus.aio.ServiceBusClient
   inheritance:
   - inheritance:
@@ -27,18 +39,17 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 32
-  summary: "A Service Bus client for a namespace with the specified authentication\
-    \ settings (SAS).\n\nCreate a ServiceBusClient.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   import os\n   from azure.servicebus.aio import ServiceBusClient\n\
-    \n   namespace = os.environ['SERVICE_BUS_HOSTNAME']\n   shared_access_policy =\
-    \ os.environ['SERVICE_BUS_SAS_POLICY']\n   shared_access_key = os.environ['SERVICE_BUS_SAS_KEY']\n\
-    \n   client = ServiceBusClient(\n       service_namespace=namespace,\n       shared_access_key_name=shared_access_policy,\n\
-    \       shared_access_key_value=shared_access_key)\n\n   ````\n\n\n\n\n\n\n\n"
+  summary: 'A Service Bus client for a namespace with the specified authentication
+    settings (SAS).
+
+
+
+
+
+
+
+
+    '
   syntax:
     content: ServiceBusClient(*, service_namespace=None, host_base='.servicebus.windows.net',
       shared_access_key_name=None, shared_access_key_value=None, loop=None, http_request_timeout=65,
@@ -91,6 +102,15 @@ items:
   type: class
   uid: azure.servicebus.aio.ServiceBusClient
 - class: azure.servicebus.aio.ServiceBusClient
+  example:
+  - "Create a ServiceBusClient via a connection string.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n   connection_str = os.environ['SERVICE_BUS_CONNECTION_STR']\n\
+    \n   client = ServiceBusClient.from_connection_string(connection_str)\n\n   ````\n"
   fullName: azure.servicebus.aio.ServiceBusClient.from_connection_string
   langs:
   - python
@@ -103,16 +123,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 70
-  summary: "Create a ServiceBus client from a connection string.\n\nCreate a ServiceBusClient\
-    \ via a connection string.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
-    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   connection_str\
-    \ = os.environ['SERVICE_BUS_CONNECTION_STR']\n\n   client = ServiceBusClient.from_connection_string(connection_str)\n\
-    \n   ````\n"
+    startLine: 71
+  summary: 'Create a ServiceBus client from a connection string.
+
+    '
   syntax:
     content: from_connection_string(conn_str, *, loop=None, **kwargs)
     parameters:
@@ -125,6 +139,16 @@ items:
   type: method
   uid: azure.servicebus.aio.ServiceBusClient.from_connection_string
 - class: azure.servicebus.aio.ServiceBusClient
+  example:
+  - "Get a QueueClient for the specified queue.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   from azure.servicebus import ServiceBusResourceNotFound\n\n   try:\n    \
+    \   queue_client = client.get_queue(\"MyQueue\")\n   except ServiceBusResourceNotFound:\n\
+    \       pass\n\n   ````\n"
   fullName: azure.servicebus.aio.ServiceBusClient.get_queue
   langs:
   - python
@@ -137,16 +161,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 97
-  summary: "Get an async client for a queue entity.\n\nGet a QueueClient for the specified\
-    \ queue.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py )]-->\n\
-    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
-    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
-    azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\", \"\
-    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   from azure.servicebus import ServiceBusResourceNotFound\n\
-    \n   try:\n       queue_client = client.get_queue(\"MyQueue\")\n   except ServiceBusResourceNotFound:\n\
-    \       pass\n\n   ````\n"
+    startLine: 99
+  summary: 'Get an async client for a queue entity.
+
+    '
   syntax:
     content: get_queue(queue_name)
     parameters:
@@ -162,6 +180,16 @@ items:
   type: method
   uid: azure.servicebus.aio.ServiceBusClient.get_queue
 - class: azure.servicebus.aio.ServiceBusClient
+  example:
+  - "Get a TopicClient for the specified topic.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   from azure.servicebus import ServiceBusResourceNotFound\n\n   try:\n    \
+    \   subscription_client = client.get_subscription(\"MyTopic\", \"MySubscription\"\
+    )\n   except ServiceBusResourceNotFound:\n       pass\n\n   ````\n"
   fullName: azure.servicebus.aio.ServiceBusClient.get_subscription
   langs:
   - python
@@ -174,17 +202,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 199
-  summary: "Get an async client for a subscription entity.\n\nGet a TopicClient for\
-    \ the specified topic.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
-    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   from azure.servicebus\
-    \ import ServiceBusResourceNotFound\n\n   try:\n       subscription_client = client.get_subscription(\"\
-    MyTopic\", \"MySubscription\")\n   except ServiceBusResourceNotFound:\n      \
-    \ pass\n\n   ````\n"
+    startLine: 203
+  summary: 'Get an async client for a subscription entity.
+
+    '
   syntax:
     content: get_subscription(topic_name, subscription_name)
     parameters:
@@ -206,6 +227,16 @@ items:
   type: method
   uid: azure.servicebus.aio.ServiceBusClient.get_subscription
 - class: azure.servicebus.aio.ServiceBusClient
+  example:
+  - "Get a TopicClient for the specified topic.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   from azure.servicebus import ServiceBusResourceNotFound\n\n   try:\n    \
+    \   topic_client = client.get_topic(\"MyTopic\")\n   except ServiceBusResourceNotFound:\n\
+    \       pass\n\n   ````\n"
   fullName: azure.servicebus.aio.ServiceBusClient.get_topic
   langs:
   - python
@@ -218,16 +249,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 149
-  summary: "Get an async client for a topic entity.\n\nGet a TopicClient for the specified\
-    \ topic.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py )]-->\n\
-    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
-    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
-    azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\", \"\
-    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   from azure.servicebus import ServiceBusResourceNotFound\n\
-    \n   try:\n       topic_client = client.get_topic(\"MyTopic\")\n   except ServiceBusResourceNotFound:\n\
-    \       pass\n\n   ````\n"
+    startLine: 152
+  summary: 'Get an async client for a topic entity.
+
+    '
   syntax:
     content: get_topic(topic_name)
     parameters:
@@ -255,7 +280,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 128
+    startLine: 131
   summary: 'Get clients for all queue entities in the namespace.
 
     '
@@ -280,7 +305,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 231
+    startLine: 236
   summary: 'Get an async client for all subscription entities in the topic.
 
     '
@@ -311,7 +336,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 179
+    startLine: 183
   summary: 'Get an async client for all topic entities in the namespace.
 
     '

@@ -22,6 +22,11 @@ items:
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 84
+  summary: 'An error occured. This is the parent of all Service Bus errors and can
+
+    be used for default error handling.
+
+    '
   syntax:
     content: ServiceBusError(message, inner_exception=None)
   type: class

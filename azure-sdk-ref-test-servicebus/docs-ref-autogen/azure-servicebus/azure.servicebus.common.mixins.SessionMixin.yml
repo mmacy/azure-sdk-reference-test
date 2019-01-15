@@ -1,7 +1,8 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- children:
+  - azure.servicebus.common.mixins.SessionMixin.expired
   class: azure.servicebus.common.mixins.SessionMixin
   fullName: azure.servicebus.common.mixins.SessionMixin
   inheritance:
@@ -21,4 +22,32 @@ items:
   syntax: {}
   type: class
   uid: azure.servicebus.common.mixins.SessionMixin
-references: []
+- class: azure.servicebus.common.mixins.SessionMixin
+  fullName: azure.servicebus.common.mixins.SessionMixin.expired
+  langs:
+  - python
+  module: azure.servicebus.common.mixins
+  name: expired
+  source:
+    id: expired
+    path: null
+    remote:
+      branch: servicebus
+      path: null
+      repo: https://github.com/annatisch/azure-sdk-for-python
+    startLine: null
+  summary: 'Whether the receivers lock on a particular session has expired.
+
+    '
+  syntax:
+    return:
+      type:
+      - bool
+  type: attribute
+  uid: azure.servicebus.common.mixins.SessionMixin.expired
+references:
+- fullName: azure.servicebus.common.mixins.SessionMixin.expired
+  isExternal: false
+  name: expired
+  parent: azure.servicebus.common.mixins.SessionMixin
+  uid: azure.servicebus.common.mixins.SessionMixin.expired

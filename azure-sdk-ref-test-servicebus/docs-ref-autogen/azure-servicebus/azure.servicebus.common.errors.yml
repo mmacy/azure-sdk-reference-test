@@ -13,7 +13,6 @@ items:
   - azure.servicebus.common.errors.ServiceBusAuthorizationError
   - azure.servicebus.common.errors.ServiceBusConnectionError
   - azure.servicebus.common.errors.ServiceBusError
-  - azure.servicebus.common.errors.ServiceBusErrorPolicy
   - azure.servicebus.common.errors.ServiceBusResourceNotFound
   - azure.servicebus.common.errors.SessionLockExpired
   fullName: azure.servicebus.common.errors
@@ -87,11 +86,6 @@ references:
   name: ServiceBusError
   parent: azure.servicebus.common.errors
   uid: azure.servicebus.common.errors.ServiceBusError
-- fullName: azure.servicebus.common.errors.ServiceBusErrorPolicy
-  isExternal: false
-  name: ServiceBusErrorPolicy
-  parent: azure.servicebus.common.errors
-  uid: azure.servicebus.common.errors.ServiceBusErrorPolicy
 - fullName: azure.servicebus.common.errors.ServiceBusResourceNotFound
   isExternal: false
   name: ServiceBusResourceNotFound

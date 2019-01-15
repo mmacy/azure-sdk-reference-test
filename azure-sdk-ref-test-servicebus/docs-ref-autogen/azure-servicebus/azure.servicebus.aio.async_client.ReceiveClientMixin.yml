@@ -23,7 +23,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 362
+    startLine: 369
   summary: '
 
 
@@ -35,6 +35,17 @@ items:
   type: class
   uid: azure.servicebus.aio.async_client.ReceiveClientMixin
 - class: azure.servicebus.aio.async_client.ReceiveClientMixin
+  example:
+  - "Receive dead-lettered messages.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   async with queue_client.get_receiver(idle_timeout=5) as receiver:\n     \
+    \  async for message in receiver:\n           await message.dead_letter()\n\n\
+    \   async with queue_client.get_deadletter_receiver() as receiver:\n       async\
+    \ for message in receiver:\n           await message.complete()\n\n   ````\n"
   fullName: azure.servicebus.aio.async_client.ReceiveClientMixin.get_deadletter_receiver
   langs:
   - python
@@ -48,19 +59,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 572
-  summary: "Get a Receiver for the deadletter endpoint of the entity. A Receiver represents\n\
-    a single open connection with which multiple receive operations can be made.\n\
-    \nReceive dead-lettered messages.<!--[!code-python[Main](ples\\async_examples\\\
-    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
-    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
-    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
-    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
-    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n   async with queue_client.get_receiver(idle_timeout=5) as receiver:\n     \
-    \  async for message in receiver:\n           await message.dead_letter()\n\n\
-    \   async with queue_client.get_deadletter_receiver() as receiver:\n       async\
-    \ for message in receiver:\n           await message.complete()\n\n   ````\n"
+    startLine: 583
+  summary: 'Get a Receiver for the deadletter endpoint of the entity. A Receiver represents
+
+    a single open connection with which multiple receive operations can be made.
+
+    '
   syntax:
     content: 'get_deadletter_receiver(transfer_deadletter=False, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -129,6 +133,15 @@ items:
   type: method
   uid: azure.servicebus.aio.async_client.ReceiveClientMixin.get_deadletter_receiver
 - class: azure.servicebus.aio.async_client.ReceiveClientMixin
+  example:
+  - "Receive messages with a Receiver.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   async with queue_client.get_receiver() as receiver:\n       async for message\
+    \ in receiver:\n           await process_message(message)\n\n   ````\n"
   fullName: azure.servicebus.aio.async_client.ReceiveClientMixin.get_receiver
   langs:
   - python
@@ -142,17 +155,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 507
-  summary: "Get a Receiver for the Service Bus endpoint. A Receiver represents\na\
-    \ single open connection with which multiple receive operations can be made.\n\
-    \nReceive messages with a Receiver.<!--[!code-python[Main](ples\\async_examples\\\
-    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
-    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
-    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
-    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
-    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n   async with queue_client.get_receiver() as receiver:\n       async for message\
-    \ in receiver:\n           await process_message(message)\n\n   ````\n"
+    startLine: 517
+  summary: 'Get a Receiver for the Service Bus endpoint. A Receiver represents
+
+    a single open connection with which multiple receive operations can be made.
+
+    '
   syntax:
     content: 'get_receiver(session=None, prefetch=0, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, idle_timeout=0, **kwargs)'
@@ -238,7 +246,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 479
+    startLine: 489
   summary: 'List the IDs of sessions in the queue with pending messages and where
     the state of the session
 
@@ -283,6 +291,14 @@ items:
   type: method
   uid: azure.servicebus.aio.async_client.ReceiveClientMixin.list_sessions
 - class: azure.servicebus.aio.async_client.ReceiveClientMixin
+  example:
+  - "Peek messages in the queue.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   peeked_messages\
+    \ = await queue_client.peek(count=5)\n\n   ````\n"
   fullName: azure.servicebus.aio.async_client.ReceiveClientMixin.peek
   langs:
   - python
@@ -295,15 +311,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 364
-  summary: "Browse messages pending in the queue. This operation does not remove\n\
-    messages from the queue, nor does it lock them.\n\nPeek messages in the queue.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   peeked_messages = await queue_client.peek(count=5)\n\n   ````\n"
+    startLine: 371
+  summary: 'Browse messages pending in the queue. This operation does not remove
+
+    messages from the queue, nor does it lock them.
+
+    '
   syntax:
     content: peek(count=1, start_from=0, session=None, **kwargs)
     parameters:
@@ -340,6 +353,17 @@ items:
   type: method
   uid: azure.servicebus.aio.async_client.ReceiveClientMixin.peek
 - class: azure.servicebus.aio.async_client.ReceiveClientMixin
+  example:
+  - "Defer messages, then retrieve them by sequence number.<!--[!code-python[Main](ples\\\
+    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
+    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
+    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
+    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
+    \n````python\n\n   sequence_numbers = []\n   async with queue_client.get_receiver(idle_timeout=5)\
+    \ as receiver:\n       async for message in receiver:\n           sequence_numbers.append(message.sequence_number)\n\
+    \           await message.defer()\n\n   deferred = await queue_client.receive_deferred_messages(sequence_numbers)\n\
+    \n   ````\n"
   fullName: azure.servicebus.aio.async_client.ReceiveClientMixin.receive_deferred_messages
   langs:
   - python
@@ -353,16 +377,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 402
-  summary: "Receive messages that have previously been deferred.\nWhen receiving deferred\
-    \ messages from a partitioned entity, all of the supplied\nsequence numbers must\
-    \ be messages from the same partition.\n\nDefer messages, then retrieve them by\
-    \ sequence number.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
-    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n\n   ````\n"
+    startLine: 410
+  summary: 'Receive messages that have previously been deferred.
+
+    When receiving deferred messages from a partitioned entity, all of the supplied
+
+    sequence numbers must be messages from the same partition.
+
+    '
   syntax:
     content: 'receive_deferred_messages(sequence_numbers, mode=<ReceiveSettleMode.PeekLock:
       <ReceiverSettleMode.PeekLock: 1>>, **kwargs)'
@@ -400,6 +422,15 @@ items:
   type: method
   uid: azure.servicebus.aio.async_client.ReceiveClientMixin.receive_deferred_messages
 - class: azure.servicebus.aio.async_client.ReceiveClientMixin
+  example:
+  - "Settle deferred messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n       deferred =\
+    \ await queue_client.receive_deferred_messages(sequence_numbers)\n\n       await\
+    \ queue_client.settle_deferred_messages('completed', deferred)\n\n   ````\n"
   fullName: azure.servicebus.aio.async_client.ReceiveClientMixin.settle_deferred_messages
   langs:
   - python
@@ -412,16 +443,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 447
-  summary: "Settle messages that have been previously deffered.\n\nSettle deferred\
-    \ messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
-    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n       deferred =\
-    \ await queue_client.receive_deferred_messages(sequence_numbers)\n\n       await\
-    \ queue_client.settle_deferred_messages('completed', deferred)\n\n   ````\n"
+    startLine: 456
+  summary: 'Settle messages that have been previously deffered.
+
+    '
   syntax:
     content: settle_deferred_messages(settlement, messages, **kwargs)
     parameters:

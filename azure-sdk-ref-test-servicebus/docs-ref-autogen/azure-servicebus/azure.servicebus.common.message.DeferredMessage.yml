@@ -23,8 +23,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 382
-  summary: '
+    startLine: 426
+  summary: 'A message that has been deferred. A deferred message can be completed,
+
+    abandoned, or dead-lettered, however it cannot be deferred again.
+
+
 
 
 
@@ -48,7 +52,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 435
+    startLine: 482
   summary: 'Abandon the message. This message will be returned to the queue to be
     reprocessed.
 
@@ -71,7 +75,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 406
+    startLine: 453
   summary: 'Complete the message.
 
     '
@@ -93,7 +97,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 418
+    startLine: 465
   summary: 'Move the message to the Dead Letter queue.
 
     '
@@ -122,7 +126,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 447
+    startLine: 494
   summary: 'A DeferredMessage cannot be deferred. Raises *ValueError*.
 
     '

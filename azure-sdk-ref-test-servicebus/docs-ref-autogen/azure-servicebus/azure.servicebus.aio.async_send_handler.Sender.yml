@@ -112,6 +112,17 @@ items:
   type: class
   uid: azure.servicebus.aio.async_send_handler.Sender
 - class: azure.servicebus.aio.async_send_handler.Sender
+  example:
+  - "Schedule messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   async with queue_client.get_sender()\
+    \ as sender:\n\n       enqueue_time = datetime.now() + timedelta(minutes=10)\n\
+    \       sequence_numbers = await sender.schedule(enqueue_time, Message(\"First\"\
+    ), Message(\"Second\"))\n\n       await sender.cancel_scheduled_messages(*sequence_numbers)\n\
+    \n   ````\n"
   fullName: azure.servicebus.aio.async_send_handler.Sender.cancel_scheduled_messages
   langs:
   - python
@@ -125,17 +136,11 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 126
-  summary: "Cancel one or more messages that have previsouly been scheduled and are\n\
-    still pending.\n\nSchedule messages.<!--[!code-python[Main](ples\\async_examples\\\
-    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
-    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
-    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
-    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
-    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n   async with queue_client.get_sender() as sender:\n\n       enqueue_time =\
-    \ datetime.now() + timedelta(minutes=10)\n       sequence_numbers = await sender.schedule(enqueue_time,\
-    \ Message(\"First\"), Message(\"Second\"))\n\n       await sender.cancel_scheduled_messages(*sequence_numbers)\n\
-    \n   ````\n"
+  summary: 'Cancel one or more messages that have previsouly been scheduled and are
+
+    still pending.
+
+    '
   syntax:
     content: cancel_scheduled_messages(*sequence_numbers)
     parameters:
@@ -176,6 +181,16 @@ items:
   type: method
   uid: azure.servicebus.aio.async_send_handler.Sender.reconnect
 - class: azure.servicebus.aio.async_send_handler.Sender
+  example:
+  - "Schedule messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   async with queue_client.get_sender()\
+    \ as sender:\n\n       enqueue_time = datetime.now() + timedelta(minutes=10)\n\
+    \       await sender.schedule(enqueue_time, Message(\"First\"), Message(\"Second\"\
+    ))\n\n   ````\n"
   fullName: azure.servicebus.aio.async_send_handler.Sender.schedule
   langs:
   - python
@@ -189,16 +204,11 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 99
-  summary: "Send one or more messages to be enqueued at a specific time.\nReturns\
-    \ a list of the sequence numbers of the enqueued messages.\n\nSchedule messages.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   async with queue_client.get_sender() as sender:\n\n       enqueue_time\
-    \ = datetime.now() + timedelta(minutes=10)\n       await sender.schedule(enqueue_time,\
-    \ Message(\"First\"), Message(\"Second\"))\n\n   ````\n"
+  summary: 'Send one or more messages to be enqueued at a specific time.
+
+    Returns a list of the sequence numbers of the enqueued messages.
+
+    '
   syntax:
     content: schedule(schedule_time, *messages)
     parameters:
@@ -220,6 +230,15 @@ items:
   type: method
   uid: azure.servicebus.aio.async_send_handler.Sender.schedule
 - class: azure.servicebus.aio.async_send_handler.Sender
+  example:
+  - "Open a Sender and send messages.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   async with queue_client.get_sender() as sender:\n\n       await sender.send(Message(\"\
+    First\"))\n       await sender.send(Message(\"Second\"))\n\n   ````\n"
   fullName: azure.servicebus.aio.async_send_handler.Sender.send
   langs:
   - python
@@ -233,15 +252,11 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 70
-  summary: "Sends a message and blocks until acknowledgement is\nreceived or the operation\
-    \ fails.\n\nOpen a Sender and send messages.<!--[!code-python[Main](ples\\async_examples\\\
-    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
-    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
-    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
-    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
-    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n   async with queue_client.get_sender() as sender:\n\n       await sender.send(Message(\"\
-    First\"))\n       await sender.send(Message(\"Second\"))\n\n   ````\n"
+  summary: 'Sends a message and blocks until acknowledgement is
+
+    received or the operation fails.
+
+    '
   syntax:
     content: send(message)
     parameters:
@@ -254,6 +269,15 @@ items:
   type: method
   uid: azure.servicebus.aio.async_send_handler.Sender.send
 - class: azure.servicebus.aio.async_send_handler.Sender
+  example:
+  - "Schedule messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   async with queue_client.get_sender()\
+    \ as sender:\n\n       sender.queue_message(Message(\"First\"))\n       sender.queue_message(Message(\"\
+    Second\"))\n       await sender.send_pending_messages()\n\n   ````\n"
   fullName: azure.servicebus.aio.async_send_handler.Sender.send_pending_messages
   langs:
   - python
@@ -267,15 +291,9 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 151
-  summary: "Wait until all pending messages have been sent.\n\nSchedule messages.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   async with queue_client.get_sender() as sender:\n\n       sender.queue_message(Message(\"\
-    First\"))\n       sender.queue_message(Message(\"Second\"))\n       await sender.send_pending_messages()\n\
-    \n   ````\n"
+  summary: 'Wait until all pending messages have been sent.
+
+    '
   syntax:
     content: send_pending_messages()
     parameters: []

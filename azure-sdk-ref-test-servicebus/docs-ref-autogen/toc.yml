@@ -44,6 +44,13 @@
           uid: azure.servicebus.aio.async_send_handler.SessionSender
         name: azure.servicebus.aio.async_send_handler
         uid: azure.servicebus.aio.async_send_handler
+      - items:
+        - name: azure.servicebus.aio.async_utils.AutoLockRenew
+          uid: azure.servicebus.aio.async_utils.AutoLockRenew
+        name: azure.servicebus.aio.async_utils
+        uid: azure.servicebus.aio.async_utils
+      - name: azure.servicebus.aio.AutoLockRenew
+        uid: azure.servicebus.aio.AutoLockRenew
       - name: azure.servicebus.aio.AutoLockRenewFailed
         uid: azure.servicebus.aio.AutoLockRenewFailed
       - name: azure.servicebus.aio.AutoLockRenewTimeout
@@ -126,8 +133,6 @@
           uid: azure.servicebus.common.errors.ServiceBusConnectionError
         - name: azure.servicebus.common.errors.ServiceBusError
           uid: azure.servicebus.common.errors.ServiceBusError
-        - name: azure.servicebus.common.errors.ServiceBusErrorPolicy
-          uid: azure.servicebus.common.errors.ServiceBusErrorPolicy
         - name: azure.servicebus.common.errors.ServiceBusResourceNotFound
           uid: azure.servicebus.common.errors.ServiceBusResourceNotFound
         - name: azure.servicebus.common.errors.SessionLockExpired

@@ -8,6 +8,34 @@ items:
   - azure.servicebus.aio.async_message.Message.defer
   - azure.servicebus.aio.async_message.Message.renew_lock
   class: azure.servicebus.aio.async_message.Message
+  example:
+  - "Sending a message with additional properties<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   message = Message(\"Hello World!\")\n   message.session_id\
+    \ = \"MySessionID\"\n   message.partition_key = \"UsingSpecificPartition\"\n \
+    \  message.user_properties = {'data': 'custom_data'}\n   message.time_to_live\
+    \ = datetime.timedelta(seconds=30)\n\n   queue_client.send(message)\n\n   ````\n\
+    \nChecking the properties on a received message<!--[!code-python[Main](ples\\\
+    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
+    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
+    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
+    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   with queue_client.get_receiver()\
+    \ as receiver:\n       for message in receiver:\n           print(\"Receiving:\
+    \ {}\".format(message))\n           print(\"Time to live: {}\".format(message.time_to_live))\n\
+    \           print(\"Sequence number: {}\".format(message.sequence_number))\n \
+    \          print(\"Enqueue Sequence numger: {}\".format(message.enqueue_sequence_number))\n\
+    \           print(\"Partition ID: {}\".format(message.partition_id))\n       \
+    \    print(\"Partition Key: {}\".format(message.partition_key))\n           print(\"\
+    User Properties: {}\".format(message.user_properties))\n           print(\"Annotations:\
+    \ {}\".format(message.annotations))\n           print(\"Delivery count: {}\".format(message.header.delivery_count))\n\
+    \           print(\"Message ID: {}\".format(message.properties.message_id))\n\
+    \           print(\"Locked until: {}\".format(message.locked_until))\n       \
+    \    print(\"Lock Token: {}\".format(message.lock_token))\n           print(\"\
+    Enqueued time: {}\".format(message.enqueued_time))\n\n   ````\n"
   fullName: azure.servicebus.aio.async_message.Message
   inheritance:
   - inheritance:
@@ -25,7 +53,9 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 16
-  summary: '
+  summary: 'A Service Bus Message.
+
+
 
 
 
@@ -33,6 +63,20 @@ items:
     '
   syntax:
     content: Message(body, *, encoding='UTF-8', loop=None, **kwargs)
+    parameters:
+    - description: 'The data to send in a single message.
+
+        '
+      id: body
+      type:
+      - str
+      - bytes
+    - description: 'The encoding for string data. Default is UTF-8.
+
+        '
+      id: encoding
+      type:
+      - str
   type: class
   uid: azure.servicebus.aio.async_message.Message
 - class: azure.servicebus.aio.async_message.Message
@@ -48,7 +92,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 68
+    startLine: 90
   summary: 'Abandon the message. This message will be returned to the queue to be
     reprocessed.
 
@@ -71,7 +115,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 37
+    startLine: 59
   summary: 'Complete the message.
 
     '
@@ -93,7 +137,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 51
+    startLine: 73
   summary: 'Move the message to the Dead Letter queue.
 
     '
@@ -122,7 +166,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 83
+    startLine: 105
   summary: 'Defer the message. This message will remain in the queue but must be received
 
     specifically by its sequence number in order to be processed.
@@ -146,7 +190,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 22
+    startLine: 44
   summary: 'Renew the message lock.
 
     This operation is only available for non-sessionful messages.

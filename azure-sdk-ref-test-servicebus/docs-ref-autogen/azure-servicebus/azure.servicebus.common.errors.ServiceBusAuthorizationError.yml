@@ -23,7 +23,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 99
+    startLine: 102
+  summary: 'An error occured when authorizing the connection.
+
+    '
   syntax:
     content: ServiceBusAuthorizationError(message, inner_exception=None)
   type: class

@@ -23,7 +23,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 162
+    startLine: 175
+  summary: 'The time allocated to renew the message or session lock has elapsed.
+
+    '
   syntax:
     content: AutoLockRenewTimeout(message, inner_exception=None)
   type: class

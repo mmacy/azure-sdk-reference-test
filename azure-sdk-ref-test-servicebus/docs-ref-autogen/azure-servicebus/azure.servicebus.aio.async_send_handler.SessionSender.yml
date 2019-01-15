@@ -115,6 +115,16 @@ items:
   type: class
   uid: azure.servicebus.aio.async_send_handler.SessionSender
 - class: azure.servicebus.aio.async_send_handler.SessionSender
+  example:
+  - "Schedule messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   async with queue_client.get_sender(session=\"\
+    MySession\") as sender:\n\n       sender.queue_message(Message(\"First\"))\n \
+    \      sender.queue_message(Message(\"Second\"))\n       await sender.send_pending_messages()\n\
+    \n   ````\n"
   fullName: azure.servicebus.aio.async_send_handler.SessionSender.queue_message
   langs:
   - python
@@ -128,17 +138,13 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 255
-  summary: "Queue a message to be sent later. This operation should be followed up\n\
-    with send_pending_messages. If neither the Sender or the message\nhas a session\
-    \ ID, a *ValueError* will be raised.\n\nSchedule messages.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   async with queue_client.get_sender(session=\"MySession\") as\
-    \ sender:\n\n       sender.queue_message(Message(\"First\"))\n       sender.queue_message(Message(\"\
-    Second\"))\n       await sender.send_pending_messages()\n\n   ````\n"
+  summary: 'Queue a message to be sent later. This operation should be followed up
+
+    with send_pending_messages. If neither the Sender or the message
+
+    has a session ID, a *ValueError* will be raised.
+
+    '
   syntax:
     content: queue_message(message)
     parameters:
@@ -151,6 +157,16 @@ items:
   type: method
   uid: azure.servicebus.aio.async_send_handler.SessionSender.queue_message
 - class: azure.servicebus.aio.async_send_handler.SessionSender
+  example:
+  - "Schedule messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
+    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
+    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   async with queue_client.get_sender(session=\"\
+    MySession\") as sender:\n\n       enqueue_time = datetime.now() + timedelta(minutes=10)\n\
+    \       await sender.schedule(enqueue_time, Message(\"First\"), Message(\"Second\"\
+    ))\n\n   ````\n"
   fullName: azure.servicebus.aio.async_send_handler.SessionSender.schedule_messages
   langs:
   - python
@@ -164,18 +180,14 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 276
-  summary: "Send one or more messages to be enqueued at a specific time.\nReturns\
-    \ a list of the sequence numbers of the enqueued messages.\nIf neither the Sender\
-    \ or the message has a session ID, a *ValueError* will be raised.\n\nSchedule\
-    \ messages.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
-    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   async with queue_client.get_sender(session=\"\
-    MySession\") as sender:\n\n       enqueue_time = datetime.now() + timedelta(minutes=10)\n\
-    \       await sender.schedule(enqueue_time, Message(\"First\"), Message(\"Second\"\
-    ))\n\n   ````\n"
+  summary: 'Send one or more messages to be enqueued at a specific time.
+
+    Returns a list of the sequence numbers of the enqueued messages.
+
+    If neither the Sender or the message has a session ID, a *ValueError* will be
+    raised.
+
+    '
   syntax:
     content: schedule_messages(schedule_time, *messages)
     parameters:
@@ -198,6 +210,16 @@ items:
   type: method
   uid: azure.servicebus.aio.async_send_handler.SessionSender.schedule_messages
 - class: azure.servicebus.aio.async_send_handler.SessionSender
+  example:
+  - "Open a sessionful Sender and send messages.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   from azure.servicebus.aio import Message\n\n   async with queue_client.get_sender(session=\"\
+    MySession\") as sender:\n\n       await sender.send(Message(\"First\"))\n    \
+    \   await sender.send(Message(\"Second\"))\n\n   ````\n"
   fullName: azure.servicebus.aio.async_send_handler.SessionSender.send
   langs:
   - python
@@ -211,17 +233,13 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 230
-  summary: "Sends a message and blocks until acknowledgement is\nreceived or the operation\
-    \ fails. If neither the Sender or the message\nhas a session ID, a *ValueError*\
-    \ will be raised.\n\nOpen a sessionful Sender and send messages.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   from azure.servicebus.aio import Message\n\n   async with queue_client.get_sender(session=\"\
-    MySession\") as sender:\n\n       await sender.send(Message(\"First\"))\n    \
-    \   await sender.send(Message(\"Second\"))\n\n   ````\n"
+  summary: 'Sends a message and blocks until acknowledgement is
+
+    received or the operation fails. If neither the Sender or the message
+
+    has a session ID, a *ValueError* will be raised.
+
+    '
   syntax:
     content: send(message)
     parameters:

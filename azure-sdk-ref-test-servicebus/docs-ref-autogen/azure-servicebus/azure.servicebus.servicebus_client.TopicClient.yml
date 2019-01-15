@@ -3,6 +3,16 @@ api_name: []
 items:
 - children: []
   class: azure.servicebus.servicebus_client.TopicClient
+  example:
+  - "Create a TopicClient.<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n\
+    <!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   import os\n   from azure.servicebus import TopicClient\n\
+    \n   connection_str = os.environ['SERVICE_BUS_CONNECTION_STR']\n   topic_client\
+    \ = TopicClient.from_connection_string(connection_str, name=\"MyTopic\")\n   properties\
+    \ = topic_client.get_properties()\n\n\n   ````\n"
   fullName: azure.servicebus.servicebus_client.TopicClient
   inheritance:
   - inheritance:
@@ -22,16 +32,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 682
-  summary: "The TopicClient class defines a high level interface for sending\nmessages\
-    \ to an Azure Service Bus Topic.\nIf you do not wish to perform management operations,\
-    \ a TopicClient can be\ninstantiated directly to perform send operations to a\
-    \ Topic.\n\nCreate a TopicClient.<!--[!code-python[Main](ples\\test_examples.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    startLine: 701
+  summary: 'The TopicClient class defines a high level interface for sending
+
+    messages to an Azure Service Bus Topic.
+
+    If you do not wish to perform management operations, a TopicClient can be
+
+    instantiated directly to perform send operations to a Topic.
+
+    '
   syntax:
     content: TopicClient(address, name, shared_access_key_name=None, shared_access_key_value=None,
       debug=False, **kwargs)

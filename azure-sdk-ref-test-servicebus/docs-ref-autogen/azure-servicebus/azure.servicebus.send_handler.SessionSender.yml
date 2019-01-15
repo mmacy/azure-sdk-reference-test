@@ -27,7 +27,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 208
+    startLine: 209
   summary: 'This handler if for sending messages to a sessionful Service Bus entity.
 
     It operates a single connetion that must be opened and closed on completion.
@@ -109,6 +109,18 @@ items:
   type: class
   uid: azure.servicebus.send_handler.SessionSender
 - class: azure.servicebus.send_handler.SessionSender
+  example:
+  - "Put the message to be sent later in the queue<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   with queue_client.get_sender(session=\"MySessionID\"\
+    ) as sender:\n       message1 = Message(\"Hello World!\")\n       message2 = Message(\"\
+    How are you?\")\n       sender.queue_message(message1)\n       sender.queue_message(message2)\n\
+    \n       message_status = sender.send_pending_messages()\n       for status in\
+    \ message_status:\n           if not status[0]:\n               print(\"Message\
+    \ send failed: {}\".format(status[1]))\n\n   ````\n"
   fullName: azure.servicebus.send_handler.SessionSender.queue_message
   langs:
   - python
@@ -121,21 +133,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 263
-  summary: "Queue a message to be sent later. This operation should be followed up\n\
-    with send_pending_messages. If neither the Sender or the message\nhas a session\
-    \ ID, a *ValueError* will be raised.\n\nPut the message to be sent later in the\
-    \ queue<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n<!-- literal_block\
-    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
-    : [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\
-    \\examples\\\\test_examples.py\", \"xml:space\": \"preserve\", \"language\": \"\
-    python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n\
-    ````python\n\n   with queue_client.get_sender(session=\"MySessionID\") as sender:\n\
-    \       message1 = Message(\"Hello World!\")\n       message2 = Message(\"How\
-    \ are you?\")\n       sender.queue_message(message1)\n       sender.queue_message(message2)\n\
-    \n       message_status = sender.send_pending_messages()\n       for status in\
-    \ message_status:\n           if not status[0]:\n               print(\"Message\
-    \ send failed: {}\".format(status[1]))\n\n   ````\n"
+    startLine: 264
+  summary: 'Queue a message to be sent later. This operation should be followed up
+
+    with send_pending_messages. If neither the Sender or the message
+
+    has a session ID, a *ValueError* will be raised.
+
+    '
   syntax:
     content: queue_message(message)
     parameters:
@@ -148,6 +153,16 @@ items:
   type: method
   uid: azure.servicebus.send_handler.SessionSender.queue_message
 - class: azure.servicebus.send_handler.SessionSender
+  example:
+  - "Schedule a message to be sent in future<!--[!code-python[Main](ples\\test_examples.py\
+    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
+    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
+    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   with queue_client.get_sender() as sender:\n    \
+    \   message = Message(\"Hello World!\")\n       today = datetime.datetime.today()\n\
+    \n       # Schedule the message 5 days from today\n       sequence_numbers = sender.schedule(today\
+    \ + datetime.timedelta(days=5), message)\n\n   ````\n"
   fullName: azure.servicebus.send_handler.SessionSender.schedule
   langs:
   - python
@@ -160,18 +175,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 284
-  summary: "Send one or more messages to be enqueued at a specific time.\nReturns\
-    \ a list of the sequence numbers of the enqueued messages.\n\nSchedule a message\
-    \ to be sent in future<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n\
-    <!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
-    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
-    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n   with queue_client.get_sender() as sender:\n    \
-    \   message = Message(\"Hello World!\")\n       today = datetime.datetime.today()\n\
-    \n       # Schedule the message 5 days from today\n       sequence_numbers = sender.schedule(today\
-    \ + datetime.timedelta(days=5), message)\n\n   ````\n"
+    startLine: 285
+  summary: 'Send one or more messages to be enqueued at a specific time.
+
+    Returns a list of the sequence numbers of the enqueued messages.
+
+    '
   syntax:
     content: schedule(schedule_time, *messages)
     parameters:
@@ -194,6 +203,15 @@ items:
   type: method
   uid: azure.servicebus.send_handler.SessionSender.schedule
 - class: azure.servicebus.send_handler.SessionSender
+  example:
+  - "Send a message and block<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   # Send the message via sender\n   with queue_client.get_sender()\
+    \ as sender:\n       message = Message(\"Hello World!\")\n       sender.send(message)\n\
+    \n   ````\n"
   fullName: azure.servicebus.send_handler.SessionSender.send
   langs:
   - python
@@ -206,17 +224,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 237
-  summary: "Sends a message and blocks until acknowledgement is\nreceived or the operation\
-    \ fails. If neither the Sender or the message\nhas a session ID, a *ValueError*\
-    \ will be raised.\n\nSend a message and block<!--[!code-python[Main](ples\\test_examples.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n   # Send the message via sender\n   with queue_client.get_sender()\
-    \ as sender:\n       message = Message(\"Hello World!\")\n       sender.send(message)\n\
-    \n   ````\n"
+    startLine: 238
+  summary: 'Sends a message and blocks until acknowledgement is
+
+    received or the operation fails. If neither the Sender or the message
+
+    has a session ID, a *ValueError* will be raised.
+
+    '
   syntax:
     content: send(message)
     parameters:

@@ -3,6 +3,16 @@ api_name: []
 items:
 - children: []
   class: azure.servicebus.QueueClient
+  example:
+  - "Create a QueueClient.<!--[!code-python[Main](ples\\test_examples.py )]-->\n\n\
+    <!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   import os\n   from azure.servicebus import QueueClient\n\
+    \n   connection_str = os.environ['SERVICE_BUS_CONNECTION_STR']\n   queue_client\
+    \ = QueueClient.from_connection_string(connection_str, name=\"MyQueue\")\n   queue_properties\
+    \ = queue_client.get_properties()\n\n\n   ````\n"
   fullName: azure.servicebus.QueueClient
   inheritance:
   - inheritance:
@@ -25,19 +35,22 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 647
-  summary: "The QueueClient class defines a high level interface for sending\nmessages\
-    \ to and receiving messages from an Azure Service Bus queue.\nIf you do not wish\
-    \ to perform management operations, a QueueClient can be\ninstantiated directly\
-    \ to perform send and receive operations to a Queue.\nHowever if a QueueClient\
-    \ is created directly, a *get_properties* operation will\nneed to be completed\
-    \ in order to retrieve the properties of this queue (for example,\nwhether it\
-    \ is sessionful).\n\nCreate a QueueClient.<!--[!code-python[Main](ples\\test_examples.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
-    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
-    : 1}} -->\n\n````python\n\n\n   ````\n"
+    startLine: 664
+  summary: 'The QueueClient class defines a high level interface for sending
+
+    messages to and receiving messages from an Azure Service Bus queue.
+
+    If you do not wish to perform management operations, a QueueClient can be
+
+    instantiated directly to perform send and receive operations to a Queue.
+
+    However if a QueueClient is created directly, a *get_properties* operation will
+
+    need to be completed in order to retrieve the properties of this queue (for example,
+
+    whether it is sessionful).
+
+    '
   syntax:
     content: QueueClient(address, name, shared_access_key_name=None, shared_access_key_value=None,
       debug=False, **kwargs)

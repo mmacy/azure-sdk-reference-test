@@ -18,11 +18,23 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\mixins.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 376
+    startLine: 380
   syntax: {}
   type: class
   uid: azure.servicebus.common.mixins.SenderMixin
 - class: azure.servicebus.common.mixins.SenderMixin
+  example:
+  - "Send the queued messages<!--[!code-python[Main](ples\\test_examples.py )]-->\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\\
+    azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
+    , \"language\": \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\"\
+    : 1}} -->\n\n````python\n\n   with queue_client.get_sender() as sender:\n    \
+    \   message1 = Message(\"Hello World!\")\n       message2 = Message(\"How are\
+    \ you?\")\n       sender.queue_message(message1)\n       sender.queue_message(message2)\n\
+    \n       message_status = sender.send_pending_messages()\n       for status in\
+    \ message_status:\n           if not status[0]:\n               print(\"Message\
+    \ send failed: {}\".format(status[1]))\n\n   ````\n"
   fullName: azure.servicebus.common.mixins.SenderMixin.queue_message
   langs:
   - python
@@ -35,19 +47,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\mixins.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 396
-  summary: "Queue a message to be sent later. This operation should be followed up\n\
-    with send_pending_messages.\n\nSend the queued messages<!--[!code-python[Main](ples\\\
-    test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
-    names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
-    s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
-    xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   with queue_client.get_sender()\
-    \ as sender:\n       message1 = Message(\"Hello World!\")\n       message2 = Message(\"\
-    How are you?\")\n       sender.queue_message(message1)\n       sender.queue_message(message2)\n\
-    \n       message_status = sender.send_pending_messages()\n       for status in\
-    \ message_status:\n           if not status[0]:\n               print(\"Message\
-    \ send failed: {}\".format(status[1]))\n\n   ````\n"
+    startLine: 400
+  summary: 'Queue a message to be sent later. This operation should be followed up
+
+    with send_pending_messages.
+
+    '
   syntax:
     content: queue_message(message)
     parameters:

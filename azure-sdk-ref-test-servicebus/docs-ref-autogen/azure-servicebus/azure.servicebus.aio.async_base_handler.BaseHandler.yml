@@ -31,6 +31,16 @@ items:
   type: class
   uid: azure.servicebus.aio.async_base_handler.BaseHandler
 - class: azure.servicebus.aio.async_base_handler.BaseHandler
+  example:
+  - "Explicitly open and close a Sender.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   from azure.servicebus.aio import Message\n\n   sender = queue_client.get_sender()\n\
+    \   try:\n       await sender.open()\n       await sender.send(Message(\"foobar\"\
+    ))\n   finally:\n       await sender.close()\n\n   ````\n"
   fullName: azure.servicebus.aio.async_base_handler.BaseHandler.close
   langs:
   - python
@@ -43,21 +53,26 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_base_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 167
-  summary: "Close down the handler connection. If the handler has already closed,\n\
-    this operation will do nothing. An optional exception can be passed in to\nindicate\
-    \ that the handler was shutdown due to error.\nIt is recommended to open a handler\
-    \ within a context manager as\nopposed to calling the method directly.\n\n\n>\
-    \ [!NOTE]\n> This operation is not thread-safe.\n>\n\nExplicitly open and close\
-    \ a Sender.<!--[!code-python[Main](ples\\async_examples\\test_examples_async.py\
-    \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
-    dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
-    \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
-    , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
-    highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   from azure.servicebus.aio\
-    \ import Message\n\n   sender = queue_client.get_sender()\n   try:\n       await\
-    \ sender.open()\n       await sender.send(Message(\"foobar\"))\n   finally:\n\
-    \       await sender.close()\n\n   ````\n"
+    startLine: 168
+  summary: 'Close down the handler connection. If the handler has already closed,
+
+    this operation will do nothing. An optional exception can be passed in to
+
+    indicate that the handler was shutdown due to error.
+
+    It is recommended to open a handler within a context manager as
+
+    opposed to calling the method directly.
+
+
+
+    > [!NOTE]
+
+    > This operation is not thread-safe.
+
+    >
+
+    '
   syntax:
     content: close(exception=None)
     parameters:
@@ -73,6 +88,16 @@ items:
   type: method
   uid: azure.servicebus.aio.async_base_handler.BaseHandler.close
 - class: azure.servicebus.aio.async_base_handler.BaseHandler
+  example:
+  - "Explicitly open and close a Sender.<!--[!code-python[Main](ples\\async_examples\\\
+    test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\":\
+    \ [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\\
+    a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
+    \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
+    , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
+    \n   from azure.servicebus.aio import Message\n\n   sender = queue_client.get_sender()\n\
+    \   try:\n       await sender.open()\n       await sender.send(Message(\"foobar\"\
+    ))\n   finally:\n       await sender.close()\n\n   ````\n"
   fullName: azure.servicebus.aio.async_base_handler.BaseHandler.open
   langs:
   - python
@@ -86,19 +111,25 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_base_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 136
-  summary: "Open handler connection and authenticate session.\nIf the handler is already\
-    \ open, this operation will do nothing.\nA handler opened with this method must\
-    \ be explicitly closed.\nIt is recommended to open a handler within a context\
-    \ manager as\nopposed to calling the method directly.\n\n\n> [!NOTE]\n> This operation\
-    \ is not thread-safe.\n>\n\nExplicitly open and close a Sender.<!--[!code-python[Main](ples\\\
-    async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
-    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
-    : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
-    async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
-    : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   from azure.servicebus.aio import Message\n\n   sender = queue_client.get_sender()\n\
-    \   try:\n       await sender.open()\n       await sender.send(Message(\"foobar\"\
-    ))\n   finally:\n       await sender.close()\n\n   ````\n"
+  summary: 'Open handler connection and authenticate session.
+
+    If the handler is already open, this operation will do nothing.
+
+    A handler opened with this method must be explicitly closed.
+
+    It is recommended to open a handler within a context manager as
+
+    opposed to calling the method directly.
+
+
+
+    > [!NOTE]
+
+    > This operation is not thread-safe.
+
+    >
+
+    '
   syntax:
     content: open()
     parameters: []
