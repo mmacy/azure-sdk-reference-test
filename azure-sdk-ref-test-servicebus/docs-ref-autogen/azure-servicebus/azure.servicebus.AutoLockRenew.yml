@@ -2,9 +2,9 @@
 api_name: []
 items:
 - children:
-  - azure.servicebus.common.utils.AutoLockRenew.register
-  - azure.servicebus.common.utils.AutoLockRenew.shutdown
-  class: azure.servicebus.common.utils.AutoLockRenew
+  - azure.servicebus.AutoLockRenew.register
+  - azure.servicebus.AutoLockRenew.shutdown
+  class: azure.servicebus.AutoLockRenew
   example:
   - "Automatically renew a message lock<!--[!code-python[Main](ples\\test_examples.py\
     \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
@@ -27,12 +27,12 @@ items:
     \ 2 minutes\n       lock_renewal.register(session, timeout=120)\n\n       for\
     \ message in session:\n           process_message(message)\n           message.complete()\n\
     \n   ````\n"
-  fullName: azure.servicebus.common.utils.AutoLockRenew
+  fullName: azure.servicebus.AutoLockRenew
   inheritance:
   - type: builtins.object
   langs:
   - python
-  module: azure.servicebus.common.utils
+  module: azure.servicebus
   name: AutoLockRenew
   source:
     id: AutoLockRenew
@@ -69,12 +69,12 @@ items:
       type:
       - int
   type: class
-  uid: azure.servicebus.common.utils.AutoLockRenew
-- class: azure.servicebus.common.utils.AutoLockRenew
-  fullName: azure.servicebus.common.utils.AutoLockRenew.register
+  uid: azure.servicebus.AutoLockRenew
+- class: azure.servicebus.AutoLockRenew
+  fullName: azure.servicebus.AutoLockRenew.register
   langs:
   - python
-  module: azure.servicebus.common.utils
+  module: azure.servicebus
   name: register(renewable, timeout=300)
   source:
     id: register
@@ -107,12 +107,12 @@ items:
       type:
       - int
   type: method
-  uid: azure.servicebus.common.utils.AutoLockRenew.register
-- class: azure.servicebus.common.utils.AutoLockRenew
-  fullName: azure.servicebus.common.utils.AutoLockRenew.shutdown
+  uid: azure.servicebus.AutoLockRenew.register
+- class: azure.servicebus.AutoLockRenew
+  fullName: azure.servicebus.AutoLockRenew.shutdown
   langs:
   - python
-  module: azure.servicebus.common.utils
+  module: azure.servicebus
   name: shutdown(wait=True)
   source:
     id: shutdown
@@ -136,15 +136,15 @@ items:
       type:
       - bool
   type: method
-  uid: azure.servicebus.common.utils.AutoLockRenew.shutdown
+  uid: azure.servicebus.AutoLockRenew.shutdown
 references:
-- fullName: azure.servicebus.common.utils.AutoLockRenew.register
+- fullName: azure.servicebus.AutoLockRenew.register
   isExternal: false
   name: register(renewable, timeout=300)
-  parent: azure.servicebus.common.utils.AutoLockRenew
-  uid: azure.servicebus.common.utils.AutoLockRenew.register
-- fullName: azure.servicebus.common.utils.AutoLockRenew.shutdown
+  parent: azure.servicebus.AutoLockRenew
+  uid: azure.servicebus.AutoLockRenew.register
+- fullName: azure.servicebus.AutoLockRenew.shutdown
   isExternal: false
   name: shutdown(wait=True)
-  parent: azure.servicebus.common.utils.AutoLockRenew
-  uid: azure.servicebus.common.utils.AutoLockRenew.shutdown
+  parent: azure.servicebus.AutoLockRenew
+  uid: azure.servicebus.AutoLockRenew.shutdown

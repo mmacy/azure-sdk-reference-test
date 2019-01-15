@@ -5,6 +5,7 @@ items:
   - azure.servicebus.Message
   - azure.servicebus.BatchMessage
   - azure.servicebus.PeekMessage
+  - azure.servicebus.AutoLockRenew
   - azure.servicebus.DeferredMessage
   - azure.servicebus.ServiceBusClient
   - azure.servicebus.QueueClient
@@ -63,6 +64,11 @@ references:
   name: PeekMessage
   parent: azure.servicebus
   uid: azure.servicebus.PeekMessage
+- fullName: azure.servicebus.AutoLockRenew
+  isExternal: false
+  name: AutoLockRenew
+  parent: azure.servicebus
+  uid: azure.servicebus.AutoLockRenew
 - fullName: azure.servicebus.DeferredMessage
   isExternal: false
   name: DeferredMessage

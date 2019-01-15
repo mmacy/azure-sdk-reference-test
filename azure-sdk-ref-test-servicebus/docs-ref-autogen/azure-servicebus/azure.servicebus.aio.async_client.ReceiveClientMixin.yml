@@ -59,7 +59,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 583
+    startLine: 585
   summary: 'Get a Receiver for the deadletter endpoint of the entity. A Receiver represents
 
     a single open connection with which multiple receive operations can be made.
@@ -155,7 +155,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 517
+    startLine: 519
   summary: 'Get a Receiver for the Service Bus endpoint. A Receiver represents
 
     a single open connection with which multiple receive operations can be made.
@@ -246,7 +246,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 489
+    startLine: 491
   summary: 'List the IDs of sessions in the queue with pending messages and where
     the state of the session
 

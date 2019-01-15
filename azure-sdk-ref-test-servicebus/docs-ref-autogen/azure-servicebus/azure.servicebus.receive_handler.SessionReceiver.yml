@@ -153,19 +153,6 @@ items:
       id: debug
       type:
       - bool
-    variables:
-    - description: 'Whether the receivers lock on a particular session has expired.
-
-        '
-      id: expired
-      type:
-      - bool
-    - description: 'The UTC timestamp that the current session lock will expire.
-
-        '
-      id: locked_until
-      type:
-      - datetime.datetime
   type: class
   uid: azure.servicebus.receive_handler.SessionReceiver
 - class: azure.servicebus.receive_handler.SessionReceiver
@@ -190,7 +177,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 504
+    startLine: 500
   summary: 'Get the session state. Returns None if no state
 
     has been set.
@@ -228,7 +215,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 655
+    startLine: 651
   summary: 'List the Session IDs with pending messages in the queue where the state
     of the session
 
@@ -293,7 +280,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 574
+    startLine: 570
   summary: 'Browse messages pending in the queue. This operation does not remove
 
     messages from the queue, nor does it lock them.
@@ -352,7 +339,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 612
+    startLine: 608
   summary: 'Receive messages that have previously been deferred. This operation can
 
     only receive deferred messages from the current session.
@@ -408,7 +395,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 551
+    startLine: 547
   summary: 'Renew the session lock. This operation must be performed periodically
 
     in order to retain a lock on the session to continue message processing.
@@ -447,7 +434,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 529
+    startLine: 525
   summary: 'Set the session state.
 
     '

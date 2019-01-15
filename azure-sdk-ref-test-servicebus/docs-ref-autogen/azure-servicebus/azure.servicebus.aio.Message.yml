@@ -23,7 +23,7 @@ items:
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
     xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"highlight_args\"\
-    : {\"linenostart\": 1}} -->\n\n````python\n\n   with queue_client.get_receiver()\
+    : {\"linenostart\": 1}} -->\n\n````python\n\n   with queue_client.get_receiver(idle_timeout=3)\
     \ as receiver:\n       for message in receiver:\n           print(\"Receiving:\
     \ {}\".format(message))\n           print(\"Time to live: {}\".format(message.time_to_live))\n\
     \           print(\"Sequence number: {}\".format(message.sequence_number))\n \

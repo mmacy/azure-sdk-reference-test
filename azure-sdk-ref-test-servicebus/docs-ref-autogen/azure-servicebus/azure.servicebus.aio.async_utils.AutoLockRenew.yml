@@ -12,20 +12,20 @@ items:
     a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\
     \\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\": \"python\"\
     , \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\
-    \n   for azure.servicebus.aio import AutoLockRenew\n\n   lock_renewal = AutoLockRenew()\n\
+    \n   from azure.servicebus.aio import AutoLockRenew\n\n   lock_renewal = AutoLockRenew()\n\
     \   async with queue_client.get_receiver(idle_timeout=3) as queue_receiver:\n\
-    \       async for message in queue_receiver:\n           lock_renewal.register(message)\n\
-    \           await process_message(message)\n\n           await message.complete()\n\
+    \       async for message in queue_receiver:\n           lock_renewal.register(message,\
+    \ timeout=60)\n           await process_message(message)\n\n           await message.complete()\n\
     \n   ````\n\nAutomatically renew a session lock<!--[!code-python[Main](ples\\\
     async_examples\\test_examples_async.py )]-->\n\n<!-- literal_block {\"ids\": [],\
     \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"source\"\
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   for azure.servicebus.aio import AutoLockRenew\n\n   lock_renewal\
-    \ = AutoLockRenew()\n   async with session_client.get_receiver(session=\"MySessionID\"\
+    \n````python\n\n   from azure.servicebus.aio import AutoLockRenew\n\n   lock_renewal\
+    \ = AutoLockRenew()\n   async with queue_client.get_receiver(session=\"MySessionID\"\
     , idle_timeout=3) as session:\n       lock_renewal.register(session)\n\n     \
-    \  async for message in queue_receiver:\n           await process_message(message)\n\
+    \  async for message in session:\n           await process_message(message)\n\
     \           await message.complete()\n\n   ````\n"
   fullName: azure.servicebus.aio.async_utils.AutoLockRenew
   inheritance:

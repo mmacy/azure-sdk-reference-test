@@ -58,7 +58,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 609
+    startLine: 611
   summary: 'Get a Receiver for the deadletter endpoint of the queue. A Receiver represents
 
     a single open Connection with which multiple receive operations can be made.
@@ -154,7 +154,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 543
+    startLine: 545
   summary: 'Get a Receiver for the Service Bus endpoint. A Receiver represents
 
     a single open Connection with which multiple receive operations can be made.

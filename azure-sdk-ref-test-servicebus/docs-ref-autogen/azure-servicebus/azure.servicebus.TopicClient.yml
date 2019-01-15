@@ -32,7 +32,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 701
+    startLine: 703
   summary: 'The TopicClient class defines a high level interface for sending
 
     messages to an Azure Service Bus Topic.

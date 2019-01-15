@@ -234,6 +234,8 @@
         uid: azure.servicebus.servicebus_client.TopicClient
       name: azure.servicebus.servicebus_client
       uid: azure.servicebus.servicebus_client
+    - name: azure.servicebus.AutoLockRenew
+      uid: azure.servicebus.AutoLockRenew
     - name: azure.servicebus.AutoLockRenewFailed
       uid: azure.servicebus.AutoLockRenewFailed
     - name: azure.servicebus.AutoLockRenewTimeout
