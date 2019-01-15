@@ -177,9 +177,8 @@ items:
       type:
       - str
     return:
-      description: '~azure.servicebus.servicebus_client.QueueClient
-
-        '
+      type:
+      - azure.servicebus.servicebus_client.QueueClient
   type: method
   uid: azure.servicebus.ServiceBusClient.get_queue
 - class: azure.servicebus.ServiceBusClient
@@ -225,9 +224,8 @@ items:
       type:
       - str
     return:
-      description: '~azure.servicebus.servicebus_client.SubscriptionClient
-
-        '
+      type:
+      - azure.servicebus.servicebus_client.SubscriptionClient
   type: method
   uid: azure.servicebus.ServiceBusClient.get_subscription
 - class: azure.servicebus.ServiceBusClient
@@ -266,9 +264,8 @@ items:
       type:
       - str
     return:
-      description: '~azure.servicebus.servicebus_client.TopicClient
-
-        '
+      type:
+      - azure.servicebus.servicebus_client.TopicClient
   type: method
   uid: azure.servicebus.ServiceBusClient.get_topic
 - class: azure.servicebus.ServiceBusClient
@@ -301,9 +298,8 @@ items:
     content: list_queues()
     parameters: []
     return:
-      description: 'list[~azure.servicebus.servicebus_client.QueueClient]
-
-        '
+      type:
+      - list[azure.servicebus.servicebus_client.QueueClient]
   type: method
   uid: azure.servicebus.ServiceBusClient.list_queues
 - class: azure.servicebus.ServiceBusClient
@@ -342,9 +338,8 @@ items:
       type:
       - str
     return:
-      description: 'list[~azure.servicebus.servicebus_client.SubscriptionClient]
-
-        '
+      type:
+      - list[azure.servicebus.servicebus_client.SubscriptionClient]
   type: method
   uid: azure.servicebus.ServiceBusClient.list_subscriptions
 - class: azure.servicebus.ServiceBusClient
@@ -376,9 +371,8 @@ items:
     content: list_topics()
     parameters: []
     return:
-      description: 'list[~azure.servicebus.servicebus_client.TopicClient]
-
-        '
+      type:
+      - list[azure.servicebus.servicebus_client.TopicClient]
   type: method
   uid: azure.servicebus.ServiceBusClient.list_topics
 references:
@@ -417,3 +411,45 @@ references:
   name: list_topics()
   parent: azure.servicebus.ServiceBusClient
   uid: azure.servicebus.ServiceBusClient.list_topics
+- fullName: list[azure.servicebus.servicebus_client.QueueClient]
+  name: list[QueueClient]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.servicebus_client.QueueClient
+    name: QueueClient
+    uid: azure.servicebus.servicebus_client.QueueClient
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.servicebus_client.QueueClient]
+- fullName: list[azure.servicebus.servicebus_client.SubscriptionClient]
+  name: list[SubscriptionClient]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.servicebus_client.SubscriptionClient
+    name: SubscriptionClient
+    uid: azure.servicebus.servicebus_client.SubscriptionClient
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.servicebus_client.SubscriptionClient]
+- fullName: list[azure.servicebus.servicebus_client.TopicClient]
+  name: list[TopicClient]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.servicebus_client.TopicClient
+    name: TopicClient
+    uid: azure.servicebus.servicebus_client.TopicClient
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.servicebus_client.TopicClient]

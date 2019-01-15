@@ -295,9 +295,8 @@ items:
       type:
       - int
     return:
-      description: 'list[str]
-
-        '
+      type:
+      - list[str]
   type: method
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.list_sessions
 - class: azure.servicebus.servicebus_client.ReceiveClientMixin
@@ -511,6 +510,20 @@ references:
   name: settle_deferred_messages(settlement, messages, **kwargs)
   parent: azure.servicebus.servicebus_client.ReceiveClientMixin
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.settle_deferred_messages
+- fullName: list[str]
+  name: list[str]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  uid: list[str]
 - fullName: list[azure.servicebus.common.message.PeekMessage]
   name: list[PeekMessage]
   spec.python:

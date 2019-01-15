@@ -204,9 +204,8 @@ items:
       type:
       - azure.servicebus.aio.async_message.Message
     return:
-      description: 'list[int]
-
-        '
+      type:
+      - list[int]
   type: method
   uid: azure.servicebus.aio.async_send_handler.SessionSender.schedule_messages
 - class: azure.servicebus.aio.async_send_handler.SessionSender
@@ -286,3 +285,17 @@ references:
   - fullName: ']'
     name: ']'
   uid: dict[str, str]
+- fullName: list[int]
+  name: list[int]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: int
+    name: int
+    uid: int
+  - fullName: ']'
+    name: ']'
+  uid: list[int]

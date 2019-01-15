@@ -448,9 +448,8 @@ items:
       type:
       - azure.servicebus.common.constants.ReceiveSettleMode
     return:
-      description: 'list[~azure.servicebus.common.message.DeferredMessage]
-
-        '
+      type:
+      - list[azure.servicebus.common.message.DeferredMessage]
   type: method
   uid: azure.servicebus.receive_handler.Receiver.receive_deferred_messages
 references:
@@ -551,3 +550,17 @@ references:
   - fullName: ']'
     name: ']'
   uid: list[int]
+- fullName: list[azure.servicebus.common.message.DeferredMessage]
+  name: list[DeferredMessage]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: azure.servicebus.common.message.DeferredMessage
+    name: DeferredMessage
+    uid: azure.servicebus.common.message.DeferredMessage
+  - fullName: ']'
+    name: ']'
+  uid: list[azure.servicebus.common.message.DeferredMessage]

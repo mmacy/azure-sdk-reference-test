@@ -375,9 +375,8 @@ items:
     '
   syntax:
     return:
-      description: 'int
-
-        '
+      type:
+      - int
   type: attribute
   uid: azure.servicebus.aio.async_receive_handler.Receiver.queue_size
 - class: azure.servicebus.aio.async_receive_handler.Receiver

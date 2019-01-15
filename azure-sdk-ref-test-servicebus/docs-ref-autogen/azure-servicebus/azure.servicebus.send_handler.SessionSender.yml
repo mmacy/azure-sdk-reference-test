@@ -197,9 +197,8 @@ items:
       type:
       - azure.servicebus.common.message.Message
     return:
-      description: 'list[int]
-
-        '
+      type:
+      - list[int]
   type: method
   uid: azure.servicebus.send_handler.SessionSender.schedule
 - class: azure.servicebus.send_handler.SessionSender
@@ -278,3 +277,17 @@ references:
   - fullName: ']'
     name: ']'
   uid: dict[str, str]
+- fullName: list[int]
+  name: list[int]
+  spec.python:
+  - fullName: list
+    name: list
+    uid: list
+  - fullName: '['
+    name: '['
+  - fullName: int
+    name: int
+    uid: int
+  - fullName: ']'
+    name: ']'
+  uid: list[int]
