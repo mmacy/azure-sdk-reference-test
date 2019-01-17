@@ -103,7 +103,7 @@ items:
   langs:
   - python
   module: azure.servicebus.aio.async_utils
-  name: shutdown(wait=True)
+  name: shutdown()
   source:
     id: shutdown
     path: azure-servicebus\azure\servicebus\aio\async_utils.py
@@ -116,15 +116,8 @@ items:
 
     '
   syntax:
-    content: shutdown(wait=True)
-    parameters:
-    - defaultValue: 'True'
-      description: 'Whether to block until futures are done. Default is *True*.
-
-        '
-      id: wait
-      type:
-      - bool
+    content: shutdown()
+    parameters: []
   type: method
   uid: azure.servicebus.aio.async_utils.AutoLockRenew.shutdown
 references:
@@ -135,6 +128,6 @@ references:
   uid: azure.servicebus.aio.async_utils.AutoLockRenew.register
 - fullName: azure.servicebus.aio.async_utils.AutoLockRenew.shutdown
   isExternal: false
-  name: shutdown(wait=True)
+  name: shutdown()
   parent: azure.servicebus.aio.async_utils.AutoLockRenew
   uid: azure.servicebus.aio.async_utils.AutoLockRenew.shutdown

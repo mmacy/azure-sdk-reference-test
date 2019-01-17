@@ -2,15 +2,15 @@
 api_name: []
 items:
 - children: []
-  class: azure.servicebus.control_client.models.EventHub
-  fullName: azure.servicebus.control_client.models.EventHub
+  class: azure.servicebus.control_client.EventHub
+  fullName: azure.servicebus.control_client.EventHub
   inheritance:
   - inheritance:
     - type: builtins.object
     type: azure.servicebus.control_client._common_models.WindowsAzureData
   langs:
   - python
-  module: azure.servicebus.control_client.models
+  module: azure.servicebus.control_client
   name: EventHub
   source:
     id: EventHub
@@ -24,5 +24,5 @@ items:
     content: EventHub(message_retention_in_days=None, status=None, user_metadata=None,
       partition_count=None)
   type: class
-  uid: azure.servicebus.control_client.models.EventHub
+  uid: azure.servicebus.control_client.EventHub
 references: []

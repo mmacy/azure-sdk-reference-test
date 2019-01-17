@@ -360,9 +360,9 @@ items:
     : \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\\
     async_examples\\\\test_examples_async.py\", \"xml:space\": \"preserve\", \"language\"\
     : \"python\", \"linenos\": false, \"highlight_args\": {\"linenostart\": 1}} -->\n\
-    \n````python\n\n   sequence_numbers = []\n   async with queue_client.get_receiver(idle_timeout=5)\
+    \n````python\n\n   sequence_numbers = []\n   async with queue_client.get_receiver()\
     \ as receiver:\n       async for message in receiver:\n           sequence_numbers.append(message.sequence_number)\n\
-    \           await message.defer()\n\n   deferred = await queue_client.receive_deferred_messages(sequence_numbers)\n\
+    \           await message.defer()\n           break\n\n   deferred = await queue_client.receive_deferred_messages(sequence_numbers)\n\
     \n   ````\n"
   fullName: azure.servicebus.aio.async_client.ReceiveClientMixin.receive_deferred_messages
   langs:

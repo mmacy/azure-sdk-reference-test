@@ -2,15 +2,15 @@
 api_name: []
 items:
 - children: []
-  class: azure.servicebus.control_client.models.Rule
-  fullName: azure.servicebus.control_client.models.Rule
+  class: azure.servicebus.control_client.Rule
+  fullName: azure.servicebus.control_client.Rule
   inheritance:
   - inheritance:
     - type: builtins.object
     type: azure.servicebus.control_client._common_models.WindowsAzureData
   langs:
   - python
-  module: azure.servicebus.control_client.models
+  module: azure.servicebus.control_client
   name: Rule
   source:
     id: Rule
@@ -28,5 +28,5 @@ items:
   syntax:
     content: Rule(filter_type=None, filter_expression=None, action_type=None, action_expression=None)
   type: class
-  uid: azure.servicebus.control_client.models.Rule
+  uid: azure.servicebus.control_client.Rule
 references: []

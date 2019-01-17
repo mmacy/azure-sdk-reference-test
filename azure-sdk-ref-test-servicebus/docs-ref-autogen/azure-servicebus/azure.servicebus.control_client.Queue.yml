@@ -2,15 +2,15 @@
 api_name: []
 items:
 - children: []
-  class: azure.servicebus.control_client.models.Queue
-  fullName: azure.servicebus.control_client.models.Queue
+  class: azure.servicebus.control_client.Queue
+  fullName: azure.servicebus.control_client.Queue
   inheritance:
   - inheritance:
     - type: builtins.object
     type: azure.servicebus.control_client._common_models.WindowsAzureData
   langs:
   - python
-  module: azure.servicebus.control_client.models
+  module: azure.servicebus.control_client
   name: Queue
   source:
     id: Queue
@@ -31,5 +31,5 @@ items:
       duplicate_detection_history_time_window=None, max_delivery_count=None, enable_batched_operations=None,
       size_in_bytes=None, message_count=None)
   type: class
-  uid: azure.servicebus.control_client.models.Queue
+  uid: azure.servicebus.control_client.Queue
 references: []

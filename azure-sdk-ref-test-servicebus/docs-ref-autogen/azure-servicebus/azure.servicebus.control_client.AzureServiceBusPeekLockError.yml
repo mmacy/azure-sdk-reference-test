@@ -2,8 +2,8 @@
 api_name: []
 items:
 - children: []
-  class: azure.servicebus.control_client.models.AzureServiceBusPeekLockError
-  fullName: azure.servicebus.control_client.models.AzureServiceBusPeekLockError
+  class: azure.servicebus.control_client.AzureServiceBusPeekLockError
+  fullName: azure.servicebus.control_client.AzureServiceBusPeekLockError
   inheritance:
   - inheritance:
     - inheritance:
@@ -14,7 +14,7 @@ items:
     type: azure.common.AzureException
   langs:
   - python
-  module: azure.servicebus.control_client.models
+  module: azure.servicebus.control_client
   name: AzureServiceBusPeekLockError
   source:
     id: AzureServiceBusPeekLockError
@@ -29,5 +29,5 @@ items:
     '
   syntax: {}
   type: class
-  uid: azure.servicebus.control_client.models.AzureServiceBusPeekLockError
+  uid: azure.servicebus.control_client.AzureServiceBusPeekLockError
 references: []

@@ -23,7 +23,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\models.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 22
+    startLine: 24
   summary: 'Indicates that the resource doesn''t exist.
 
     '

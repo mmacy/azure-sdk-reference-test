@@ -19,7 +19,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\models.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 133
+    startLine: 135
   syntax:
     content: AuthorizationRule(claim_type=None, claim_value=None, rights=None, key_name=None,
       primary_key=None, secondary_key=None)

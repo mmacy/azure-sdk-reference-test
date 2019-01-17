@@ -17,10 +17,10 @@ items:
     \\0\\\\azure-servicebus\\\\examples\\\\async_examples\\\\test_examples_async.py\"\
     , \"xml:space\": \"preserve\", \"language\": \"python\", \"linenos\": false, \"\
     highlight_args\": {\"linenostart\": 1}} -->\n\n````python\n\n   import os\n  \
-    \ from azure.servicebus.aio import ServiceBusClient\n\n   namespace = os.environ['SERVICE_BUS_HOSTNAME']\n\
-    \   shared_access_policy = os.environ['SERVICE_BUS_SAS_POLICY']\n   shared_access_key\
-    \ = os.environ['SERVICE_BUS_SAS_KEY']\n\n   client = ServiceBusClient(\n     \
-    \  service_namespace=namespace,\n       shared_access_key_name=shared_access_policy,\n\
+    \ from azure.servicebus.aio import ServiceBusClient, Message\n\n   namespace =\
+    \ os.environ['SERVICE_BUS_HOSTNAME']\n   shared_access_policy = os.environ['SERVICE_BUS_SAS_POLICY']\n\
+    \   shared_access_key = os.environ['SERVICE_BUS_SAS_KEY']\n\n   client = ServiceBusClient(\n\
+    \       service_namespace=namespace,\n       shared_access_key_name=shared_access_policy,\n\
     \       shared_access_key_value=shared_access_key)\n\n   ````\n"
   fullName: azure.servicebus.aio.ServiceBusClient
   inheritance:

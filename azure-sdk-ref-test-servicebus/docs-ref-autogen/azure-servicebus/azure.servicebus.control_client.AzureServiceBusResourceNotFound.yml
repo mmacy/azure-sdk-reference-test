@@ -2,8 +2,8 @@
 api_name: []
 items:
 - children: []
-  class: azure.servicebus.control_client.models.AzureServiceBusPeekLockError
-  fullName: azure.servicebus.control_client.models.AzureServiceBusPeekLockError
+  class: azure.servicebus.control_client.AzureServiceBusResourceNotFound
+  fullName: azure.servicebus.control_client.AzureServiceBusResourceNotFound
   inheritance:
   - inheritance:
     - inheritance:
@@ -14,20 +14,20 @@ items:
     type: azure.common.AzureException
   langs:
   - python
-  module: azure.servicebus.control_client.models
-  name: AzureServiceBusPeekLockError
+  module: azure.servicebus.control_client
+  name: AzureServiceBusResourceNotFound
   source:
-    id: AzureServiceBusPeekLockError
+    id: AzureServiceBusResourceNotFound
     path: azure-servicebus\azure\servicebus\control_client\models.py
     remote:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\control_client\models.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 20
-  summary: 'Indicates that peek-lock is required for this operation.
+    startLine: 24
+  summary: 'Indicates that the resource doesn''t exist.
 
     '
   syntax: {}
   type: class
-  uid: azure.servicebus.control_client.models.AzureServiceBusPeekLockError
+  uid: azure.servicebus.control_client.AzureServiceBusResourceNotFound
 references: []

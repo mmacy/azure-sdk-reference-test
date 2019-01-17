@@ -203,6 +203,26 @@
           uid: azure.servicebus.control_client.servicebusservice.ServiceBusWrapTokenAuthentication
         name: azure.servicebus.control_client.servicebusservice
         uid: azure.servicebus.control_client.servicebusservice
+      - name: azure.servicebus.control_client.AuthorizationRule
+        uid: azure.servicebus.control_client.AuthorizationRule
+      - name: azure.servicebus.control_client.AzureServiceBusPeekLockError
+        uid: azure.servicebus.control_client.AzureServiceBusPeekLockError
+      - name: azure.servicebus.control_client.AzureServiceBusResourceNotFound
+        uid: azure.servicebus.control_client.AzureServiceBusResourceNotFound
+      - name: azure.servicebus.control_client.EventHub
+        uid: azure.servicebus.control_client.EventHub
+      - name: azure.servicebus.control_client.Message
+        uid: azure.servicebus.control_client.Message
+      - name: azure.servicebus.control_client.Queue
+        uid: azure.servicebus.control_client.Queue
+      - name: azure.servicebus.control_client.Rule
+        uid: azure.servicebus.control_client.Rule
+      - name: azure.servicebus.control_client.ServiceBusService
+        uid: azure.servicebus.control_client.ServiceBusService
+      - name: azure.servicebus.control_client.Subscription
+        uid: azure.servicebus.control_client.Subscription
+      - name: azure.servicebus.control_client.Topic
+        uid: azure.servicebus.control_client.Topic
       name: azure.servicebus.control_client
       uid: azure.servicebus.control_client
     - items:
