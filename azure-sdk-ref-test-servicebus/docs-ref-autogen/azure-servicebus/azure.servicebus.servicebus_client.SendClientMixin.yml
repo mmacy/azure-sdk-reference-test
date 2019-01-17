@@ -19,7 +19,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 290
+    startLine: 288
   summary: '
 
     '
@@ -28,7 +28,7 @@ items:
   uid: azure.servicebus.servicebus_client.SendClientMixin
 - class: azure.servicebus.servicebus_client.SendClientMixin
   example:
-  - "Get sender client from service bus client<!--[!code-python[Main](ples\\test_examples.py\
+  - "Get sender client from Service Bus client<!--[!code-python[Main](ples\\test_examples.py\
     \ )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"\
     dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\s\\\\source_repo\\\
     \\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"xml:space\": \"preserve\"\
@@ -48,10 +48,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 348
-  summary: 'Get a Sender for the Service Bus endpoint. A Sender represents
+    startLine: 347
+  summary: 'Get a Sender for the Service Bus endpoint.
 
-    a single open Connection with which multiple send operations can be made.
+
+    A Sender represents a single open Connection with which multiple send operations
+    can be made.
 
     '
   syntax:
@@ -60,7 +62,7 @@ items:
     - defaultValue: '0'
       description: 'The period in seconds during which messages sent with
 
-        this Sender must be sent. If the send in not completed in this time it will
+        this Sender must be sent. If the send is not completed in this time it will
         fail.
 
         '
@@ -120,10 +122,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 292
-  summary: 'Send one or more messages to the current entity. This operation
+    startLine: 290
+  summary: 'Send one or more messages to the current entity.
 
-    will open a single-use connection, send the supplied messages, and close
+
+    This operation will open a single-use connection, send the supplied messages,
+    and close
 
     connection. If the entity requires sessions, a session ID must be either
 
@@ -143,7 +147,7 @@ items:
     - defaultValue: '0'
       description: 'The period in seconds during which the Message must be
 
-        sent. If the send in not completed in this time it will return a failure result.
+        sent. If the send is not completed in this time it will return a failure result.
 
         '
       id: message_timeout

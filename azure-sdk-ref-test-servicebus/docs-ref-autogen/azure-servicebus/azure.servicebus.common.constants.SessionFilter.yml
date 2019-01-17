@@ -20,7 +20,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\constants.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 49
+    startLine: 50
   summary: 'An enumeration.
 
 

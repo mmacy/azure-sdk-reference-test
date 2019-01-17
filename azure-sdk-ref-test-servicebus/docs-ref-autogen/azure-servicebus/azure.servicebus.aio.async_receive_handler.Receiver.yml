@@ -42,9 +42,12 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 40
-  summary: 'This receive handler acts as an iterable message stream for retrieving
+  summary: 'A message receiver.
 
-    messages for a Service Bus entity. It operates a single connetion that must be
+
+    This receive handler acts as an iterable message stream for retrieving
+
+    messages for a Service Bus entity. It operates a single connection that must be
     opened and
 
     closed on completion. The service connection will remain open for the entirety
@@ -154,12 +157,13 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 241
-  summary: 'Close down the receiver connection. If the receiver has already closed,
+    startLine: 246
+  summary: 'Close down the receiver connection.
 
-    this operation will do nothing. An optional exception can be passed in to
 
-    indicate that the handler was shutdown due to error.
+    If the receiver has already closed, this operation will do nothing. An optional
+
+    exception can be passed in to indicate that the handler was shutdown due to error.
 
     It is recommended to open a handler within a context manager as
 
@@ -217,12 +221,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 351
-  summary: 'Receive a batch of messages at once. This approach it optimal
+    startLine: 360
+  summary: 'Receive a batch of messages at once.
 
-    if you wish to process multiple messages simultaneously. Note that the
 
-    number of messages retrieved in a single batch will be dependent on
+    This approach it optimal if you wish to process multiple messages simultaneously.
+
+    Note that the number of messages retrieved in a single batch will be dependent
+    on
 
     whether *prefetch* was set for the receiver. This call will prioritize returning
 
@@ -276,8 +282,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 211
+    startLine: 215
   summary: 'Open receiver connection and authenticate session.
+
 
     If the receiver is already open, this operation will do nothing.
 
@@ -326,10 +333,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 273
-  summary: 'Browse messages pending in the queue. This operation does not remove
+    startLine: 279
+  summary: 'Browse messages currently pending in the queue.
 
-    messages from the queue, nor does it lock them.
+
+    Peeked messages are not removed from queue, nor are they locked. They cannot be
+    completed,
+
+    deferred or dead-lettered.
 
     '
   syntax:
@@ -404,8 +415,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 310
+    startLine: 318
   summary: 'Receive messages that have previously been deferred.
+
 
     When receiving deferred messages from a partitioned entity, all of the supplied
 
@@ -451,6 +463,7 @@ items:
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: null
   summary: 'Whether the receiver connection has been marked for shutdown.
+
 
     If this value is *True* - it does not indicate that the connection
 

@@ -35,8 +35,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 666
-  summary: 'The QueueClient class defines a high level interface for sending
+    startLine: 672
+  summary: 'A queue client.
+
+
+    The QueueClient class defines a high level interface for sending
 
     messages to and receiving messages from an Azure Service Bus queue.
 

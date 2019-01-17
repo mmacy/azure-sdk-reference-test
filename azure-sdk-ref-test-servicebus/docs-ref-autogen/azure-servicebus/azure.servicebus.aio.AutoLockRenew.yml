@@ -42,7 +42,10 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_utils.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 18
-  summary: 'An asynchronous AutoLockRenew handler for renewing the lock
+  summary: 'Auto lock renew.
+
+
+    An asynchronous AutoLockRenew handler for renewing the lock
 
     tokens of messages and/or sessions in the background.
 
@@ -73,7 +76,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_utils.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 83
+    startLine: 86
   summary: 'Register a renewable entity for automatic lock renewal.
 
     '
@@ -111,7 +114,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_utils.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 97
+    startLine: 100
   summary: 'Cancel remaining open lock renewal futures.
 
     '

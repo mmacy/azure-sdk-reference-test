@@ -29,14 +29,16 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 359
+    startLine: 378
   summary: 'A batch of messages combined into a single message body.
+
 
     The body of the messages in the batch should be supplied by an iterable,
 
     such as a generator.
 
-    If the contents of the iterable exceeds the maximum size of a single message,
+    If the contents of the iterable exceeds the maximum size of a single message (256
+    kB),
 
     the data will be broken up across multiple messages.
 
@@ -44,7 +46,10 @@ items:
   syntax:
     content: BatchMessage(body, encoding='UTF-8', **kwargs)
     parameters:
-    - description: 'The data to send in each message in the batch.
+    - description: 'The data to send in each message in the batch. The maximum size
+        per message is 256 kB.
+
+        If data is supplied in excess of this limit, multiple messages will be sent.
 
         '
       id: body

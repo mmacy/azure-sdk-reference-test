@@ -58,10 +58,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 611
-  summary: 'Get a Receiver for the deadletter endpoint of the queue. A Receiver represents
+    startLine: 616
+  summary: 'Get a Receiver for the deadletter endpoint of the queue.
 
-    a single open Connection with which multiple receive operations can be made.
+
+    A Receiver represents a single open Connection with which multiple receive operations
+    can be made.
 
     '
   syntax:
@@ -71,7 +73,7 @@ items:
     - defaultValue: 'False'
       description: 'Whether to connect to the transfer deadletter queue, or the standard
 
-        deadletter queue. Default is False, i.e. the standard deadletter endpoint.
+        deadletter queue. Default is False, using the standard deadletter endpoint.
 
         '
       id: transfer_deadletter
@@ -81,10 +83,10 @@ items:
       description: 'The maximum number of messages to cache with each request to the
         service.
 
-        The default value is 0, i.e. messages will be received from the service and
-        processed
+        The default value is 0, meaning messages will be received from the service
+        and processed
 
-        one at a time. Increasing this value will improve message through-put performance
+        one at a time. Increasing this value will improve message throughput performance
         but increase
 
         the change that messages will expire while they are cached if they''re not
@@ -117,7 +119,7 @@ items:
       description: 'The timeout in seconds between received messages after which the
         receiver will
 
-        automatically shutdown. The default value is 0, i.e. no timeout.
+        automatically shutdown. The default value is 0, meaning no timeout.
 
         '
       id: idle_timeout
@@ -133,7 +135,7 @@ items:
   uid: azure.servicebus.servicebus_client.ReceiveClientMixin.get_deadletter_receiver
 - class: azure.servicebus.servicebus_client.ReceiveClientMixin
   example:
-  - "Get the receiver client from service bus client<!--[!code-python[Main](ples\\\
+  - "Get the receiver client from Service Bus client<!--[!code-python[Main](ples\\\
     test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
@@ -154,10 +156,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 545
-  summary: 'Get a Receiver for the Service Bus endpoint. A Receiver represents
+    startLine: 549
+  summary: 'Get a Receiver for the Service Bus endpoint.
 
-    a single open Connection with which multiple receive operations can be made.
+
+    A Receiver represents a single open Connection with which multiple receive operations
+    can be made.
 
     '
   syntax:
@@ -182,10 +186,10 @@ items:
       description: 'The maximum number of messages to cache with each request to the
         service.
 
-        The default value is 0, i.e. messages will be received from the service and
-        processed
+        The default value is 0, meaning messages will be received from the service
+        and processed
 
-        one at a time. Increasing this value will improve message through-put performance
+        one at a time. Increasing this value will improve message throughput performance
         but increase
 
         the change that messages will expire while they are cached if they''re not
@@ -218,7 +222,7 @@ items:
       description: 'The timeout in seconds between received messages after which the
         receiver will
 
-        automatically shutdown. The default value is 0, i.e. no timeout.
+        automatically shutdown. The default value is 0, meaning no timeout.
 
         '
       id: idle_timeout
@@ -255,9 +259,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 432
-  summary: 'List the Session IDs with pending messages in the queue where the state
-    of the session
+    startLine: 433
+  summary: 'List session IDs.
+
+
+    List the Session IDs with pending messages in the queue where the state of the
+    session
 
     has been updated since the timestamp provided. If no timestamp is provided, all
     will be returned.
@@ -321,9 +328,11 @@ items:
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 395
-  summary: 'Browse messages currently pending in the queue. Peeked messages
+  summary: 'Browse messages currently pending in the queue.
 
-    are not removed from queue, nor are they locked. The cannot be completed,
+
+    Peeked messages are not removed from queue, nor are they locked. They cannot be
+    completed,
 
     deferred or dead-lettered.
 
@@ -388,8 +397,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 468
-  summary: 'Receive messages by sequence number that have been previously deffered.
+    startLine: 471
+  summary: 'Receive messages by sequence number that have been previously deferred.
+
 
     When receiving deferred messages from a partitioned entity, all of the supplied
 
@@ -453,8 +463,8 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\servicebus_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 511
-  summary: 'Settle messages that have been previously deffered.
+    startLine: 515
+  summary: 'Settle messages that have been previously deferred.
 
     '
   syntax:

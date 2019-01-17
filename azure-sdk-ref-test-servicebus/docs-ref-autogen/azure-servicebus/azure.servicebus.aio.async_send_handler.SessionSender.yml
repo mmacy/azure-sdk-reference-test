@@ -27,10 +27,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 199
-  summary: 'This handler if for sending messages to a sessionful Service Bus entity.
+    startLine: 201
+  summary: 'This handler is for sending messages to a sessionful Service Bus entity.
 
-    It operates a single connetion that must be opened and closed on completion.
+
+    It operates a single connection that must be opened and closed on completion.
 
     The Sender can be run within a context manager to ensure that the connection is
     closed on exit.
@@ -137,12 +138,13 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 255
-  summary: 'Queue a message to be sent later. This operation should be followed up
+    startLine: 258
+  summary: 'Queue a message to be sent later.
 
-    with send_pending_messages. If neither the Sender or the message
 
-    has a session ID, a *ValueError* will be raised.
+    This operation should be followed up with send_pending_messages. If neither the
+
+    Sender nor the message has a session ID, a *ValueError* will be raised.
 
     '
   syntax:
@@ -179,12 +181,13 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 276
+    startLine: 280
   summary: 'Send one or more messages to be enqueued at a specific time.
+
 
     Returns a list of the sequence numbers of the enqueued messages.
 
-    If neither the Sender or the message has a session ID, a *ValueError* will be
+    If neither the Sender nor the message has a session ID, a *ValueError* will be
     raised.
 
     '
@@ -231,12 +234,13 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 230
-  summary: 'Sends a message and blocks until acknowledgement is
+    startLine: 233
+  summary: 'Send a message and blocks until acknowledgement is received or the operation
+    fails.
 
-    received or the operation fails. If neither the Sender or the message
 
-    has a session ID, a *ValueError* will be raised.
+    If neither the Sender nor the message has a session ID, a *ValueError* will be
+    raised.
 
     '
   syntax:

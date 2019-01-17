@@ -53,8 +53,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_base_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 168
-  summary: 'Close down the handler connection. If the handler has already closed,
+    startLine: 171
+  summary: 'Close down the handler connection.
+
+
+    If the handler has already closed,
 
     this operation will do nothing. An optional exception can be passed in to
 
@@ -110,8 +113,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_base_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 136
+    startLine: 138
   summary: 'Open handler connection and authenticate session.
+
 
     If the handler is already open, this operation will do nothing.
 
@@ -149,7 +153,10 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_base_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 127
-  summary: 'If the handler was disconnected from the service with
+  summary: 'Reconnect the handler.
+
+
+    If the handler was disconnected from the service with
 
     a retryable error - attempt to reconnect.
 

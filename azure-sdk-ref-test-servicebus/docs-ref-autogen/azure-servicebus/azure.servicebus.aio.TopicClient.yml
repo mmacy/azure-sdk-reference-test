@@ -34,8 +34,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 695
-  summary: 'The TopicClient class defines a high level interface for sending
+    startLine: 705
+  summary: 'A topic client.
+
+
+    The TopicClient class defines a high level interface for sending
 
     messages to an Azure Service Bus Topic.
 

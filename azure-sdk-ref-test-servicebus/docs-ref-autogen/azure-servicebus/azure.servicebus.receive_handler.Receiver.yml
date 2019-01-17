@@ -11,7 +11,7 @@ items:
   - azure.servicebus.receive_handler.Receiver.receive_deferred_messages
   class: azure.servicebus.receive_handler.Receiver
   example:
-  - "Get the receiver client from service bus client<!--[!code-python[Main](ples\\\
+  - "Get the receiver client from Service Bus client<!--[!code-python[Main](ples\\\
     test_examples.py )]-->\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
     names\": [], \"dupnames\": [], \"backrefs\": [], \"source\": \"D:\\\\a\\\\1\\\\\
     s\\\\source_repo\\\\0\\\\azure-servicebus\\\\examples\\\\test_examples.py\", \"\
@@ -36,9 +36,12 @@ items:
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 40
-  summary: 'This receive handler acts as an iterable message stream for retrieving
+  summary: 'A message receiver.
 
-    messages for a Service Bus entity. It operates a single connetion that must be
+
+    This receive handler acts as an iterable message stream for retrieving
+
+    messages for a Service Bus entity. It operates a single connection that must be
     opened and
 
     closed on completion. The service connection will remain open for the entirety
@@ -142,10 +145,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 319
-  summary: 'Close down the receiver connection. If the receiver has already closed,
+    startLine: 323
+  summary: 'Close down the receiver connection.
 
-    this operation will do nothing. An optional exception can be passed in to
+
+    If the receiver has already closed, this operation will do nothing. An optional
+    exception can be passed in to
 
     indicate that the handler was shutdown due to error.
 
@@ -206,10 +211,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 351
-  summary: 'Receive a batch of messages at once. This approach it optimal
+    startLine: 356
+  summary: 'Receive a batch of messages at once.
 
-    if you wish to process multiple messages simultaneously. Note that the
+
+    This approach it optimal if you wish to process multiple messages simultaneously.
+    Note that the
 
     number of messages retrieved in a single batch will be dependent on
 
@@ -265,7 +272,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 174
+    startLine: 175
   syntax:
     content: next()
     parameters: []
@@ -284,8 +291,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 289
+    startLine: 292
   summary: 'Open receiver connection and authenticate session.
+
 
     If the receiver is already open, this operation will do nothing.
 
@@ -334,10 +342,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 210
-  summary: 'Browse messages pending in the queue. This operation does not remove
+    startLine: 211
+  summary: 'Browse messages currently pending in the queue.
 
-    messages from the queue, nor does it lock them.
+
+    Peeked messages are not removed from queue, nor are they locked. They cannot be
+    completed,
+
+    deferred or dead-lettered.
 
     '
   syntax:
@@ -388,10 +400,11 @@ items:
     startLine: null
   summary: 'The current size of the unprocessed message queue.
 
-    :rtype: int
-
     '
-  syntax: {}
+  syntax:
+    return:
+      type:
+      - int
   type: attribute
   uid: azure.servicebus.receive_handler.Receiver.queue_size
 - class: azure.servicebus.receive_handler.Receiver
@@ -420,8 +433,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\receive_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 248
+    startLine: 250
   summary: 'Receive messages that have previously been deferred.
+
 
     When receiving deferred messages from a partitioned entity, all of the supplied
 

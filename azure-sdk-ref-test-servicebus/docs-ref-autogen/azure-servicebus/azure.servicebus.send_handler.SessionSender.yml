@@ -27,10 +27,13 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 209
-  summary: 'This handler if for sending messages to a sessionful Service Bus entity.
+    startLine: 212
+  summary: 'A session message sender.
 
-    It operates a single connetion that must be opened and closed on completion.
+
+    This handler is for sending messages to a sessionful Service Bus entity.
+
+    It operates a single connection that must be opened and closed on completion.
 
     The Sender can be run within a context manager to ensure that the connection is
     closed on exit.
@@ -133,10 +136,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 264
-  summary: 'Queue a message to be sent later. This operation should be followed up
+    startLine: 269
+  summary: 'Queue a message to be sent later.
 
-    with send_pending_messages. If neither the Sender or the message
+
+    This operation should be followed up with send_pending_messages. If neither the
+    Sender nor the message
 
     has a session ID, a *ValueError* will be raised.
 
@@ -175,8 +180,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 285
+    startLine: 291
   summary: 'Send one or more messages to be enqueued at a specific time.
+
 
     Returns a list of the sequence numbers of the enqueued messages.
 
@@ -223,12 +229,13 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 238
-  summary: 'Sends a message and blocks until acknowledgement is
+    startLine: 243
+  summary: 'Send a message and blocks until acknowledgement is received or the operation
+    fails.
 
-    received or the operation fails. If neither the Sender or the message
 
-    has a session ID, a *ValueError* will be raised.
+    If neither the Sender nor the message has a session ID, a *ValueError* will be
+    raised.
 
     '
   syntax:

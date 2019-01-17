@@ -43,8 +43,8 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\mixins.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 307
-  summary: 'Create a Client from a ServiceBus connection string.
+    startLine: 306
+  summary: 'Create a Client from a Service Bus connection string.
 
     '
   syntax:
@@ -79,7 +79,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\mixins.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 298
+    startLine: 297
   syntax:
     content: from_entity(address, entity, **kwargs)
     parameters:
@@ -101,7 +101,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\mixins.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 326
+    startLine: 324
   summary: 'Perform an operation to update the properties of the entity.
 
     '

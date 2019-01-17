@@ -48,10 +48,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 322
-  summary: 'Get a Sender for the Service Bus endpoint. A Sender represents
+    startLine: 323
+  summary: 'Get a Sender for the Service Bus endpoint.
 
-    a single open connection within which multiple send operations can be made.
+
+    A Sender represents a single open connection within which multiple send operations
+    can be made.
 
     '
   syntax:
@@ -60,7 +62,7 @@ items:
     - defaultValue: '0'
       description: 'The period in seconds during which messages sent with
 
-        this Sender must be sent. If the send in not completed in this time it will
+        this Sender must be sent. If the send is not completed in this time it will
         fail.
 
         '
@@ -122,9 +124,11 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 264
-  summary: 'Send one or more messages to the current entity. This operation
+  summary: 'Send one or more messages to the current entity.
 
-    will open a single-use connection, send the supplied messages, and close
+
+    This operation will open a single-use connection, send the supplied messages,
+    and close
 
     connection. If the entity requires sessions, a session ID must be either
 
@@ -144,7 +148,7 @@ items:
     - defaultValue: '0'
       description: 'The period in seconds during which the Message must be
 
-        sent. If the send in not completed in this time it will return a failure result.
+        sent. If the send is not completed in this time it will return a failure result.
 
         '
       id: message_timeout

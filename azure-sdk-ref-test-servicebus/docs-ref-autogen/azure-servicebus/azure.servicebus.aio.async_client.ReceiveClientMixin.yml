@@ -23,7 +23,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 369
+    startLine: 371
   summary: '
 
 
@@ -59,10 +59,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 585
-  summary: 'Get a Receiver for the deadletter endpoint of the entity. A Receiver represents
+    startLine: 593
+  summary: 'Get a Receiver for the deadletter endpoint of the entity.
 
-    a single open connection with which multiple receive operations can be made.
+
+    A Receiver represents a single open connection with which multiple receive operations
+    can be made.
 
     '
   syntax:
@@ -72,7 +74,7 @@ items:
     - defaultValue: 'False'
       description: 'Whether to connect to the transfer deadletter queue, or the standard
 
-        deadletter queue. Default is False, i.e. the standard deadletter endpoint.
+        deadletter queue. Default is False, using the standard deadletter endpoint.
 
         '
       id: transfer_deadletter
@@ -82,10 +84,10 @@ items:
       description: 'The maximum number of messages to cache with each request to the
         service.
 
-        The default value is 0, i.e. messages will be received from the service and
-        processed
+        The default value is 0, meaning messages will be received from the service
+        and processed
 
-        one at a time. Increasing this value will improve message through-put performance
+        one at a time. Increasing this value will improve message throughput performance
         but increase
 
         the change that messages will expire while they are cached if they''re not
@@ -118,7 +120,7 @@ items:
       description: 'The timeout in seconds between received messages after which the
         receiver will
 
-        automatically shutdown. The default value is 0, i.e. no timeout.
+        automatically shutdown. The default value is 0, meaning no timeout.
 
         '
       id: idle_timeout
@@ -155,10 +157,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 519
-  summary: 'Get a Receiver for the Service Bus endpoint. A Receiver represents
+    startLine: 526
+  summary: 'Get a Receiver for the Service Bus endpoint.
 
-    a single open connection with which multiple receive operations can be made.
+
+    A Receiver represents a single open connection with which multiple receive operations
+    can be made.
 
     '
   syntax:
@@ -183,10 +187,10 @@ items:
       description: 'The maximum number of messages to cache with each request to the
         service.
 
-        The default value is 0, i.e. messages will be received from the service and
-        processed
+        The default value is 0, meaning messages will be received from the service
+        and processed
 
-        one at a time. Increasing this value will improve message through-put performance
+        one at a time. Increasing this value will improve message throughput performance
         but increase
 
         the chance that messages will expire while they are cached if they''re not
@@ -219,7 +223,7 @@ items:
       description: 'The timeout in seconds between received messages after which the
         receiver will
 
-        automatically shutdown. The default value is 0, i.e. no timeout.
+        automatically shutdown. The default value is 0, meaning no timeout.
 
         '
       id: idle_timeout
@@ -246,9 +250,12 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 491
-  summary: 'List the IDs of sessions in the queue with pending messages and where
-    the state of the session
+    startLine: 496
+  summary: 'List session IDs.
+
+
+    List the IDs of sessions in the queue with pending messages and where the state
+    of the session
 
     has been updated since the timestamp provided. If no timestamp is provided, all
     will be returned.
@@ -311,10 +318,14 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 371
-  summary: 'Browse messages pending in the queue. This operation does not remove
+    startLine: 373
+  summary: 'Browse messages currently pending in the queue.
 
-    messages from the queue, nor does it lock them.
+
+    Peeked messages are not removed from queue, nor are they locked. They cannot be
+    completed,
+
+    deferred or dead-lettered.
 
     '
   syntax:
@@ -377,8 +388,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 410
+    startLine: 414
   summary: 'Receive messages that have previously been deferred.
+
 
     When receiving deferred messages from a partitioned entity, all of the supplied
 
@@ -443,8 +455,8 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 456
-  summary: 'Settle messages that have been previously deffered.
+    startLine: 461
+  summary: 'Settle messages that have been previously deferred.
 
     '
   syntax:

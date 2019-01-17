@@ -39,8 +39,8 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 32
-  summary: 'A Service Bus client for a namespace with the specified authentication
-    settings (SAS).
+  summary: 'A Service Bus client for a namespace with the specified SAS authentication
+    settings.
 
 
 
@@ -55,13 +55,13 @@ items:
       shared_access_key_name=None, shared_access_key_value=None, loop=None, http_request_timeout=65,
       http_request_session=None, debug=False)
     parameters:
-    - description: 'Service bus namespace, required for all operations.
+    - description: 'Service Bus namespace, required for all operations.
 
         '
       id: service_namespace
       type:
       - str
-    - description: 'Optional. Live host base url. Defaults to Azure url.
+    - description: 'Optional. Live host base URL. Defaults to Azure URL.
 
         '
       id: host_base
@@ -83,13 +83,13 @@ items:
 
         '
       id: loop
-    - description: 'Optional. Timeout for the http request, in seconds.
+    - description: 'Optional. Timeout for the HTTP request, in seconds.
 
         '
       id: http_request_timeout
       type:
       - int
-    - description: 'Optional. Session object to use for http requests.
+    - description: 'Optional. Session object to use for HTTP requests.
 
         '
       id: http_request_session
@@ -123,8 +123,8 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 71
-  summary: 'Create a ServiceBus client from a connection string.
+    startLine: 72
+  summary: 'Create a Service Bus client from a connection string.
 
     '
   syntax:
@@ -281,7 +281,7 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_client.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 131
-  summary: 'Get clients for all queue entities in the namespace.
+  summary: 'Get async clients for all queue entities in the namespace.
 
     '
   syntax:

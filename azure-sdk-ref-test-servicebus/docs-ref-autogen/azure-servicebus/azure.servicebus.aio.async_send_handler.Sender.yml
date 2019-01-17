@@ -28,9 +28,10 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 20
-  summary: 'This handler if for sending messages to a Service Bus entity.
+  summary: 'This handler is for sending messages to a Service Bus entity.
 
-    It operates a single connetion that must be opened and closed on completion.
+
+    It operates a single connection that must be opened and closed on completion.
 
     The Sender can be run within a context manager to ensure that the connection is
     closed on exit.
@@ -135,9 +136,8 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 126
+    startLine: 127
   summary: 'Cancel one or more messages that have previsouly been scheduled and are
-
     still pending.
 
     '
@@ -166,7 +166,10 @@ items:
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 184
-  summary: 'If the handler was disconnected from the service with
+  summary: 'Reconnect the handler.
+
+
+    If the handler was disconnected from the service with
 
     a retryable error - attempt to reconnect.
 
@@ -205,6 +208,7 @@ items:
       repo: https://github.com/annatisch/azure-sdk-for-python
     startLine: 99
   summary: 'Send one or more messages to be enqueued at a specific time.
+
 
     Returns a list of the sequence numbers of the enqueued messages.
 
@@ -251,10 +255,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\aio\async_send_handler.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 70
-  summary: 'Sends a message and blocks until acknowledgement is
-
-    received or the operation fails.
+    startLine: 71
+  summary: 'Send a message and blocks until acknowledgement is received or the operation
+    fails.
 
     '
   syntax:

@@ -23,9 +23,10 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 151
+    startLine: 156
   summary: 'The lock on the message has expired and it has been released back to the
     queue.
+
 
     It will need to be received again in order to settle it.
 

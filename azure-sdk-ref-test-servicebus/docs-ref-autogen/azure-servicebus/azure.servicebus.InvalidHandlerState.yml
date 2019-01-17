@@ -23,10 +23,9 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 106
-  summary: 'An attempt to run a handler operation that the handler is not
-
-    in the right state to perform.
+    startLine: 110
+  summary: 'An attempt to run a handler operation that the handler is not in the right
+    state to perform.
 
     '
   syntax:

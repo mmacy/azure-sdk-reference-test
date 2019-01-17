@@ -23,8 +23,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 426
-  summary: 'A message that has been deferred. A deferred message can be completed,
+    startLine: 451
+  summary: 'A message that has been deferred.
+
+
+    A deferred message can be completed,
 
     abandoned, or dead-lettered, however it cannot be deferred again.
 
@@ -52,9 +55,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 482
-  summary: 'Abandon the message. This message will be returned to the queue to be
-    reprocessed.
+    startLine: 519
+  summary: 'Abandon the message.
+
+
+    This message will be returned to the queue to be reprocessed.
 
     '
   syntax:
@@ -75,8 +80,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 453
+    startLine: 481
   summary: 'Complete the message.
+
+
+    This removes the message from the queue.
 
     '
   syntax:
@@ -97,15 +105,29 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 465
+    startLine: 495
   summary: 'Move the message to the Dead Letter queue.
+
+
+    The Dead Letter queue is a sub-queue that can be
+
+    used to store messages that failed to process correctly, or otherwise require
+    further inspection
+
+    or processing. The queue can also be configured to send expired messages to the
+    Dead Letter queue.
+
+    To receive dead-lettered messages, use *QueueClient.get_deadletter_receiver()*
+    or
+
+    *SubscriptionClient.get_deadletter_receiver()*.
 
     '
   syntax:
     content: dead_letter(description=None)
     parameters:
     - defaultValue: None
-      description: 'Additional details.
+      description: 'The reason for dead-lettering the message.
 
         '
       id: description
@@ -126,7 +148,7 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\message.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 494
+    startLine: 533
   summary: 'A DeferredMessage cannot be deferred. Raises *ValueError*.
 
     '

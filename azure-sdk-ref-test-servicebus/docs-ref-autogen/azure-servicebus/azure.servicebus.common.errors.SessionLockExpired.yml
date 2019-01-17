@@ -23,11 +23,11 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 161
-  summary: 'The lock on the session has expired, therefore all unsettled messages
-    that have
+    startLine: 168
+  summary: 'The lock on the session has expired.
 
-    been received can no longer be settled.
+
+    All unsettled messages that have been received can no longer be settled.
 
     '
   syntax:

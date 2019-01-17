@@ -23,10 +23,13 @@ items:
       branch: servicebus
       path: azure-servicebus\azure\servicebus\common\errors.py
       repo: https://github.com/annatisch/azure-sdk-for-python
-    startLine: 116
-  summary: 'An attempt was made to complete an operation on a message that has already
+    startLine: 118
+  summary: 'Failed to settle the message.
 
-    been settled (e.g. completed, abandoned, dead-lettered or deferred).
+
+    An attempt was made to complete an operation on a message that has already
+
+    been settled (completed, abandoned, dead-lettered or deferred).
 
     This error will also be raised if an attempt is made to settle a message
 
